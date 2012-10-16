@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-2.5.xsd
+      	   http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<import resource="classpath:org/osehra/das/common/xml/commonXmlConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/common/http/commonHttpConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/common/feed/commonFeedConfiguration.xml" />
+
+	<import resource="classpath:org/osehra/das/cdm/vdata/vDataXmlFeedEntryConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/cdm/vdata/vDataSubjectDocumentConfiguration.xml" />
+
+	<bean id="dodServiceInvoker" class="org.osehra.das.mock.http.NamedRestServiceInvoker">
+		<property name="restService" ref="dodService" />
+	</bean>
+
+	<bean id="dodService" class="org.osehra.das.mock.http.RestServiceImpl">
+		<property name="stringToXml" ref="defaultStringToXmlTransformer" />
+		<property name="dataStore" ref="dodDataStore" />
+		<property name="xmlToEntryFactory" ref="xmlToFeedEntryCreatorFactory" />
+		<property name="baseUri" value="${dod.das.baseUri.href}" />
+		<property name="dasExtensionUtil" ref="dasExtensionUtil" />
+		<property name="xmlAttachmentToString" ref="c62XmlAttachmentToString" />
+		<property name="feedToString" ref="defaultFeedToStringTransformer" />
+	</bean>
+			    	
+	<bean id="dasExtensionUtil" class="org.osehra.integration.feed.handler.DasExtensionUtil">
+		<property name="dasextensionNamespace" value="${dasextension.namespace}" />		
+	</bean>
+	
+	<bean id="dodDataStore" class="org.osehra.das.mock.registry.DocumentDataStoreImpl">
+		<property name="documentResources">
+			<map>
+				<entry key="${dod.homeCommunityOid}">
+					<map>
+						<entry key="${dod.remoteRepositoryId}_1001" value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/C62_IMAGE.xml" />
+						<entry key="${dod.remoteRepositoryId}_1002" value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/C62 - Consult Note.xml" />
+						<entry key="${dod.remoteRepositoryId}_1003" value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/C62 - Discharge Summary.xml" />
+						<entry key="${dod.remoteRepositoryId}_1004" value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/C62 - Pathology.xml" />
+						<entry key="${dod.remoteRepositoryId}_1005" value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/CHDRONE_C62_DS.xml" />
+						<entry key="${dod.remoteRepositoryId}_1006" value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/DoD_sampleRadiologyReport_pdf.xml" />
+						<entry key="${dod.remoteRepositoryId}_1007" value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/DoD_sampleRadiologyReport_text.xml" />
+						<entry key="${dod.remoteRepositoryId}_1008" value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/VA_CHDRONE_c62_10292010.xml" />
+						<entry key="${dod.remoteRepositoryId}_1009"
+							value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/VA CHDRONE C62-DischargeSummaries 2011 06 09.xml" />
+						<entry key="${dod.remoteRepositoryId}_1010"
+							value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/VA CHDRONE C62-Radiology Surgery Reports 2011 06 09.xml" />
+						<entry key="${dod.remoteRepositoryId}_1011" value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/C62 - Consult Note.xml" />									
+					</map>
+				</entry>
+			</map>
+		</property>
+		<property name="metadataResources">
+			<map>
+				<entry key="${dod.homeCommunityOid}">
+					<map>
+						<entry key="${dod.remoteRepositoryId}_1001" value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_Image.xml" />
+						<entry key="${dod.remoteRepositoryId}_1002"
+							value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_ConsultNote.xml" />
+						<entry key="${dod.remoteRepositoryId}_1003"
+							value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_DischargeSummary.xml" />
+						<entry key="${dod.remoteRepositoryId}_1004"
+							value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_Pathology.xml" />
+						<entry key="${dod.remoteRepositoryId}_1005" value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_DS2.xml" />
+						<entry key="${dod.remoteRepositoryId}_1006"
+							value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_Radiology.xml" />
+						<entry key="${dod.remoteRepositoryId}_1007" value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_RR.xml" />
+						<entry key="${dod.remoteRepositoryId}_1008" value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_DS4.xml" />
+						<entry key="${dod.remoteRepositoryId}_1009" value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_DS3.xml" />
+						<entry key="${dod.remoteRepositoryId}_1010" value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_RRS.xml" />
+						<entry key="${dod.remoteRepositoryId}_1011"
+							value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_DeploymentAssessment.xml" />
+					</map>
+				</entry>
+			</map>
+		</property>
+		<property name="previewResources">
+			<map>
+				<entry key="1012581676V377802">
+					<map>
+						<entry key="medicalNotes">
+							<list>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_Image.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1001" />
+									<property name="remoteRepositoryId" value="${dod.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${dod.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+									<property name="attachmentDocumentSize" value="50000" />
+									<property name="attachmentDocumentType" value="image/jpeg" />
+									<property name="attachmentDocumentExtension" value="jpg" />
+								</bean>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_ConsultNote.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1002" />
+									<property name="remoteRepositoryId" value="${dod.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${dod.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+									<property name="attachmentDocumentSize" value="50000" />
+									<property name="attachmentDocumentType" value="application/pdf" />
+									<property name="attachmentDocumentExtension" value="pdf" />
+								</bean>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_DischargeSummary.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1003" />
+									<property name="remoteRepositoryId" value="${dod.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${dod.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+									<property name="attachmentDocumentSize" value="50000" />
+									<property name="attachmentDocumentType" value="application/octlet-stream" />
+									<property name="attachmentDocumentExtension" value="flv" />
+								</bean>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_Pathology.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1004" />
+									<property name="remoteRepositoryId" value="${dod.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${dod.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+									<property name="attachmentDocumentSize" value="50000" />
+									<property name="attachmentDocumentType" value="application/octlet-stream" />
+									<property name="attachmentDocumentExtension" value="bin" />
+								</bean>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_DS2.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1005" />
+									<property name="remoteRepositoryId" value="${dod.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${dod.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+									<property name="attachmentDocumentSize" value="50000" />
+									<property name="attachmentDocumentType" value="text/plain" />
+									<property name="attachmentDocumentExtension" value="txt" />
+								</bean>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_Radiology.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1006" />
+									<property name="remoteRepositoryId" value="${dod.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${dod.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+									<property name="attachmentDocumentSize" value="50000" />
+									<property name="attachmentDocumentType" value="application/pdf" />
+									<property name="attachmentDocumentExtension" value="pdf" />
+								</bean>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_RR.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1007" />
+									<property name="remoteRepositoryId" value="${dod.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${dod.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+									<property name="attachmentDocumentSize" value="50000" />
+									<property name="attachmentDocumentType" value="text/plain" />
+									<property name="attachmentDocumentExtension" value="txt" />
+								</bean>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_DS4.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1008" />
+									<property name="remoteRepositoryId" value="${dod.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${dod.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+									<property name="attachmentDocumentSize" value="50000" />
+									<property name="attachmentDocumentType" value="text/plain" />
+									<property name="attachmentDocumentExtension" value="txt" />
+								</bean>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_DS3.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1009" />
+									<property name="remoteRepositoryId" value="${dod.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${dod.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+									<property name="attachmentDocumentSize" value="50000" />
+									<property name="attachmentDocumentType" value="text/plain" />
+									<property name="attachmentDocumentExtension" value="txt" />
+								</bean>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_CHDRONE_RRS.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1010" />
+									<property name="remoteRepositoryId" value="${dod.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${dod.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+									<property name="attachmentDocumentSize" value="50000" />
+									<property name="attachmentDocumentType" value="text/plain" />
+									<property name="attachmentDocumentExtension" value="txt" />
+								</bean>
+							</list>
+						</entry>						
+						<entry key="deploymentAssessments">
+							<list>								
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/dod/sample/c62/Sample-UnstructuredC62_DeploymentAssessment.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1011" />
+									<property name="remoteRepositoryId" value="${dod.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${dod.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+									<property name="attachmentDocumentSize" value="50000" />
+									<property name="attachmentDocumentType" value="application/pdf" />
+									<property name="attachmentDocumentExtension" value="pdf" />
+								</bean>								
+							</list>								
+						</entry>
+					</map>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+</beans>

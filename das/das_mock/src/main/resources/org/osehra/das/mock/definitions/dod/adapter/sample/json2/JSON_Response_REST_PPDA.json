@@ -1,0 +1,86 @@
+{
+	"dataList" : [{
+			"dataRecord" : {
+				"AuthorInstitution" : "",
+				"AuthorName" : "David Ellis",
+				"CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+				"CustodianName" : "share: Madigan",
+				"DateString" : "20120608094355",
+				"Description" : "Text",
+				"DocId" : "c385f2c7-b0da-11e1-8cc2-ab47d9ff3054",
+				"HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+				"MimeType" : "text/xml",
+				"Name" : "Pre Deployment Assessment",
+				"RepositoryId" : "2.16.840.1.113883.3.42.10009.100001.13"
+			},
+			"dataType" : 0
+		}, {
+			"dataRecord" : {
+				"AuthorInstitution" : "",
+				"AuthorName" : "Jorge Calderon",
+				"CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+				"CustodianName" : "share: Madigan",
+				"DateString" : "20120608094355",
+				"Description" : "Text",
+				"DocId" : "c385f2c7-b0da-11e1-8cc2-ab47d9ff3084",
+				"HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+				"MimeType" : "text/xml",
+				"Name" : "Pre Deployment Assessment - 2",
+				"RepositoryId" : "2.16.840.1.113883.3.42.10009.100001.13"
+			},
+			"dataType" : 0
+		},{
+			"dataRecord" : {
+				"AuthorInstitution" : "",
+				"AuthorName" : "Jorge Calderon",
+				"CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+				"CustodianName" : "share: Madigan",
+				"DateString" : "20120608094355",
+				"Description" : "Text",
+				"DocId" : "c385f2c7-b0da-11e1-8cc2-ab47d9ff3064",
+				"HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+				"MimeType" : "text/xml",
+				"Name" : "Post Deployment Assessment",
+				"RepositoryId" : "2.16.840.1.113883.3.42.10009.100001.13"
+			},
+			"dataType" : 0
+		},{
+			"dataRecord" : {
+				"AuthorInstitution" : "",
+				"AuthorName" : "Jorge Calderon",
+				"CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+				"CustodianName" : "share: Madigan",
+				"DateString" : "20120608094355",
+				"Description" : "Text",
+				"DocId" : "c385f2c7-b0da-11e1-8cc2-ab47d9ff3064",
+				"HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+				"MimeType" : "text/xml",
+				"Name" : "Post Deployment Re-assessment",
+				"RepositoryId" : "2.16.840.1.113883.3.42.10009.100001.13"
+			},
+			"dataType" : 0
+		}
+	],
+	"errorList" : [{
+			"ErrorCode" : "XDSRegistryError",
+			"ErrorLocation" : "",
+			"ErrorSeverity" : "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error",
+			"ErrorValue" : "Registry (2.16.840.1.113883.3.42.10002.100001.8.35) is not available"
+		}
+	],
+	"queryComplete" : "true",
+	"statusList" : [{
+			"ExpectedCount" : "",
+			"RetrievedCount" : "",
+			"SiteId" : "2.16.840.1.113883.3.42.10009.100001.13",
+			"SiteName" : "tmds",
+			"SiteStatus" : "UP"
+		}, {
+			"ExpectedCount" : "",
+			"RetrievedCount" : "",
+			"SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+			"SiteName" : "share: Madigan",
+			"SiteStatus" : "UP"
+		}
+	]
+}

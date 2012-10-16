@@ -1,0 +1,8 @@
+{ "dataList" : [  ],
+  "errorList" : [ { "ErrorCode" : "XDSRegistryError",
+        "ErrorLocation" : "",
+        "ErrorSeverity" : "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error",
+        "ErrorValue" : "Registry (2.16.840.1.113883.3.42.10002.100001.8.35) is not available"
+      } ],
+  "statusList" : [  ]
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Preview xsi:noNamespaceSchemaLocation="Preview-CareCoordinatorProfile.xsd"
+	xmlns:vler="http://mynamespace.com/schemas/vcp/0.1/otherAdmin/CareCoordinatorProfile/0.2/subset/vler/0.2"
+	xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:s="http://niem.gov/niem/structures/2.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<PreviewCareCoordinatorProfile>
+		<vler:ServiceProviderClientAssociation>
+			<vler:ServiceProviderReference
+				s:ref="VTA_Person002_99a3bd36-0224-4764-be0e-fc29218c49bd" />
+			<vler:AssociationActiveIndicator>true
+			</vler:AssociationActiveIndicator>
+		</vler:ServiceProviderClientAssociation>
+		<vler:ServiceProvider
+			s:id="VTA_Provider001_99a3bd36-0224-4764-be0e-fc29218c49bd">
+			<vler:ServiceProviderRoleTitle>PEBLO
+			</vler:ServiceProviderRoleTitle>
+			<nc:RoleOfPersonReference
+				s:ref="VTA_Person002_99a3bd36-0224-4764-be0e-fc29218c49bd" />
+			<nc:OrganizationReference
+				s:ref="VTA_Person002_99a3bd36-0224-4764-be0e-fc29218c49bd" />
+		</vler:ServiceProvider>
+		<nc:Person s:id="VTA_Person002_99a3bd36-0224-4764-be0e-fc29218c49bd">
+			<nc:PersonName>
+				<nc:PersonGivenName>BEN</nc:PersonGivenName>
+				<nc:PersonSurName>MADDOX</nc:PersonSurName>
+			</nc:PersonName>
+		</nc:Person>
+		<nc:Organization s:id="VTA_Org001_99a3bd36-0224-4764-be0e-fc29218c49bd">
+			<nc:OrganizationName>VTA Veterans Affairs</nc:OrganizationName>
+		</nc:Organization>
+	</PreviewCareCoordinatorProfile>
+</Preview>

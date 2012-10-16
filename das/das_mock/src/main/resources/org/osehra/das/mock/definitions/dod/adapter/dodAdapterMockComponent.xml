@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-2.5.xsd
+      	   http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+    <!-- Spring beans for populating Mock DoD Adapter.
+    	 author: Julian Jewel
+     -->
+
+	<!-- Canned JSON files for Pass One metadata, keyed on Patient ID and LOINC code.
+	 -->
+	 <!-- Shuffled patients to support Pass Two cutover from SOAP to REST.
+	 		Patients:
+	 		1012581676V377802 (CHDRONE): Was SOAP.  Moved all two-pass data to dummy SOAP patient 1,
+	 			relocated all Pass Two REST data to this patient.
+	 		1008520921V771535 (CHDRTWO): Was SOAP.  Changed ID to dummy SOAP patient 2.
+	 		1012590785V255843 (DDTEST, VistAWeb test patient):  Was SOAP.  Moved to dummy SOAP patient 3,
+	 			associated a copy of Pass Two REST data with this patient also.
+	 		1092345678V123456: Bogus patient ID.  Was used for REST data.  Moved all data to CHDRONE, copy to DDTEST.
+	 		Make sure all data for dummy SOAP patients 1, 2, 3 is kept alive in the file system but commented out.
+	 		Dummy SOAP patient IDs: 109000000xV00000x, x=1,2,3
+	 -->
+	<bean id="mockDoDAdapterResource" class="org.osehra.das.mock.dod.adapter.MockDoDAdapterResource">
+		<qualifier value="mockDoDAdapterResource" />
+		<property name="jsonPass1FullResponses">
+			<map>
+				<!-- entries for SOAP data keyed on dummy patients -->
+				<entry key="1090000001V000001_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Full_JSON_Response_MOCK_NOTE.json" />
+				<entry key="1090000002V000002_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Full_JSON_Response2_MOCK_Note.json" />
+				<entry key="1090000003V000003_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Full_JSON_Response3_MOCK_Note.json" />
+				<entry key="1090000001V000001_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Full_JSON_Response_MOCK_PPDA.json" />
+				<entry key="1090000003V000003_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Full_JSON_Response3_MOCK_PPDA.json" />
+				<entry key="EDIPI:1090000001V000001_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Full_JSON_Response_MOCK_NOTE.json" />
+				<entry key="EDIPI:1090000002V000002_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Full_JSON_Response2_MOCK_Note.json" />
+				<entry key="EDIPI:1090000003V000003_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Full_JSON_Response3_MOCK_Note.json" />
+				<entry key="EDIPI:1090000001V000001_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Full_JSON_Response_MOCK_PPDA.json" />
+				<entry key="EDIPI:1090000003V000003_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Full_JSON_Response3_MOCK_PPDA.json" />
+				<entry key="VA0:1090000001V000001_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Full_JSON_Response_MOCK_NOTE.json" />
+				<entry key="VA0:1090000002V000002_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Full_JSON_Response2_MOCK_Note.json" />
+				<entry key="VA0:1090000003V000003_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Full_JSON_Response3_MOCK_Note.json" />
+				<entry key="VA0:1090000001V000001_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Full_JSON_Response_MOCK_PPDA.json" />
+				<entry key="VA0:1090000003V000003_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Full_JSON_Response3_MOCK_PPDA.json" />
+					
+				<!-- The Pass Two REST data is skimpy now.  Set up same data for patients CHDRONE and DDTEST. -->
+				<entry key="1012581676V377802_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_NOTES.json" />
+				<entry key="VA0:1012581676V377802_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_NOTES.json" />
+				<entry key="EDIPI:1012581676V377802_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_NOTES.json" />
+				<entry key="1012581676V377802_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_PPDA.json" />
+				<entry key="VA0:1012581676V377802_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_PPDA.json" />
+				<entry key="EDIPI:1012581676V377802_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_PPDA.json" />
+				<entry key="1012590785V255843_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_NOTES.json" />
+				<entry key="VA0:1012590785V255843_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_NOTES.json" />
+				<entry key="EDIPI:1012590785V255843_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_NOTES.json" />
+				<entry key="1012590785V255843_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_PPDA.json" />
+				<entry key="VA0:1012590785V255843_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_PPDA.json" />
+				<entry key="EDIPI:1012590785V255843_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_PPDA.json" />
+					
+				<!-- BHIE09 REST Data -->
+				<entry key="EDIPI:D1666701215_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/D1666701215_FirstPass_JSON_Response.json" />
+				
+				<!-- One Pass Allergies -->
+				<entry key="1012581676V377802_48765-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_One_Pass_ALLERGIES.json" />
+				<entry key="VA0:1012581676V377802_48765-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_One_Pass_ALLERGIES.json" />
+				<entry key="EDIPI:1012581676V377802_48765-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_One_Pass_ALLERGIES.json" />
+			</map>
+		</property>
+		<property name="jsonPass1PartialResponses">
+			<map>
+				<!-- entries for SOAP data keyed on dummy patients -->
+				<entry key="1090000001V000001_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_JSON_Response_MOCK_NOTE.json" />
+				<entry key="1090000002V000002_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_JSON_Response2_MOCK_Note.json" />
+				<entry key="1090000003V000003_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_JSON_Response3_MOCK_Note.json" />
+				<entry key="1090000001V000001_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_JSON_Response_MOCK_PPDA.json" />
+				<entry key="1090000003V000003_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_JSON_Response3_MOCK_PPDA.json" />
+				<entry key="EDIPI:1090000001V000001_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_JSON_Response_MOCK_NOTE.json" />
+				<entry key="EDIPI:1090000002V000002_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_JSON_Response2_MOCK_Note.json" />
+				<entry key="EDIPI:1090000003V000003_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_JSON_Response3_MOCK_Note.json" />
+				<entry key="EDIPI:1090000001V000001_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_JSON_Response_MOCK_PPDA.json" />
+				<entry key="EDIPI:1090000003V000003_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_JSON_Response3_MOCK_PPDA.json" />
+				<entry key="VA0:1090000001V000001_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_JSON_Response_MOCK_NOTE.json" />
+				<entry key="VA0:1090000002V000002_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_JSON_Response2_MOCK_Note.json" />
+				<entry key="VA0:1090000003V000003_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_JSON_Response3_MOCK_Note.json" />
+				<entry key="VA0:1090000001V000001_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_JSON_Response_MOCK_PPDA.json" />
+				<entry key="VA0:1090000003V000003_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_JSON_Response3_MOCK_PPDA.json" />
+					
+				<!-- The Pass Two REST data is skimpy now.  Partial Notes data for patient CHDRONE, PPDA for DDTEST. -->
+				<entry key="1012581676V377802_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_NOTES.json" />
+				<entry key="VA0:1012581676V377802_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_NOTES.json" />
+				<entry key="EDIPI:1012581676V377802_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_NOTES.json" />
+				<entry key="1012590785V255843_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_PPDA.json" />
+				<entry key="VA0:1012590785V255843_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_PPDA.json" />
+				<entry key="EDIPI:1012590785V255843_51847-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_REST_PPDA.json" />
+					
+				<!-- BHIE09 REST Data -->
+				<entry key="EDIPI:D1666701215_11536-0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json/Partial_Empty_JSON_Response.json" />
+					
+				<!-- One Pass Allergies -->
+				<entry key="1012581676V377802_48765-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_One_Pass_ALLERGIES.json" />
+				<entry key="VA0:1012581676V377802_48765-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_One_Pass_ALLERGIES.json" />
+				<entry key="EDIPI:1012581676V377802_48765-2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/JSON_Response_One_Pass_ALLERGIES.json" />
+			</map>
+		</property>
+		<property name="jsonPass2Responses">
+			<map>
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10009.100001.13_4fc18fba-8a44-11e1-b177-d5affe6619e1"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/Note1_4fc18fba-8a44-11e1-b177-d5affe6619e1.json" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10009.100001.13_79051b11-8aef-11e1-b4d2-17bee037cac1"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/Note2_79051b11-8aef-11e1-b4d2-17bee037cac1.json" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10009.100001.13_6a04af3b-8e13-11e1-977a-4fd6c5b1bd26"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/Note3_6a04af3b-8e13-11e1-977a-4fd6c5b1bd26.json" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10009.100001.13_c385f2c7-b0da-11e1-8cc2-ab47d9ff3054"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/PPDA1_c385f2c7-b0da-11e1-8cc2-ab47d9ff3054.json" />
+					
+				<!-- BHIE09 REST Data -->
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.126.100001.13_833558/11536-0/2155845810/0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/2155845810_CompleteNote.json" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.126.100001.13_833558/11536-0/2155726054/1"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/2155726054_ComplexContent_CompleteNote.json" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.126.100001.13_833558/11536-0/2155773526/1"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/2155773526_ComplexContent_CompleteNote.json" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.126.100001.13_833558/11536-0/2155858059/1"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/2155858059_ComplexContent_CompleteNote.json" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.126.100001.13_833558/11536-0/2155995129/1"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/2155995129_ComplexContent_CompleteNote.json" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.126.100001.13_833558/11536-0/2156171494/1"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/2156171494_ComplexContent_CompleteNote.json" />
+
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10009.100001.13_c385f2c7-b0da-11e1-8cc2-ab47d9ff3064"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/PPDA2_c385f2c7-b0da-11e1-8cc2-ab47d9ff3064.json" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10009.100001.13_c385f2c7-b0da-11e1-8cc2-ab47d9ff3074"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/PPDA3_c385f2c7-b0da-11e1-8cc2-ab47d9ff3074.json" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10009.100001.13_c385f2c7-b0da-11e1-8cc2-ab47d9ff3084"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/PPDA4_c385f2c7-b0da-11e1-8cc2-ab47d9ff3084.json" />
+								
+			
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10009.100001.13_4fc18fba-8a44-11e1-b177-d5affe6619z1"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/Note4_4fc18fba-8a44-11e1-b177-d5affe6619z1.json" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10009.100001.13_4fc18fba-8a44-11e1-b177-d5affe6619z2"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/Note5_4fc18fba-8a44-11e1-b177-d5affe6619z2.json" />
+
+			</map>
+		</property>
+		<property name="complexContentResponses">
+			<map>
+				<entry key="async/complex/note/12345"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/json2/complexContent_Note3_12345.rtf" />
+				<entry key="async/complex/note/2155726054"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/complexContent/2155726054.rtf" />
+				<entry key="async/complex/note/2155773526"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/complexContent/2155773526.rtf" />
+				<entry key="async/complex/note/2155858059"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/complexContent/2155858059.rtf" />
+				<entry key="async/complex/note/2155995129"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/complexContent/2155995129.rtf" />
+				<entry key="async/complex/note/2155995129"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/complexContent/2156171494.rtf" />			</map>
+		</property>
+	</bean>
+
+	<!--  Canned CDA document files for Pass Two subject documents and attachments,
+	      keyed on Community ID, Repository ID, Document unique ID.
+	 -->
+	<bean id="mockAdapterDocRetrieve" class="org.osehra.das.mock.dod.adapter.MockAdapterDocRetrieve">
+		<qualifier value="mockAdapterDocRetrieve" />
+		<property name="documents">
+			<map>
+				<!-- medical notes, patient CHDRONE -->
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10009.100001.13_06366bbb-b27f-4305-a81e-5e007b595a4f"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/notes/LOINC(11536-0)_06366bbb-b27f-4305-a81e-5e007b595a4f.xml" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.125_156d9432-9cce-4e47-9096-22261c9e2bbe"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/notes/LOINC(11536-0)_156d9432-9cce-4e47-9096-22261c9e2bbe.xml" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.125_292298a2-7ce8-4ac0-a49b-d794e241ca8b"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/notes/LOINC(11536-0)_292298a2-7ce8-4ac0-a49b-d794e241ca8b.xml" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.125_3b5ce4f8-574c-11e1-a7be-05ec2249ca82"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/notes/LOINC(11536-0)_3b5ce4f8-574c-11e1-a7be-05ec2249ca82_JPEG.xml" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.125_38fb929a-6dfd-11e1-9d20-eb29594a53b4"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/notes/LOINC(11536-0)_38fb929a-6dfd-11e1-9d20-eb29594a53b4_RTF.xml" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.125_cdeeba1a-5750-11e1-a7be-05ec2249ca82"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/notes/LOINC(11536-0)_cdeeba1a-5750-11e1-a7be-05ec2249ca82_PDF.xml" />
+				<!-- medical notes, patient CHDRTWO -->
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.125_2c53e186-95ce-4818-b361-8d056df41f12"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/notes/LOINC(11536-0)_2c53e186-95ce-4818-b361-8d056df41f12.xml" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.22200_34c91592-017f-48d3-8a70-74dd4730c021"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/notes/LOINC(11536-0)_34c91592-017f-48d3-8a70-74dd4730c021.xml" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.22200_df531e29-574d-11e1-a7be-05ec2249ca82"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/notes/LOINC(11536-0)_df531e29-574d-11e1-a7be-05ec2249ca82_TEXT.xml" />
+				<!-- medical notes, patient DDTEST -->
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.125_b61c0e8f-78d3-11e1-a00f-052ae090d378"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/notes/LOINC(11536-0)_b61c0e8f-78d3-11e1-a00f-052ae090d378.xml" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.22200_e4fa5910-78d3-11e1-a00f-052ae090d378"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/notes/LOINC(11536-0)_e4fa5910-78d3-11e1-a00f-052ae090d378.xml" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.125_38fb929a-6dfd-11e1-9d20-eb29594a53b4"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/notes/LOINC(11536-0)_38fb929a-6dfd-11e1-9d20-eb29594a53b4_RTF.xml" />
+				<!-- deployment assessments, patient CHDRONE -->
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.125_3b302284-4e86-1131-a49a-e7e8b674c4f0"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/deployment/LOINC(51847-2)_3b302284-4e86-1131-a49a-e7e8b674c4f0.xml" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.125_8f352408-646e-11e1-b996-9d1c1d99a64e"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/deployment/LOINC(51847-2)_8f352408-646e-11e1-b996-9d1c1d99a64e.xml" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.125_12eb3ff9-646f-11e1-b996-9d1c1d99a64e"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/deployment/LOINC(51847-2)_12eb3ff9-646f-11e1-b996-9d1c1d99a64e.xml" />
+				<!-- deployment assessments, patient DDTEST -->
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.125_26ba635e-78d2-11e1-a00f-052ae090d378"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/deployment/LOINC(51847-2)_26ba635e-78d2-11e1-a00f-052ae090d378.xml" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.125_8f352408-646e-11e1-b996-9d1c1d99a64e"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/deployment/LOINC(51847-2)_8f352408-646e-11e1-b996-9d1c1d99a64e.xml" />
+				<entry key="2.16.840.1.113883.3.42.10001.100001.12_2.16.840.1.113883.3.42.10002.100001.8.125_12eb3ff9-646f-11e1-b996-9d1c1d99a64e"
+					value="classpath:org/osehra/das/mock/definitions/dod/adapter/sample/c62/deployment/LOINC(51847-2)_12eb3ff9-646f-11e1-b996-9d1c1d99a64e.xml" />
+			</map>
+		</property>
+	</bean>
+
+</beans>

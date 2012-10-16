@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<assembly>
+	<id>${project.name}-dist</id>
+	<formats>
+		<format>tar.gz</format>
+	</formats>
+	<fileSets>
+		<!-- this is the filtered properties file -->
+		<fileSet>
+			<directory>${project.build.directory}</directory>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>${propertyFile.name}</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${project.build.directory}</directory>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>${project.name}-${pom.version}.war</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+</assembly>

@@ -1,0 +1,30 @@
+{ "dataList" : [
+	{ "dataRecord" : { "AuthorInstitution" : "",
+            "AuthorName" : "VistAWeb demo user",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+            "CustodianName" : "share: Madigan",
+            "DateString" : "2012328092416",
+            "Description" : "CDA",
+            "DocId" : "b61c0e8f-78d3-11e1-a00f-052ae090d378",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "text/xml",
+            "Name" : "Surgery Consult",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10002.100001.8.125"
+          },
+        "dataType" : 0
+      }
+
+    ],
+  "errorList" : [ { "ErrorCode" : "XDSRegistryError",
+        "ErrorLocation" : "",
+        "ErrorSeverity" : "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error",
+        "ErrorValue" : "Registry (2.16.840.1.113883.3.42.10002.100001.8.35) is not available"
+      } ],
+  "statusList" : [ { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "UP"
+      }
+    ]
+}

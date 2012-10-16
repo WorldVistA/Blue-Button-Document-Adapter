@@ -1,0 +1,133 @@
+{
+    "dataList" : [ {
+        "dataRecord" : {
+            "AdmissionDate" : "20000121173457",
+            "CompleteNote" : "DISCHARGE SUMMARY MOCK - Test Data",
+            "CustodianId" : "2.16.840.1.113883.3.42.126.100001.13",
+            "CustodianName" : "ahlta",
+            "DictatedBy" : "",
+            "DictatedDate" : "20100121173457",
+            "EnteredBy" : "Jane C. Doe",
+            "EnteredByDate" : "null",
+            "Facility" : "NMC Portsmouth/null",
+            "NoteTitle" : "Discharge Summary",
+            "NoteTypeName" : "Discharge Summary",
+            "Status" : "COMPLETE",
+            "VerifiedBy" : "xxx",
+            "VerifiedDate" : "20030121173457"
+        },
+        "dataType" : 2
+    } ],
+    "errorList" : [ {
+        "ErrorCode" : "XDSRegistryError",
+        "ErrorLocation" : "",
+        "ErrorSeverity" : "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error",
+        "ErrorValue" : "Registry (2.16.840.1.113883.3.42.10002.100001.8.35) is not available"
+    } ],
+    "statusList" : [ {
+        "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10009.100001.13",
+        "SiteName" : "tmds",
+        "SiteStatus" : "UP"
+    },
+    {
+        "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "UP"
+    },
+    {
+        "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "SiteName" : "va",
+        "SiteStatus" : "UP"
+    },
+    {
+        "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.35",
+        "SiteName" : "share: Groton",
+        "SiteStatus" : "DOWN"
+    },
+    {
+        "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.126.100001.13",
+        "SiteName" : "ahlta",
+        "SiteStatus" : "UP"
+    },
+    {
+        "ExpectedCount" : "0",
+        "RetrievedCount" : "0",
+        "SiteId" : "2.16.840.1.113883.3.42.126.100001.13",
+        "SiteName" : "ahlta",
+        "SiteStatus" : "IN_PROGRESS"
+    },
+    {
+        "ExpectedCount" : "0",
+        "RetrievedCount" : "0",
+        "SiteId" : "2.16.840.1.113883.3.42.126.100001.13",
+        "SiteName" : "ahlta",
+        "SiteStatus" : "COMPLETE"
+    },
+    {
+        "ExpectedCount" : "-1",
+        "RetrievedCount" : "0",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "IN_PROGRESS"
+    },
+    {
+        "ExpectedCount" : "-1",
+        "RetrievedCount" : "0",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "COMPLETE"
+    },
+    {
+        "ExpectedCount" : "-1",
+        "RetrievedCount" : "0",
+        "SiteId" : "2.16.840.1.113883.3.42.10009.100001.13",
+        "SiteName" : "tmds",
+        "SiteStatus" : "IN_PROGRESS"
+    },
+    {
+        "ExpectedCount" : "-1",
+        "RetrievedCount" : "1",
+        "SiteId" : "2.16.840.1.113883.3.42.10009.100001.13",
+        "SiteName" : "tmds",
+        "SiteStatus" : "COMPLETE"
+    },
+    {
+        "ExpectedCount" : "-1",
+        "RetrievedCount" : "0",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "IN_PROGRESS"
+    },
+    {
+        "ExpectedCount" : "-1",
+        "RetrievedCount" : "8",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "COMPLETE"
+    },
+    {
+        "ExpectedCount" : "-1",
+        "RetrievedCount" : "0",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "SiteName" : "va",
+        "SiteStatus" : "IN_PROGRESS"
+    },
+    {
+        "ExpectedCount" : "-1",
+        "RetrievedCount" : "15",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "SiteName" : "va",
+        "SiteStatus" : "COMPLETE"
+    }
+    ]
+}

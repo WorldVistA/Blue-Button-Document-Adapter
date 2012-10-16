@@ -1,0 +1,17 @@
+{ "dataRecord" : { "CompleteNote" : "Patient: AATEST, AARON  Date: 22 Feb 2012 1330 EST  Appt Type: EST  \nTreatment Facility: 4TH MEDICAL GROUP  Clinic: SJ MENTAL HEALTH CLINIC  Provider: HAIMSPROVIDER,QUAZI  \nPatient Status: Outpatient  \n \nAutoCites Refreshed by HAIMSPROVIDER,QUAZI @ 22 Feb 2012 1330 EST\t\nProblems \nChronic: \n-Previous history of gastrointestinal symptoms \n-Acquired deformity of upper extremity \n-Atypical face pain \nFamily History \nNo Family History Found.  \n   Allergies \nNo Allergies Found.\nActive Medications\nNo Active Medications Found.\n \nReason for Appointment:Written by HAIMSPROVIDER,QUAZI @ 22 Feb 2012 1330 EST\nmnohoijp \n\nScreening Written by HAIMSPROVIDER,QUAZI @ 22 Feb 2012 1332 EST\t\nReason For Appointment: Notes Entered by: HAIMSPROVIDER,QUAZI 22 Feb 2012 1330\n------------------------------\nmnohoijp \nReason(s) For Visit (Chief Complaint): Atypical face pain (Follow-Up) ;  \n \nVitals\nVitals Written by HAIMSPROVIDER,QUAZI @ 22 Feb 2012 1332 EST\n BP: 90/60, Tobacco Use: No, Alcohol Use: No, Pain Scale: 0 Pain Free \n \nSO Note Written by HAIMSPROVIDER,QUAZI @ 22 Feb 2012 1333 EST\nbodybodyHistory of present illness g2\n\tThe Patient is a 42 year old male. \n\n\tHe reported: No systemic symptoms.  No head symptoms.  No neck symptoms.eg\nPhysical findings g8\nVital Signs:\n- Vital signs:eg\nebody\nebody\n \n \nA/P Written by HAIMSPROVIDER,QUAZI @ 22 Feb 2012 1335 EST\t\n1. Atypical face pain\n2. TRIGEMINAL NEURALGIA\n \nDisposition Written by HAIMSPROVIDER,QUAZI @ 22 Feb 2012 1335 EST\t\nReleased w/o Limitations \nFollow up:  as needed . \nDiscussed: Diagnosis, Medication(s)/Treatment(s), Alternatives, Potential Side Effects with Patient who indicated understanding. \n30 minutes face-to-face/floor time. >50% of appointment time spent counseling and/or coordinating care. \n \n\nSigned By  HAIMSPROVIDER, QUAZI (Physician/Workstation) @ 22 Feb 2012 1336",
+      "ComplexDataUrl" : "!#COMPLEX_DATA_URL#!2155858059",
+      "CustodianId" : "2.16.840.1.113883.3.42.126.100001.13",
+      "CustodianName" : "ahlta",
+      "EnteredBy" : "",
+      "EnteredByDate" : "",
+      "Facility" : "Seymour Johnson Mental Health Clinic",
+      "NoteFormat" : "plaintext",
+      "NoteTitle" : "Progress Note",
+      "NoteTypeCode" : "",
+      "NoteTypeName" : "Progress Note",
+      "RepositoryId" : "2.16.840.1.113883.3.42.126.100001.13",
+      "VerifiedBy" : "HAIMSPROVIDER, QUAZI",
+      "VerifiedDate" : "20120222183045"
+    },
+  "dataType" : 12
+}

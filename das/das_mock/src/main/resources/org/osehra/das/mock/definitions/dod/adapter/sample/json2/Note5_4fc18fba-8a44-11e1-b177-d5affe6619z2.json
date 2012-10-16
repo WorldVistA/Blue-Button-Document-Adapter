@@ -1,0 +1,37 @@
+{ "dataRecord" : {
+	    "CompleteNote" :
+	"<ClinicalDocument xmlns=\"urn:hl7-org:v3\" xmlns:xsi=\"http:\/\/www.w3.org\/2001\/XMLSchema-instance\">\r\n\t<typeId root=\"2.16.840.1.113883.1.3\" extension=\"POCD_HD000040\"\/>\r\n\t<id root=\"2.16.840.1.113883.2.99.1.3\"\/>\r\n\t<code code=\"11536-0\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"\/>\r\n\t<title>General Note<\/title>\r\n\t<effectiveTime\/>\r\n\t<confidentialityCode code=\"N\"\/>\r\n\t<recordTarget>\r\n\t\t<patientRole>\r\n\t\t\t<id extension=\"799999\" root=\"2.16.840.1.113883.2.99.1.2\" assigningAuthorityName=\"CDR\"\/>\r\n\t\t\t<providerOrganization>\r\n\t\t\t\t<id root=\"2.16.840.1.113883.2.99.1.5\"\/>\r\n\t\t\t\t<name\/>\r\n\t\t\t<\/providerOrganization>\r\n\t\t<\/patientRole>\r\n\t<\/recordTarget>\r\n\t<author>\r\n\t\t<time\/>\r\n\t\t<assignedAuthor>\r\n\t\t\t<id root=\"2.16.840.1.113883.2.11.1.3\"\/>\r\n\t\t\t<assignedPerson>\r\n\t\t\t\t<name>\r\n\t\t\t\t\t<prefix\/>\r\n\t\t\t\t\t<given\/>\r\n\t\t\t\t\t<family\/>\r\n\t\t\t\t<\/name>\r\n\t\t\t<\/assignedPerson>\r\n\t\t\t<representedOrganization>\r\n\t\t\t\t<id root=\"2.16.840.1.113883.2.99.1.5\"\/>\r\n\t\t\t\t<name>\r\n\t\t\t\t<\/name>\r\n\t\t\t<\/representedOrganization>\r\n\t\t<\/assignedAuthor>\r\n\t<\/author>\r\n\t<custodian>\r\n\t\t<assignedCustodian>\r\n\t\t\t<representedCustodianOrganization>\r\n\t\t\t\t<id root=\"2.16.840.1.113883.3.42.126.100001.13\"\/>\r\n\t\t\t\t<name>ahlta<\/name>\r\n\t\t\t<\/representedCustodianOrganization>\r\n\t\t<\/assignedCustodian>\r\n\t<\/custodian>\r\n\t<component>\r\n\t\t<structuredBody>\r\n\t\t\t<component>\r\n\t\t\t\t<section>\r\n\t\t\t\t\t<code code=\"11536-0\" displayName=\"Progress Note\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"\/>\r\n\t\t\t\t\t<entry>\r\n\t\t\t\t\t\t<act classCode=\"ACT\" moodCode=\"EVN\">\r\n\t\t\t\t\t\t\t<templateId root=\"2.16.840.1.113883.3.88.11.83.123\"\/>\r\n\t\t\t\t\t\t\t<templateId root=\"1.3.6.14.1.19376.1.5.3.1.3.6\"\/>\r\n\t\t\t\t\t\t\t<id extension=\"2156097223\"\/>\r\n\t\t\t\t\t\t\t<code\/>\r\n\t\t\t\t\t\t\t<entryRelationship typeCode=\"SUBJ\">\r\n\t\t\t\t\t\t\t\t<observation classCode=\"OBS\" moodCode=\"EVN\">\r\n\t\t\t\t\t\t\t\t\t<templateId root=\"2.16.840.1.113883.3.88.11.83.123\"\/>\r\n\t\t\t\t\t\t\t\t\t<id root=\"2.16.840.1.113883.3.42.126.100001.2\"\/>\r\n\t\t\t\t\t\t\t\t\t<code\/>\r\n\t\t\t\t\t\t\t\t\t<text>Progress Note<\/text>\r\n\t\t\t\t\t\t\t\t\t<effectiveTime value=\"20111024170951\"\/>\r\n\t\t\t\t\t\t\t\t\t<author>\r\n\t\t\t\t\t\t\t\t\t\t<time value=\"20111024170951\"\/>\r\n\t\t\t\t\t\t\t\t\t\t<assignedAuthor>\r\n\t\t\t\t\t\t\t\t\t\t\t<id\/>\r\n\t\t\t\t\t\t\t\t\t\t\t<assignedPerson>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<name>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<family>BHIEPROV, TWO<\/family>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<\/name>\r\n\t\t\t\t\t\t\t\t\t\t\t<\/assignedPerson>\r\n\t\t\t\t\t\t\t\t\t\t\t<representedOrganization>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<id root=\"2.16.840.1.113883.3.42.10002.100001.8\"\/>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<name>Internal Medicine 200H<\/name>\r\n\t\t\t\t\t\t\t\t\t\t\t<\/representedOrganization>\r\n\t\t\t\t\t\t\t\t\t\t<\/assignedAuthor>\r\n\t\t\t\t\t\t\t\t\t<\/author>\r\n\t\t\t\t\t\t\t\t\t<entryRelationship typeCode=\"COMP\">\r\n\t\t\t\t\t\t\t\t\t\t<templateId root=\"2.16.840.1.113883.3.88.11.83.123\"\/>\r\n\t\t\t\t\t\t\t\t\t\t<observation classCode=\"OBS\" moodCode=\"EVN\">\r\n\t\t\t\t\t\t\t\t\t\t\t<templateId root=\"2.16.840.1.113883.3.88.11.83.123\"\/>\r\n\t\t\t\t\t\t\t\t\t\t\t<code displayName=\"Progress Note\">\r\n\t\t\t\t\t\t\t\t\t\t\t<originalText>\t\t\t\t\t\t\t\t<list listType=\"ordered\">\r\nSHARE NOTE WITH CDA FORMAT ELEMENTS. LIST:\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t<item ID=\"Option1\">\r\n\t\t\t\t\t\t\t\t\t\t<caption>Option1<\/caption>\r\n\t\t\t\t\t\t\t\t\t\t<content ID=\"A\">X<\/content>\r\n\t\t\t\t\t\t\t\t\t<\/item>\r\n\t\t\t\t\t\t\t\t\t<item ID=\"Option2\">\r\n\t\t\t\t\t\t\t\t\t\t<caption>Option2<\/caption>\r\n\t\t\t\t\t\t\t\t\t\t<content ID=\"B\">X<\/content>\r\n\t\t\t\t\t\t\t\t\t<\/item>\r\n\t\t\t\t\t\t\t\t<\/list><\/originalText>\r\n\t\t\t\t\t\t\t\t\t\t\t<\/code>\r\n\t\t\t\t\t\t\t\t\t\t\t<text><\/text>\r\n\t\t\t\t\t\t\t\t\t\t<\/observation>\r\n\t\t\t\t\t\t\t\t\t<\/entryRelationship>\r\n\t\t\t\t\t\t\t\t<\/observation>\r\n\t\t\t\t\t\t\t<\/entryRelationship>\r\n\t\t\t\t\t\t<\/act>\r\n\t\t\t\t\t<\/entry>\r\n\t\t\t\t<\/section>\r\n\t\t\t<\/component>\r\n\t\t<\/structuredBody>\r\n\t<\/component>\r\n<\/ClinicalDocument>",
+	    "NoteTypeName":"",
+	    "EnteredBy":"",
+	    "NoteFormat":"CDA",
+	    "RepositoryId":"2.16.840.1.113883.3.42.126.100001.13",
+	    "CustodianId":"2.16.840.1.113883.3.42.126.100001.13",
+	    "EnteredByDate":"",
+	    "NoteTitle":"SHARE_Note_With_CDA",
+	    "VerifiedBy":"See Note Text",
+	    "CustodianName":"ahlta",
+	    "VerifiedDate":"",
+	    "Facility":"Internal Medicine 200H/DNS:ha.osd.mil/13",
+	    "NoteTypeCode":"11536-0"
+	    },
+	    "dataType":12,
+  "errorList" : [ { "ErrorCode" : "XDSRegistryError",
+        "ErrorLocation" : "",
+        "ErrorSeverity" : "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error",
+        "ErrorValue" : "Registry (2.16.840.1.113883.3.42.10002.100001.8.35) is not available"
+      } ],
+  "queryComplete" : "true",
+  "statusList" : [ { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10009.100001.13",
+        "SiteName" : "tmds",
+        "SiteStatus" : "UP"
+      },
+      { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "UP"
+      }
+    ]
+}

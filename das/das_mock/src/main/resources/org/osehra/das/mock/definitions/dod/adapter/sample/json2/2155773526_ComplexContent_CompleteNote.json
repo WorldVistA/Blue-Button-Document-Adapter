@@ -1,0 +1,17 @@
+{ "dataRecord" : { "CompleteNote" : "Patient: AATEST, AARON  Date: 31 Jan 2012 1909 EST  Appt Type: EROOM  \nTreatment Facility: 4TH MEDICAL GROUP  Clinic: BLUE MTF  Provider: SJFQQGF,FOUR  \nPatient Status: Outpatient  \n \nReason for Appointment:  \n\nAutoCites Refreshed by SJF,FOUR @ 31 Jan 2012 1909 EST\t\nProblems \nLoading... Family History \nNo Family History Found.  \nAllergies \nNo Allergies Found.\nOther PMHs \nNo Other PMHs Found. Social History \nNo Social History Found.  \nProcedures \nNo Procedures Found.\nActive Medications\nNo Active Medications Found.\nExpired Medications\nNo Expired Medications Found.\nLabs\nNo Labs Found.\nVitals\nNo Vitals Found.\n \nQuestionnaire AutoCites Refreshed by SJF,FOUR @ 31 Jan 2012 1909 EST\t\nQuestionnaires\n\n \nRad AutoCites Refreshed by SJF,FOUR @ 31 Jan 2012 1909 EST\t\nRads\nNo Rads Found.\n \nA/P Written by SJF,FOUR @ 31 Jan 2012 1910 EST\t\n1. ACQUIRED DEFORMITY UPPER EXTREMITY\n \nDisposition Written by SJF,FOUR @ 31 Jan 2012 1910 EST\t\nReleased w/o Limitations \nAdministrative Options: Medical board \n \n\nSigned By  SJF, FOUR (Physician/Workstation) @ 31 Jan 2012 1910",
+      "ComplexDataUrl" : "!#COMPLEX_DATA_URL#!2155773526",
+      "CustodianId" : "2.16.840.1.113883.3.42.126.100001.13",
+      "CustodianName" : "ahlta",
+      "EnteredBy" : "",
+      "EnteredByDate" : "",
+      "Facility" : "Blue MTF",
+      "NoteFormat" : "plaintext",
+      "NoteTitle" : "Progress Note",
+      "NoteTypeCode" : "",
+      "NoteTypeName" : "Progress Note",
+      "RepositoryId" : "2.16.840.1.113883.3.42.126.100001.13",
+      "VerifiedBy" : "SJF, FOUR",
+      "VerifiedDate" : "20120201000923"
+    },
+  "dataType" : 12
+}

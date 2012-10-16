@@ -1,0 +1,152 @@
+{
+    "dataList" : [ {
+        "dataRecord" : { 
+            "CompleteNote" : "CONSULT REPORT\\r\\n		--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\\r\\n		                                                                       Order Request for BEAR, ROSA\\r\\n\\r\\n		Requesting HCP:  HURST, PROVIDER\\r\\n		Requesting Location:  CARDIOLOGY NMCP\\r\\n		Order ID number:  030121-00025\\r\\n		MCP Referral #:\\r\\n		No. of Visits:\\r\\n		Referral Authorized Until:\\r\\n		Reason for Consult:\\r\\n		Test\\r\\n		Priority:  ROUTINE\\r\\n		Provisional Diagnosis:\\r\\n		Test\\r\\n		ACV:\\r\\n		Reviewed Date/Time:\\r\\n		Appoint Status:\\r\\n		Appointment Review Comment:\\r\\n		Reviewer:  ,  \\r\\n\\r\\n		--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\\r\\n		                                                                                    CONSULT RESULT\\r\\n\\r\\n		Appointment Date:  21 Jan 2003\\r\\n		Requesting HCP:  HURST, PROVIDER\\r\\n		Clinic:  CARDIOLOGY NMCP\\r\\n		Consulting HCP:  HURST, DEANIE \\r\\n\\r\\n		Problem List:\\r\\n		                             **** Appended Note ****\\r\\n		Note:\\r\\n		Test\\r\\n		Appended by: Deanie Hurst on 04 Feb 2003@1506\\r\\n		Note:\\r\\n		Test\\r\\n		Verified by: Deanie Hurst               21 Jan 2003@1244",
+            "NoteTypeName" : "Consultation Report",
+            "EnteredBy" : "",
+            "NoteFormat" : "plaintext",
+            "RepositoryId" : "2.16.840.1.113883.3.42.126.100001.13",
+            "CustodianId" : "2.16.840.1.113883.3.42.126.100001.13",
+            "EnteredByDate" : "null",
+            "NoteTitle" : "Consultation Report",
+            "VerifiedBy" : "xxx",
+            "CustodianName" : "ahlta",
+            "VerifiedDate": "20030121173457",
+            "Facility" : "null/null",
+            "NoteTypeCode" : ""
+        },
+        "dataType" : 1
+    },
+    {
+        "dataRecord" : { 
+            "CompleteNote" : "CONSULT REPORT\\n		--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\\n		                                                                       Order Request for BEAR, ROSA\\n\\n		Requesting HCP:  HURST, PROVIDER\\n		Requesting Location:  CARDIOLOGY NMCP\\n		Order ID number:  030121-00025\\n		MCP Referral #:\\n		No. of Visits:\\n		Referral Authorized Until:\\n		Reason for Consult:\\n		Test\\n		Priority:  ROUTINE\\n		Provisional Diagnosis:\\n		Test\\n		ACV:\\n		Reviewed Date/Time:\\n		Appoint Status:\\n		Appointment Review Comment:\\n		Reviewer:  ,  \\n\\n		--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\\n		                                                                                    CONSULT RESULT\\n\\n		Appointment Date:  21 Jan 2003\\n		Requesting HCP:  HURST, PROVIDER\\n		Clinic:  CARDIOLOGY NMCP\\n		Consulting HCP:  HURST, DEANIE \\n\\n		Problem List:\\n		                             **** Appended Note ****\\n		Note:\\n		Test\\n		Appended by: Deanie Hurst on 04 Feb 2003@1506\\n		Note:\\n		Test\\n		Verified by: Deanie Hurst               21 Jan 2003@1244",
+            "NoteTypeName" : "Consultation Report",
+            "EnteredBy" : "John Doe",
+            "NoteFormat" : "plaintext",
+            "RepositoryId" : "2.16.840.1.113883.3.42.126.100001.13",
+            "CustodianId" : "2.16.840.1.113883.3.42.126.100001.13",
+            "EnteredByDate" : "20110729172413",
+            "NoteTitle" : "Consultation Report",
+            "VerifiedBy" : "null",
+            "CustodianName" : "share: Tripler",
+            "VerifiedDate": "20030121173457",
+            "Facility" : "NMC Portsmouth/0124",
+            "NoteTypeCode" : "11536-0"
+        },
+        "dataType" : 1
+    } 
+    ],
+    "errorList" : [ {
+        "ErrorCode" : "XDSRegistryError",
+        "ErrorLocation" : "",
+        "ErrorSeverity" : "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error",
+        "ErrorValue" : "Registry (2.16.840.1.113883.3.42.10002.100001.8.35) is not available"
+    } ],
+    "queryComplete" : "true",
+    "statusList" : [ {
+        "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10009.100001.13",
+        "SiteName" : "tmds",
+        "SiteStatus" : "UP"
+    },
+    {
+        "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "UP"
+    },
+    {
+        "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "SiteName" : "va",
+        "SiteStatus" : "UP"
+    },
+    {
+        "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.35",
+        "SiteName" : "share: Groton",
+        "SiteStatus" : "DOWN"
+    },
+    {
+        "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.126.100001.13",
+        "SiteName" : "ahlta",
+        "SiteStatus" : "UP"
+    },
+    {
+        "ExpectedCount" : "0",
+        "RetrievedCount" : "0",
+        "SiteId" : "2.16.840.1.113883.3.42.126.100001.13",
+        "SiteName" : "ahlta",
+        "SiteStatus" : "IN_PROGRESS"
+    },
+    {
+        "ExpectedCount" : "0",
+        "RetrievedCount" : "0",
+        "SiteId" : "2.16.840.1.113883.3.42.126.100001.13",
+        "SiteName" : "ahlta",
+        "SiteStatus" : "COMPLETE"
+    },
+    {
+        "ExpectedCount" : "-1",
+        "RetrievedCount" : "0",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "IN_PROGRESS"
+    },
+    {
+        "ExpectedCount" : "-1",
+        "RetrievedCount" : "0",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "COMPLETE"
+    },
+    {
+        "ExpectedCount" : "-1",
+        "RetrievedCount" : "0",
+        "SiteId" : "2.16.840.1.113883.3.42.10009.100001.13",
+        "SiteName" : "tmds",
+        "SiteStatus" : "IN_PROGRESS"
+    },
+    {
+        "ExpectedCount" : "0",
+        "RetrievedCount" : "1",
+        "SiteId" : "2.16.840.1.113883.3.42.10009.100001.13",
+        "SiteName" : "tmds",
+        "SiteStatus" : "COMPLETE"
+    },
+    {
+        "ExpectedCount" : "-1",
+        "RetrievedCount" : "0",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "IN_PROGRESS"
+    },
+    {
+        "ExpectedCount" : "10",
+        "RetrievedCount" : "8",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "COMPLETE"
+    },
+    {
+        "ExpectedCount" : "-1",
+        "RetrievedCount" : "0",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "SiteName" : "va",
+        "SiteStatus" : "IN_PROGRESS"
+    },
+    {
+        "ExpectedCount" : "-1",
+        "RetrievedCount" : "15",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "SiteName" : "va",
+        "SiteStatus" : "COMPLETE"
+    }
+    ]
+}

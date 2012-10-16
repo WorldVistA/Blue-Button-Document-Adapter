@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="traceout" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="das_trace.log" />
+		<param name="MaxFileSize" value="5000KB" />
+		<param name="MaxBackupIndex" value="10" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n" />
+		</layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+        	<param name="levelMin" value="TRACE" />
+            <param name="levelMax" value="TRACE" />
+        </filter>		
+	</appender>
+
+	<appender name="errorout" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="das_error.log" />
+		<param name="MaxFileSize" value="5000KB" />
+		<param name="MaxBackupIndex" value="10" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n" />
+		</layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+        	<param name="levelMin" value="ERROR" />
+            <param name="levelMax" value="ERROR" />
+        </filter>
+	</appender>	
+	
+	<!-- Trace & Error Loggers-->
+	<logger name="org.osehra.das" additivity="false">
+		<level value="trace" />		
+		<appender-ref ref="traceout" />
+		<appender-ref ref="errorout" />				
+	</logger>
+			
+	<logger name="org.osehra.integration" additivity="false">
+		<level value="trace" />			
+		<appender-ref ref="traceout" />	
+		<appender-ref ref="errorout" />					
+	</logger>
+
+		
+	<!-- Root Logger -->
+	<root>
+		<priority value="info" />		
+	</root>
+	
+</log4j:configuration>

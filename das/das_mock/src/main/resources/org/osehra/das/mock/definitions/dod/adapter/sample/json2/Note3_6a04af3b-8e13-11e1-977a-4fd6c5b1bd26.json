@@ -1,0 +1,35 @@
+{ "dataRecord" : { "ComplexDataUrl" : "https://baseUri/async/complex/note/12345",
+	    "NoteTypeName":"",
+	    "EnteredBy":"",
+	    "NoteFormat":"CDA",
+	    "RepositoryId":"2.16.840.1.113883.3.42.126.100001.13",
+	    "CustodianId":"2.16.840.1.113883.3.42.126.100001.13",
+	    "EnteredByDate":"",
+	    "NoteTitle":"General Note",
+	    "VerifiedBy":"See Note Text",
+	    "CustodianName":"ahlta",
+	    "VerifiedDate":"",
+	    "Facility":"Internal Medicine 200H/DNS:ha.osd.mil/13",
+	    "NoteTypeCode":"11536-0"
+	    },
+	    "dataType":12,
+  "errorList" : [ { "ErrorCode" : "XDSRegistryError",
+        "ErrorLocation" : "",
+        "ErrorSeverity" : "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error",
+        "ErrorValue" : "Registry (2.16.840.1.113883.3.42.10002.100001.8.35) is not available"
+      } ],
+  "queryComplete" : "true",
+  "statusList" : [ { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10009.100001.13",
+        "SiteName" : "tmds",
+        "SiteStatus" : "UP"
+      },
+      { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "UP"
+      }
+    ]
+}

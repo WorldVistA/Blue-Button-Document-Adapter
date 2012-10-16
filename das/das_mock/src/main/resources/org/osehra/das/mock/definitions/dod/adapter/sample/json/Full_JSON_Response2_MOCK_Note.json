@@ -1,0 +1,65 @@
+{ "dataList" : [
+	{ "dataRecord" : { "AuthorInstitution" : "",
+            "AuthorName" : "DEMO USER",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+            "CustodianName" : "share: Madigan",
+            "DateString" : "20110729172416",
+            "Description" : "CDA",
+            "DocId" : "2c53e186-95ce-4818-b361-8d056df41f12",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "text/xml",
+            "Name" : "ICU Transfer/Disch Summary",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10002.100001.8.125"
+          },
+        "dataType" : 0
+      },
+      { "dataRecord" : { "AuthorInstitution" : "EL PASO VA HCS",
+            "AuthorName" : "Mostafa BALIAMOUNE",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8.22200",
+            "CustodianName" : "va",
+            "DateString" : "20110729172344",
+            "Description" : "CDA",
+            "DocId" : "34c91592-017f-48d3-8a70-74dd4730c021",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "text/xml",
+            "Name" : "",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10002.100001.8.22200"
+          },
+        "dataType" : 0
+      },
+      { "dataRecord" : { "AuthorInstitution" : "EL PASO VA HCS",
+            "AuthorName" : "David Ellis",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8.22200",
+            "CustodianName" : "va",
+            "DateString" : "20110729172344",
+            "Description" : "CDA",
+            "DocId" : "df531e29-574d-11e1-a7be-05ec2249ca82",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "text/plain",
+            "Name" : "",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10002.100001.8.22200"
+          },
+        "dataType" : 0
+      }
+
+    ],
+  "errorList" : [ { "ErrorCode" : "XDSRegistryError",
+        "ErrorLocation" : "",
+        "ErrorSeverity" : "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error",
+        "ErrorValue" : "Registry (2.16.840.1.113883.3.42.10002.100001.8.35) is not available"
+      } ],
+  "queryComplete" : "true",
+  "statusList" : [ { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10009.100001.13",
+        "SiteName" : "tmds",
+        "SiteStatus" : "UP"
+      },
+      { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "UP"
+      }
+    ]
+}

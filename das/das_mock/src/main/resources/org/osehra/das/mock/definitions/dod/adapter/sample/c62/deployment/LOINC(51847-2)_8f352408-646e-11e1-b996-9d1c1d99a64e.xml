@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument
+	xmlns="urn:hl7-org:v3"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 infrastructure\cda\CDA.ReleaseTwo.MembershipBallot01.Dec.2004.xsd">
+	<id extension="String" root="10.10" />
+	<code code="POST" codeSystem="mil" displayName="DD Form 2796" />
+	<title>POST-DEPLOYMENT Health Assessment</title>
+	<effectiveTime value="05051921" />
+	<confidentialityCode />
+	<versionNumber value="2796" />
+	<author>
+		<time />
+		<assignedAuthor>
+			<id />
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id />
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<recordTarget>
+		<patient>
+			<id />
+		</patient>
+	</recordTarget>
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<text>
+						<list>
+							<item ID="FORM_TYPE">
+								<caption>Type of Form</caption>
+								<content ID="f000">POST</content>
+							</item>
+							<item ID="FORM_VERSION">
+								<caption>DOD Form Number</caption>
+								<content ID="f001">DD2796_200801e</content>
+							</item>
+						</list>
+						<paragraph>Authority: 10 U.S.C. 136 Chapter 55. 1074f, 3013, 5013,
+							8013 and E.O. 9397</paragraph>
+						<paragraph />
+						<paragraph>Principal Purpose: To assess your state of health after
+							deployment outside the</paragraph>
+						<paragraph>United States in support of military operations and to
+							assist military</paragraph>
+						<paragraph>healthcare providers in identifying and providing
+							present and future medical</paragraph>
+						<paragraph>care to you.</paragraph>
+						<paragraph />
+						<paragraph>Routine Use: To other Federal and State agencies and
+							civilian healthcare</paragraph>
+						<paragraph>providers, as necessary, in order to provide necessary
+							medical care and</paragraph>
+						<paragraph>treatment.</paragraph>
+						<paragraph />
+						<paragraph>Disclosure: (Military personnal and DoD civilian
+							Employees Only) Voluntary. If</paragraph>
+						<paragraph>not provided, healthcare WILL BE furnished, but
+							comprehensive care may not be</paragraph>
+						<paragraph>possible.</paragraph>
+						<paragraph />
+						<paragraph>INSTRUCTIONS: Please read each question completely and
+							carefully before marking</paragraph>
+						<paragraph>your selections. Provide a response for each question.
+							If you do not understand</paragraph>
+						<paragraph>a question, ask the administrator.</paragraph>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<title>Demographics</title>
+					<text>
+						<list listType="ordered">
+							<item ID="LNAME">
+								<caption>Last Name</caption>
+								<content ID="f003">CTEST</content>
+							</item>
+							<item ID="FNAME">
+								<caption>First Name</caption>
+								<content ID="f004">CARL</content>
+							</item>
+							<item ID="DEPLOYING_UNIT">
+								<caption>Name of Your Unit or Ship during this Deployment</caption>
+								<content ID="f007" />
+							</item>
+							<item ID="MI">
+								<caption>MI</caption>
+								<content ID="f005">S</content>
+							</item>
+							<item ID="D_EVENT">
+								<caption>Today's Date</caption>
+								<content ID="f006">19990606</content>
+							</item>
+							<item ID="SSN">
+								<caption>Social Security Number</caption>
+								<content ID="f002">000001103</content>
+							</item>
+							<item ID="DOB">
+								<caption>Date of Birth</caption>
+								<content ID="f008">19500101</content>
+							</item>
+							<item ID="D_ARRIVAL">
+								<caption>Date of arrival in theater</caption>
+								<content ID="f009" />
+							</item>
+							<item ID="D_DEPART">
+								<caption>Date of departure from theater</caption>
+								<content ID="f010" />
+							</item>
+							<item ID="SEX">
+								<caption>Gender</caption>
+								<content>M = MALE, F = FEMALE, Z = UNKNOWN</content>
+								<content ID="f011">M</content>
+							</item>
+							<item ID="SERVICE">
+								<caption>Service Branch</caption>
+								<content>A = ARMY, F = AIR FORCE, C = COAST GUARD, M = MARINES,
+									N = NAVY, Z = OTHER/UNKNOWN</content>
+								<content ID="f012">F</content>
+							</item>
+							<item ID="FORM_COMPONENT">
+								<caption>Component</caption>
+								<content>A = ACTIVE DUTY, G = NATIONAL GUARD, N = NATIONAL
+									GUARD, O = OTHER, R = RESERVES, X = CIVILIAN GOV EMPLOYEE, Y =
+									NON-GOVERNMENT (CONTRACT) EMPLOYEE, Z = UNKNOWN</content>
+								<content ID="f013">A</content>
+							</item>
+							<item ID="GRADE">
+								<caption>Pay Grade</caption>
+								<content>E00 = ENLISTED UNKNOWN, E01 = E1, E02 = E2, E03 = E3,
+									E04 = E4, E05 = E5, E06 = E6, E07 = E7, E08 = E8, E09 = E9, O00
+									= OFFICER UNKNOWN, O01 = O1, O02 = 02, O03 = O3, O04 = O4, O05
+									= O5, O06 = O6, O07 = O7, O08 = O8, O09 = O9, O10 = O10, W01 =
+									W1, W02 = W2, W03 = W3, W04 = W4, W05 = W5, ZZZ = OTHER</content>
+								<content ID="f014">E04</content>
+							</item>
+							<item ID="OPERATION_LOCATION">
+								<caption>Location of Operation</caption>
+								<content>01 = EUROPE, 02 = SW ASIA, 03 = SE ASIA, 04 = ASIA
+									(OTHER), 05 = SOUTH AMERICA, 06 = AUSTRALIA, 07 = AFRICA, 08 =
+									CENTRAL AMERICA, 09 = UNKNOWN, 10 = NORTH AMERICA, 11 = OTHER,
+									12= MULTIPLE: INCLUDES WEST PAC (02, 03, 07)</content>
+								<content ID="f015">02</content>
+							</item>
+							<item ID="OPERATION_LOCATION_TEXT">
+								<caption>Location of Operation Other Text</caption>
+								<content ID="f016" />
+							</item>
+							<item ID="DEPLOYMENTS">
+								<caption>To what areas were you mainly deployed:</caption>
+								<caption>(mark all that apply - list where/date arrived)</caption>
+								<list listType="ordered">
+									<item ID="KUWAIT">
+										<caption>Kuwait</caption>
+										<content ID="f017">X</content>
+									</item>
+									<item ID="KUWAIT_WHERE">
+										<content ID="f018" />
+									</item>
+									<item ID="KUWAIT_D_ARRIVAL">
+										<content ID="f019" />
+									</item>
+									<item ID="QATAR">
+										<caption>Qatar</caption>
+										<content ID="f020">X</content>
+									</item>
+									<item ID="QATAR_WHERE">
+										<content ID="f021" />
+									</item>
+									<item ID="QATAR_D_ARRIVAL">
+										<content ID="f022" />
+									</item>
+									<item ID="AFGHAN">
+										<caption>Afghanistan</caption>
+										<content ID="f023">X</content>
+									</item>
+									<item ID="AFGHAN_WHERE">
+										<content ID="f024" />
+									</item>
+									<item ID="AFGHAN_D_ARRIVAL">
+										<content ID="f025" />
+									</item>
+									<item ID="BOSNIA">
+										<caption>Bosnia</caption>
+										<content ID="f026">X</content>
+									</item>
+									<item ID="BOSNIA_WHERE">
+										<content ID="f027" />
+									</item>
+									<item ID="BOSNIA_D_ARRIVAL">
+										<content ID="f028" />
+									</item>
+									<item ID="SHIP">
+										<caption>On a ship</caption>
+										<content ID="f029">X</content>
+									</item>
+									<item ID="SHIP_WHERE">
+										<content ID="f030" />
+									</item>
+									<item ID="SHIP_D_ARRIVAL">
+										<content ID="f031" />
+									</item>
+									<item ID="IRAQ">
+										<caption>Iraq</caption>
+										<content ID="f032">X</content>
+									</item>
+									<item ID="IRAQ_WHERE">
+										<content ID="f033" />
+									</item>
+									<item ID="IRAQ_D_ARRIVAL">
+										<content ID="f034" />
+									</item>
+									<item ID="TURKEY">
+										<caption>Turkey</caption>
+										<content ID="f035">X</content>
+									</item>
+									<item ID="TURKEY_WHERE">
+										<content ID="f036" />
+									</item>
+									<item ID="TURKEY_D_ARRIVAL">
+										<content ID="f037" />
+									</item>
+									<item ID="UZBEK">
+										<caption>Uzbekistan</caption>
+										<content ID="f038">X</content>
+									</item>
+									<item ID="UZBEK_WHERE">
+										<content ID="f039" />
+									</item>
+									<item ID="UZBEK_D_ARRIVAL">
+										<content ID="f040" />
+									</item>
+									<item ID="KOSOVO">
+										<caption>Kosovo</caption>
+										<content ID="f041">X</content>
+									</item>
+									<item ID="KOSOVO_WHERE">
+										<content ID="f042" />
+									</item>
+									<item ID="KOSOVO_D_ARRIVAL">
+										<content ID="f043" />
+									</item>
+									<item ID="CONUS">
+										<caption>CONUS</caption>
+										<content ID="f044">X</content>
+									</item>
+									<item ID="CONUS_WHERE">
+										<content ID="f045" />
+									</item>
+									<item ID="CONUS_D_ARRIVAL">
+										<content ID="f046" />
+									</item>
+									<item ID="OTHER">
+										<caption>Other</caption>
+										<content ID="f047">X</content>
+									</item>
+									<item ID="OTHER_WHERE">
+										<content ID="f048" />
+									</item>
+									<item ID="OTHER_D_ARRIVAL">
+										<content ID="f049" />
+									</item>
+								</list>
+							</item>
+							<item ID="OPERATION_NAME">
+								<caption>Name of Operation:</caption>
+								<content ID="f050">SWA</content>
+							</item>
+							<item ID="ADMIN_USE_ONLY">
+								<caption>Indicate the status of each of the following:</caption>
+								<content>Y = YES, N = NO, X = N/A</content>
+								<list listType="ordered">
+									<item ID="ADMIN_MED_THREAT">
+										<caption>Medical threat debriefing completed</caption>
+										<content ID="f051">X</content>
+									</item>
+									<item ID="ADMIN_INFO_SHEET">
+										<caption>Medical information sheet distributed</caption>
+										<content ID="f052">X</content>
+									</item>
+									<item ID="ADMIN_HIV_DRAW">
+										<caption>Post-Deployment serum specimen collected</caption>
+										<content ID="f053">X</content>
+									</item>
+								</list>
+							</item>
+							<item ID="OCC_SPECIALTY">
+								<caption>Occupational specialty during this deployment (MOS, NEC
+									or AFSC)</caption>
+								<content ID="f054">X</content>
+								<content>MOS, NEC, AFSC</content>
+							</item>
+							<item ID="COMBAT_SPECIALTY">
+								<caption>Combat specialty</caption>
+								<content ID="f055">X</content>
+							</item>
+						</list>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<title>Please answer all questions in relation to THIS deployment</title>
+					<text>
+						<list listType="ordered">
+							<item ID="HEALTH_CHANGE">
+								<caption>1. Did your health change during this deployment?</caption>
+								<content>N = Health stayed about the same or got better, Y =
+									Health got worse</content>
+								<content ID="f056">X</content>
+							</item>
+							<item ID="TIMES_SEEN">
+								<caption>2. How many time were you seen in sick call during this
+									deployment?</caption>
+								<content ID="f057">0</content>
+							</item>
+							<item ID="HOSPITALIZED">
+								<caption>3. Did you have to spend one or more nights in a
+									hospital as a patient during</caption>
+								<caption>this deployment?</caption>
+								<content>Y = YES, N = NO</content>
+								<content ID="f058">X</content>
+							</item>
+							<item ID="HOSPITALIZED_TEXT">
+								<caption>Yes, reason/dates</caption>
+								<content ID="f059" />
+							</item>
+							<item ID="VACCINATIONS">
+								<caption>4. Did you receive any vaccinations just before or
+									during this deployment?</caption>
+								<content>Y = CHECKED, N = NOT CHECKED</content>
+								<list listType="ordered">
+									<item ID="VAC_SMALLPOX">
+										<caption>Smallpox (leaves a scar on the arm)</caption>
+										<content ID="f060">X</content>
+									</item>
+									<item ID="VAC_ANTHRAX">
+										<caption>Anthrax</caption>
+										<content ID="f061">X</content>
+									</item>
+									<item ID="VAC_BOTULISM">
+										<caption>Botulism</caption>
+										<content ID="f062">X</content>
+									</item>
+									<item ID="VAC_TYPHOID">
+										<caption>Typhoid</caption>
+										<content ID="f063">X</content>
+									</item>
+									<item ID="VAC_MENING">
+										<caption>Meningococcal</caption>
+										<content ID="f064">X</content>
+									</item>
+									<item ID="VAC_OTHER">
+										<caption>Other, list:</caption>
+										<content ID="f065">X</content>
+									</item>
+									<item ID="VAC_OTHER_TEXT">
+										<content ID="f066" />
+									</item>
+									<item ID="VAC_DK">
+										<caption>Don't know</caption>
+										<content ID="f067">X</content>
+									</item>
+									<item ID="VAC_NONE">
+										<caption>None</caption>
+										<content ID="f068">X</content>
+									</item>
+								</list>
+							</item>
+							<item ID="MEDS">
+								<caption>5. Did you take any of the following medications during
+									this deployment?</caption>
+								<caption>(mark all that apply)</caption>
+								<content>Y = CHECKED, N = NOT CHECKED</content>
+								<list listType="ordered">
+									<item ID="MEDS_PB">
+										<caption>PB (pyridostigmine bormide) nerve agent pill</caption>
+										<content ID="f069">X</content>
+									</item>
+									<item ID="MEDS_MARK1">
+										<caption>Mark-1 antidote kit</caption>
+										<content ID="f070">X</content>
+									</item>
+									<item ID="MEDS_MALARIA">
+										<caption>Anti-malaria pills</caption>
+										<content ID="f071">X</content>
+									</item>
+									<item ID="MEDS_AWAKE">
+										<caption>Pills to stay awake, such as dexedrine</caption>
+										<content ID="f072">X</content>
+									</item>
+									<item ID="MEDS_OTHER">
+										<caption>Other, please list</caption>
+										<content ID="f073">X</content>
+									</item>
+									<item ID="MEDS_OTHER_TEXT">
+										<content ID="f074" />
+									</item>
+									<item ID="MEDS_DK">
+										<caption>Don't know</caption>
+										<content ID="f075">X</content>
+									</item>
+								</list>
+							</item>
+							<item ID="SYMPTOMS">
+								<caption>6. Do you have any of these symptoms now or did you
+									develop them anytime during</caption>
+								<caption>this deployment?</caption>
+								<content>1 = NO, 2 = YES DURING, 3 = YES NOW, 4 = YES DURING AND
+									YES NOW</content>
+								<list listType="ordered">
+									<item ID="COUGH">
+										<caption>Chronic Cough</caption>
+										<content ID="f076">X</content>
+									</item>
+									<item ID="RUNNY_NOSE">
+										<caption>Runny Nose</caption>
+										<content ID="f077">X</content>
+									</item>
+									<item ID="FEVER">
+										<caption>Fever</caption>
+										<content ID="f078">X</content>
+									</item>
+									<item ID="WEAKNESS">
+										<caption>Weakness</caption>
+										<content ID="f079">X</content>
+									</item>
+									<item ID="HEADACHE">
+										<caption>Headaches</caption>
+										<content ID="f080">X</content>
+									</item>
+									<item ID="JOINTS">
+										<caption>Swollen, stiff or painful joints</caption>
+										<content ID="f081">X</content>
+									</item>
+									<item ID="BACK_PAIN">
+										<caption>Back pain</caption>
+										<content ID="f082">X</content>
+									</item>
+									<item ID="MUSCLE">
+										<caption>Muscle Aches</caption>
+										<content ID="f083">X</content>
+									</item>
+									<item ID="NUMBNESS">
+										<caption>Numbness or tingling in hands or feet</caption>
+										<content ID="f084">X</content>
+									</item>
+									<item ID="RASH">
+										<caption>Skin diseases or rashes</caption>
+										<content ID="f085">X</content>
+									</item>
+									<item ID="TEARING">
+										<caption>Redness of eyes with tearing</caption>
+										<content ID="f086">X</content>
+									</item>
+									<item ID="VISION">
+										<caption>Dimming of vision, like the lights were going out</caption>
+										<content ID="f087">X</content>
+									</item>
+									<item ID="CHEST_PAIN">
+										<caption>Chest pain or pressure</caption>
+										<content ID="f088">X</content>
+									</item>
+									<item ID="DIZZY">
+										<caption>Dizziness, fainting, light headedness</caption>
+										<content ID="f089">X</content>
+									</item>
+									<item ID="BREATHING">
+										<caption>Difficulty breathing</caption>
+										<content ID="f090">X</content>
+									</item>
+									<item ID="TIRED">
+										<caption>Still feeling tired after sleeping</caption>
+										<content ID="f091">X</content>
+									</item>
+									<item ID="MEMORY">
+										<caption>Difficulty remembering</caption>
+										<content ID="f092">X</content>
+									</item>
+									<item ID="DIARRHEA">
+										<caption>Diarrhea</caption>
+										<content ID="f093">X</content>
+									</item>
+									<item ID="INDIGESTION">
+										<caption>Frequent indigestion</caption>
+										<content ID="f094">X</content>
+									</item>
+									<item ID="VOMITING">
+										<caption>Vomiting</caption>
+										<content ID="f095">X</content>
+									</item>
+									<item ID="RINGING">
+										<caption>Ringing of the ears</caption>
+										<content ID="f096">X</content>
+									</item>
+								</list>
+							</item>
+							<item ID="CASUALTY_SEEN">
+								<caption>7. Did you see anyone wounded, killed or dead during
+									this deployment?</caption>
+								<caption>(mark all that apply)</caption>
+								<list listType="ordered">
+									<item ID="KILLED_NO">
+										<caption>No</caption>
+										<content ID="f097">X</content>
+									</item>
+									<item ID="KILLED_COALITION">
+										<caption>Yes - coalition</caption>
+										<content ID="f098">X</content>
+									</item>
+									<item ID="KILLED_ENEMY">
+										<caption>Yes - enemy</caption>
+										<content ID="f099">X</content>
+									</item>
+									<item ID="KILLED_CIVILIAN">
+										<caption>Yes - civilian</caption>
+										<content ID="f100">X</content>
+									</item>
+								</list>
+							</item>
+							<item ID="WEAPON">
+								<caption>8. Were you engaged in direct combat where you
+									discharged your weapon?</caption>
+								<list listType="ordered">
+									<item ID="WEAPON_NO">
+										<caption>No</caption>
+										<content ID="f101">X</content>
+									</item>
+									<item ID="WEAPON_LAND">
+										<caption>Yes - land</caption>
+										<content ID="f102">X</content>
+									</item>
+									<item ID="WEAPON_SEA">
+										<caption>Yes - sea</caption>
+										<content ID="f103">X</content>
+									</item>
+									<item ID="WEAPON_AIR">
+										<caption>Yes - air</caption>
+										<content ID="f104">X</content>
+									</item>
+								</list>
+							</item>
+							<item ID="DANGER_KILLED">
+								<caption>9. During this deployment, did you ever feel that you
+									were in great danger of</caption>
+								<caption>being killed?</caption>
+								<content>Y = YES, N = NO</content>
+								<content ID="f105">X</content>
+							</item>
+							<item ID="RECEIVING_HELP">
+								<caption>10. Are you currently interested in receiving help for
+									a stress, emotional,</caption>
+								<caption>alcohol, or family problem?</caption>
+								<content>Y = YES, N = NO</content>
+								<content ID="f106">X</content>
+							</item>
+							<item ID="PROBLEMS">
+								<caption>11. Over the LAST 2 WEEKS, how often have you been
+									bothered by any of the</caption>
+								<caption>following problems?</caption>
+								<content>N = NONE, S = SOME, A = A LOT</content>
+								<list listType="ordered">
+									<item ID="LITTLE_INTEREST">
+										<caption>Little interest or pleasure in doing things</caption>
+										<content ID="f107">X</content>
+									</item>
+									<item ID="FEELING_DOWN">
+										<caption>Feeling down, depressed, or hopeless</caption>
+										<content ID="f108">X</content>
+									</item>
+									<item ID="HURT_SELF">
+										<caption>Thoughts that you would be better off dead or hurting
+											yourself in some way.</caption>
+										<content ID="f109">X</content>
+									</item>
+								</list>
+							</item>
+							<item ID="BAD_EXPERIENCES">
+								<caption>12. Have you ever had any experience that was so
+									frightening, horrible, or</caption>
+								<caption>upsetting that, IN THE PAST MONTH, you ....</caption>
+								<content>Y = YES, N = NO</content>
+								<list listType="ordered">
+									<item ID="NIGHTMARES">
+										<caption>Have had any nightmares about it or thought about it
+											when you did not want to?</caption>
+										<content ID="f110">X</content>
+									</item>
+									<item ID="AVOID_SITUATIONS">
+										<caption>Tried hard not to think about it or went out of your
+											way to avoid situations that remind you of it?</caption>
+										<content ID="f111">X</content>
+									</item>
+									<item ID="ON_GUARD">
+										<caption>Were constantly on guard, watchful, or easily
+											startled?</caption>
+										<content ID="f112">X</content>
+									</item>
+									<item ID="DETACHED">
+										<caption>Felt numb or detached from others, activities,or your
+											surroundings?</caption>
+										<content ID="f113">X</content>
+									</item>
+								</list>
+							</item>
+							<item ID="CONCERNS">
+								<caption>13. Are you having thoughts or concerns that ...</caption>
+								<content>Y = YES, N = NO, Z = UNSURE</content>
+								<list listType="ordered">
+									<item ID="CONFLICTS">
+										<caption>You may have serious conflicts with your spouse,
+											family members, or close friends?</caption>
+										<content ID="f114">X</content>
+									</item>
+									<item ID="LOSE_CONTROL">
+										<caption>You might hurt or lose control with someone?</caption>
+										<content ID="f115">X</content>
+									</item>
+								</list>
+							</item>
+							<item ID="EXPOSED_TO">
+								<caption>14. While you were deployed, were you exposed to: (mark
+									all that apply)</caption>
+								<content>N = NO, S = SOMETIMES, O = OFTEN</content>
+								<list listType="ordered">
+									<item ID="EXP_DEET">
+										<caption>DEET insect repellent applied to skin</caption>
+										<content ID="f116">X</content>
+									</item>
+									<item ID="EXP_PEST_UNIFORM">
+										<caption>Pesticide-treated uniforms</caption>
+										<content ID="f117">X</content>
+									</item>
+									<item ID="EXP_PEST_ENVIRO">
+										<caption>Environmental pesticides (like area fogging)</caption>
+										<content ID="f118">X</content>
+									</item>
+									<item ID="EXP_FLEA">
+										<caption>Flea or tick collars</caption>
+										<content ID="f119">X</content>
+									</item>
+									<item ID="EXP_PEST_STRIP">
+										<caption>Pesticide strips</caption>
+										<content ID="f120">X</content>
+									</item>
+									<item ID="EXP_SMOKE_OIL">
+										<caption>Smoke from oil fire</caption>
+										<content ID="f121">X</content>
+									</item>
+									<item ID="EXP_SMOKE_TRASH">
+										<caption>Smoke from burning trash or feces</caption>
+										<content ID="f122">X</content>
+									</item>
+									<item ID="EXP_FUMES_EXHAUST">
+										<caption>Vehicle or truck exhaust fumes</caption>
+										<content ID="f123">X</content>
+									</item>
+									<item ID="EXP_SMOKE_HEATER">
+										<caption>Tent heater smoke</caption>
+										<content ID="f124">X</content>
+									</item>
+									<item ID="EXP_FUELS">
+										<caption>JP8 or other fuels</caption>
+										<content ID="f125">X</content>
+									</item>
+									<item ID="EXP_FOG_OILS">
+										<caption>Fog oils (smoke screen)</caption>
+										<content ID="f126">X</content>
+									</item>
+									<item ID="EXP_SOLVENTS">
+										<caption>Solvents</caption>
+										<content ID="f127">X</content>
+									</item>
+									<item ID="EXP_PAINTS">
+										<caption>Paints</caption>
+										<content ID="f128">X</content>
+									</item>
+									<item ID="EXP_RADIATION">
+										<caption>Ionizing radiation</caption>
+										<content ID="f129">X</content>
+									</item>
+									<item ID="EXP_MICROWAVE">
+										<caption>Radar/microwaves</caption>
+										<content ID="f130">X</content>
+									</item>
+									<item ID="EXP_LASER">
+										<caption>Lasers</caption>
+										<content ID="f131">X</content>
+									</item>
+									<item ID="EXP_NOISE">
+										<caption>Loud noises</caption>
+										<content ID="f132">X</content>
+									</item>
+									<item ID="EXP_VIBRATION">
+										<caption>Excessive vibration</caption>
+										<content ID="f133">X</content>
+									</item>
+									<item ID="EXP_POLLUTION">
+										<caption>Industrial pollution</caption>
+										<content ID="f134">X</content>
+									</item>
+									<item ID="EXP_SAND">
+										<caption>Sand/dust</caption>
+										<content ID="f135">X</content>
+									</item>
+									<item ID="EXP_URANIUM">
+										<caption>Depleted uranium</caption>
+										<content ID="f136">X</content>
+									</item>
+									<item ID="EXP_URANIUM_TEXT">
+										<caption>Explanation of exposure to depleted uranium</caption>
+										<content ID="f137" />
+									</item>
+									<item ID="EXP_OTHER">
+										<caption>Other exposures</caption>
+										<content ID="f138">X</content>
+									</item>
+									<item ID="EXP_OTHER_TEXT">
+										<caption>Explanation of other exposures</caption>
+										<content ID="f139" />
+									</item>
+								</list>
+							</item>
+							<item ID="DAYS_MOPP">
+								<caption>15. On how many days did you wear your MOPP over
+									garments?</caption>
+								<content ID="f140">0</content>
+							</item>
+							<item ID="TIMES_MASK">
+								<caption>16. How many times did you put on your gas mask because
+									of alerts and NOT</caption>
+								<caption>because of exercises?</caption>
+								<content ID="f141">0</content>
+							</item>
+							<item ID="DESTROYED_VEHICLES">
+								<caption>17. Were you in or did you enter or closely inspect any
+									destroyed military</caption>
+								<caption>vehicles?</caption>
+								<content>Y = YES, N = NO</content>
+								<content ID="f142">X</content>
+							</item>
+							<item ID="CBR_AGENTS">
+								<caption>18. Do you think you were exposed to any chemical,
+									biological, or radiological</caption>
+								<caption>warfare agents during this deployment?</caption>
+								<content>Y = YES, N = NO, Z = DON'T KNOW</content>
+								<content ID="f143">X</content>
+							</item>
+							<item ID="CBR_AGENTS_TEXT">
+								<caption>Yes, explain with date and location</caption>
+								<content ID="f144" />
+							</item>
+						</list>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<title>Health Care Provider Only</title>
+					<text>
+						<list>
+							<item>
+								<paragraph>Post-Deployment Health Care Provider Review,
+									Interview, and Assessment</paragraph>
+							</item>
+							<item ID="INTERVIEW">
+								<caption>1. Would you say your health in general is:</caption>
+								<content>E = EXCELLENT, V = VERY GOOD, G = GOOD, F = FAIR, P =
+									POOR</content>
+								<content ID="f145">V</content>
+							</item>
+							<item ID="MED_PROBLEMS">
+								<caption>2. Do you have any medical or dental problems that
+									developed during this</caption>
+								<caption>deployment?</caption>
+								<content>Y = YES, N = NO</content>
+								<content ID="f146">N</content>
+							</item>
+							<item ID="LIGHT_DUTY">
+								<caption>3. Are you currently on a profile, or light duty?</caption>
+								<content>Y = YES, N = NO</content>
+								<content ID="f147">N</content>
+							</item>
+							<item ID="MENTAL_HEALTH">
+								<caption>4. During this deployment have you sought, or do you
+									now intend to seek,</caption>
+								<caption>counseling or care for your mental health?</caption>
+								<content>Y = YES, N = NO</content>
+								<content ID="f149">N</content>
+							</item>
+							<item ID="EXPOSURE_CONCERNS">
+								<caption>5. Do you have concerns about possible exposures or
+									events during this</caption>
+								<caption>deployment that you feel may affect your health?</caption>
+								<content>Y = YES, N = NO</content>
+								<content ID="f152">N</content>
+							</item>
+							<item ID="EXPOSURE_CONCERNS_TEXT">
+								<caption>Please list your concerns:</caption>
+								<content ID="f153" />
+							</item>
+							<item ID="HEALTH_CONCERNS">
+								<caption>6. Do you currently have any questions or concerns
+									about your health?</caption>
+								<content>Y = YES, N = NO</content>
+								<content ID="f150">N</content>
+							</item>
+							<item ID="HEALTH_CONCERNS_TEXT">
+								<caption>Please list your concerns</caption>
+								<content ID="f151" />
+							</item>
+						</list>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<title>Health Assessment</title>
+					<text>
+						<list>
+							<item>
+								<paragraph>After my interview/exam of the service member and
+									review of this form, there is</paragraph>
+								<paragraph>a need for further evaluation as indicated below.
+									(More than one may be noted</paragraph>
+								<paragraph>for patients with multiple problems. Further
+									documentation of the problem</paragraph>
+								<paragraph>evaluation to be placed in the service member's
+									medical record.)</paragraph>
+							</item>
+							<item ID="REFERRALS">
+								<caption>REFERRAL INDICATED FOR:</caption>
+								<content>Y = YES, N = NO, X = N/A</content>
+								<list listType="ordered">
+									<item ID="REF_NONE">
+										<caption>None</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f155">Y</content>
+									</item>
+									<item ID="REF_CARDIAC">
+										<caption>Cardiac</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f156">N</content>
+									</item>
+									<item ID="REF_COMBAT">
+										<caption>Combat/Operational Stress Reaction</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f157">N</content>
+									</item>
+									<item ID="REF_DENTAL">
+										<caption>Dental</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f158">N</content>
+									</item>
+									<item ID="REF_DERM">
+										<caption>Dermatologic</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f159">N</content>
+									</item>
+									<item ID="REF_ENT">
+										<caption>ENT</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f160">N</content>
+									</item>
+									<item ID="REF_EYE">
+										<caption>Eye</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f161">N</content>
+									</item>
+									<item ID="REF_FAMILY">
+										<caption>Family Problems</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f162">N</content>
+									</item>
+									<item ID="REF_FATIGUE">
+										<caption>Fatigue, Malaise, Multisystem complaint</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f163">N</content>
+									</item>
+									<item ID="REF_AUDIOLOGY">
+										<caption>Audiology</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f164">X</content>
+									</item>
+									<item ID="REF_GI">
+										<caption>GI</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f165">N</content>
+									</item>
+									<item ID="REF_GU">
+										<caption>GU</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f166">N</content>
+									</item>
+									<item ID="REF_GYN">
+										<caption>GYN</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f167">N</content>
+									</item>
+									<item ID="REF_MENTAL">
+										<caption>Mental Health</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f168">N</content>
+									</item>
+									<item ID="REF_NEURO">
+										<caption>Neurologic</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f169">N</content>
+									</item>
+									<item ID="REF_ORTHO">
+										<caption>Orthopedic</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f170">N</content>
+									</item>
+									<item ID="REF_PREGNANCY">
+										<caption>Pregnancy</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f171">N</content>
+									</item>
+									<item ID="REF_PULMONARY">
+										<caption>Pulmonary</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f172">N</content>
+									</item>
+									<item ID="REF_OTHER">
+										<caption>Other</caption>
+										<content>Y = CHECKED, N = NOT CHECKED</content>
+										<content ID="f173">N</content>
+									</item>
+									<item ID="REF_OTHER_TEXT">
+										<caption>Referral indicated - Other Text</caption>
+										<content ID="f174" />
+									</item>
+								</list>
+							</item>
+							<item ID="PROVIDER_CONCERNS">
+								<caption>EXPOSURE CONCERNS (During Deployment):</caption>
+								<content>Y = CHECKED, N = NOT CHECKED</content>
+								<list listType="ordered">
+									<item ID="PROVIDER_CONCERNS_ENVIRO">
+										<caption>Environmental</caption>
+										<content ID="f175">N</content>
+									</item>
+									<item ID="PROVIDER_CONCERNS_OCC">
+										<caption>Occupational</caption>
+										<content ID="f176">N</content>
+									</item>
+									<item ID="PROVIDER_CONCERNS_COMBAT">
+										<caption>Combat or mission related</caption>
+										<content ID="f177">N</content>
+									</item>
+									<item ID="PROVIDER_CONCERNS_NONE">
+										<caption>None</caption>
+										<content ID="f178">Y</content>
+									</item>
+								</list>
+							</item>
+							<item ID="CERT_PROVIDER">
+								<caption>I certify that this review process has been completed.</caption>
+								<caption>Provider's signature and stamp:</caption>
+								<content>Y = Form is Signed by Provider, N = Form is Not Signed
+									by Provider</content>
+								<content ID="f179" />
+							</item>
+							<item ID="D_CERT_PROVIDER">
+								<caption>Date</caption>
+								<content ID="f180" />
+								<content>DATE PROVIDER SIGNS, YYYYMMDD FORMAT</content>
+							</item>
+							<item ID="PROVIDER_COMMENTS">
+								<caption>Comments</caption>
+								<content ID="f181" />
+							</item>
+							<item ID="UNIQUE_PDF_IDENTIFIER">
+								<caption>Unique identifier of the original PDF form from which
+									data was extracted.</caption>
+								<content ID="f182">A44433-205.pdf</content>
+							</item>
+						</list>
+					</text>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:uri="http://org/osehra/integration/http" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	targetNamespace="http://org/osehra/integration/http" elementFormDefault="qualified"
+	attributeFormDefault="unqualified" version="0.2" xml:lang="en"
+	jaxb:version="2.0">
+
+	<xs:complexType name="multiValuedMap">
+		<xs:sequence>
+			<xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="key" minOccurs="0" type="xs:string" />
+						<xs:element name="value" minOccurs="0" type="xs:string"
+							maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="uriInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="pathParametersExt" type="uri:multiValuedMap" />
+				<xs:element name="queryParametersExt" type="uri:multiValuedMap" />
+				<xs:element name="baseUriExt" type="xs:string" />
+				<xs:element name="requestUriExt" type="xs:string" />
+				<xs:element name="absolutePathExt" type="xs:string" />
+				<xs:element name="pathExt" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

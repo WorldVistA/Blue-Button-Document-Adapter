@@ -1,0 +1,65 @@
+{ "dataList" : [
+	{ "dataRecord" : { "AuthorInstitution" : "",
+            "AuthorName" : "VistAWeb demo user",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+            "CustodianName" : "share: Madigan",
+            "DateString" : "2012328092416",
+            "Description" : "CDA",
+            "DocId" : "b61c0e8f-78d3-11e1-a00f-052ae090d378",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "text/xml",
+            "Name" : "Surgery Consult",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10002.100001.8.125"
+          },
+        "dataType" : 0
+      },
+      { "dataRecord" : { "AuthorInstitution" : "EL PASO VA HCS",
+            "AuthorName" : "David Ellis",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8.22200",
+            "CustodianName" : "va",
+            "DateString" : "2012328172344",
+            "Description" : "CDA",
+            "DocId" : "e4fa5910-78d3-11e1-a00f-052ae090d378",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "text/plain",
+            "Name" : "Outpatient Encounter",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10002.100001.8.22200"
+          },
+        "dataType" : 0
+      },
+      { "dataRecord" : { "AuthorInstitution" : "",
+            "AuthorName" : "David Ellis",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+            "CustodianName" : "share: Madigan",
+            "DateString" : "20110729172346",
+            "Description" : "CDA",
+            "DocId" : "38fb929a-6dfd-11e1-9d20-eb29594a53b4",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "application/rtf",
+            "Name" : "Sample RTF file",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10002.100001.8.125"
+          },
+        "dataType" : 0
+      }
+
+    ],
+  "errorList" : [ { "ErrorCode" : "XDSRegistryError",
+        "ErrorLocation" : "",
+        "ErrorSeverity" : "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error",
+        "ErrorValue" : "Registry (2.16.840.1.113883.3.42.10002.100001.8.35) is not available"
+      } ],
+  "queryComplete" : "true",
+  "statusList" : [ { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10009.100001.13",
+        "SiteName" : "tmds",
+        "SiteStatus" : "UP"
+      },
+      { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "UP"
+      }
+    ]
+}

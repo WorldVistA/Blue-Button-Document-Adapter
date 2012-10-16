@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-2.5.xsd
+      	   http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<import resource="classpath:org/osehra/das/common/xml/commonXmlConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/common/http/commonHttpConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/common/feed/commonFeedConfiguration.xml" />
+
+	<import resource="classpath:org/osehra/das/cdm/vdata/vDataXmlFeedEntryConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/cdm/vdata/vDataSubjectDocumentConfiguration.xml" />
+
+	<bean id="MockProducerServiceInvoker" class="org.osehra.das.mock.http.RestServiceInvoker">
+		<property name="restService" ref="MockProducerService" />
+	</bean>
+
+	<bean id="MockProducerService" class="org.osehra.das.mock.http.MockProducerRestServiceImpl">
+		<property name="stringToXml" ref="defaultStringToXmlTransformer" />
+		<property name="dataStore" ref="MockProducerDataStore" />
+		<property name="xmlToEntryFactory" ref="xmlToFeedEntryCreatorFactory" />
+		<property name="baseUri" value="${mock.das.baseUri.href}" />
+		<property name="xmlAttachmentToString" ref="c62XmlAttachmentToString" />
+		<property name="feedToString" ref="defaultFeedToStringTransformer" />
+	</bean>
+
+	<bean id="MockProducerDataStore" class="org.osehra.das.mock.registry.MockProducerDocumentDataStoreImpl">
+		<property name="documentResources">
+			<map>
+				<entry key="${mock.homeCommunityOid}">
+					<map>
+						<entry key="${mock.remoteRepositoryId}_1002" value="classpath:org/osehra/das/mock/definitions/producer/sample/c62/C62 - Sample.xml" />
+					</map>
+				</entry>
+			</map>
+		</property>
+		<property name="metadataResources">
+			<map>
+				<entry key="${mock.homeCommunityOid}">
+					<map>
+						<entry key="${mock.remoteRepositoryId}_1002" value="classpath:org/osehra/das/mock/definitions/producer/sample/c62/Sample-UnstructuredC62.xml" />
+					</map>
+				</entry>
+			</map>
+		</property>
+		<property name="previewResources">
+			<map>
+				<entry key="1012581676V377802">
+					<map>
+						<entry key="medicalNotes">
+							<list>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document" value="classpath:org/osehra/das/mock/definitions/producer/sample/c62/Sample-UnstructuredC62.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1002" />
+									<property name="remoteRepositoryId" value="${mock.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${mock.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+									<property name="attachmentDocumentSize" value="50000" />
+									<property name="attachmentDocumentType" value="application/pdf" />
+									<property name="attachmentDocumentExtension" value="pdf" />
+								</bean>
+							</list>
+						</entry>
+					</map>
+				</entry>
+			</map>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ClinicalDocument xsi:schemaLocation="urn:ihe:iti:xds-sd:pdf:2008" xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <realmCode code="US"/>
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <templateId extension="IMPL_CDAR2_LEVEL1" root="2.16.840.1.113883.10"/>
+  <templateId extension="IMPL_CDAR2_LEVEL2" root="2.16.840.1.113883.10"/>
+  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+  <id root="2.16.840.1.113883.3.65.2.349128.1"/>
+  <code code="34133-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="SUMMARIZATION OF EPISODE NOTE"/>
+  <title>Joseph Nhinpatient Test Record</title>
+  <effectiveTime value="19920603131438-0500"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" displayName="normal"/>
+  <languageCode code="en-US"/>
+  <setId root="2.16.840.1.113883.3.65.2" extension="349129.3"/>
+  <versionNumber value="1"/>
+  <recordTarget>
+    <patientRole>
+      <id extension="1784539" root="2.16.840.1.113883.3.166.4"/>
+      <addr>
+        <streetAddressLine>100 Somewhere Street</streetAddressLine>
+        <city>Cherokee</city>
+        <state>NC</state>
+        <postalCode>28719</postalCode>
+        <country>US</country>
+      </addr>
+      <telecom value="tel:+1-828-555-3388" use="H"/>
+      <patient>
+        <name>
+            <prefix></prefix>
+            <given>Joseph</given>
+            <given></given>
+            <family>Nhinpatient</family>
+            <suffix></suffix>
+        </name>
+        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" displayName="Male"/>
+        <birthTime value="19761212"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <time value="200806004070000-0500"/>
+    <assignedAuthor>
+      <id extension="wenzhi" root="2.16.840.1.113883.3.65.2"/>
+      <code code="SELF" codeSystem="2.16.840.1.113883.5.111" codeSystemName="PersonalRelationshipRoleType" displayName="Self"/>
+      <addr nullFlavor="UNK"/>
+      <telecom nullFlavor="UNK"/>
+      <assignedPerson>
+        <name>
+          <given>CareSpark-Holston Medical Group</given>
+          <family/>
+          <prefix/>
+          <suffix/>
+        </name>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+  <author>
+    <time value="200806004070000-0500"/>
+    <assignedAuthor>
+      <id extension="349100.5" root="2.16.840.1.113883.3.65.2"/>
+      <addr>
+        <streetAddressLine> </streetAddressLine>
+        <city>Kingsport</city>
+        <state>TN</state>
+        <postalCode>37660</postalCode>
+        <country/>
+      </addr>
+      <telecom use="WP" nullFlavor="UNK"/>
+      <assignedAuthoringDevice>
+        <code code="CAPTURE" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DICOM" displayName="Image Capture"/>
+        <manufacturerModelName>Misys Scanner</manufacturerModelName>
+        <softwareName>Misys Scan Software v1.0</softwareName>
+      </assignedAuthoringDevice>
+      <representedOrganization>
+        <id root="2.16.840.1.113883.3.65.2"/>
+        <name>CareSpark-Holston Medical Group</name>
+        <telecom use="WP" nullFlavor="UNK"/>
+        <addr>
+          <streetAddressLine>105 West Stone Dr.</streetAddressLine>
+          <city>Kingsport</city>
+          <state>TN</state>
+          <postalCode>37660</postalCode>
+          <country>USA</country>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <dataEnterer>
+    <time value="200806004070000-0500"/>
+    <assignedEntity>
+      <id extension="349130.4" root="2.16.840.1.113883.3.65.2"/>
+      <assignedPerson>
+        <name>
+          <given>Steve</given>
+          <family>Adkins</family>
+          <prefix/>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+  </dataEnterer>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id extension="349100.5" root="2.16.840.1.113883.3.65.2"/>
+        <name>Steve Adkins</name>
+        <telecom use="WP" nullFlavor="UNK"/>
+        <addr>
+          <streetAddressLine>105 West Stone Dr.</streetAddressLine>
+          <city>Kingsport</city>
+          <state>TN</state>
+          <postalCode>37660</postalCode>
+          <country>USA</country>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <documentationOf>
+    <serviceEvent classCode="PCPR">
+      <id root="2.16.840.1.113883.3.65.2.349131.11"/>
+      <effectiveTime>
+        <low value="200806004070000-0500"/>
+        <high value="200806004190000-0500"/>
+      </effectiveTime>
+    </serviceEvent>
+  </documentationOf>
+  <component>
+    <nonXMLBody>
+      <text mediaType="text/plain" representation="B64">
+        Hello, this is a test record.
+      </text>
+    </nonXMLBody>
+  </component>
+</ClinicalDocument>

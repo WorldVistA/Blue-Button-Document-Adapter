@@ -1,0 +1,30 @@
+{ "dataList" : [
+	{ "dataRecord" : { "AuthorInstitution" : "",
+            "AuthorName" : "DEMO USER",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+            "CustodianName" : "share: Madigan",
+            "DateString" : "20110729172416",
+            "Description" : "CDA",
+            "DocId" : "2c53e186-95ce-4818-b361-8d056df41f12",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "text/xml",
+            "Name" : "ICU Transfer/Disch Summary",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10002.100001.8.125"
+          },
+        "dataType" : 0
+      }
+
+    ],
+  "errorList" : [ { "ErrorCode" : "XDSRegistryError",
+        "ErrorLocation" : "",
+        "ErrorSeverity" : "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error",
+        "ErrorValue" : "Registry (2.16.840.1.113883.3.42.10002.100001.8.35) is not available"
+      } ],
+  "statusList" : [ { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "UP"
+      }
+    ]
+}

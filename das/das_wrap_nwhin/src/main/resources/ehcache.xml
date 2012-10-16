@@ -1,0 +1,69 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+
+
+  <!--
+    The ehcache-failsafe.xml is a default configuration for ehcache, if an ehcache.xml is not configured.
+
+    The diskStore element is optional. It must be configured if you have overflowToDisk or diskPersistent enabled
+    for any cache. If it is not configured, a warning will be issues and java.io.tmpdir will be used.
+
+    diskStore has only one attribute - "path". It is the path to the directory where .data and .index files will be created.
+
+    If the path is a Java System Property it is replaced by its value in the
+    running VM.
+
+    The following properties are translated:
+    * user.home - User's home directory
+    * user.dir - User's current working directory
+    * java.io.tmpdir - Default temp file path
+    * ehcache.disk.store.dir - A system property you would normally specify on the command line
+    e.g. java -Dehcache.disk.store.dir=/u01/myapp/diskdir ...
+
+    Subdirectories can be specified below the property e.g. java.io.tmpdir/one
+
+  -->
+  <diskStore path="ehcache.disk.store.dir" />
+
+  <!--
+    Mandatory Default Cache configuration. These settings will be applied to caches
+    created programmtically using CacheManager.add(String cacheName)
+  -->
+
+  <defaultCache maxElementsInMemory="10000" eternal="false"
+    timeToIdleSeconds="120" timeToLiveSeconds="120"
+    overflowToDisk="true"
+    diskPersistent="false" diskExpiryThreadIntervalSeconds="120"
+    memoryStoreEvictionPolicy="LRU">
+  </defaultCache>
+
+  <cache name="org.osehra.das.core.ReverseProxyCache"
+    maxElementsInMemory="10000" eternal="false"
+    overflowToDisk="true" timeToIdleSeconds="1200"
+    timeToLiveSeconds="1200" diskExpiryThreadIntervalSeconds="21600"
+    memoryStoreEvictionPolicy="LFU">
+  </cache>
+
+  <cache name="org.osehra.das.endpoint.pdq.PdqService.Correlations"
+    maxElementsInMemory="10000" eternal="false"
+    overflowToDisk="true" timeToIdleSeconds="1200"
+    timeToLiveSeconds="1200" diskExpiryThreadIntervalSeconds="21600"
+    memoryStoreEvictionPolicy="LFU">
+  </cache>
+
+
+  <cache name="org.hibernate.cache.StandardQueryCache"
+    maxElementsInMemory="300" eternal="false"
+    overflowToDisk="true" timeToIdleSeconds="1200"
+    timeToLiveSeconds="1200" diskExpiryThreadIntervalSeconds="21600"
+    memoryStoreEvictionPolicy="LFU">
+  </cache>
+
+  <cache name="org.hibernate.cache.UpdateTimestampsCache"
+    maxElementsInMemory="300" eternal="false"
+    overflowToDisk="true" timeToIdleSeconds="1200"
+    timeToLiveSeconds="1200" diskExpiryThreadIntervalSeconds="21600"
+    memoryStoreEvictionPolicy="LFU">
+  </cache>
+
+
+</ehcache>

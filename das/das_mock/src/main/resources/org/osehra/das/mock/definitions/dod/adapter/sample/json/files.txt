@@ -1,0 +1,38 @@
+Files in org.osehra.das.mock.definitions.dod.adapter.sample.json:
+
+These files contain canned JSON Pass One metadata to be returned by the Mock DoD Adapter in reponse to poller requests.
+The Mock Adapter returns the metadata as String objects.
+
+Two clinical domains are currently supported:
+Progress Notes (LOINC code 11536-0)
+Deployment Assessments (LOINC code 51847-2)
+
+Three patients are currently supported:
+CHDRONE, patient ID 1012581676V377802.
+CHDRTWO, patient ID 1008520921V771535.
+DDTEST, patient ID 1012590785V255843.
+
+Mock data for patient CHDRONE includes Progress Notes (with text and binary attachments) and Deployment Assessments.
+Mock data for patient CHDRTWO includes Progress Notes only.
+Mock data for patient DDTEST includes Progress Notes and Deployment Assessments.
+
+
+File										Description
+----										-----------
+
+Full_JSON_Response_MOCK_NOTE.json			Metadata for complete poll of Progress Notes data for patient CHDRONE.
+Full_JSON_Response_MOCK_PPDA.json			Metadata for complete poll of Deployment Assessment data for patient CHDRONE.
+Full_JSON_Response2_MOCK_Note.json			Metadata for complete poll of Progress Notes data for patient CHDRTWO.
+Full_JSON_Response3_MOCK_Note.json			Metadata for complete poll of Progress Notes data for patient DDTEST.
+Full_JSON_Response3_MOCK_PPDA.json			Metadata for complete poll of Deployment Assessment data for patient DDTEST.
+
+Partial_JSON_Response_MOCK_NOTE.json		Metadata for partial poll of Progress Notes data for patient CHDRONE.
+Partial_JSON_Response_MOCK_PPDA.json		Metadata for partial poll of Deployment Assessment data for patient CHDRONE.
+Partial_JSON_Response2_MOCK_Note.json		Metadata for partial poll of Progress Notes data for patient CHDRTWO.
+Full_JSON_Response3_MOCK_Note.json			Metadata for partial poll of Progress Notes data for patient DDTEST.
+Full_JSON_Response3_MOCK_PPDA.json			Metadata for partial poll of Deployment Assessment data for patient DDTEST.
+
+----
+
+Note: Files with names beginning OnePass and Partial OnePass are intended to contain responses to single-pass queries,
+which are not currently supported.

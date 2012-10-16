@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RSP_K22>
+	<MSH>
+		<MSH.1>^</MSH.1>
+		<MSH.2>~|\&amp;</MSH.2>
+		<MSH.3>
+			<HD.1>PSIM</HD.1>
+		</MSH.3>
+		<MSH.4>
+			<HD.1>200PS</HD.1>
+			<HD.2>200PS.FO-BAYPINES.OSEHRA.ORG</HD.2>
+			<HD.3>DNS</HD.3>
+		</MSH.4>
+		<MSH.5>
+			<HD.1>MPI APP</HD.1>
+		</MSH.5>
+		<MSH.6>
+			<HD.1>200M</HD.1>
+			<HD.2>TLMPI.FO-BAYPINES.OSEHRA.ORG</HD.2>
+			<HD.3>DNS</HD.3>
+		</MSH.6>
+		<MSH.7>
+			<TS.1>20090106082334.975-0500</TS.1>
+		</MSH.7>
+		<MSH.9>
+			<MSG.1>RSP</MSG.1>
+			<MSG.2>K22</MSG.2>
+		</MSH.9>
+		<MSH.10>12312482149750906562915</MSH.10>
+		<MSH.11>
+			<PT.1>T</PT.1>
+		</MSH.11>
+		<MSH.12>
+			<VID.1>2.4</VID.1>
+		</MSH.12>
+		<MSH.15>AL</MSH.15>
+		<MSH.16>NE</MSH.16>
+	</MSH>
+	<MSA>
+		<MSA.1>AA</MSA.1>
+		<MSA.2>200M 110659</MSA.2>
+	</MSA>
+	<ERR />
+	<QAK>
+		<QAK.1>1</QAK.1>
+		<QAK.2>OK</QAK.2>
+		<QAK.3>
+			<CE.1>Q22</CE.1>
+			<CE.2>Find Candidates</CE.2>
+			<CE.3>HL72.4</CE.3>
+		</QAK.3>
+		<QAK.4>4</QAK.4>
+	</QAK>
+	<QPD>
+		<QPD.1>
+			<CE.1>Q22</CE.1>
+			<CE.2>Find Candidates</CE.2>
+			<CE.3>HL72.4</CE.3>
+		</QPD.1>
+		<QPD.2>1</QPD.2>
+		<QPD.3>
+			<UNKNOWN.1>@PID.3</UNKNOWN.1>
+			<UNKNOWN.2>666456789</UNKNOWN.2>
+			<UNKNOWN.5>
+				<UNKNOWN.1>USSSA</UNKNOWN.1>
+				<UNKNOWN.3>0363</UNKNOWN.3>
+			</UNKNOWN.5>
+			<UNKNOWN.6>SS</UNKNOWN.6>
+			<UNKNOWN.7>
+				<UNKNOWN.1>VA FACILITY ID</UNKNOWN.1>
+				<UNKNOWN.2>553</UNKNOWN.2>
+				<UNKNOWN.3>L</UNKNOWN.3>
+			</UNKNOWN.7>
+		</QPD.3>
+		<QPD.3>
+			<UNKNOWN.1>@PID.3</UNKNOWN.1>
+			<UNKNOWN.5>
+				<UNKNOWN.1>USVBA</UNKNOWN.1>
+				<UNKNOWN.3>0363</UNKNOWN.3>
+			</UNKNOWN.5>
+			<UNKNOWN.6>PN</UNKNOWN.6>
+			<UNKNOWN.7>
+				<UNKNOWN.1>VA FACILITY ID</UNKNOWN.1>
+				<UNKNOWN.2>553</UNKNOWN.2>
+				<UNKNOWN.3>L</UNKNOWN.3>
+			</UNKNOWN.7>
+		</QPD.3>
+		<QPD.3>
+			<UNKNOWN.1>@PID.5</UNKNOWN.1>
+			<UNKNOWN.2>ONE</UNKNOWN.2>
+			<UNKNOWN.3>MPIPATIENT</UNKNOWN.3>
+			<UNKNOWN.9>L</UNKNOWN.9>
+		</QPD.3>
+		<QPD.3>
+			<UNKNOWN.1>@PID.11</UNKNOWN.1>
+			<UNKNOWN.2>Street line1</UNKNOWN.2>
+			<UNKNOWN.3>Street line2</UNKNOWN.3>
+			<UNKNOWN.4>Albany</UNKNOWN.4>
+			<UNKNOWN.5>NY</UNKNOWN.5>
+			<UNKNOWN.6>12144</UNKNOWN.6>
+			<UNKNOWN.8>P</UNKNOWN.8>
+			<UNKNOWN.9>Street line3</UNKNOWN.9>
+		</QPD.3>
+		<QPD.3>
+			<UNKNOWN.1>@PID.7</UNKNOWN.1>
+			<UNKNOWN.2>19550722</UNKNOWN.2>
+		</QPD.3>
+		<QPD.3>
+			<UNKNOWN.1>@PID.13</UNKNOWN.1>
+			<UNKNOWN.2>(518)477-6764</UNKNOWN.2>
+			<UNKNOWN.3>PRN</UNKNOWN.3>
+			<UNKNOWN.4>PH</UNKNOWN.4>
+		</QPD.3>
+		<QPD.3>
+			<UNKNOWN.1>@PID.8</UNKNOWN.1>
+			<UNKNOWN.2>F</UNKNOWN.2>
+		</QPD.3>
+		<QPD.3>
+			<UNKNOWN.1>@PID.24</UNKNOWN.1>
+			<UNKNOWN.2>N</UNKNOWN.2>
+		</QPD.3>
+		<QPD.4>INITIATE</QPD.4>
+		<QPD.5>7.5</QPD.5>
+	</QPD>
+	<RSP_K22.QUERY_RESPONSE>
+		<PID>
+			<PID.1>1</PID.1>
+			<PID.3>
+				<CX.1>1008520921V771535</CX.1>
+				<CX.4>
+					<HD.1>USVHA</HD.1>
+					<HD.3>0363</HD.3>
+				</CX.4>
+				<CX.5>NI</CX.5>
+				<CX.6>
+					<HD.1>VA FACILITY ID</HD.1>
+					<HD.2>200M</HD.2>
+					<HD.3>L</HD.3>
+				</CX.6>
+			</PID.3>
+			<PID.3>
+				<CX.1>100000702</CX.1>
+				<CX.4>
+					<HD.1>USVHA</HD.1>
+					<HD.3>0363</HD.3>
+				</CX.4>
+				<CX.5>PI</CX.5>
+				<CX.6>
+					<HD.1>VA FACILITY ID</HD.1>
+					<HD.2>500</HD.2>
+					<HD.3>L</HD.3>
+				</CX.6>
+			</PID.3>
+			<PID.5>
+				<XPN.1>
+					<FN.1>ONE</FN.1>
+				</XPN.1>
+				<XPN.2>MPIPATIENT</XPN.2>
+				<XPN.3>M</XPN.3>
+				<XPN.4>JR</XPN.4>
+				<XPN.5>DR</XPN.5>
+				<XPN.6>MD</XPN.6>
+				<XPN.7>L</XPN.7>
+			</PID.5>
+			<PID.7>
+				<TS.1>19700410</TS.1>
+			</PID.7>
+			<PID.8>F</PID.8>
+		</PID>
+		<PD1 />
+		<QRI>
+			<QRI.1>86</QRI.1>
+			<QRI.3>
+				<CE.2>INITIATE</CE.2>
+			</QRI.3>
+		</QRI>
+	</RSP_K22.QUERY_RESPONSE>
+	<RSP_K22.QUERY_RESPONSE>
+		<PID>
+			<PID.1>2</PID.1>
+			<PID.3>
+				<CX.1>1008520921V771535</CX.1>
+				<CX.4>
+					<HD.1>USVHA</HD.1>
+					<HD.3>0363</HD.3>
+				</CX.4>
+				<CX.5>NI</CX.5>
+				<CX.6>
+					<HD.1>VA FACILITY ID</HD.1>
+					<HD.2>200M</HD.2>
+					<HD.3>L</HD.3>
+				</CX.6>
+			</PID.3>
+			<PID.5>
+				<XPN.1>
+					<FN.1>ONE</FN.1>
+				</XPN.1>
+				<XPN.2>MPIPATIENT</XPN.2>
+				<XPN.7>L</XPN.7>
+			</PID.5>
+		</PID>
+		<PD1 />
+		<QRI>
+			<QRI.1>86</QRI.1>
+			<QRI.3>
+				<CE.2>INITIATE</CE.2>
+			</QRI.3>
+		</QRI>
+	</RSP_K22.QUERY_RESPONSE>
+	<RSP_K22.QUERY_RESPONSE>
+		<PID>
+			<PID.1>3</PID.1>
+			<PID.3>
+				<CX.1>1008520438V882204</CX.1>
+				<CX.4>
+					<HD.1>USVHA</HD.1>
+					<HD.3>0363</HD.3>
+				</CX.4>
+				<CX.5>NI</CX.5>
+				<CX.6>
+					<HD.1>VA FACILITY ID</HD.1>
+					<HD.2>200M</HD.2>
+					<HD.3>L</HD.3>
+				</CX.6>
+			</PID.3>
+			<PID.3>
+				<CX.1>7171584</CX.1>
+				<CX.4>
+					<HD.1>USVHA</HD.1>
+					<HD.3>0363</HD.3>
+				</CX.4>
+				<CX.5>PI</CX.5>
+				<CX.6>
+					<HD.1>VA FACILITY ID</HD.1>
+					<HD.2>553</HD.2>
+					<HD.3>L</HD.3>
+				</CX.6>
+			</PID.3>
+			<PID.5>
+				<XPN.1>
+					<FN.1>ONE</FN.1>
+				</XPN.1>
+				<XPN.2>MPIPATIENT</XPN.2>
+				<XPN.7>L</XPN.7>
+			</PID.5>
+		</PID>
+		<PD1 />
+		<QRI>
+			<QRI.1>23</QRI.1>
+			<QRI.3>
+				<CE.2>INITIATE</CE.2>
+			</QRI.3>
+		</QRI>
+	</RSP_K22.QUERY_RESPONSE>
+	<RSP_K22.QUERY_RESPONSE>
+		<PID>
+			<PID.1>4</PID.1>
+			<PID.3>
+				<CX.1>1008520438V882204</CX.1>
+				<CX.4>
+					<HD.1>USVHA</HD.1>
+					<HD.3>0363</HD.3>
+				</CX.4>
+				<CX.5>NI</CX.5>
+				<CX.6>
+					<HD.1>VA FACILITY ID</HD.1>
+					<HD.2>200M</HD.2>
+					<HD.3>L</HD.3>
+				</CX.6>
+			</PID.3>
+			<PID.5>
+				<XPN.1>
+					<FN.1>ONE</FN.1>
+				</XPN.1>
+				<XPN.2>MPIPATIENT</XPN.2>
+				<XPN.7>L</XPN.7>
+			</PID.5>
+		</PID>
+		<PD1 />
+		<QRI>
+			<QRI.1>23</QRI.1>
+			<QRI.3>
+				<CE.2>INITIATE</CE.2>
+			</QRI.3>
+		</QRI>
+	</RSP_K22.QUERY_RESPONSE>
+</RSP_K22>
+<!--MSH^~|\&^PSIM^200PS~200PS.FO-BAYPINES.OSEHRA.ORG~DNS^MPI APP^200M~TLMPI.FO-BAYPINES.OSEHRA.ORG~DNS^20090106082334.975-0500^^RSP~K22^12312482149750906562915^T^2.4^^^AL^NE
+	MSA^AA^200M 110659
+	QAK^1^OK^Q22~Find Candidates~HL72.4^4
+	QPD^Q22~Find Candidates~HL72.4^1^@PID.3~666456789~~~USSSA&&0363~SS~VA FACILITY ID&553&L|@PID.3~~~~USVBA&&0363~PN~VA FACILITY ID&553&L|@PID.5~ONE~MPIPATIENT~~~~~~L|@PID.11~Street line1~Street line2~Albany~NY~12144~~P~Street line3|@PID.7~19550722|@PID.13~(518)477-6764~PRN~PH|@PID.8~F|@PID.24~N|^INITIATE^7.5
+	PID^1^^1008520921V771535~~~USVHA&&0363~NI~VA FACILITY ID&200M&L|100000702~~~USVHA&&0363~PI~VA FACILITY ID&500&L^^ONE~MPIPATIENT~M~JR~DR~MD~L^^19700410^F
+	QRI^86^^~INITIATE
+	PID^2^^1008520921V771535~~~USVHA&&0363~NI~VA FACILITY ID&200M&L^^ONE~MPIPATIENT~~~~~L
+	QRI^86^^~INITIATE
+	PID^3^^1008520438V882204~~~USVHA&&0363~NI~VA FACILITY ID&200M&L|7171584~~~USVHA&&0363~PI~VA FACILITY ID&553&L^^ONE~MPIPATIENT~~~~~L
+	QRI^23^^~INITIATE
+	PID^4^^1008520438V882204~~~USVHA&&0363~NI~VA FACILITY ID&200M&L^^ONE~MPIPATIENT~~~~~L
+	QRI^23^^~INITIATE
+-->

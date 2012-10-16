@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 http://xreg2.nist.gov:8080/hitspValidation/schema/cdar2c32/infrastructure/cda/C32_CDA.xsd">
+  <realmCode code="US"/>
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <templateId root="2.16.840.1.113883.10.20.3"/>
+  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+  <templateId root="2.16.840.1.113883.3.88.11.62.1"/>
+  <templateId root="1.3.6.1.4.1.19376.1.2.20"/>
+  <templateId root="2.16.840.1.113883.10.20.19.1"/>
+  <id extension="2147737736-2" root="2.16.840.1.113883.3.42.126.100001.26"/>
+  <code code="18726-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Radiology Study"/>
+  <title>Department of Defense Radiology Study Report</title>
+  <effectiveTime value="20100218170724-0000"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+  <languageCode code="en-US"/>
+  <recordTarget>
+    <patientRole>
+      <id assigningAuthorityName="Defense Enrollment Eligibility Reporting System (DEERS)" extension="1010651989" root="2.16.840.1.113883.3.42.10001.100001.12"/>
+      <addr use="HP">
+        <streetAddressLine>0890 BJXY XYWJJY</streetAddressLine>
+        <city>ANWLNSNF GJFHM</city>
+        <state>AF</state>
+        <country>US</country>
+        <postalCode>78901</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:359-0864532"/>
+      <patient>
+        <name use="L">
+          <given>WTXF</given>
+          <family>GJFW</family>
+          <suffix/>
+          <given/>
+        </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7 AdministrativeGenderCodes" displayName="Female"/>
+        <birthTime value="19771108"/>
+        <maritalStatusCode code="M" codeSystem="2.16.840.1.113883.5.2" codeSystemName="MaritalStatusCode" displayName="Married">
+          <originalText>Married</originalText>
+        </maritalStatusCode>
+        <religiousAffiliationCode codeSystem="2.16.840.1.113883.5.1076" codeSystemVersion="HL7 ReligiousAffiliation" nullFlavor="UNK">
+          <originalText>Roman Catholic</originalText>
+        </religiousAffiliationCode>
+        <raceCode codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity" nullFlavor="UNK">
+          <originalText>White</originalText>
+        </raceCode>
+      </patient>
+      <providerOrganization xsi:type="POCD_MT000040.Organization">
+        <id root="2.16.840.1.113883.3.42"/>
+        <name>DoD MHS</name>
+        <telecom nullFlavor="NA"/>
+        <addr nullFlavor="NA"/>
+      </providerOrganization>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <templateId root="1.3.6.1.4.1.19376.1.2.20.1"/>
+    <time value="20100218170724-0000"/>
+    <assignedAuthor>
+      <id nullFlavor="NA" root="2.16.840.1.113883.3.198"/>
+      <addr nullFlavor="NA"/>
+      <telecom nullFlavor="NA"/>
+      <assignedPerson>
+        <name>SMITH, SAM</name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root="2.16.840.1.113883.3.198"/>
+        <name>Department of Defense</name>
+        <telecom nullFlavor="NA"/>
+        <addr nullFlavor="NA"/>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <author>
+    <templateId root="1.3.6.1.4.1.19376.1.2.20.2"/>
+    <time value="20110329124142-0500"/>
+    <assignedAuthor>
+      <id nullFlavor="NA" root="2.16.840.1.113883.3.198"/>
+      <addr nullFlavor="NA"/>
+      <telecom nullFlavor="NA"/>
+      <assignedPerson>
+        <name>SMITH, SAM</name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root="2.16.840.1.113883.3.198"/>
+        <name>Department of Defense</name>
+        <telecom nullFlavor="NA"/>
+        <addr nullFlavor="NA"/>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <dataEnterer>
+    <templateId root="1.3.6.1.4.1.19376.1.2.20.3"/>
+    <time value="20110329124142-0500"/>
+    <assignedEntity>
+      <id root="2.16.840.1.113883.3.198"/>
+      <addr nullFlavor="NA"/>
+      <telecom nullFlavor="NA"/>
+      <assignedPerson>
+        <name>System Generated Document</name>
+      </assignedPerson>
+    </assignedEntity>
+  </dataEnterer>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root="2.16.840.1.113883.3.198"/>
+        <name>Department of Defense</name>
+        <telecom nullFlavor="NA"/>
+        <addr nullFlavor="NA"/>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <time value="20110112125927-0500"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id nullFlavor="NI"/>
+      <addr nullFlavor="NA"/>
+      <telecom nullFlavor="NA"/>
+      <assignedPerson>
+        <name/>
+      </assignedPerson>
+      <representedOrganization>
+        <id root="2.16.840.1.113883.3.198"/>
+        <name>Department of Defense</name>
+        <telecom nullFlavor="NA"/>
+        <addr nullFlavor="NA"/>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <documentationOf>
+    <serviceEvent classCode="PCPR">
+      <code code="37947-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Arthrogram, Elbow, Rt"/>
+      <effectiveTime>
+        <low value="20100205222200-0000"/>
+        <high value="20100205222200-0000"/>
+      </effectiveTime>
+    </serviceEvent>
+  </documentationOf>
+  <component>
+    <nonXMLBody>
+      <text mediaType="text/plain" representation="B64">UHJvY2VkdXJlOipBUlRIUk9HUkFNLFJUIEVMQk9XIChQKQ0KT3JkZXIgQ29tbWVudDogcGF0aWVudCByZXBvcnRpbmcgcGFpbiBqdXN0IGFib3ZlIGVsYm93DQpSZWFzb24gZm9yIE9yZGVyOiBwYXRpZW50IGZlZWxpbmcgcGFpbiBhZnRlciBmYWxsDQpFeGFtICM6IDEwMDAwMDQ4DQpFeGFtIERhdGUvVGltZTogMDVGZWIyMDEwIDE3OjIyDQpUcmFuc2NyaXB0aW9uIERhdGUvVGltZTogMDhGZWIyMDEwIDEzOjMwDQpQcm92aWRlcjogU01JVEgsIFNBTQ0KUmVxdWVzdGluZyBMb2NhdGlvbjogQkxVRSBNVEYgICAgIFNFWU1PVVIgSk9ITlNPTiBBRkIsIE5DDQpTdGF0dXM6IENPTVBMRVRFDQpSZXN1bHQgQ29kZTogTk9STUFMDQpJbnRlcnByZXRlZCBCeTogRlJFQ0hFVFRFLCBHRU9SR0UNCkFwcHJvdmVkIEJ5OiBGUkVDSEVUVEUsIEdFT1JHRQ0KQXBwcm92ZWQgRGF0ZTogMDhGZWIyMDEwIDEzOjMwDQpSZXBvcnQgVGV4dDogVGV4dCBvZiBSYWRpb2xvZ3kgcmVwb3J0IHdpbGwgYXBwZWFyIGhlcmUu</text>
+    </nonXMLBody>
+  </component>
+</ClinicalDocument>

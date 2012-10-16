@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n1:ClinicalDocument xmlns:n1="urn:hl7-org:v3"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 infrastructure\cda\CDA.ReleaseTwo.MembershipBallot01.Dec.2004.xsd">
+	<n1:id extension="String" root="10.10" />
+	<n1:code code="REA" codeSystem="mil" displayName="DD Form 2900" />
+	<n1:title>POST-DEPLOYMENT Health Reassessment</n1:title>
+	<n1:effectiveTime value="200506" />
+	<n1:confidentialityCode />
+	<n1:versionNumber value="2900" />
+	<n1:author>
+		<n1:time />
+		<n1:assignedAuthor>
+			<n1:id />
+		</n1:assignedAuthor>
+	</n1:author>
+	<n1:custodian>
+		<n1:assignedCustodian>
+			<n1:representedCustodianOrganization>
+				<n1:id />
+			</n1:representedCustodianOrganization>
+		</n1:assignedCustodian>
+	</n1:custodian>
+	<n1:recordTarget>
+		<n1:patient>
+			<n1:id />
+		</n1:patient>
+	</n1:recordTarget>
+	<n1:component>
+		<n1:structuredBody>
+			<n1:component>
+				<n1:section>
+					<n1:text>
+						<n1:list>
+							<n1:item ID="FORM_TYPE">
+								<n1:caption>POST-DEPLOYMENT HEALTH REASSESSMENT (PDHRA)
+								</n1:caption>
+								<n1:content ID="f000">PDHRA</n1:content>
+							</n1:item>
+							<n1:item ID="FORM_VERSION">
+								<n1:caption>DD FORM 2900, JUN 2005</n1:caption>
+								<n1:content ID="f001">DD2900_200801</n1:content>
+							</n1:item>
+						</n1:list>
+						<n1:paragraph>Authority: 10 U.S.C. 136 Chapter 55. 1074f, 3013,
+							5013, 8013 and E.O. 9397</n1:paragraph>
+						<n1:paragraph />
+						<n1:paragraph>Principal Purpose: To assess your state of health
+							after deployment in support</n1:paragraph>
+						<n1:paragraph>of military operations and to assist military
+							healthcare providers, including</n1:paragraph>
+						<n1:paragraph>behavioral health providers, in identifying present
+							and future medical care</n1:paragraph>
+						<n1:paragraph>needs you may have. The information you provide may
+							result in a referral</n1:paragraph>
+						<n1:paragraph>for additional healthcare that may include
+							behavioral healthcare.</n1:paragraph>
+						<n1:paragraph />
+						<n1:paragraph>Routine Use: To other Federal and State agencies and
+							civilian healthcare</n1:paragraph>
+						<n1:paragraph>providers as necessary in order to provide necessary
+							medical care and</n1:paragraph>
+						<n1:paragraph>treatment. Responses may be used to guide possible
+							referrals.</n1:paragraph>
+						<n1:paragraph />
+						<n1:paragraph>Disclosure: Disclosure is voluntary.</n1:paragraph>
+						<n1:paragraph />
+						<n1:paragraph>INSTRUCTIONS: Please read each question completely
+							and carefully before making</n1:paragraph>
+						<n1:paragraph>your selections. Provide a response for each
+							question. If you do not understand</n1:paragraph>
+						<n1:paragraph>a question, ask the administrator. Please respond
+							based on your MOST RECENT</n1:paragraph>
+						<n1:paragraph>DEPLOYMENT.</n1:paragraph>
+					</n1:text>
+				</n1:section>
+			</n1:component>
+			<n1:component>
+				<n1:section>
+					<n1:title>Demographics</n1:title>
+					<n1:text>
+						<n1:list listType="ordered">
+							<n1:item ID="LNAME">
+								<n1:caption>Last Name</n1:caption>
+								<n1:content ID="f003">BTEST</n1:content>
+							</n1:item>
+							<n1:item ID="FNAME">
+								<n1:caption>First Name</n1:caption>
+								<n1:content ID="f004">BOB</n1:content>
+							</n1:item>
+							<n1:item ID="MI">
+								<n1:caption>MI</n1:caption>
+								<n1:content ID="f005" />
+							</n1:item>
+							<n1:item ID="D_EVENT">
+								<n1:caption>Today's Date</n1:caption>
+								<n1:content ID="f006">20090312</n1:content>
+							</n1:item>
+							<n1:item ID="SSN">
+								<n1:caption>Social Security Number</n1:caption>
+								<n1:content ID="f002">000001102</n1:content>
+							</n1:item>
+							<n1:item ID="DOB">
+								<n1:caption>DOB</n1:caption>
+								<n1:content ID="f007">19450101</n1:content>
+							</n1:item>
+							<n1:item ID="D_ARRIVAL">
+								<n1:caption>Date arrived theater</n1:caption>
+								<n1:content ID="f008">20040919</n1:content>
+							</n1:item>
+							<n1:item ID="D_DEPART">
+								<n1:caption>Date departed theater</n1:caption>
+								<n1:content ID="f009">20050916</n1:content>
+							</n1:item>
+							<n1:item ID="SEX">
+								<n1:caption>Gender</n1:caption>
+								<n1:content>M = MALE, F = FEMALE, Z = UNKNOWN</n1:content>
+								<n1:content ID="f010">M</n1:content>
+							</n1:item>
+							<n1:item ID="SERVICE">
+								<n1:caption>Service Branch</n1:caption>
+								<n1:content>A = ARMY, F = AIR FORCE, C = COAST GUARD, M =
+									MARINES, N = NAVY, Z = OTHER/UNKNOWN</n1:content>
+								<n1:content ID="f011">A</n1:content>
+							</n1:item>
+							<n1:item ID="STATUS_PRIOR">
+								<n1:caption>Status Prior to Deployment</n1:caption>
+								<n1:content>0 = Active Duty, 1 = Selected Reserves - Reserve -
+									Unit, 2 = Selected Reserves - Reserve - AGR, 3 = Selected
+									Reserves - Reserve - IMA, 4 = Selected Reserves - National
+									Guard - Unit, 5 =Selected Reserves - National Guard - AGR, 6 =
+									Ready Reserves - IRR, 7</n1:content>
+								<n1:content ID="f012">4</n1:content>
+							</n1:item>
+							<n1:item ID="GRADE">
+								<n1:caption>Pay Grade</n1:caption>
+								<n1:content>E01 = E1, E02 = E2, E03 = E3, E04 = E4, E05 = E5,
+									E06 = E6, E07 = E7, E08 = E8, E09 = E9, O01 = O01, O02 = 002,
+									O03 = O03, O04 = O04, O05 = O05, O06 = O06, O07 = O07, O08 =
+									O08, O09 = O09, O10 = O10, W01 = W1, W02 = W2, W03 = W3, W04 =
+									W4, W05 = W5, ZZZ = OTHER</n1:content>
+								<n1:content ID="f013">E07</n1:content>
+							</n1:item>
+							<n1:item ID="MAR_STAT_2900">
+								<n1:caption>Marital Status</n1:caption>
+								<n1:content>0 = Never Married, 1 = Married, 2 = Separated, 3 =
+									Divorced, 4 = Widowed</n1:content>
+								<n1:content ID="f014">1</n1:content>
+							</n1:item>
+							<n1:item ID="LOCATION_OF_OPERATION">
+								<n1:caption>Location of Operation</n1:caption>
+								<n1:content>Y = CHECKED, N = NOT CHECKED</n1:content>
+								<n1:list listType="ordered">
+									<n1:item ID="IRAQ">
+										<n1:caption>Iraq</n1:caption>
+										<n1:content ID="f015">Y</n1:content>
+									</n1:item>
+									<n1:item ID="AFGHAN">
+										<n1:caption>Afghanistan</n1:caption>
+										<n1:content ID="f016">N</n1:content>
+									</n1:item>
+									<n1:item ID="KUWAIT">
+										<n1:caption>Kuwait</n1:caption>
+										<n1:content ID="f017">Y</n1:content>
+									</n1:item>
+									<n1:item ID="QATAR">
+										<n1:caption>Qatar</n1:caption>
+										<n1:content ID="f018">N</n1:content>
+									</n1:item>
+									<n1:item ID="BOSNIA_KOSOVO">
+										<n1:caption>Bosnia/Kosovo</n1:caption>
+										<n1:content ID="f019">N</n1:content>
+									</n1:item>
+									<n1:item ID="SWA">
+										<n1:caption>SW Asia - other</n1:caption>
+										<n1:content ID="f020">N</n1:content>
+									</n1:item>
+									<n1:item ID="AFRICA">
+										<n1:caption>Africa</n1:caption>
+										<n1:content ID="f021">N</n1:content>
+									</n1:item>
+									<n1:item ID="SO_AMER">
+										<n1:caption>South America</n1:caption>
+										<n1:content ID="f022">N</n1:content>
+									</n1:item>
+									<n1:item ID="NO_AMER">
+										<n1:caption>North America</n1:caption>
+										<n1:content ID="f023">N</n1:content>
+									</n1:item>
+									<n1:item ID="AUSTR">
+										<n1:caption>Australia</n1:caption>
+										<n1:content ID="f024">N</n1:content>
+									</n1:item>
+									<n1:item ID="EUROPE">
+										<n1:caption>Europe</n1:caption>
+										<n1:content ID="f025">N</n1:content>
+									</n1:item>
+									<n1:item ID="SHIP">
+										<n1:caption>On a ship</n1:caption>
+										<n1:content ID="f026">N</n1:content>
+									</n1:item>
+									<n1:item ID="LOC_OTHER">
+										<n1:caption>Other</n1:caption>
+										<n1:content ID="f027">N</n1:content>
+									</n1:item>
+									<n1:item ID="LOC_OTHER_TEXT">
+										<n1:content ID="f028" />
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="STATUS_CURRENT">
+								<n1:caption>Since return from deployment I have:</n1:caption>
+								<n1:list listType="ordered">
+									<n1:item ID="STATUS_CURRENT_SEL">
+										<n1:content>0 = Maintained/returned to previous status, 1 =
+											Transitioned to Selected Reserves, 2 = Transitioned to Ready
+											Reserves, 3 = Retired from Military Service, 4 = Separated
+											from Military Service</n1:content>
+										<n1:content ID="f029">0</n1:content>
+									</n1:item>
+									<n1:item ID="SEL_RES_TEXT">
+										<n1:caption>Transitioned to Selected Reserves:</n1:caption>
+										<n1:content ID="f030" />
+									</n1:item>
+									<n1:item ID="RDY_RES_TEXT">
+										<n1:caption>Transitioned to Ready Reserves:</n1:caption>
+										<n1:content ID="f031" />
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="TOTAL_DEPLOY">
+								<n1:caption>Total Deployments in Past 5 Years</n1:caption>
+								<n1:list listType="ordered">
+									<n1:item ID="OIF_TOTAL">
+										<n1:caption>OIF</n1:caption>
+										<n1:content>0 = 0, 1 = 1, 2 = 2, 3 = 3, 4 = 4, 5 = 5 or more
+										</n1:content>
+										<n1:content ID="f032">1</n1:content>
+									</n1:item>
+									<n1:item ID="OEF_TOTAL">
+										<n1:caption>OEF</n1:caption>
+										<n1:content>0 = 0, 1 = 1, 2 = 2, 3 = 3, 4 = 4, 5 = 5 or more
+										</n1:content>
+										<n1:content ID="f033">0</n1:content>
+									</n1:item>
+									<n1:item ID="OTH_TOTAL">
+										<n1:caption>Other</n1:caption>
+										<n1:content>0 = 0, 1 = 1, 2 = 2, 3 = 3, 4 = 4, 5 = 5 or more
+										</n1:content>
+										<n1:content ID="f034">0</n1:content>
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="DEPLOYING_UNIT">
+								<n1:caption>Current Unit of Assignment</n1:caption>
+								<n1:content ID="f035">HHB 178FA</n1:content>
+							</n1:item>
+							<n1:item ID="CURR_LOCATION">
+								<n1:caption>Current Assignment Location</n1:caption>
+								<n1:content ID="f036" />
+							</n1:item>
+							<n1:item ID="CURR_CONTACT">
+								<n1:caption>Current Contact Information:</n1:caption>
+								<n1:list listType="ordered">
+									<n1:item ID="PHONE">
+										<n1:caption>Phone:</n1:caption>
+										<n1:content ID="f037">7035551212</n1:content>
+									</n1:item>
+									<n1:item ID="CELL">
+										<n1:caption>Cell:</n1:caption>
+										<n1:content ID="f038">7035551212</n1:content>
+									</n1:item>
+									<n1:item ID="DSN">
+										<n1:caption>DSN:</n1:caption>
+										<n1:content ID="f039" />
+									</n1:item>
+									<n1:item ID="EMAIL">
+										<n1:caption>Email:</n1:caption>
+										<n1:content ID="f040">BTEST63@YAHOO.COM</n1:content>
+									</n1:item>
+									<n1:item ID="ADDR">
+										<n1:caption>Address:</n1:caption>
+										<n1:content ID="f041">1234 MOORANDMOOR STREET</n1:content>
+									</n1:item>
+									<n1:item ID="CITY">
+										<n1:content ID="f042" />
+									</n1:item>
+									<n1:item ID="STATE">
+										<n1:content ID="f043">VA</n1:content>
+									</n1:item>
+									<n1:item ID="ZIP">
+										<n1:content ID="f044">22222</n1:content>
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="POC">
+								<n1:caption>Point of Contact who can always reach you:
+								</n1:caption>
+								<n1:list listType="ordered">
+									<n1:item ID="POC_NAME">
+										<n1:caption>Name:</n1:caption>
+										<n1:content ID="f045">KAREN BTEST</n1:content>
+									</n1:item>
+									<n1:item ID="POC_PHONE">
+										<n1:caption>Phone:</n1:caption>
+										<n1:content ID="f046">7035551212</n1:content>
+									</n1:item>
+									<n1:item ID="POC_EMAIL">
+										<n1:caption>Email:</n1:caption>
+										<n1:content ID="f047" />
+									</n1:item>
+									<n1:item ID="POC_ADDR">
+										<n1:caption>Mailing Address:</n1:caption>
+										<n1:content ID="f048">SAME</n1:content>
+									</n1:item>
+									<n1:item ID="POC_CITY">
+										<n1:content ID="f049">ARLINGTON</n1:content>
+									</n1:item>
+									<n1:item ID="POC_STATE">
+										<n1:content ID="f050">VA</n1:content>
+									</n1:item>
+									<n1:item ID="POC_ZIP">
+										<n1:content ID="f051">22222</n1:content>
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="HEALTH_ASSESSMENT">
+								<n1:caption>1. Overall, how would you rate your health during
+									the PAST MONTH?</n1:caption>
+								<n1:content>E = Excellent, V = Very Good, G = Good, F = Fair, P
+									= Poor</n1:content>
+								<n1:content ID="f052">G</n1:content>
+							</n1:item>
+							<n1:item ID="HEALTH_CHANGE">
+								<n1:caption>2. Compared to before your most recent deployment,
+									how would you rate your health in general now?</n1:caption>
+								<n1:content>0 = Much better now than before I deployed, 1 =
+									Somewhat better now than before I deployed, 2 = About the same
+									as before I deployed, 3 = Somewhat worse now than before I
+									deployed, 4 = Much worse now than before I deployed
+								</n1:content>
+								<n1:content ID="f053">2</n1:content>
+							</n1:item>
+							<n1:item ID="TIMES_SEEN_AFTER">
+								<n1:caption>3. Since you returned from deployment, about how
+									many times have you seen a healthcare provider for any reason,
+									such as in sick call, emergency room, primary care, family
+									doctor, or mental health provider?</n1:caption>
+								<n1:content>0 = 0, 1 = 1, 2 = 2 - 3, 3 = 4 - 5, 4 = 6 or more
+								</n1:content>
+								<n1:content ID="f054">1</n1:content>
+							</n1:item>
+							<n1:item ID="HOSPITALIZED_AFTER">
+								<n1:caption>4. Since you returned from deployment, have you been
+									hospitalized?</n1:caption>
+								<n1:content>Y = YES, N = NO</n1:content>
+								<n1:content ID="f055">N</n1:content>
+							</n1:item>
+							<n1:item ID="INJURED">
+								<n1:caption>5. During your deployment, were you wounded,
+									injured, assaulted or otherwise physically hurt? If NO, skip to
+									Question 6.</n1:caption>
+								<n1:list listType="ordered">
+									<n1:item>
+										<n1:content>Y = YES, N = NO</n1:content>
+										<n1:content ID="f056">N</n1:content>
+									</n1:item>
+									<n1:item ID="INJ_PROB">
+										<n1:caption>5a. IF YES, are you still having problems related
+											to this wound, assault, or injury?</n1:caption>
+										<n1:content>Y = Yes, N = No, Z = Unsure</n1:content>
+										<n1:content ID="f057">X</n1:content>
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="HEALTH_CONCERNS">
+								<n1:caption>6. Other than wounds or injuries, do you currently
+									have a health concern or condition that you feel is related to
+									your deployment? IF NO, skip to Question 7.</n1:caption>
+								<n1:list listType="ordered">
+									<n1:item>
+										<n1:content>Y = Yes, N = No, Z = Unsure</n1:content>
+										<n1:content ID="f058">Y</n1:content>
+									</n1:item>
+									<n1:item ID="DEPLOY_CONDITION">
+										<n1:caption>6a. IF YES, please mark the item(s) that best
+											describe your deployment-related condition or concern:
+										</n1:caption>
+										<n1:content>Y = CHECKED, N = NOT CHECKED</n1:content>
+										<n1:list listType="ordered">
+											<n1:item ID="COUGH">
+												<n1:caption>Chronic Cough</n1:caption>
+												<n1:content ID="f059">N</n1:content>
+											</n1:item>
+											<n1:item ID="RUNNY_NOSE">
+												<n1:caption>Runny nose</n1:caption>
+												<n1:content ID="f060">N</n1:content>
+											</n1:item>
+											<n1:item ID="FEVER">
+												<n1:caption>Fever</n1:caption>
+												<n1:content ID="f061">N</n1:content>
+											</n1:item>
+											<n1:item ID="WEAKNESS">
+												<n1:caption>Weakness</n1:caption>
+												<n1:content ID="f062">N</n1:content>
+											</n1:item>
+											<n1:item ID="HEADACHE">
+												<n1:caption>Headaches</n1:caption>
+												<n1:content ID="f063">Y</n1:content>
+											</n1:item>
+											<n1:item ID="JOINTS">
+												<n1:caption>Swollen, stiff or painful joints</n1:caption>
+												<n1:content ID="f064">Y</n1:content>
+											</n1:item>
+											<n1:item ID="BACK_PAIN">
+												<n1:caption>Back Pain</n1:caption>
+												<n1:content ID="f065">N</n1:content>
+											</n1:item>
+											<n1:item ID="MUSCLE">
+												<n1:caption>Muscle aches</n1:caption>
+												<n1:content ID="f066">N</n1:content>
+											</n1:item>
+											<n1:item ID="NUMBNESS">
+												<n1:caption>Numbness or tingling in hands or feet
+												</n1:caption>
+												<n1:content ID="f067">N</n1:content>
+											</n1:item>
+											<n1:item ID="RASH">
+												<n1:caption>Skin diseases or rashes</n1:caption>
+												<n1:content ID="f068">N</n1:content>
+											</n1:item>
+											<n1:item ID="RINGING">
+												<n1:caption>Ringing of the ears</n1:caption>
+												<n1:content ID="f069">N</n1:content>
+											</n1:item>
+											<n1:item ID="TEARING">
+												<n1:caption>Redness of eyes with tearing</n1:caption>
+												<n1:content ID="f070">N</n1:content>
+											</n1:item>
+											<n1:item ID="VISION">
+												<n1:caption>Dimming of vision, like the lights were going
+													out</n1:caption>
+												<n1:content ID="f071">N</n1:content>
+											</n1:item>
+											<n1:item ID="CHEST_PAIN">
+												<n1:caption>Chest pain or pressure</n1:caption>
+												<n1:content ID="f072">N</n1:content>
+											</n1:item>
+											<n1:item ID="DIZZY">
+												<n1:caption>Dizziness, fainting, light headedness
+												</n1:caption>
+												<n1:content ID="f073">N</n1:content>
+											</n1:item>
+											<n1:item ID="BREATHING">
+												<n1:caption>Difficulty breathing</n1:caption>
+												<n1:content ID="f074">N</n1:content>
+											</n1:item>
+											<n1:item ID="DIARRHEA">
+												<n1:caption>Diarrhea, vomiting, or frequent indigestion
+												</n1:caption>
+												<n1:content ID="f075">N</n1:content>
+											</n1:item>
+											<n1:item ID="TIRED">
+												<n1:caption>Problems sleeping or still feeling tired after
+													sleeping</n1:caption>
+												<n1:content ID="f076">N</n1:content>
+											</n1:item>
+											<n1:item ID="MEMORY">
+												<n1:caption>Difficulty remembering</n1:caption>
+												<n1:content ID="f077">N</n1:content>
+											</n1:item>
+											<n1:item ID="IRRITABLE">
+												<n1:caption>Increased irritability</n1:caption>
+												<n1:content ID="f078">N</n1:content>
+											</n1:item>
+											<n1:item ID="RISK_TAKING">
+												<n1:caption>Taking more risks such as driving faster
+												</n1:caption>
+												<n1:content ID="f079">N</n1:content>
+											</n1:item>
+											<n1:item ID="OTHER_COND">
+												<n1:caption>Other</n1:caption>
+												<n1:content ID="f080">N</n1:content>
+											</n1:item>
+											<n1:item ID="OTHER_COND_TEXT">
+												<n1:content ID="f081" />
+											</n1:item>
+										</n1:list>
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="EXPOSURE_CONCERNS">
+								<n1:caption>7. Do you have any persistent major concerns
+									regarding the health effects of something you believe you may
+									have been exposed to or encountered while deployed? IF NO, skip
+									to Question 8.</n1:caption>
+								<n1:list listType="ordered">
+									<n1:item>
+										<n1:caption>Y = Yes, N = No, Z = Unsure</n1:caption>
+										<n1:content>Y = YES, N = NO</n1:content>
+										<n1:content ID="f082">Y</n1:content>
+									</n1:item>
+									<n1:item ID="EXPOSURE_CONCERNS_YES">
+										<n1:caption>7a. IF YES, please mark the item(s) that best
+											describe your concern:</n1:caption>
+										<n1:content>Y = CHECKED, N = NOT CHECKED</n1:content>
+										<n1:list listType="ordered">
+											<n1:item ID="EXP_DEET">
+												<n1:caption>DEET insect repellent applied to skin
+												</n1:caption>
+												<n1:content ID="f083">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_PEST_UNIFORM">
+												<n1:caption>Pesticide-treated uniforms</n1:caption>
+												<n1:content ID="f084">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_PEST_ENVIRO">
+												<n1:caption>Environmental pesticides (like area fogging)
+												</n1:caption>
+												<n1:content ID="f085">Y</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_FLEA">
+												<n1:caption>Flea or tick collars</n1:caption>
+												<n1:content ID="f086">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_PEST_STRIP">
+												<n1:caption>Pesticide strips</n1:caption>
+												<n1:content ID="f087">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_SMOKE_OIL">
+												<n1:caption>Smoke from oil fire</n1:caption>
+												<n1:content ID="f088">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_SMOKE_TRASH">
+												<n1:caption>Smoke from burning trash or feces</n1:caption>
+												<n1:content ID="f089">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_FUMES_EXHAUST">
+												<n1:caption>Vehicle or truck exhaust fumes</n1:caption>
+												<n1:content ID="f090">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_SMOKE_HEATER">
+												<n1:caption>Tent heater smoke</n1:caption>
+												<n1:content ID="f091">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_FUELS">
+												<n1:caption>JP8 or other fuels</n1:caption>
+												<n1:content ID="f092">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_FOG_OILS">
+												<n1:caption>Fog oils (smoke screen)</n1:caption>
+												<n1:content ID="f093">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_SOLVENTS">
+												<n1:caption>Solvents</n1:caption>
+												<n1:content ID="f094">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_PAINTS">
+												<n1:caption>Paints</n1:caption>
+												<n1:content ID="f095">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_RADIATION">
+												<n1:caption>Radiation</n1:caption>
+												<n1:content ID="f096">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_MICROWAVE">
+												<n1:caption>Radar/microwaves</n1:caption>
+												<n1:content ID="f097">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_LASER">
+												<n1:caption>Lasers</n1:caption>
+												<n1:content ID="f098">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_NOISE">
+												<n1:caption>Loud noises</n1:caption>
+												<n1:content ID="f099">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_VIBRATION">
+												<n1:caption>Excessive vibration</n1:caption>
+												<n1:content ID="f100">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_POLLUTION">
+												<n1:caption>Industrial pollution</n1:caption>
+												<n1:content ID="f101">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_SAND">
+												<n1:caption>Sand/dust</n1:caption>
+												<n1:content ID="f102">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_BLAST">
+												<n1:caption>Blast or motor vehicle accident</n1:caption>
+												<n1:content ID="f103">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_URANIUM">
+												<n1:caption>Depleted Uranium (if yes, explain)</n1:caption>
+												<n1:content ID="f104">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_URANIUM_TEXT">
+												<n1:content ID="f105" />
+											</n1:item>
+											<n1:item ID="EXP_OTHER">
+												<n1:caption>Other:</n1:caption>
+												<n1:content ID="f106">N</n1:content>
+											</n1:item>
+											<n1:item ID="EXP_OTHER_TEXT">
+												<n1:content ID="f107" />
+											</n1:item>
+										</n1:list>
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="CONFLICTS">
+								<n1:caption>8. Since return from your deployment, have you had
+									serious conflicts with your spouse, family members, close
+									friends, or at work that continue to cause you worry or
+									concern?</n1:caption>
+								<n1:content>Y = YES, N = NO, Z = UNSURE</n1:content>
+								<n1:content ID="f108">N</n1:content>
+							</n1:item>
+							<n1:item ID="FRIGHT">
+								<n1:caption>9. Have you had any experience that was so
+									frightening, horrible, or upsetting that, IN THE PAST MONTH,
+									you...</n1:caption>
+								<n1:content>Y = YES, N = NO</n1:content>
+								<n1:list listType="ordered">
+									<n1:item ID="NIGHTMARES">
+										<n1:caption>a. Have had nightmares about it or thought about
+											it when you did not want to</n1:caption>
+										<n1:content ID="f109">N</n1:content>
+									</n1:item>
+									<n1:item ID="AVOID_SITUATIONS">
+										<n1:caption>b. Tried hard not to think about it or went out of
+											your way to avoid situations that remind you of it
+										</n1:caption>
+										<n1:content ID="f110">N</n1:content>
+									</n1:item>
+									<n1:item ID="ON_GUARD">
+										<n1:caption>c. Were constantly on guard, watchful, or easily
+											startled</n1:caption>
+										<n1:content ID="f111">N</n1:content>
+									</n1:item>
+									<n1:item ID="DETACHED">
+										<n1:caption>d. Felt numb or detached from others, activities,
+											or your surroundings</n1:caption>
+										<n1:content ID="f112">N</n1:content>
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="DRINKING">
+								<n1:caption>10.</n1:caption>
+								<n1:list>
+									<n1:item ID="ETOH">
+										<n1:caption>a. In the PAST MONTH, did you use alcohol more
+											than you meant to?</n1:caption>
+										<n1:content>Y = YES, N = NO</n1:content>
+										<n1:content ID="f113">N</n1:content>
+									</n1:item>
+									<n1:item ID="ETOH_DOWN">
+										<n1:caption>b. In the PAST MONTH, have you felt that you
+											wanted to or needed to cut down on your drinking?
+										</n1:caption>
+										<n1:content>Y = YES, N = NO</n1:content>
+										<n1:content ID="f114">N</n1:content>
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="POSSIBLE_BOTHERS">
+								<n1:caption>11. Over the PAST MONTH, have you been bothered by
+									the following problems?</n1:caption>
+								<n1:content>0 = Not at all, 1 = Few or several days, 2 = More
+									than half the days, 3 = Nearly every-day</n1:content>
+								<n1:list listType="ordered">
+									<n1:item ID="LITTLE_INTEREST">
+										<n1:caption>a. Little interest or pleasure in doing things
+										</n1:caption>
+										<n1:content ID="f115">0</n1:content>
+									</n1:item>
+									<n1:item ID="FEELING_DOWN">
+										<n1:caption>b. Feeling down, depressed, or hopeless
+										</n1:caption>
+										<n1:content ID="f116">0</n1:content>
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="DIFFICULTY">
+								<n1:caption>12. If you checked off any problems or concerns on
+									this questionnaire, how difficult have these problems made for
+									you to do your work, take care of things at home, or get along
+									with other people?</n1:caption>
+								<n1:content>0 = Not difficult at all, 1 = Somewhat difficult, 2
+									= Very difficult, 3 = Extremely difficult</n1:content>
+								<n1:content ID="f117">0</n1:content>
+							</n1:item>
+							<n1:item ID="REQ_PROVIDER">
+								<n1:caption>13. Would you like to schedule a visit with a
+									healthcare provider to further discuss your health concern(s)?
+								</n1:caption>
+								<n1:content>Y = YES, N = NO</n1:content>
+								<n1:content ID="f118">N</n1:content>
+							</n1:item>
+							<n1:item ID="REQ_STRESS">
+								<n1:caption>14. Are you currently interested in receiving
+									information or assistance for a stress, emotional or alcohol
+									concern?</n1:caption>
+								<n1:content>Y = YES, N = NO</n1:content>
+								<n1:content ID="f119">N</n1:content>
+							</n1:item>
+							<n1:item ID="REQ_FAMILY">
+								<n1:caption>15. Are you currently interested in receiving
+									assistance for a family or relationship concern?</n1:caption>
+								<n1:content>Y = YES, N = NO</n1:content>
+								<n1:content ID="f120">N</n1:content>
+							</n1:item>
+							<n1:item ID="REQ_CHAPLAIN">
+								<n1:caption>16. Would you like to schedule a visit with a
+									chaplain or a community support counselor?</n1:caption>
+								<n1:content>Y = YES, N = NO</n1:content>
+								<n1:content ID="f121">N</n1:content>
+							</n1:item>
+						</n1:list>
+					</n1:text>
+				</n1:section>
+			</n1:component>
+			<n1:component>
+				<n1:section>
+					<n1:title>Provider Review and Interview</n1:title>
+					<n1:text>
+						<n1:list>
+							<n1:item ID="REVIEW_SYMPTOMS">
+								<n1:caption>1. Review symptoms and deployment concerns
+									identified on form:</n1:caption>
+								<n1:list>
+									<n1:item ID="PROVIDER_REVIEW">
+										<n1:content>0 = confirmed, 1 = modified</n1:content>
+										<n1:content ID="f122">0</n1:content>
+									</n1:item>
+									<n1:item ID="HEALTH_CONCERNS_TEXT">
+										<n1:content ID="f123" />
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="HURT_SELF_ITEM">
+								<n1:caption>2. Ask behavioral risk questions.</n1:caption>
+								<n1:list>
+									<n1:item ID="HURT_SELF">
+										<n1:caption>a. Over the PAST MONTH, have you been bothered by
+											thoughts that you would be better off dead or of hurting
+											yourself in some way?</n1:caption>
+										<n1:content>Y = YES, N = NO</n1:content>
+										<n1:content ID="f124">N</n1:content>
+									</n1:item>
+									<n1:item ID="HURT_SELF_FREQ">
+										<n1:caption>IF YES, about how often have you been bothered by
+											these thoughts?</n1:caption>
+										<n1:content>0 = Very few days, 1 = More than half of the time,
+											2 = Nearly every day</n1:content>
+										<n1:content ID="f125" />
+									</n1:item>
+									<n1:item ID="LOSE_CONTROL">
+										<n1:caption>b. Since return from your deployment, have you had
+											thoughts or concerns that you might hurt or lose control with
+											someone?</n1:caption>
+										<n1:content>Y = YES, N = NO, Z = UNSURE</n1:content>
+										<n1:content ID="f126">N</n1:content>
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="RISK_ASSESSMENT">
+								<n1:caption>3. IF YES OR UNSURE to behavioral risk questions,
+									conduct risk assessment.</n1:caption>
+								<n1:list>
+									<n1:item ID="CURRENT_RISK">
+										<n1:caption>a. Does member pose a current risk for harm to
+											self or others?</n1:caption>
+										<n1:content>Y = YES, N = NO, Z = UNSURE</n1:content>
+										<n1:content ID="f127" />
+									</n1:item>
+									<n1:item ID="OUTCOME">
+										<n1:caption>b. Outcome of assessment</n1:caption>
+										<n1:content>0 = Immediate referral, 1 = Routine follow-up
+											referral, 2 = Referral not indicated</n1:content>
+										<n1:content ID="f128" />
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="PT_CONCERNS_TEXT">
+								<n1:caption>4. Record additional questions or concerns
+									identified by patient during interview:</n1:caption>
+								<n1:content ID="f129" />
+							</n1:item>
+						</n1:list>
+					</n1:text>
+				</n1:section>
+			</n1:component>
+			<n1:component>
+				<n1:section>
+					<n1:title>Assessment and Referral: After my interview with the
+						service member and review of this form, there is a need for
+						further evaluation and follow-up as indicated below. (More than
+						one may be noted for patients with multiple concerns.)</n1:title>
+					<n1:text>
+						<n1:list>
+							<n1:item ID="CONCERNS">
+								<n1:caption>5. Identified Concerns</n1:caption>
+								<n1:content>0 = minor, 1 = major</n1:content>
+								<n1:list listType="ordered">
+									<n1:item ID="CON_PHYSICAL">
+										<n1:caption>Physical Symptom</n1:caption>
+										<n1:content ID="f131">1</n1:content>
+									</n1:item>
+									<n1:item ID="CON_EXPOSURE">
+										<n1:caption>Exposure Concern</n1:caption>
+										<n1:content ID="f132">0</n1:content>
+									</n1:item>
+									<n1:item ID="CON_DEPRESSION">
+										<n1:caption>Depression Symptoms</n1:caption>
+										<n1:content ID="f133" />
+									</n1:item>
+									<n1:item ID="CON_PTSD">
+										<n1:caption>PTSD Symptoms</n1:caption>
+										<n1:content ID="f134" />
+									</n1:item>
+									<n1:item ID="CON_ANGER">
+										<n1:caption>Anger/Aggression</n1:caption>
+										<n1:content ID="f135" />
+									</n1:item>
+									<n1:item ID="CON_SUICIDE">
+										<n1:caption>Suicidal Ideation</n1:caption>
+										<n1:content ID="f136" />
+									</n1:item>
+									<n1:item ID="CON_FAMILY">
+										<n1:caption>Social/Family Conflict</n1:caption>
+										<n1:content ID="f137" />
+									</n1:item>
+									<n1:item ID="CON_ETOH">
+										<n1:caption>Alcohol Use</n1:caption>
+										<n1:content ID="f138" />
+									</n1:item>
+									<n1:item ID="CON_OTHER">
+										<n1:caption>Other</n1:caption>
+										<n1:content ID="f139" />
+									</n1:item>
+									<n1:item ID="CON_NONE">
+										<n1:caption>None</n1:caption>
+										<n1:content>Y = YES, N = NO</n1:content>
+										<n1:content ID="f130">N</n1:content>
+									</n1:item>
+									<n1:item ID="CON_OTHER_TEXT">
+										<n1:content ID="f140" />
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="CARE">
+								<n1:caption>Already Under Care</n1:caption>
+								<n1:content>Y = YES, N = NO</n1:content>
+								<n1:list listType="ordered">
+									<n1:item ID="CARE_PHYSICAL">
+										<n1:content ID="f141">N</n1:content>
+									</n1:item>
+									<n1:item ID="CARE_EXPOSURE">
+										<n1:content ID="f142">N</n1:content>
+									</n1:item>
+									<n1:item ID="CARE_DEPRESSION">
+										<n1:content ID="f143">N</n1:content>
+									</n1:item>
+									<n1:item ID="CARE_PTSD">
+										<n1:content ID="f144">N</n1:content>
+									</n1:item>
+									<n1:item ID="CARE_ANGER">
+										<n1:content ID="f145">N</n1:content>
+									</n1:item>
+									<n1:item ID="CARE_SUICIDE">
+										<n1:content ID="f146">N</n1:content>
+									</n1:item>
+									<n1:item ID="CARE_FAMILY">
+										<n1:content ID="f147">N</n1:content>
+									</n1:item>
+									<n1:item ID="CARE_ETOH">
+										<n1:content ID="f148">N</n1:content>
+									</n1:item>
+									<n1:item ID="CARE_OTHER">
+										<n1:content ID="f149">N</n1:content>
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="REFERRAL">
+								<n1:caption>6. Referral Information</n1:caption>
+								<n1:content>Y = CHECKED, N = NOT CHECKED</n1:content>
+								<n1:list listType="ordered">
+									<n1:item ID="REF_NONE">
+										<n1:caption>a. No referral made</n1:caption>
+										<n1:content ID="f150">N</n1:content>
+									</n1:item>
+									<n1:item ID="REF_URGENT">
+										<n1:caption>b. Immediate/emergent care</n1:caption>
+										<n1:content ID="f151">N</n1:content>
+									</n1:item>
+									<n1:item ID="REF_PRIMARY">
+										<n1:caption>c. Primary Care, Family Practice</n1:caption>
+										<n1:content ID="f152">Y</n1:content>
+									</n1:item>
+									<n1:item ID="REF_SPECIALTY">
+										<n1:caption>d. Specialty Care:</n1:caption>
+										<n1:content ID="f153">N</n1:content>
+									</n1:item>
+									<n1:item ID="REF_SPEC_TEXT">
+										<n1:content ID="f154" />
+									</n1:item>
+									<n1:item ID="REF_MENTAL_PRIMARY">
+										<n1:caption>e. Behavioral Health in Primary Care</n1:caption>
+										<n1:content ID="f155">N</n1:content>
+									</n1:item>
+									<n1:item ID="REF_MENTAL_SPECIAL">
+										<n1:caption>f. Mental Health Specialty Care</n1:caption>
+										<n1:content ID="f156">N</n1:content>
+									</n1:item>
+									<n1:item ID="REF_CASE">
+										<n1:caption>g. Case Manager, Care Manager</n1:caption>
+										<n1:content ID="f157">N</n1:content>
+									</n1:item>
+									<n1:item ID="REF_ABUSE">
+										<n1:caption>h. Substance Abuse Program</n1:caption>
+										<n1:content ID="f158">N</n1:content>
+									</n1:item>
+									<n1:item ID="REF_HEALTH_ED">
+										<n1:caption>i. Health Promotion, Health Education</n1:caption>
+										<n1:content ID="f159">N</n1:content>
+									</n1:item>
+									<n1:item ID="REF_OTH_SERVICE">
+										<n1:caption>j. Other Healthcare Service</n1:caption>
+										<n1:content ID="f160">N</n1:content>
+									</n1:item>
+									<n1:item ID="REF_CHAPLAIN">
+										<n1:caption>k. Chaplain</n1:caption>
+										<n1:content ID="f161">N</n1:content>
+									</n1:item>
+									<n1:item ID="REF_FAMILY">
+										<n1:caption>l. Family Support, Community Service</n1:caption>
+										<n1:content ID="f162">N</n1:content>
+									</n1:item>
+									<n1:item ID="REF_ONE_SOURCE">
+										<n1:caption>m. Military OneSource</n1:caption>
+										<n1:content ID="f163">N</n1:content>
+									</n1:item>
+									<n1:item ID="REF_OTHER">
+										<n1:caption>n. Other:</n1:caption>
+										<n1:content ID="f164">N</n1:content>
+									</n1:item>
+									<n1:item ID="REF_OTHER_TEXT">
+										<n1:content ID="f165" />
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="PROVIDER_COMMENTS">
+								<n1:caption>7. Comments:</n1:caption>
+								<n1:content ID="f166">LOD FOR HEADACHE</n1:content>
+							</n1:item>
+							<n1:item ID="CERT_PROVIDER_ITEM">
+								<n1:caption>8. Provider</n1:caption>
+								<n1:list>
+									<n1:item ID="CERT_PROVIDER">
+										<n1:caption>a. Name (Last, First)</n1:caption>
+										<n1:content ID="f167">Y</n1:content>
+									</n1:item>
+									<n1:item ID="D_CERT_PROVIDER">
+										<n1:caption>b. Signature and stamp:</n1:caption>
+										<n1:content ID="f168">20060318</n1:content>
+									</n1:item>
+								</n1:list>
+							</n1:item>
+						</n1:list>
+					</n1:text>
+				</n1:section>
+			</n1:component>
+			<n1:component>
+				<n1:section>
+					<n1:title>Ancillary Staff/Administrative Section</n1:title>
+					<n1:text>
+						<n1:list>
+							<n1:item ID="PROVISIONS">
+								<n1:caption>9. Member was provided the following:</n1:caption>
+								<n1:content>Y = CHECKED, N = NOT CHECKED</n1:content>
+								<n1:list listType="ordered">
+									<n1:item ID="PROV_HEALTH_ED">
+										<n1:caption>Health Education and Information</n1:caption>
+										<n1:content ID="f169">Y</n1:content>
+									</n1:item>
+									<n1:item ID="PROV_BENEFIT">
+										<n1:caption>Health Care Benefits and Resources Information
+										</n1:caption>
+										<n1:content ID="f170">Y</n1:content>
+									</n1:item>
+									<n1:item ID="PROV_APPT">
+										<n1:caption>Appointment Assistance</n1:caption>
+										<n1:content ID="f171">Y</n1:content>
+									</n1:item>
+									<n1:item ID="DECLINED_FORM">
+										<n1:caption>Service member declined to complete form
+										</n1:caption>
+										<n1:content ID="f172">N</n1:content>
+									</n1:item>
+									<n1:item ID="DECLINED_INTERVIEW">
+										<n1:caption>Service member declined to complete
+											interview/assessment</n1:caption>
+										<n1:content ID="f173">N</n1:content>
+									</n1:item>
+									<n1:item ID="DECLINED_REFERRAL">
+										<n1:caption>Service member declined referral for services
+										</n1:caption>
+										<n1:content ID="f174">N</n1:content>
+									</n1:item>
+									<n1:item ID="PROV_OTHER">
+										<n1:caption>Other:</n1:caption>
+										<n1:content ID="f175">N</n1:content>
+									</n1:item>
+									<n1:item ID="PROV_OTHER_TEXT">
+										<n1:content ID="f176" />
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="SUPPORT_SYSTEM">
+								<n1:caption>10. Referral made to the following healthcare or
+									support system:</n1:caption>
+								<n1:content>Y = CHECKED, N = NOT CHECKED</n1:content>
+								<n1:list listType="ordered">
+									<n1:item ID="SYS_MTF">
+										<n1:caption>Military Treatment Facility</n1:caption>
+										<n1:content ID="f177">N</n1:content>
+									</n1:item>
+									<n1:item ID="SYS_DIV">
+										<n1:caption>Division/Line-Based Medical Resource</n1:caption>
+										<n1:content ID="f178">N</n1:content>
+									</n1:item>
+									<n1:item ID="SYS_VA">
+										<n1:caption>VA Medical Center or Community Clinic</n1:caption>
+										<n1:content ID="f179">N</n1:content>
+									</n1:item>
+									<n1:item ID="SYS_VET">
+										<n1:caption>Vet Center</n1:caption>
+										<n1:content ID="f180">N</n1:content>
+									</n1:item>
+									<n1:item ID="SYS_TRICARE">
+										<n1:caption>TRICARE Provider</n1:caption>
+										<n1:content ID="f181">Y</n1:content>
+									</n1:item>
+									<n1:item ID="SYS_CONTRACT">
+										<n1:caption>Contract Support:</n1:caption>
+										<n1:content ID="f182">N</n1:content>
+									</n1:item>
+									<n1:item ID="SYS_CONTRACT_TEXT">
+										<n1:content ID="f183" />
+									</n1:item>
+									<n1:item ID="SYS_CMNTY">
+										<n1:caption>Community Service:</n1:caption>
+										<n1:content ID="f184">N</n1:content>
+									</n1:item>
+									<n1:item ID="SYS_CMNTY_TEXT">
+										<n1:content ID="f185" />
+									</n1:item>
+									<n1:item ID="SYS_OTHER">
+										<n1:caption>Other:</n1:caption>
+										<n1:content ID="f186">N</n1:content>
+									</n1:item>
+									<n1:item ID="SYS_OTHER_TEXT">
+										<n1:content ID="f187" />
+									</n1:item>
+									<n1:item ID="SYS_NONE">
+										<n1:caption>None</n1:caption>
+										<n1:content ID="f188">N</n1:content>
+									</n1:item>
+								</n1:list>
+							</n1:item>
+							<n1:item ID="UNIQUE_PDF_IDENTIFIER">
+								<n1:caption>Unique identifier of the original PDF form from
+									which data was extracted.</n1:caption>
+								<n1:content ID="f189">A.PDF</n1:content>
+							</n1:item>
+						</n1:list>
+					</n1:text>
+				</n1:section>
+			</n1:component>
+		</n1:structuredBody>
+	</n1:component>
+</n1:ClinicalDocument>

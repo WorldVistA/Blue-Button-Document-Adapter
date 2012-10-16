@@ -1,0 +1,96 @@
+{ "dataList" : [
+	{ "dataRecord" : { "AuthorInstitution" : "",
+            "AuthorName" : "David Ellis",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+            "CustodianName" : "share: Madigan",
+            "DateString" : "20120419092416",
+            "Description" : "Text",
+            "DocId" : "4fc18fba-8a44-11e1-b177-d5affe6619e1",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "text/xml",
+            "Name" : "Sample text Medical Note",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10009.100001.13"
+          },
+        "dataType" : 0
+      },
+      
+      	{ "dataRecord" : { "AuthorInstitution" : "",
+            "AuthorName" : "Jorge Calderon",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+            "CustodianName" : "share: Madigan",
+            "DateString" : "20120419092416",
+            "Description" : "Text",
+            "DocId" : "4fc18fba-8a44-11e1-b177-d5affe6619z1",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "text/xml",
+            "Name" : "CDA Note - With Plain Text",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10009.100001.13"
+          },
+        "dataType" : 0
+      },
+      
+      	{ "dataRecord" : { "AuthorInstitution" : "",
+            "AuthorName" : "Jorge Calderon",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+            "CustodianName" : "share: Madigan",
+            "DateString" : "20120419092416",
+            "Description" : "Text",
+            "DocId" : "4fc18fba-8a44-11e1-b177-d5affe6619z2",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "text/xml",
+            "Name" : "CDA Note - With CDA Formatting",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10009.100001.13"
+          },
+        "dataType" : 0
+      },
+      
+	{ "dataRecord" : { "AuthorInstitution" : "",
+            "AuthorName" : "David Ellis",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+            "CustodianName" : "share: Madigan",
+            "DateString" : "20120420092416",
+            "Description" : "Text",
+            "DocId" : "79051b11-8aef-11e1-b4d2-17bee037cac1",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "text/xml",
+            "Name" : "Sample CDA Medical Note",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10009.100001.13"
+          },
+        "dataType" : 0
+      },
+	{ "dataRecord" : { "AuthorInstitution" : "",
+            "AuthorName" : "David Ellis",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+            "CustodianName" : "share: Madigan",
+            "DateString" : "20120420092416",
+            "Description" : "Text",
+            "DocId" : "6a04af3b-8e13-11e1-977a-4fd6c5b1bd26",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "application/rtf",
+            "Name" : "Sample complex content",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10009.100001.13"
+          },
+        "dataType" : 0
+      }
+
+    ],
+  "errorList" : [ { "ErrorCode" : "XDSRegistryError",
+        "ErrorLocation" : "",
+        "ErrorSeverity" : "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error",
+        "ErrorValue" : "Registry (2.16.840.1.113883.3.42.10002.100001.8.35) is not available"
+      } ],
+  "queryComplete" : "true",
+  "statusList" : [ { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10009.100001.13",
+        "SiteName" : "tmds",
+        "SiteStatus" : "UP"
+      },
+      { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "UP"
+      }
+    ]
+}

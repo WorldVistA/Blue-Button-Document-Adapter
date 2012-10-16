@@ -1,0 +1,37 @@
+{ "dataList" : [ { "dataRecord" : { "Allergen" : "Aspirin",
+            "Comments" : "Testing on mar16th",
+            "CustodianId" : "2.16.840.1.113883.3.42.126.100001.13",
+            "CustodianName" : "ahlta",
+            "EnteredBy" : "SJF, TWENTY EIGHT",
+            "EnteredByDate" : "20110316185453",
+            "Facility" : "4th Medical Group/0090",
+            "OnsetDate" : "20110316040000",
+            "Reaction" : "Rash",
+            "ReactionComment" : "",
+            "RepositoryId" : "2.16.840.1.113883.3.42.126.100001.13",
+            "Source" : "Patient",
+            "Type" : "Drug Allergy"
+          },
+        "dataType" : 1
+      } ],
+  "queryComplete" : "true",
+  "statusList" : [ { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.126.100001.13",
+        "SiteName" : "ahlta",
+        "SiteStatus" : "UP"
+      },
+      { "ExpectedCount" : "1",
+        "RetrievedCount" : "0",
+        "SiteId" : "2.16.840.1.113883.3.42.126.100001.13",
+        "SiteName" : "ahlta",
+        "SiteStatus" : "IN_PROGRESS"
+      },
+      { "ExpectedCount" : "1",
+        "RetrievedCount" : "1",
+        "SiteId" : "2.16.840.1.113883.3.42.126.100001.13",
+        "SiteName" : "ahlta",
+        "SiteStatus" : "COMPLETE"
+      }
+    ]
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Preview xsi:noNamespaceSchemaLocation="unstructuredC62.xsd" xmlns:vler="http://mynamespace.com/schemas/vcp/0.1/health/UnstructuredC62/0.1/subset/vler/" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<nc:Document>
+		<nc:DocumentCategoryID>11488-4</nc:DocumentCategoryID>
+		<nc:DocumentCategoryText>Consultation Note</nc:DocumentCategoryText>
+		<nc:DocumentCreationDate>
+			<nc:Date>2011-07-18</nc:Date>
+		</nc:DocumentCreationDate>
+		<nc:DocumentIdentification>
+			<nc:IdentificationID>DOC_ID_abc123</nc:IdentificationID>
+			<nc:IdentificationCategoryText>HL7_UD_3.1.4</nc:IdentificationCategoryText>
+		</nc:DocumentIdentification>
+		<nc:DocumentPublicationDate>
+			<nc:Date>2011-07-18</nc:Date>
+		</nc:DocumentPublicationDate>
+		<nc:DocumentTitleText>XYZ Consultation Note</nc:DocumentTitleText>
+		<nc:SecurityLevelText>Private</nc:SecurityLevelText>
+		<nc:DocumentCoverageTextDate>
+			<nc:Date>2011-07-18</nc:Date>
+		</nc:DocumentCoverageTextDate>
+		<nc:DocumentCoverageTextDate>
+			<nc:Date>2011-07-18</nc:Date>
+		</nc:DocumentCoverageTextDate>
+		<nc:DocumentFormatCategoryText>application/pdf</nc:DocumentFormatCategoryText>
+		<nc:DocumentLanguageCode>mlr</nc:DocumentLanguageCode>
+	</nc:Document>
+	<vler:Author>
+		<vler:TemplateID>1.3.6.1.4.1.19376.1.2.20.1</vler:TemplateID>
+		<nc:AssociationBeginDate>
+			<nc:Date>2011-07-18</nc:Date>
+		</nc:AssociationBeginDate>
+		<vler:PersonIdentifier>
+			<nc:IdentificationID>XYZ1234</nc:IdentificationID>
+			<nc:IdentificationCategoryText>RN License ID</nc:IdentificationCategoryText>
+		</vler:PersonIdentifier>
+		<nc:RoleOfPersonReference s:ref="ID_Person002"/>
+		<nc:ContactInformation>
+			<nc:ContactMailingAddress>
+				<nc:StructuredAddress>
+					<nc:LocationStreet>
+						<nc:StreetFullText>10 Hospital Way</nc:StreetFullText>
+					</nc:LocationStreet>
+					<nc:LocationCityName>Visnville</nc:LocationCityName>
+					<nc:LocationStateUSPostalServiceCode>CA</nc:LocationStateUSPostalServiceCode>
+					<nc:LocationPostalCode>949877</nc:LocationPostalCode>
+				</nc:StructuredAddress>
+			</nc:ContactMailingAddress>
+			<nc:ContactTelephoneNumber>
+				<nc:FullTelephoneNumber>
+					<nc:TelephoneNumberFullID>555-555-2345</nc:TelephoneNumberFullID>
+				</nc:FullTelephoneNumber>
+			</nc:ContactTelephoneNumber>
+		</nc:ContactInformation>
+		<nc:Organization>
+			<nc:OrganizationIdentification>
+				<nc:IdentificationID>1.3.5.35.1.4436.7</nc:IdentificationID>
+				<nc:IdentificationCategoryText>CDA Root OID</nc:IdentificationCategoryText>
+			</nc:OrganizationIdentification>
+			<nc:OrganizationName>Visnville VAMC</nc:OrganizationName>
+		</nc:Organization>
+	</vler:Author>
+</Preview>

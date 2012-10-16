@@ -1,0 +1,238 @@
+<ClinicalDocument xmlns="urn:hl7-org:v3">
+   <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+   <id root="2.16.840.1.113883.3.42.127.100001.15" extension="125.361276.20080612212222"/>
+   <code code="18842-5" displayName="DISCHARGE SUMMARIZATION NOTE" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+   <title>DISCHARGE SUMMARIZATION NOTE</title>
+   <effectiveTime value="20080612212222"/>
+   <confidentialityCode code="N" codeSystem="2.16.840.1.113883.6.1"/>
+   <recordTarget>
+      <patientRole>
+         <id root="2.16.840.1.113883.4.1" extension="111111102"/>
+         <id root="2.16.840.1.113883.3.42.127.125.2" extension="361276"/>
+         <addr>
+            <streetAddressLine>11809 SEMILLON BLVD</streetAddressLine>
+            <city>SAN DIEGO</city>
+            <state>CA</state>
+            <postalCode>92121</postalCode>
+            <country>US</country>
+         </addr>
+         <telecom value="8004449909" use="HP"/>
+         <patient>
+            <name>
+               <family>BTEST</family>
+               <given>BOB</given>
+            </name>
+            <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+            <birthTime value="19441201000100"/>
+         </patient>
+      </patientRole>
+   </recordTarget>
+   <author>
+      <time value="20050228145400"/>
+      <assignedAuthor>
+         <id root="2.16.840.1.113883.3.42.127.125.3" extension="29732 "/>
+         <addr>
+            <streetAddressLine/>
+            <city/>
+            <state/>
+            <postalCode/>
+            <country/>
+         </addr>
+         <telecom value="858-826-7658 " use="WP"/>
+         <assignedPerson>
+            <name>
+               <family>SCHMIDT</family>
+               <given>DONNA</given>
+            </name>
+         </assignedPerson>
+      </assignedAuthor>
+   </author>
+   <author>
+      <time value="20050228145400"/>
+      <assignedAuthor>
+         <id root="2.16.840.1.113883.3.42.127.125.99" extension="7188"/>
+         <addr>
+            <streetAddressLine/>
+            <city>GROTON</city>
+            <state>CT</state>
+            <postalCode>06340</postalCode>
+            <country>US</country>
+         </addr>
+         <telecom value="" use="WP"/>
+         <assignedAuthoringDevice>
+            <softwareName code="0125" codeSystem="2.16.840.1.113883.3.42.10002.100001.8" codeSystemName="DMIS ID"/>
+         </assignedAuthoringDevice>
+      </assignedAuthor>
+   </author>
+   <custodian>
+      <assignedCustodian>
+         <representedCustodianOrganization>
+            <id root="2.16.840.1.113883.3.42.127.100001.13"/>
+         </representedCustodianOrganization>
+      </assignedCustodian>
+   </custodian>
+   <legalAuthenticator>
+      <time value="20050228145400"/>
+      <assignedEntity>
+         <id root="2.16.840.1.113883.3.42.127.125.3" extension="29732 "/>
+         <addr>
+            <streetAddressLine/>
+            <city/>
+            <state/>
+            <postalCode/>
+            <country/>
+         </addr>
+         <telecom value="858-826-7658 " use="WP"/>
+         <assignedPerson>
+            <name>
+               <family>SCHMIDT</family>
+               <given>DONNA</given>
+            </name>
+         </assignedPerson>
+      </assignedEntity>
+   </legalAuthenticator>
+   <authenticator>
+      <time value="20050228145400"/>
+      <signatureCode code="S"/>
+      <assignedEntity>
+         <id root="2.16.840.1.113883.3.42.127.125.3" extension="29732 "/>
+         <addr>
+            <streetAddressLine/>
+            <city/>
+            <state/>
+            <postalCode/>
+            <country/>
+         </addr>
+         <telecom value="858-826-7658 " use="WP"/>
+         <assignedPerson>
+            <name>
+               <family>SCHMIDT</family>
+               <given>DONNA</given>
+            </name>
+         </assignedPerson>
+      </assignedEntity>
+   </authenticator>
+   <component>
+      <structuredBody>
+         <component>
+            <section>
+               <code code="18842-5" displayName="DISCHARGE SUMMARIZATION NOTE "/>
+               <title>DISCHARGE SUMMARIZATION NOTE</title>
+               <text>
+                  <paragraph>Mock data from F0252 for 361275 Note 1.1</paragraph>
+                  <paragraph>Asprin MotrinWARNING! Numeric entity suppressed (BHIE-1412): 160;WARNING! Numeric entity suppressed (BHIE-1412): 160;(ibuprofen)</paragraph>
+                  <paragraph>Attending Physician: SCHMIDT,DONNA</paragraph>
+                  <paragraph>Admission Date: 28 Feb 2005             Discharge Date: 01 Mar 2005</paragraph>
+                  <paragraph/>
+                  <paragraph>Admitting Diagnosis:</paragraph>
+                  <paragraph/>
+                  <paragraph>Discharge Diagnosis:</paragraph>
+                  <paragraph/>
+                  <paragraph/>
+                  <paragraph>ICD Operations/Procedures:</paragraph>
+                  <paragraph>INTRAVASCULAR IMAGING OF EXTRACRANIAL CEREBRAL VESSELS (ICD 00.21)</paragraph>
+                  <paragraph>Active Problem List:</paragraph>
+                  <paragraph/>
+                  <paragraph>Principal Diagnosis:</paragraph>
+                  <paragraph/>
+                  <paragraph>Secondary Diagnosis:</paragraph>
+                  <paragraph/>
+                  <paragraph>Principal Procedures/Operations:</paragraph>
+                  <paragraph/>
+                  <paragraph/>
+                  <paragraph/>
+                  <paragraph/>
+                  <paragraph/>
+                  <paragraph>Patient's condition at time of Discharge:</paragraph>
+                  <paragraph/>
+                  <paragraph>Active Outpatient Medications:</paragraph>
+                  <paragraph>...No active outpatient prescriptions...</paragraph>
+                  <paragraph/>
+                  <paragraph>Pending at time of Discharge:</paragraph>
+                  <paragraph/>
+                  <paragraph>Lab Tests                      Ordered for             Status</paragraph>
+                  <paragraph>No pending Laboratory tests</paragraph>
+                  <paragraph/>
+                  <paragraph>Radiology Exams</paragraph>
+                  <paragraph>No pending Radiology Exams</paragraph>
+                  <paragraph/>
+                  <paragraph>Future Appointments:</paragraph>
+                  <paragraph>Clinic/Div                    Provider      Date/time          Type   Status</paragraph>
+                  <paragraph>________________________________________________________________________________</paragraph>
+                  <paragraph/>
+                  <paragraph>Activity Limitations:</paragraph>
+                  <paragraph>No driving for:                       No long walks for:</paragraph>
+                  <paragraph>No jogging for:                       No stair climbing for:</paragraph>
+                  <paragraph>No swimming for:                      No shower/bath for:</paragraph>
+                  <paragraph>No golf, tennis, similar sports for:</paragraph>
+                  <paragraph>No sexual intercourse for:</paragraph>
+                  <paragraph/>
+                  <paragraph>Do not return to work until:</paragraph>
+                  <paragraph/>
+                  <paragraph>Diet:</paragraph>
+                  <paragraph/>
+                  <paragraph>Patient Instructions:</paragraph>
+                  <paragraph>Care After Superficial Surgery</paragraph>
+                  <paragraph>Please follow these directions:</paragraph>
+                  <paragraph/>
+                  <paragraph>1.  Clean the wound with mild soap and water.</paragraph>
+                  <paragraph>2.  Apply a topical antibiotic ointment, such as Bacitracin at least twice</paragraph>
+                  <paragraph>daily to the wound with a cotton tipped applicator.</paragraph>
+                  <paragraph>3.  Keep a non-stick bandage or a Band-Aid over the wound.</paragraph>
+                  <paragraph>4.  Try not to let the wound dry out (form a scab) because that can</paragraph>
+                  <paragraph>delay wound healing.</paragraph>
+                  <paragraph>5.  You can get the wound wet, just make sure you to reapply ointment and</paragraph>
+                  <paragraph>a Band-Aid when done.</paragraph>
+                  <paragraph>6.  If the skin around the wound becomes red, swollen, or  painful, you</paragraph>
+                  <paragraph>may have an infected wound.  Call your doctor for further evaluation.</paragraph>
+                  <paragraph/>
+                  <paragraph>Reference</paragraph>
+                  <paragraph>Epstein, Ernst. Common Skin Disorders 4th Edition. W.B. Saunders 1994.</paragraph>
+                  <paragraph/>
+                  <paragraph>Physician Responsible for Dictation:</paragraph>
+                  <paragraph/>
+                  <paragraph>Discharge Summary:</paragraph>
+                  <paragraph>HISTORY: Mr. James is a 21-year-old male. The patient off late noted that he</paragraph>
+                  <paragraph>develops tachyarrhythmias especially at night. He will take his pulse, which</paragraph>
+                  <paragraph>ranges between 120 and 150 and this has been noted on several occasions. He</paragraph>
+                  <paragraph>has developed chest discomfort as well, non-exertional. He denies slow</paragraph>
+                  <paragraph>increase and slow decrease of heart rate.</paragraph>
+                  <paragraph>PAST MEDICAL HISTORY: The patient denies peptic ulcer disease, asthma, COPD,</paragraph>
+                  <paragraph>kidney problem, bleeding disorders, diabetes, and hypertension or history of</paragraph>
+                  <paragraph>CAD.</paragraph>
+                  <paragraph>ALLERGIES: No known drug allergies.</paragraph>
+                  <paragraph>MEDICATIONS: Xanax, beta-blocker which she was given by neurologist and has</paragraph>
+                  <paragraph>not started yet, Ritalin 20 mg p.o. q.d., and Zoloft 100 mg p.o. q.d.</paragraph>
+                  <paragraph>FAMILY HISTORY: Father is status post CABG and heart attack. Mother also has</paragraph>
+                  <paragraph>heart disease.</paragraph>
+                  <paragraph>PERSONAL HISTORY: Smokes four cigarettes a day. Works as an office clerk.</paragraph>
+                  <paragraph>Denies significant alcohol use.</paragraph>
+                  <paragraph>REVIEW OF SYSTEMS: Noncontributory.</paragraph>
+                  <paragraph>PHYSICAL EXAMINATION:</paragraph>
+                  <paragraph>General: He is a well-developed, well-nourished male in no acute distress.</paragraph>
+                  <paragraph>Vital signs: Blood pressure is 100/70 mm Hg. Pulse is 82 per minute and</paragraph>
+                  <paragraph>regular. Respiratory rate is 18.</paragraph>
+                  <paragraph>Lungs: Clear.</paragraph>
+                  <paragraph>Heart: Regular rate and rhythm. Normal S1 and S2. No murmurs, clicks, rubs or</paragraph>
+                  <paragraph>gallops.</paragraph>
+                  <paragraph>Abdominal exam: Normal bowel sounds. Non-tender. Non-distended.</paragraph>
+                  <paragraph>Extremities: No clubbing, cyanosis or edema.</paragraph>
+                  <paragraph>Neurologic: Grossly nonfocal.</paragraph>
+                  <paragraph>IMPRESSION:</paragraph>
+                  <paragraph>1. Tachyarrhythmias.</paragraph>
+                  <paragraph>2. Palpitations.</paragraph>
+                  <paragraph>3. Chest pain.</paragraph>
+                  <paragraph>PLAN:</paragraph>
+                  <paragraph>1. I have recommended Holter monitor for assessment of tachyarrhythmias.</paragraph>
+                  <paragraph>2. The patient will also have stress test for evaluation of exercise-induced</paragraph>
+                  <paragraph>arrhythmias.</paragraph>
+                  <paragraph>3. We discussed risk factors for CAD especially smoking cessation and</paragraph>
+                  <paragraph>reduction of stimulants.</paragraph>
+                  <paragraph/>
+                  <paragraph>Verified by: DONNA SCHMIDT MD on 28 Feb 2005</paragraph>
+               </text>
+            </section>
+         </component>
+      </structuredBody>
+   </component>
+</ClinicalDocument>

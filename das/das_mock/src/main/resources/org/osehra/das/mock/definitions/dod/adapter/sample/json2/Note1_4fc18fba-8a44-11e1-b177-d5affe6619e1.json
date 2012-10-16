@@ -1,0 +1,35 @@
+{ "dataRecord" : {"CompleteNote" : "Patient: AATEST, AARON  Date: 21 Feb 2012 1537 EDT  Appt Type: GRP$  \nTreatment Facility: NHC GREAT LAKES  Clinic: INTERNAL MEDICINE 200H  Provider: HAIMS,ATTEND A  \nPatient Status: Outpatient  \n \n\nA/P Written by HAIMS,ATTEND A @ 08 Mar 2012 1859 EDT\t\n1. BENIGN CARDIAC NEOPLASM HAMARTOMA ATRIAL SEPTAL\n \nDisposition Written by HAIMS,ATTEND A @ 08 Mar 2012 1900 EDT\t\nReleased w/o Limitations \nFollow up: as needed with PCM. \nDiscussed: Diagnosis, Medication(s)/Treatment(s), Alternatives, Potential Side Effects with Patient who indicated understanding. \n \n\nSigned By  HAIMS, ATTEND A (Physician/Workstation) @ 08 Mar 2012 1900",
+		"NoteTypeName":"Progress Note",
+		"EnteredBy":"",
+		"NoteFormat":"plaintext",
+		"RepositoryId":"2.16.840.1.113883.3.42.126.100001.13",
+		"CustodianId":"2.16.840.1.113883.3.42.126.100001.13",
+		"EnteredByDate":"",
+		"NoteTitle":"Progress Note",
+		"VerifiedBy":"HAIMS, ATTEND A",
+		"CustodianName":"ahlta",
+		"VerifiedDate":"20120221203808",
+		"Facility":"Internal Medicine 200H",
+		"NoteTypeCode":""
+        },
+        "dataType" : 12,
+  "errorList" : [ { "ErrorCode" : "XDSRegistryError",
+        "ErrorLocation" : "",
+        "ErrorSeverity" : "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error",
+        "ErrorValue" : "Registry (2.16.840.1.113883.3.42.10002.100001.8.35) is not available"
+      } ],
+  "queryComplete" : "true",
+  "statusList" : [ { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10009.100001.13",
+        "SiteName" : "tmds",
+        "SiteStatus" : "UP"
+      },
+      { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "UP"
+      }
+    ]
+}

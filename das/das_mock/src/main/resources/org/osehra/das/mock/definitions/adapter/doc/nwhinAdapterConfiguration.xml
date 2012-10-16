@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-2.5.xsd
+      	   http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!-- ADAPTER DOC QUERY XCA WEBSERVICE TEMPLATE -->
+	<bean id="adapterDocQueryServiceTemplate" class="org.osehra.das.mock.adapter.MockAdapterDocQueryPortImpl">
+	</bean>
+	<!-- ADAPTER DOC RETRIEVE XCA WEBSERVICE TEMPLATE -->
+	<bean id="adapterDocRetrieveWebServiceTemplate" class="org.osehra.das.mock.adapter.MockAdapterDocRetrievePortImpl">
+		<property name="randomFiles">
+			<list>
+				<value>classpath:org/osehra/das/mock/definitions/adapter/report/Utah 2011 03 05 CCD.XML</value>
+				<value>classpath:org/osehra/das/mock/definitions/adapter/report/C62_IMAGE.xml</value>
+				<value>classpath:org/osehra/das/mock/definitions/adapter/report/DoD_sampleRadiologyReport_pdf.xml</value>
+				<value>classpath:org/osehra/das/mock/definitions/adapter/report/DoD_sampleRadiologyReport_text.xml</value>
+				<value>classpath:org/osehra/das/mock/definitions/adapter/report/Joseph Nhinpatient XDS-SD.xml</value>
+				<value>classpath:org/osehra/das/mock/definitions/adapter/report/VA_CHDRONE_c62_10292010.xml</value>
+				<value>classpath:org/osehra/das/mock/definitions/adapter/report/VA CHDRONE C62-DischargeSummaries 2011 06 09.xml</value>
+				<value>classpath:org/osehra/das/mock/definitions/adapter/report/VA CHDRONE C62-Radiology Surgery Reports 2011 06 09.xml
+				</value>
+			</list>
+		</property>
+	</bean>
+</beans>

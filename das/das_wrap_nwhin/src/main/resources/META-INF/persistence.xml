@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	<persistence-unit name="mhvWrapperEntityManager" transaction-type="JTA">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>jdbc/datasource/DAS_XA</jta-data-source>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<class>org.osehra.das.wrapper.nwhin.C32DocumentEntity</class>
+		<properties>
+			<property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.WeblogicTransactionManagerLookup" />
+      <!-- Scan for annotated classes and Hibernate mapping XML files -->
+			<property name="hibernate.archive.autodetection" value="class, hbm" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
+			<property name="hibernate.query.factory_class" value="org.hibernate.hql.classic.ClassicQueryTranslatorFactory" />
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.EhCacheProvider" />
+			<property name="hibernate.cache.use_query_cache" value="true" />
+			<property name="hibernate.cache.use_minimal_puts" value="false" />
+			<property name="hibernate.default_batch_fetch_size" value="100" />
+      <!-- property name="hibernate.query.factory_class" value="org.hibernate.hql.classic.ClassicQueryTranslatorFactory" / -->
+			<property name="hibernate.connection.SetBigStringTryClob" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="100" />
+<!--      <property name="hibernate.show_sql" value="true" />-->
+		</properties>
+	</persistence-unit>
+</persistence>

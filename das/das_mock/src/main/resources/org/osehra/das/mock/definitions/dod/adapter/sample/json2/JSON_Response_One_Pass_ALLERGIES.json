@@ -1,0 +1,17 @@
+{ "dataList" : [
+	{ "dataRecord" : {
+		"RepositoryId" : "repositoryID333",
+		"CustodianId" : "repositoryID333",
+		"CustodianName" : "xxx",
+		"Source" : "SourceOfInfo",
+		"Comments" : "Comment",
+		"Allergen" : "Allergy",
+		"Type" : "Type",
+		"Facility" : "LocationName/null",
+		"Reaction" : "Reaction",
+		"ReactionComment" : ""
+		},
+		"dataType" : 1
+	} ],
+  "queryComplete" : "true"
+}

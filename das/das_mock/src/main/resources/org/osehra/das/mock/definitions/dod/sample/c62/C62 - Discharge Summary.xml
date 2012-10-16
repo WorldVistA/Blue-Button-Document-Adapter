@@ -1,0 +1,154 @@
+<ClinicalDocument xmlns="urn:hl7-org:v3"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <realmCode code="US" />
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3" />
+  <templateId assigningAuthorityName="HL7 General Header Constraints"
+  root="2.16.840.1.113883.10.20.3" />
+  <templateId assigningAuthorityName="IHE Medical Documents"
+  root="1.3.6.1.4.1.19376.1.5.3.1.1.1" />
+  <templateId assigningAuthorityName="HITSP C62"
+  root="2.16.840.1.113883.3.88.11.62.1" />
+  <templateId assigningAuthorityName="IHE Scanned Documents"
+  root="1.3.6.1.4.1.19376.1.2.20" />
+  <templateId assigningAuthorityName="HL7 Unstructured Documents"
+  root="2.16.840.1.113883.10.20.19.1" />
+  <id extension="1f814c97-52c0-4600-afca-30a8f7f06540"
+  root="2.16.840.1.113883.3.42.126.100001.26" />
+  <code code="18842-5" codeSystem="2.16.840.1.113883.6.1"
+  codeSystemName="LOINC" displayName="Discharge Summarization Note" />
+  <title>DOD Transfer Summary</title>
+  <effectiveTime value="20090706093353.0-0400" />
+  <confidentialityCode code="N"
+  codeSystem="2.16.840.1.113883.5.25" />
+  <languageCode code="en-US" />
+  <recordTarget>
+    <patientRole>
+      <id assigningAuthorityName="Defense Enrollment Eligibility Reporting System (DEERS)"
+      extension="101050002"
+      root="2.16.840.1.113883.3.42.10001.100001.12" />
+      <addr>
+        <streetAddressLine>6222F 66YM XYWJJY</streetAddressLine>
+        <city>MFRUYTS</city>
+        <state>AF</state>
+        <postalCode>78110</postalCode>
+      </addr>
+      <telecom value="tel:+1-202-2116769" />
+      <patient>
+        <name use="L">
+          <given>OTID</given>
+          <family>LWJJSQJFK</family>
+        </name>
+        <administrativeGenderCode code="F"
+        codeSystem="2.16.840.1.113883.5.1"
+        codeSystemName="HL7 AdministrativeGenderCodes"
+        displayName="Female" />
+        <birthTime value="19710716" />
+        <maritalStatusCode code="S"
+        codeSystem="2.16.840.1.113883.5.2"
+        codeSystemName="MaritalStatusCode"
+        displayName="Never Married">
+          <originalText>Never Married</originalText>
+        </maritalStatusCode>
+        <raceCode codeSystem="2.16.840.1.113883.6.238"
+        codeSystemName="CDC Race and Ethnicity" nullFlavor="UNK">
+          <originalText>White</originalText>
+        </raceCode>
+        <languageCommunication>
+          <templateId root="2.16.840.1.113883.3.88.11.83.2" />
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.1" />
+          <languageCode nullFlavor="UNK" />
+        </languageCommunication>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <templateId root="1.3.6.1.4.1.19376.1.2.20.1" />
+    <time value="20090706093353.0-0400" />
+    <assignedAuthor>
+      <id nullFlavor="NA" />
+      <addr nullFlavor="UNK" />
+      <telecom nullFlavor="UNK" />
+      <assignedPerson>
+        <name>FITZSIMMON, GARTH</name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root="2.16.840.1.113883.3.198" />
+        <name>Department of Defense</name>
+        <telecom nullFlavor="NA" />
+        <addr nullFlavor="NA" />
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <author>
+    <templateId root="1.3.6.1.4.1.19376.1.2.20.2" />
+    <time value="20110629105809-0400" />
+    <assignedAuthor>
+      <id root="2.16.840.1.113883.3.198" />
+      <addr nullFlavor="UNK" />
+      <telecom nullFlavor="UNK" />
+      <assignedAuthoringDevice>
+        <code code="WSD" codeSystem="1.2.840.10008.2.16.4"
+        codeSystemName="DIACOM" displayName="WorkStation" />
+        <manufacturerModelName>Department of
+        Defense</manufacturerModelName>
+        <softwareName>DoD NwHIN Adapter</softwareName>
+      </assignedAuthoringDevice>
+      <representedOrganization>
+        <id root="2.16.840.1.113883.3.198" />
+        <name>Department of Defense</name>
+        <telecom nullFlavor="NA" />
+        <addr nullFlavor="NA" />
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <dataEnterer>
+    <templateId root="1.3.6.1.4.1.19376.1.2.20.3" />
+    <time value="20110629105809-0400" />
+    <assignedEntity>
+      <id root="2.16.840.1.113883.3.198" />
+      <addr nullFlavor="UNK" />
+      <telecom nullFlavor="UNK" />
+      <assignedPerson>
+        <name nullFlavor="UNK" />
+      </assignedPerson>
+    </assignedEntity>
+  </dataEnterer>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root="2.16.840.1.113883.3.198" />
+        <name>Department of Defense</name>
+        <telecom nullFlavor="UNK" />
+        <addr nullFlavor="UNK" />
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <time value="20110629105809-0400" />
+    <signatureCode code="S" />
+    <assignedEntity>
+      <id nullFlavor="NI" />
+      <addr nullFlavor="UNK" />
+      <telecom nullFlavor="UNK" />
+      <assignedPerson>
+        <name />
+      </assignedPerson>
+    </assignedEntity>
+  </legalAuthenticator>
+  <documentationOf>
+    <serviceEvent classCode="PCPR">
+       <code code="18842-5" codeSystem="2.16.840.1.113883.6.1"
+      codeSystemName="LOINC"
+      displayName="Discharge Summarization Note" />
+      <effectiveTime>
+        <low value="20090705093353.0-0400" />
+        <high value="20090705093353.0-0400" />
+      </effectiveTime>
+    </serviceEvent>
+  </documentationOf>
+  <component>
+    <nonXMLBody>
+      <text mediaType="text/plain" representation="B64" >CgkJCQkJCQkgTE9DQUwgVElUTEU6IFNVUkdJQ0FMIERJU0NIQVJHRSBTVU1NQVJZICAgICAgICAgICAgICAgICAgICAgICAgIAogICBESUNUIERBVEU6IEFQUiAyMCwgMjAxMUAxNzowMyAgICAgRU5UUlkgREFURTogQVBSIDIwLCAyMDExQDE3OjA0OjE2ICAgICAgCiBESUNUQVRFRCBCWTogQkFMSUFNT1VORSxNT1NUQUZBICAgICAgQVRURU5ESU5HOiBBR1VJTEFSLFRPTUFTIEhFQ1RPUiAgICAgICAgIAogICAgIFVSR0VOQ1k6IHJvdXRpbmUgICAgICAgICAgICAgICAgICAgIFNUQVRVUzogVU5DT1NJR05FRCAgICAgICAgICAgICAgICAgICAgCgogICAgICAgICAgICAgICAgICAgKioqIE5PVCBZRVQgQ09TSUdORUQgKioqICAgICAgICAgICAgICAgICAgICAgICAgICAgCgpQYXRpZW50CkNDOiBDaHJvbmljIGNlcnZpY2FsIHBhaW4sIHN0YWJsZSBzeW1wdG9tYXRvbG9neS4KCkRYOiBkamQgb2YgY2VydmljYWwgc3BpbmUsIG5vIGZvY2FsIG5ldXJvZGVmaWNpdC4KClBMQU46IEYvdSByb3V0aW5lLCBwdCBpcyBub3QgaW50ZXJlc3RlZCBpbiBpbnZhc2l2ZSBwcm9jZWR1cmUKb3Igc3VyZ2ljYWwgaW50ZXJ2ZW50aW9uLgogCi9lcy8gTW9zdGFmYSBCQUxJQU1PVU5FCgpTaWduZWQ6IDA0LzIwLzIwMTEgMTc6MDc=</text>
+    </nonXMLBody>
+  </component>
+</ClinicalDocument>

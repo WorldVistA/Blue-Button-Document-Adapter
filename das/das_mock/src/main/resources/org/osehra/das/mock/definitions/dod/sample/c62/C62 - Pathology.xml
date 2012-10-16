@@ -1,0 +1,160 @@
+<ClinicalDocument xmlns="urn:hl7-org:v3"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <realmCode code="US" />
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3" />
+  <templateId assigningAuthorityName="HL7 General Header Constraints"
+  root="2.16.840.1.113883.10.20.3" />
+  <templateId assigningAuthorityName="IHE Medical Documents"
+  root="1.3.6.1.4.1.19376.1.5.3.1.1.1" />
+  <templateId assigningAuthorityName="HITSP C62"
+  root="2.16.840.1.113883.3.88.11.62.1" />
+  <templateId assigningAuthorityName="IHE Scanned Documents"
+  root="1.3.6.1.4.1.19376.1.2.20" />
+  <templateId assigningAuthorityName="HL7 Unstructured Documents"
+  root="2.16.840.1.113883.10.20.19.1" />
+  <id extension="14152594_0_27898-6"
+  root="2.16.840.1.113883.3.42.126.100001.26" />
+  <code code="27898-6" codeSystem="2.16.840.1.113883.6.1"
+  codeSystemName="LOINC" displayName="Pathology Studies" />
+  <title>Pathology Studies - Cytology, Gyn</title>
+  <effectiveTime value="20110629104604-0400" />
+  <confidentialityCode code="N"
+  codeSystem="2.16.840.1.113883.5.25" />
+  <languageCode code="en-US" />
+  <recordTarget>
+    <patientRole>
+      <id assigningAuthorityName="Defense Enrollment Eligibility Reporting System (DEERS)"
+      extension="1010651989"
+      root="2.16.840.1.113883.3.42.10001.100001.12" />
+      <addr>
+        <streetAddressLine>0890 BJXY XYWJJY</streetAddressLine>
+        <city>ANWLNSNF GJFHM</city>
+        <state>AF</state>
+        <postalCode>78901</postalCode>
+      </addr>
+      <telecom value="tel:+1-359-0864532" />
+      <patient>
+        <name use="L">
+          <given>WTXF</given>
+          <family>GJFW</family>
+        </name>
+        <administrativeGenderCode code="F"
+        codeSystem="2.16.840.1.113883.5.1"
+        codeSystemName="HL7 AdministrativeGenderCodes"
+        displayName="Female" />
+        <birthTime value="19771108" />
+        <maritalStatusCode code="M"
+        codeSystem="2.16.840.1.113883.5.2"
+        codeSystemName="MaritalStatusCode" displayName="Married">
+          <originalText>Married</originalText>
+        </maritalStatusCode>
+        <religiousAffiliationCode codeSystem="2.16.840.1.113883.5.1076"
+        codeSystemVersion="HL7 ReligiousAffiliation"
+        nullFlavor="UNK">
+          <originalText>Roman Catholic</originalText>
+        </religiousAffiliationCode>
+        <raceCode codeSystem="2.16.840.1.113883.6.238"
+        codeSystemName="CDC Race and Ethnicity" nullFlavor="UNK">
+          <originalText>White</originalText>
+        </raceCode>
+        <languageCommunication>
+          <templateId root="2.16.840.1.113883.3.88.11.83.2" />
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.1" />
+          <languageCode nullFlavor="UNK" />
+        </languageCommunication>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <templateId root="1.3.6.1.4.1.19376.1.2.20.1" />
+    <time value="201106291046-0400" />
+    <assignedAuthor>
+      <id nullFlavor="NA" />
+      <addr nullFlavor="UNK" />
+      <telecom nullFlavor="UNK" />
+      <assignedPerson>
+        <name>52015 HURST, DEANIE</name>
+      </assignedPerson>
+      <representedOrganization>
+        <id extension="1049621"
+        root="2.16.840.1.113883.3.42.126.100001.16" />
+        <name>4th Medical Group</name>
+        <telecom nullFlavor="NA" />
+        <addr nullFlavor="NA" />
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <author>
+    <templateId root="1.3.6.1.4.1.19376.1.2.20.2" />
+    <time value="20110629104604-0400" />
+    <assignedAuthor>
+      <id root="2.16.840.1.113883.3.198" />
+      <addr nullFlavor="UNK" />
+      <telecom nullFlavor="UNK" />
+      <assignedAuthoringDevice>
+        <code code="WSD" codeSystem="1.2.840.10008.2.16.4"
+        codeSystemName="DIACOM" displayName="WorkStation" />
+        <manufacturerModelName>Department of
+        Defense</manufacturerModelName>
+        <softwareName>DoD NwHIN Adapter</softwareName>
+      </assignedAuthoringDevice>
+      <representedOrganization>
+        <id root="2.16.840.1.113883.3.198" />
+        <name>Department of Defense</name>
+        <telecom nullFlavor="NA" />
+        <addr nullFlavor="NA" />
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <dataEnterer>
+    <templateId root="1.3.6.1.4.1.19376.1.2.20.3" />
+    <time value="20110629104604-0400" />
+    <assignedEntity>
+      <id root="2.16.840.1.113883.3.198" />
+      <addr nullFlavor="UNK" />
+      <telecom nullFlavor="UNK" />
+      <assignedPerson>
+        <name nullFlavor="UNK" />
+      </assignedPerson>
+    </assignedEntity>
+  </dataEnterer>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root="2.16.840.1.113883.3.198" />
+        <name>Department of Defense</name>
+        <telecom nullFlavor="UNK" />
+        <addr nullFlavor="UNK" />
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <time value="20110629104604-0400" />
+    <signatureCode code="S" />
+    <assignedEntity>
+      <id nullFlavor="NI" />
+      <addr nullFlavor="UNK" />
+      <telecom nullFlavor="UNK" />
+      <assignedPerson>
+        <name />
+      </assignedPerson>
+    </assignedEntity>
+  </legalAuthenticator>
+  <documentationOf>
+    <serviceEvent classCode="PCPR">
+      <code nullFlavor="NI">
+        <originalText>Cytology, Gyn</originalText>
+      </code>
+      <effectiveTime>
+        <low value="200303270501-0400" />
+        <high value="200303270501-0400" />
+      </effectiveTime>
+    </serviceEvent>
+  </documentationOf>
+  <component>
+    <nonXMLBody>
+      <text mediaType="text/plain" representation="B64">
+      UHJvY2VkdXJlOkNZVE9MT0dJQyBHWU4KT3JkZXIgIzowMzAzMjctMDAwMDQKUHJvdmlkZXI6NTIwMTUgSFVSU1QsIERFQU5JRQpPcmRlcmVkIERhdGU6MjAwMzAzMjcxMDUzMDAKUHJpb3JpdHk6Uk9VVElORQpTcGVjaW1lbjpFQ1RPQ0VSVklDQUwtRU5ET0NFUlZJQ0FMIENZVE9MT0dJQyBNQVRFUklBTApSZXN1bHRlZCBEYXRlOjIwMDMwMzI3MTExNTUxLjAtMDUwMApHUzogRUNUT0NFUlZJQ0FMLUVORE9DRVJWSUNBTCBDWVRPTE9HSUMgTUFURVJJQUwKTC5NLlAuOiAwNyBNYXIgMDMKQmlydGggQ29udHJvbCBQaWxsczogWWVzClByZXZpb3VzIEN5dG9sb2d5IERpYWdub3NpczoKTm9ybWFsCk1pY3Jvc2NvcGljIERpYWdub3NpczoKIDogRUNUT0NFUlZJQ0FMLUVORE9DRVJWSUNBTCBDWVRPTE9HSUMgTUFURVJJQUwKTm8gbWFsaWduYW50IGNlbGxzIHNlZW4KCkRpYWdub3NpcyBDb21tZW50OgpOb3JtYWwgY3l0b2xvZ3kKClJlY29tbWVuZGF0aW9uKHMpOgpOb25lCgpTdGFmZiBQYXRob2xvZ2lzdChzKTogU1RFVkVOUyxEQVZFCkN5dG90ZWNobm9sb2dpc3Qocyk6IE1BR0VFLEpBTUVMCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCk90aGVyIEZpbmRpbmdzOgpOb25lCgpFc3Ryb2dlbiBJbnZhbGlkIER1ZSBUbzogUGF0aWVudCBpcyBvbiBiaXJ0aCBjb250cm9sIHBpbGxzCgpMb2ctaW4gQ29tbWVudDoKbm9uZQoKU05PTUVEIENvZGU6ClQtOFgzMzAgICAgICAgOiBFQ1RPQ0VSVklDQUwtRU5ET0NFUlZJQ0FMIENZVE9MT0dJQyBNQVRFUklBTAo=</text>
+    </nonXMLBody>
+  </component>
+</ClinicalDocument>

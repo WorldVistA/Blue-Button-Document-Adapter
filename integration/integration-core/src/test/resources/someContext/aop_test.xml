@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-2.5.xsd
+      http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+      
+	<aop:aspectj-autoproxy /> 
+	     
+	<!-- Aspect -->
+	<bean id="logAspect" class="org.osehra.integration.util.loggingaspect.LoggingAspect" />	
+	
+	<bean id="sampleClass" class="org.osehra.integration.test.util.loggingaspect.SampleClass" />	
+	
+	<aop:config proxy-target-class="true" >
+
+		
+		<aop:pointcut id="allProjectClasses" expression="execution(* org.osehra.integration.test.util.loggingaspect.SampleClass.*(..))" />
+
+		<aop:pointcut id="allProjectClasses2" expression="execution(void org.osehra.integration.test.util.loggingaspect.SampleClass.*(..))" />
+									
+		<aop:pointcut id="allProjectClasses3" expression="execution(!void org.osehra.integration.test.util.loggingaspect.SampleClass.*(..))" />
+		
+
+						
+		<aop:aspect id="aspectLoggging" ref="logAspect" >
+
+			<!-- @Before -->
+
+			<aop:before method="logBefore" pointcut-ref="allProjectClasses" />
+			
+			<!-- @After -->
+			<aop:after method="logAfter" pointcut-ref="allProjectClasses2" />
+			
+			<!-- @AfterReturning -->
+			
+			<aop:after-returning method="logAfterReturning" returning="result" 
+				pointcut-ref="allProjectClasses3" />
+			
+			<!-- @AfterThrowing -->
+			<aop:after-throwing method="logAfterThrowing" throwing="error" 
+				pointcut-ref="allProjectClasses" />
+				
+
+			
+		</aop:aspect>
+
+	</aop:config>
+
+
+</beans>

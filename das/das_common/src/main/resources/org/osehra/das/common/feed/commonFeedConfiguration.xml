@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-2.5.xsd
+      http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<import resource="classpath:org/osehra/das/common/xml/commonXmlConfiguration.xml" />
+		
+		
+	<bean id="defaultFeedToStringTransformer" class="org.osehra.integration.feed.transformer.FeedToString" />
+	
+	<bean id="defaultStringToFeedTransformer" class="org.osehra.integration.feed.transformer.StringToFeed" />
+	
+	<bean id="defaultFeedToXMLTransformer" class="org.osehra.integration.feed.transformer.FeedToXML" >
+		<property name="feedToString" ref="defaultFeedToStringTransformer" />
+		<property name="stringToXml" ref="defaultStringToXmlTransformer" />
+	</bean>
+    
+	<bean id="listOfStringsToFeedsTransformer" class="org.osehra.integration.core.transformer.CompositeTransformer">		
+		<property name="transformer" ref="defaultStringToFeedTransformer" />		
+	</bean>
+
+</beans>

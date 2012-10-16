@@ -1,0 +1,17 @@
+Files in org.osehra.das.mock.definitions.dod.adapter.sample.c62.deployment:
+
+These files contain canned CDA text files to be returned by the Mock DoD Adapter in reponse to Pass Two data requests.
+The Mock Adapter returns the CDA in text form as String objects.
+
+The CDA documents in this folder are for Deployment Assessments.
+
+File															Description
+----															-----------
+
+LOINC(51847-2)_3b302284-4e86-1131-a49a-e7e8b674c4f0.xml			Pre-deployment assessment, data in text form.
+LOINC(51847-2)_8f352408-646e-11e1-b996-9d1c1d99a64e.xml			Post-deployment assessment, data in text form.
+LOINC(51847-2)_12eb3ff9-646f-11e1-b996-9d1c1d99a64e.xml			Reassessment, data in text form.
+LOINC(51847-2)_26ba635e-78d2-11e1-a00f-052ae090d378.xml			Pre-deployment assessment, data in text form.
+
+----
+

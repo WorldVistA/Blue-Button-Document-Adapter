@@ -1,0 +1,58 @@
+{ "dataList" : [
+	{ "dataRecord" : { "AuthorInstitution" : "",
+            "AuthorName" : "David Ellis",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+            "CustodianName" : "share: Madigan",
+            "DateString" : "20120203172346",
+            "Description" : "CDA",
+            "DocId" : "3b302284-4e86-1131-a49a-e7e8b674c4f0",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "text/xml",
+            "Name" : "pre-deployment form",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10002.100001.8.125"
+          },
+        "dataType" : 0
+      },
+	{ "dataRecord" : { "AuthorInstitution" : "",
+            "AuthorName" : "David Ellis",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+            "CustodianName" : "share: Madigan",
+            "DateString" : "20120203172346",
+            "Description" : "CDA",
+            "DocId" : "8f352408-646e-11e1-b996-9d1c1d99a64e",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "text/xml",
+            "Name" : "post-deployment form",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10002.100001.8.125"
+          },
+        "dataType" : 0
+      },
+	{ "dataRecord" : { "AuthorInstitution" : "",
+            "AuthorName" : "David Ellis",
+            "CustodianId" : "2.16.840.1.113883.3.42.10002.100001.8",
+            "CustodianName" : "share: Madigan",
+            "DateString" : "20120203172346",
+            "Description" : "CDA",
+            "DocId" : "12eb3ff9-646f-11e1-b996-9d1c1d99a64e",
+            "HomeId" : "2.16.840.1.113883.3.42.10001.100001.12",
+            "MimeType" : "text/xml",
+            "Name" : "deployment reassessment form",
+            "RepositoryId" : "2.16.840.1.113883.3.42.10002.100001.8.125"
+          },
+        "dataType" : 0
+      }
+    ],
+  "errorList" : [ { "ErrorCode" : "XDSRegistryError",
+        "ErrorLocation" : "",
+        "ErrorSeverity" : "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error",
+        "ErrorValue" : "Registry (2.16.840.1.113883.3.42.10002.100001.8.35) is not available"
+      } ],
+  "queryComplete" : "true",
+  "statusList" : [ { "ExpectedCount" : "",
+        "RetrievedCount" : "",
+        "SiteId" : "2.16.840.1.113883.3.42.10002.100001.8.125",
+        "SiteName" : "share: Madigan",
+        "SiteStatus" : "UP"
+      }
+    ]
+}

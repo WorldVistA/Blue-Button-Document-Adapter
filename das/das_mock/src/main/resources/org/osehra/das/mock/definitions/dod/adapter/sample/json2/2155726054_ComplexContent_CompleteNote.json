@@ -1,0 +1,17 @@
+{ "dataRecord" : { "CompleteNote" : "Patient: AATEST, AARON  Date: 19 Jan 2012 1727 EST  Appt Type: ROUT$  \nTreatment Facility: 4TH MEDICAL GROUP  Clinic: BLUE MTF  Provider: SJF,TWENTY FOUR  \nPatient Status: Outpatient  \n \nReason for Appointment:  Patient is ill\n\nAutoCites Refreshed by SJF,TWENTY FOUR @ 19 Jan 2012 1729 EST\t\nLabs\nNo Labs Found.\nVitals\nNo Vitals Found.\n \nRad AutoCites Refreshed by SJF,TWENTY FOUR @ 19 Jan 2012 1729 EST\t\nRads\nNo Rads Found.\n \nA/P Written by SJF,TWENTY FOUR @ 19 Jan 2012 1730 EST\t\n1. ATYPICAL FACE PAIN\n  \tConsult(s):-Referred To: BLUE PRIMARY CARE CONSULT (Routine) Specialty: FAMILY PRACTICE/PRIMARY CARE Clinic: BLUE MTF Primary Diagnosis: ATYPICAL FACE PAIN  \n \nDisposition Written by SJF,TWENTY FOUR @ 19 Jan 2012 1730 EST\t\nReleased w/o Limitations \nAdministrative Options: Consultation requested, Medical board \n \n\nSigned By  SJF, TWENTY FOUR (Lousy doctor, good bedside manner,, but beats wife and children regularily.) @ 19 Jan 2012 1730",
+      "ComplexDataUrl" : "!#COMPLEX_DATA_URL#!2155726054",
+      "CustodianId" : "2.16.840.1.113883.3.42.126.100001.13",
+      "CustodianName" : "ahlta",
+      "EnteredBy" : "",
+      "EnteredByDate" : "",
+      "Facility" : "Blue MTF",
+      "NoteFormat" : "plaintext",
+      "NoteTitle" : "Progress Note",
+      "NoteTypeCode" : "",
+      "NoteTypeName" : "Progress Note",
+      "RepositoryId" : "2.16.840.1.113883.3.42.126.100001.13",
+      "VerifiedBy" : "SJF, TWENTY FOUR",
+      "VerifiedDate" : "20120119222826"
+    },
+  "dataType" : 12
+}

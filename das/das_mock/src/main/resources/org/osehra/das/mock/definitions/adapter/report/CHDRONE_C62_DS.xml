@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- edited with XMLSpy v2011 rel. 2 sp1 (http://www.altova.com) by SPAWAR Systems Center Atlantic (SPAWAR Systems Center Atlantic) --><?xml-stylesheet type="text/xsl" href="CCD.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" classCode="DOCCLIN" moodCode="EVN" xsi:schemaLocation="urn:hl7-org:v3 http://xreg2.nist.gov:8080/hitspValidation/schema/cdar2/infrastructure/cda/CDA.xsd">
+	<!-- 
+    ********************************************************
+    C62-UNSTRUCTURED DOCUMENT
+    CDA Header
+    ********************************************************
+    -->
+	<!-- HITSP: realmCode -->
+	<realmCode code="US"/>
+	<!-- Following template is HL7 CDA Release 2 -->
+	<!-- POCD_HD000040 is for Lab.Report.Clinical.Document -->
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<!-- HL7 General Header Constraints-->
+	<templateId root="2.16.840.1.113883.10.20.3"/>
+	<!-- IHE Medical Documents -->
+	<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+	<!-- HITSP C62  template -->
+	<templateId root="2.16.840.1.113883.3.88.11.62.1"/>
+	<!-- IHE Scanned Documents (XDS-SD) -->
+	<templateId root="1.3.6.1.4.1.19376.1.2.20"/>
+	<!-- HL7 Unstructured Documents -->
+	<templateId root="2.16.840.1.113883.10.20.19.1"/>
+	<!-- 0.03 CDA DOCUMENT IDENTIFIER, id=VA OID, extension=system-generated -->
+	<id extension="2971fe9f-a779-40a2-86c0-dbe5c57c27b5" root="2.16.840.1.113883.4.349"/>
+	<!-- 0.04 CDA DOCUMENT CODE , REQUIRED, LOINC -->
+	<code code="18842-5" codeSystem="2.16.840.1.113883.6.1" displayName="Discharge summarization note"/>
+	<!-- 0.05 CDA DOCUMENAT TITLE, REQUIRED  -->
+	<title>Department of Veterans Affairs DISCHARGE SUMMARY</title>
+	<!-- 0.07  DOCUMENT TIMESTAMP, REQUIRED, Note Signature Date/Time -->
+	<effectiveTime value="20100921105140"/>
+	<!-- 0.06 CDA CONFIDENTIALITY CODE, REQUIRED -->
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<!-- 0.08 CDA DOCUMENT LANGUAGE, REQUIRED -->
+	<languageCode code="en-US"/>
+	<!-- 
+	********************************************************
+	PERSON INFORMATION CONTENT MODULE, REQUIRED
+	********************************************************
+	-->
+	<recordTarget>
+		<patientRole>
+			<!-- 1.02 PERSON ID, REQUIRED, id=VA OID, extension=GUID -->
+			<id extension="1012581676V377802" root="2.16.840.1.113883.4.349"/>
+			<!--  1.03 PERSON ADDRESS-HOME PERMANENT, REQUIRED -->
+			<addr use="HP">
+				<streetAddressLine>1234 Howard St.</streetAddressLine>
+				<city>LA JOLLA</city>
+				<state>CA</state>
+				<postalCode>92038</postalCode>
+				<country>Country Code Not Available</country>
+			</addr>
+			<!-- 1.04 PERSON PHONE/EMAIL/URL, REQUIRED -->
+			<telecom use="HP" value="tel:+1-760-222-5555"/>
+			<patient>
+				<!--  1.05 PERSON NAME LEGAL, REQUIRED -->
+				<name use="L">
+					
+					<given>CHDRONE</given>
+					<family>CHDRZZZTESTPATIENT</family>
+					
+				</name>
+				<!--  1.05 PERSON NAME Alias Name, Optional -->
+				<name use="P">
+					
+					<given nullFlavor="UNK"/>
+					<family nullFlavor="UNK"/>
+					
+				</name>
+				<!--1.06 GENDER, REQUIRED AND REQUIRED Terminology -->
+				<!--  When Vista value is M, F, send as HL7AdminGenderCode  -->
+				<!-- When Vista value is "Unknown", send as genderCode nullFlavor=UNK"  -->
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGenderCode" displayName="Male">
+					<originalText>MALE</originalText>
+				</administrativeGenderCode>
+				<!-- 1.07 PERSON DATE OF BIRTH, REQUIRED -->
+				<birthTime value="19600303"/>
+				<!--  1.08 MARITAL STATUS, Optional-R2 -->
+				<!-- VLER SEG 1B:  Send as HL7 MaritalStatus  -->
+				<maritalStatusCode code="M" codeSystem="2.16.840.1.113883.5.2" codeSystemName="MaritalStatusCode" displayName="Married">
+					<originalText>MARRIED</originalText>
+				</maritalStatusCode>
+				<!--  1.09 RELIGIOUS AFFILIATION, Optional, Removed b/c data not yet available via VA VIstA RPCs-->
+				<!--  1.10 RACE, Optional -->
+				<!--  1.10 RACE as originalText per NHIN Core Content Specification b/c VA code translation not yet available -->
+				<raceCode codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity" nullFlavor="UNK">
+					
+				</raceCode>
+				<!-- 1.11 ETHNICITY, Optional -->
+				<!-- 1.11 ETHNICITY as originalText per NHIN Core Content Specification b/c VA code translation not yet available -->
+				<ethnicGroupCode codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity" nullFlavor="UNK">
+					<originalText>NOT HISPANIC OR LATINO</originalText>
+				</ethnicGroupCode>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<!-- 
+		********************************************************
+		 CLINICAL DOCUMENT / AUTHOR (ORIGINAL) Header Sub-Section, REQUIRED
+		Author of the Original Content (Non XML Body)
+		********************************************************
+	-->
+	<author>
+		<!-- 2.01 AUTHOR TEMPLATE ID, REQUIRED  -->
+		<templateId root="1.3.6.1.4.1.19376.1.2.20.1"/>
+		<!-- 2.02 AUTHOR TIME, REQUIRED -->
+		<time value="20100921105140"/>
+		<assignedAuthor>
+			<!-- 2.03 AUTHOR ID, REQUIRED IF KNOWN -->
+			<!-- AUTHOR ID (VA OID) (authorOID) -->
+			<id extension="31131" root="2.16.840.1.113883.4.349"/>
+			<!-- 2.05 AUTHOR ADDRESS, REQUIRED, but VA VistA data not yet available -->
+			<addr/>
+			<!-- 2.06 AUTHOR TELECOM, REQUIRED, but VA VistA data not yet available -->
+			<telecom nullFlavor="UNK"/>
+			<assignedPerson>
+				<!-- 2.04 AUTHOR NAME, REQUIRED -->
+				<name>PROVIDER NHINTEST AMOD</name>
+			</assignedPerson>
+			<representedOrganization>
+				<!-- 2.07 ORGANIZATION ID, REQUIRED IF KNOWN -->
+				<!-- AUTHOR ID (root = VA OID, extension = VA Facility Nbr)  -->
+				<id extension="552" root="2.16.840.1.113883.4.349"/>
+				<!-- 2.08 INFORMATION SOURCE NAME, REQUIRED, VA Facility Name -->
+				<name>DAYTON</name>
+				<!-- HITSP C62 V1.1:  Assigned Author  Telecom Required, but VA VistA data not yet available -->
+				<telecom nullFlavor="UNK"/>
+				<!-- HITSP C62 V1.1: Assigned Author Address Required, but VA VistA data not yet available -->
+				<addr/>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<!-- 
+		********************************************************
+		 SCANNER Header Sub-Section, REQUIRED
+		Represents the scanning device and software used to produce the scanned content
+		********************************************************
+	-->
+	<author>
+		<!-- 3.01 AUTHOR TEMPLATE, REQUIRED -->
+		<templateId root="1.3.6.1.4.1.19376.1.2.20.2"/>
+		<!-- 3.02 AUTHOR TIME, REQUIRED, Must be same as 0.07-Document Timestamp -->
+		<time value="20100921105140"/>
+		<assignedAuthor>
+			<!-- 3.03 AUTHOR ID (VA OID), REQUIRED -->
+			<id root="2.16.840.1.113883.4.349"/>
+			<!-- HITSP C62 V1.1: Assigned Author Address Required, but VA VistA data not yet available -->
+			<addr/>
+			<!-- HITSP C62 V1.1:  Assigned Author  Telecom Required, but VA VistA data not yet available -->
+			<telecom nullFlavor="UNK"/>
+			<assignedAuthoringDevice>
+				<!-- 3.04 DEVICE CODE, REQUIRED -->
+				<code code="WSD" codeSystem="1.2.840.10008.2.16.4" displayName="Workstation"/>
+				<!-- 3.05 DEVICE NAME, REQUIRED -->
+				<manufacturerModelName>Department of Veterans Affairs</manufacturerModelName>
+				<!-- 3.06 SOFTWARE NAME, REQUIRED -->
+				<softwareName>VA  Computerized Patient Record System (CPRS)</softwareName>
+			</assignedAuthoringDevice>
+			<representedOrganization>
+				<!-- 3.07 ORGANIZATION ID (VA OID), REQUIRED -->
+				<id root="2.16.840.1.113883.4.349"/>
+				<!-- 3.08 INFORMATION SOURCE NAME, REQUIRED -->
+				<name>VA Austin Information Technology Center</name>
+				<!-- HITSP C62 V1.1:  Assigned Author  Telecom Required, but VA VistA data not yet available -->
+				<telecom nullFlavor="UNK"/>
+				<!-- 3.09 INFORMATION SOURCE ADDRESS, OPTIONAL -->
+				<addr>
+					<streetAddressLine>1615 Eastwood Street </streetAddressLine>
+					<city>Austin</city>
+					<state>TX</state>
+					<postalCode>78772</postalCode>
+					<country>USA</country>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<!-- 
+	********************************************************
+	CLINICAL DOCUMENT / DATA ENTERER (SCANNER OPERATOR), REQUIRED
+	Data Enterer in VLER “virtually scanned” scenario is
+	software, not a person.
+	********************************************************
+	-->
+	<dataEnterer>
+		<!-- 4.01 DATA ENTERER TEMPLATE ID, REQUIRED -->
+		<templateId root="1.3.6.1.4.1.19376.1.2.20.3"/>
+		<!-- 4.02 DATA ENTERER TIME, REQUIRED -->
+		<time value="20110610110726-0500"/>
+		<assignedEntity>
+			<!-- 4.03 ENTITY ID, REQUIRED, Identifer representing the software (VA OID, Station 200) -->
+			<id extension="200" root="2.16.840.1.113883.4.349"/>
+			<assignedPerson>
+				<!-- 4.04 AUTHOR NAME, Not Required for VLER Virtually scanned scenario -->
+				<name>VA  Computerized Patient Record System (CPRS)</name>
+			</assignedPerson>
+		</assignedEntity>
+	</dataEnterer>
+	<!-- 
+	********************************************************
+	 CUSTODIAN, REQUIRED
+	********************************************************
+	-->
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<!-- 5.01 CUSTODIAN ID (VA OID), REQUIRED  -->
+				<id root="2.16.840.1.113883.4.349"/>
+				<!-- 5.02 CUSTODIAN NAME, REQUIRED -->
+				<name>Department of Veterans Affairs</name>
+				<!-- 5.03 - TELECOM, REQUIRED, but VA VistA data not yet available -->
+				<telecom nullFlavor="UNK"/>
+				<!-- 5.04 CUSTODIAN ADDRESS, OPTIONAL -->
+				<addr>
+					<streetAddressLine>810 Vermont Avenue, NW</streetAddressLine>
+					<city>Washington</city>
+					<state>DC</state>
+					<postalCode>20420</postalCode>
+					<country>USA</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!-- 
+	********************************************************
+	LEGAL AUTHENTICATOR , OPTIONAL
+	********************************************************
+	-->
+	<legalAuthenticator>
+		<!-- 6.01 AUTHENTICATOR TIME, REQUIRED -->
+		<time value="20100921105140"/>
+		<!-- 6.02 SIGNATURE CODE, REQUIRED -->
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<!-- 6.03 ENTITY ID (User ID), REQUIRED -->
+			<id extension="31131" root="2.16.840.1.113883.4.349"/>
+			<!--  Address Required for assignedEntity, but VA VistA data not yet available -->
+			<addr/>
+			<!--  Telecom Required for assignedEntity, but VA VistA data not yet available -->
+			<telecom nullFlavor="UNK"/>
+			<!-- assigned Person Required for legalAuthenticator/assignedEntity  -->
+			<assignedPerson>
+				<!-- 6.04 AUTHOR NAME, REQUIRED -->
+				<name>PROVIDER NHINTEST AMOD</name>
+			</assignedPerson>
+		</assignedEntity>
+	</legalAuthenticator>
+	<!-- 
+	********************************************************
+	DOCUMENTATION OF MODULE, REQUIRED
+	********************************************************
+	-->
+	<documentationOf>
+		<serviceEvent>
+			<effectiveTime>
+				<!-- 7.01 BEGIN TIME, REQUIRED -->
+				<low value="20100920152932-0500"/>
+				<!-- 7.02 END TIME, REQUIRED -->
+				<high value="20100920152932-0500"/>
+			</effectiveTime>
+		</serviceEvent>
+	</documentationOf>
+	<!--
+	********************************************************
+	NON XML BODY, REQUIRED
+	********************************************************
+	-->
+	<component>
+		<nonXMLBody>
+			<!-- 8.01 TEXT,MEDIA TYPE, REPRESENTATION, REQUIRED-->
+			<text mediaType="text/plain" representation="B64">IExPQ0FMIFRJVExFOiBEaXNjaGFyZ2UgU3VtbWFyeSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKU1RBTkRBUkQgVElUTEU6IERJU0NIQVJHRSBTVU1NQVJZICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICBESUNUIERBVEU6IFNFUCAyMCwgMjAxMEAxNzo0NiAgICAgRU5UUlkgREFURTogU0VQIDIwLCAyMDEwQDE3OjQ3OjAyICAgICAgCiBESUNUQVRFRCBCWTogT05MT0VTLFNPTkpBICAgICAgICAgICAgQVRURU5ESU5HOiBOSElOVEVTVCxQUk9WSURFUiAgICAgICAgICAgIAogICAgIFVSR0VOQ1k6IHJvdXRpbmUgICAgICAgICAgICAgICAgICAgIFNUQVRVUzogQ09NUExFVEVEICAgICAgICAgICAgICAgICAgICAgCgpEQVRFIE9GIEFETUlTU0lPTjogCkRBVEUgT0YgRElTQ0hBUkdFOiA5LzIwLzIwMTAKClBSSU5DSVBMRSBESVNDSEFSR0UgRElBR05PU0lTOiBwYXRpZW50IGJldHRlciBub3cKQURESVRJT05BTCBESUFHTk9TRVM6ICAgICAgICAgICB0ZXN0aW5nIG1vcmUgaW5mbwoKQ09OU1VMVEFOVChTKTogClBST0NFRFVSRShTKTogIGJyb25jaCBzdHVkeQoKCkJSSUVGIEFETUlTU0lPTiBISVNUT1JZOiAKNTAgeWVhciBvbGQgTUFMRSB0ZXN0IHNlc3Npb24gZm9yIENIRFJPTkUKCgpCUklFRiBBRE1JU1NJT04gUEhZU0lDQUwgRVhBTTogIHZpdGFsIHNpZ25zCgoKQURNSVNTSU9OIExBQi9FS0cvWC1SQVkgUkVTVUxUUzogIHgtcmF5IHBhdGllbnQgaGFzIGNoZXN0IHBhaW4KCgpIT1NQSVRBTCBDT1VSU0U6IAogIE5vdCBzdXJlCgpDT05ESVRJT04gT04gRElTQ0hBUkdFOiAgIGZhaXIgYnV0IG9rIHRvIGdvCgpESVNDSEFSR0UgSU5TVFJVQ1RJT05TOgogICBBY3Rpdml0eTogICAgICBkaXNjaGFyZ2UKICAgRGlldDogICAgICAgICAgbG93IHNhbHQKICAgTWVkaWNhdGlvbnM6ICAgYXMgd3JpdHRlbgogICBTcGVjaWFsIEluc3RydWN0aW9uczogICBwYXRpZW50IHNob3VsZCBub3RpZnkgcGh5c2ljaWFuIGZvciBleGFtCiAgIEZvbGxvdy11cCBQbGFuczogICBzZXQgZm9sbG93LXVwIGFwcG9pbnRtZW50CiAKL2VzLyBQUk9WSURFUiBOSElOVEVTVApBTU9EClNpZ25lZDogMDkvMjEvMjAxMCAxMDo1MQpmb3IgU09OSkEgT05MT0VTICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogCi9lcy8gUFJPVklERVIgTkhJTlRFU1QKQU1PRApDb3NpZ25lZDogMDkvMjEvMjAxMCAxMDo1MQ==</text>
+		</nonXMLBody>
+	</component>
+</ClinicalDocument>

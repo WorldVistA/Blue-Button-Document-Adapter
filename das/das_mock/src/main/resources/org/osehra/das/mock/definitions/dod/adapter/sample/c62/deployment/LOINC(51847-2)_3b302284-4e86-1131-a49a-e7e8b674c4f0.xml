@@ -1,0 +1,378 @@
+<ClinicalDocument
+    xmlns="urn:hl7-org:v3"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:hl7-org:v3 infrastructure\cda\CDA.ReleaseTwo.MembershipBallot01.Dec.2004.xsd">
+  <id extension="String" root="10.10"/>
+  <code code="PRE" codeSystem="mil" displayName="DD Form 2795"/>
+  <title>PRE-DEPLOYMENT Health Assessment</title>
+  <effectiveTime value="05051921"/>
+  <confidentialityCode/>
+  <versionNumber value="2795"/>
+  <author>
+    <time/>
+    <assignedAuthor>
+      <id/>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id/>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <recordTarget>
+    <patient>
+      <id/>
+    </patient>
+  </recordTarget>
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <text>
+            <list>
+              <item ID="FORM_TYPE">
+                <caption>Type of Form</caption>
+                <content ID="f000">PRE</content>
+              </item>
+              <item ID="FORM_VERSION">
+                <caption>DOD Form Number</caption>
+                <content ID="f001">DD2795_199809d</content>
+              </item>
+            </list>
+            <paragraph>Authority:  10 U.S.C. 136 Chapter 55. 1074f,
+              3013, 5013, 8013 and E.O. 9397</paragraph>
+            <paragraph/>
+            <paragraph>Principal Purpose: To assess your state before
+              possible deployment outside the</paragraph>
+            <paragraph>United States in support of military operations
+              and to assist military</paragraph>
+            <paragraph>healthcare providers in identifying and providing
+              present and future medical</paragraph>
+            <paragraph>care and treatment.</paragraph>
+            <paragraph/>
+            <paragraph>Routine Use: To other Federal and State agencies
+              and civilian healthcare</paragraph>
+            <paragraph>providers, as necessary, in order to provide
+              necessary medical care and</paragraph>
+            <paragraph>treatment.</paragraph>
+            <paragraph/>
+            <paragraph>Disclosure: (Military personnal and DoD civilian
+              Employees Only) Voluntary. If</paragraph>
+            <paragraph>not provided, healthcare WILL BE furnished, but
+              comprehensive care may not be</paragraph>
+            <paragraph>possible.</paragraph>
+            <paragraph/>
+            <paragraph>INSTRUCTIONS: Please read each question
+              completely and carefully before marking</paragraph>
+            <paragraph>your selections. Provide a response for each
+              question. If you do not understand</paragraph>
+            <paragraph>a question, ask the administrator.</paragraph>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <title>Demographics</title>
+          <text>
+            <list listType="ordered">
+              <item ID="LNAME">
+                <caption>Last Name</caption>
+                <content ID="f003">ATEST</content>
+              </item>
+              <item ID="FNAME">
+                <caption>First Name</caption>
+                <content ID="f004">AMANDA</content>
+              </item>
+              <item ID="DEPLOYING_UNIT">
+                <caption>Deploying Unit</caption>
+                <content ID="f007"/>
+              </item>
+              <item ID="MI">
+                <caption>MI</caption>
+                <content ID="f005">F</content>
+              </item>
+              <item ID="D_EVENT">
+                <caption>Today&apos;s Date</caption>
+                <content ID="f006">19990510</content>
+              </item>
+              <item ID="SSN">
+                <caption>Social Security Number</caption>
+                <content ID="f002">000001101</content>
+              </item>
+              <item ID="DOB">
+                <caption>Date of Birth</caption>
+                <content ID="f008">19400101</content>
+                <content>YYYYMMDD FORMAT</content>
+              </item>
+              <item ID="SEX">
+                <caption>Gender</caption>
+                <content>M = MALE, F = FEMALE, Z = UNKNOWN</content>
+                <content ID="f009">M</content>
+              </item>
+              <item ID="SERVICE">
+                <caption>Service Branch</caption>
+                <content>A = ARMY, F = AIR FORCE, C = COAST GUARD, M =
+                  MARINES, N = NAVY, Z =  OTHER/UNKNOWN</content>
+                <content ID="f010">M</content>
+              </item>
+              <item ID="FORM_COMPONENT">
+                <caption>Component</caption>
+                <content>A = ACTIVE DUTY, G = NATIONAL GUARD, N =
+                  NATIONAL GUARD, O = OTHER, R = RESERVES, X = CIVILIAN
+                  GOV EMPLOYEE, Y = NON-GOVERNMENT (CONTRACT) EMPLOYEE,
+                  Z = UNKNOWN</content>
+                <content ID="f011">A</content>
+              </item>
+              <item ID="GRADE">
+                <caption>Pay Grade</caption>
+                <content>E00 = ENLISTED UNKNOWN, E01 = E1, E02 = E2, E03
+                  = E3, E04 = E4, E05 = E5, E06 = E6, E07 = E7, E08 =
+                  E8, E09 = E9, O00 = OFFICER UNKNOWN, O01 = O1, O02 =
+                  02, O03 = O3, O04 = O4, O05 = O5, O06 = O6, O07 = O7,
+                  O08 = O8, O09 = O9, O10 = O10, W01 = W1, W02 = W2, W03
+                  = W3, W04 = W4, W05 = W5, ZZZ = OTHER</content>
+                <content ID="f012">E03</content>
+              </item>
+              <item ID="OPERATION_LOCATION">
+                <caption>Location of Operation</caption>
+                <content>01 = EUROPE, 02  = SW ASIA, 03  = SE ASIA, 04 =
+                  ASIA (OTHER), 05 = SOUTH AMERICA,  06 = AUSTRALIA, 07
+                  = AFRICA, 08 = CENTRAL AMERICA,  09  = UNKNOWN, 10 =
+                  NORTH AMERICA, 11 = OTHER, 12= MULTIPLE:  INCLUDES
+                  WEST PAC (02, 03, 07)</content>
+                <content ID="f013">03</content>
+              </item>
+              <item ID="DEPLOY_LOCATION">
+                <caption>Deployment Location (IF KNOWN) (CITY, TOWN, or BASE):</caption>
+                <content ID="f014">X</content>
+              </item>
+              <item ID="COUNTRY">
+                <caption>List country (IF KNOWN):</caption>
+                <content ID="f015">UNKNOWN</content>
+              </item>
+              <item ID="OPERATION_NAME">
+                <caption>Name of Operation:</caption>
+                <content ID="f016">OTHER/UNKNOWN</content>
+              </item>
+              <item ID="ADMIN_USE_ONLY">
+                <caption>Indicate the Status of Each of the Following</caption>
+                <content>Y = YES, N = NO, X = N/A</content>
+                <list listType="ordered">
+                  <item ID="ADMIN_MED_THREAT">
+                    <caption>Medical threat briefing completed</caption>
+                    <content ID="f017">X</content>
+                  </item>
+                  <item ID="ADMIN_INFO_SHEET">
+                    <caption>Medical information sheet distributed</caption>
+                    <content ID="f018">X</content>
+                  </item>
+                  <item ID="ADMIN_HIV_DRAW">
+                    <caption>Serum for HIV drawn within 12 months</caption>
+                    <content ID="f019">X</content>
+                  </item>
+                  <item ID="ADMIN_IMM_CURRENT">
+                    <caption>Immunizations current</caption>
+                    <content ID="f020">X</content>
+                  </item>
+                  <item ID="ADMIN_PPD_SCREEN">
+                    <caption>PPD screening within 24 months</caption>
+                    <content ID="f021">X</content>
+                  </item>
+                </list>
+              </item>
+              <item ID="HEALTH_ASSESSMENT">
+                <caption>1. Would you say your health in general is:</caption>
+                <content>E = EXCELLENT, V = VERY GOOD, G = GOOD, F =
+                  FAIR, P = POOR</content>
+                <content ID="f022">V</content>
+              </item>
+              <item ID="MED_PROBLEMS">
+                <caption>2. Do you have any medical or dental problems?</caption>
+                <content>Y = YES, N = NO</content>
+                <content ID="f023">N</content>
+              </item>
+              <item ID="LIGHT_DUTY">
+                <caption>3. Are your currently on a profile, or light
+                  duty, or are you undergoing a</caption>
+                <caption>medical board?</caption>
+                <content>Y = YES, N = NO</content>
+                <content ID="f024">N</content>
+              </item>
+              <item ID="PREGNANT">
+                <caption>4. Are you pregnant?</caption>
+                <content>Y = YES, N = NO, Z = DON&apos;T KNOW, NULL for males</content>
+                <content ID="f025">N</content>
+              </item>
+              <item ID="MEDS_SUPPLY">
+                <caption>5. Do you have a 90-day supply of your
+                  prescription medication or birth control</caption>
+                <caption>pills?</caption>
+                <content>Y = YES, N = NO, X = N/A</content>
+                <content ID="f026">N</content>
+              </item>
+              <item ID="PERSONAL_MED_EQUIP">
+                <caption>6. Do you have two pairs of prescription
+                  glasses and any other personal medical</caption>
+                <caption>equipment?</caption>
+                <content>Y = YES, N = NO, X = N/A</content>
+                <content ID="f027">N</content>
+              </item>
+              <item ID="MENTAL_HEALTH">
+                <caption>7. During the past year, have you sought
+                  counseling for your mental health?</caption>
+                <content>Y = YES, N = NO</content>
+                <content ID="f028">Y</content>
+              </item>
+              <item ID="HEALTH_CONCERNS">
+                <caption>8. Do you currently have any questions or
+                  concerns about your health?</caption>
+                <content>Y = YES, N = NO</content>
+                <content ID="f029">N</content>
+              </item>
+              <item ID="HEALTH_CONCERNS_TEXT">
+                <caption>Please list your concerns</caption>
+                <content ID="f030"/>
+              </item>
+              <item ID="CERT_MEMBER">
+                <caption>I certify that responses on this form are true.</caption>
+                <caption>Service Member Signature:</caption>
+                <content>Y = Form is Signed by Service Member, N = Form
+                  is Not Signed by Service Member</content>
+                <content ID="f031"/>
+              </item>
+            </list>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <text>
+            <list>
+              <item>
+                <paragraph>Pre-Deployment Health Provider Review (For
+                  Health Provider Use Only)</paragraph>
+                <paragraph>After interview/exam of patient the following
+                  problems were noted and</paragraph>
+                <paragraph>categorized by Review of Systems.  More than
+                  one may be noted for patients with</paragraph>
+                <paragraph>multiple problems.  Further documentation of
+                  problem to be placed in medical</paragraph>
+                <paragraph>records.</paragraph>
+              </item>
+              <item ID="REFERRALS">
+                <caption>REFERRAL INDICATED</caption>
+                <content>Y = YES, N = NO</content>
+                <list listType="ordered">
+                  <item ID="REF_NONE">
+                    <caption>None</caption>
+                    <content ID="f032">Y</content>
+                  </item>
+                  <item ID="REF_CARDIAC">
+                    <caption>Cardiac</caption>
+                    <content ID="f033">N</content>
+                  </item>
+                  <item ID="REF_COMBAT">
+                    <caption>Combat / Operational Stress Reaction</caption>
+                    <content ID="f034">N</content>
+                  </item>
+                  <item ID="REF_DENTAL">
+                    <caption>Dental</caption>
+                    <content ID="f035">N</content>
+                  </item>
+                  <item ID="REF_DERM">
+                    <caption>Dermatologic</caption>
+                    <content ID="f036">N</content>
+                  </item>
+                  <item ID="REF_ENT">
+                    <caption>ENT</caption>
+                    <content ID="f037">N</content>
+                  </item>
+                  <item ID="REF_EYE">
+                    <caption>Eye</caption>
+                    <content ID="f038">N</content>
+                  </item>
+                  <item ID="REF_FAMILY">
+                    <caption>Family Problems</caption>
+                    <content ID="f039">N</content>
+                  </item>
+                  <item ID="REF_FATIGUE">
+                    <caption>Fatigue, Malaise, Multisystem complaint</caption>
+                    <content ID="f040">N</content>
+                  </item>
+                  <item ID="REF_GI">
+                    <caption>GI</caption>
+                    <content ID="f041">N</content>
+                  </item>
+                  <item ID="REF_GU">
+                    <caption>GU</caption>
+                    <content ID="f042">N</content>
+                  </item>
+                  <item ID="REF_GYN">
+                    <caption>GYN</caption>
+                    <content ID="f043">N</content>
+                  </item>
+                  <item ID="REF_MENTAL">
+                    <caption>Mental Health</caption>
+                    <content ID="f044">N</content>
+                  </item>
+                  <item ID="REF_NEURO">
+                    <caption>Neurologic</caption>
+                    <content ID="f045">N</content>
+                  </item>
+                  <item ID="REF_ORTHO">
+                    <caption>Orthopedic</caption>
+                    <content ID="f046">N</content>
+                  </item>
+                  <item ID="REF_PREGNANCY">
+                    <caption>Pregnancy</caption>
+                    <content ID="f047">N</content>
+                  </item>
+                  <item ID="REF_PULMONARY">
+                    <caption>Pulmonary</caption>
+                    <content ID="f048">N</content>
+                  </item>
+                  <item ID="REF_OTHER">
+                    <caption>Other</caption>
+                    <content ID="f049">N</content>
+                  </item>
+                  <item ID="REF_OTHER_TEXT">
+                    <content ID="f050"/>
+                  </item>
+                </list>
+              </item>
+              <item ID="MED_DISP">
+                <caption>FINAL MEDICAL DISPOSITION:</caption>
+                <content>Y = DEPLOYABLE, N = NOT DEPLOYABLE</content>
+                <content ID="f051"/>
+              </item>
+              <item ID="MED_DISP_TEXT">
+                <caption>Comments: (If not deployable, explain)</caption>
+                <content ID="f052"/>
+              </item>
+              <item ID="CERT_PROVIDER">
+                <caption>I certify that this review process has been completed.</caption>
+                <caption>Provider&apos;s Signature and Stamp:</caption>
+                <content>Y = Form is Signed by Provider, N = Form is Not
+                  Signed by Provider</content>
+                <content ID="f053"/>
+              </item>
+              <item ID="D_CERT_PROVIDER">
+                <caption>Date</caption>
+                <content>DATE PROVIDER SIGNS, YYYYMMDD FORMAT</content>
+                <content ID="f054"/>
+              </item>
+              <item ID="UNIQUE_PDF_IDENTIFIER">
+                <caption>Unique identifier of the original PDF form from
+                  which data was extracted.</caption>
+                <content ID="f055">A01566-081.pdf</content>
+              </item>
+            </list>
+          </text>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

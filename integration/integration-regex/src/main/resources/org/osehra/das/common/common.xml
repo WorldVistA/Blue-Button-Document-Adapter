@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-2.5.xsd
+      	   http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<util:map id="fileExtensions" map-class="java.util.HashMap"
+		key-type="java.lang.String" value-type="java.lang.String">
+		<entry key="pdf" value="application/pdf" />
+		<entry key="jpg" value="application/image" />
+		<entry key="xml" value="application/xml" />
+	</util:map>
+
+	<bean id="stringToDate"
+		class="org.osehra.das.common.transformer.date.StringToDate" />
+
+	<bean id="stringToXml"
+		class="org.osehra.das.common.transformer.xml.StringToXML" />
+
+	<bean id="xmlToString"
+		class="org.osehra.das.common.transformer.xml.XMLToString" />
+
+	<bean id="objectToString"
+		class="org.osehra.das.common.transformer.string.ObjectToString" />
+
+	<bean id="transformerFactory"
+		class="org.osehra.das.common.xsl.SaxonTransformerFactoryImpl">
+		<property name="errorListener" ref="defaultTransformerErrorListener" />
+		<property name="URIResolver">
+			<bean class="org.osehra.das.common.xsl.ClasspathURLResolver" />
+		</property>
+	</bean>
+
+	<bean id="defaultTransformerErrorListener"
+		class="org.osehra.das.common.xsl.DefaultTransformerErrorListener" />
+
+</beans>

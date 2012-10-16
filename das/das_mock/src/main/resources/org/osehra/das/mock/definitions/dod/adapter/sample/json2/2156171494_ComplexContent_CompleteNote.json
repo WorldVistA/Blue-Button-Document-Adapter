@@ -1,0 +1,17 @@
+{ "dataRecord" : { "CompleteNote" : "Patient: AATEST, AARON  Date: 11 May 2012 1212 EDT  Appt Type: EST  \nTreatment Facility: 4TH MEDICAL GROUP  Clinic: SJ MENTAL HEALTH CLINIC  Provider: HAIMSPROVIDER,QUAZI  \nPatient Status: Outpatient  \n \nAutoCites Refreshed by HAIMSPROVIDER,QUAZI @ 11 May 2012 1214 EDT\t\nProblems \nChronic: \n-Trigeminal neuralgia \n-Previous history of gastrointestinal symptoms \n-Acquired deformity of upper extremity \n-Atypical face pain \nFamily History \nNo Family History Found.  \n   Allergies \nNo Allergies Found.\nActive Medications\nNo Active Medications Found.\n \nReason for Appointment:Written by HAIMSPROVIDER,QUAZI @ 11 May 2012 1212 EDT\nannual exam \n\nA/P Written by HAIMSPROVIDER,QUAZI @ 11 May 2012 1238 EDT\t\n1. CLOSED FRACTURE MULTIPLE METACARPAL BONES RIGHT HAND\n \nDisposition Written by HAIMSPROVIDER,QUAZI @ 11 May 2012 1242 EDT\t\nReleased w/o Limitations \nFollow up:  as needed . \nDiscussed: Diagnosis, Medication(s)/Treatment(s), Alternatives, Potential Side Effects with Patient who indicated understanding. \n \n\nSigned By  HAIMSPROVIDER, QUAZI (Physician/Workstation) @ 11 May 2012 1244",
+      "ComplexDataUrl" : "!#COMPLEX_DATA_URL#!2156171494",
+      "CustodianId" : "2.16.840.1.113883.3.42.126.100001.13",
+      "CustodianName" : "ahlta",
+      "EnteredBy" : "",
+      "EnteredByDate" : "",
+      "Facility" : "Seymour Johnson Mental Health Clinic",
+      "NoteFormat" : "plaintext",
+      "NoteTitle" : "Progress Note",
+      "NoteTypeCode" : "",
+      "NoteTypeName" : "Progress Note",
+      "RepositoryId" : "2.16.840.1.113883.3.42.126.100001.13",
+      "VerifiedBy" : "HAIMSPROVIDER, QUAZI",
+      "VerifiedDate" : "20120511161359"
+    },
+  "dataType" : 12
+}

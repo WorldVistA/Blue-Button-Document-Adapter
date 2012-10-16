@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-2.5.xsd
+      	   http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<import resource="classpath:org/osehra/das/common/xml/commonXmlConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/common/http/commonHttpConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/common/feed/commonFeedConfiguration.xml" />
+
+	<import resource="classpath:org/osehra/das/cdm/vdata/vDataXmlFeedEntryConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/cdm/vdata/vDataSubjectDocumentConfiguration.xml" />
+
+	<bean id="awctsServiceInvoker" class="org.osehra.das.mock.http.NamedRestServiceInvoker">
+		<property name="restService" ref="awctsService" />
+	</bean>
+
+	<bean id="awctsService" class="org.osehra.das.mock.http.RestServiceImpl">
+		<property name="componentName" value="AWCTS" />	
+		<property name="stringToXml" ref="defaultStringToXmlTransformer" />
+		<property name="dataStore" ref="awctsDataStore" />
+		<property name="xmlToEntryFactory" ref="xmlToFeedEntryCreatorFactory" />
+		<property name="baseUri" value="${awcts.das.baseUri.href}" />
+		<property name="dasExtensionUtil" ref="dasExtensionUtil" />
+		<property name="feedToString" ref="defaultFeedToStringTransformer" />
+	</bean>
+	 	
+	<bean id="dasExtensionUtil" class="org.osehra.integration.feed.handler.DasExtensionUtil">
+		<property name="dasextensionNamespace" value="${dasextension.namespace}" />		
+	</bean>
+	
+	<bean id="awctsDataStore" class="org.osehra.das.mock.registry.DocumentDataStoreImpl">
+		<property name="documentResources">
+			<map>
+				<entry key="${awcts.homeCommunityOid}">
+					<map>
+						<entry key="${awcts.remoteRepositoryId}_1001" value="classpath:org/osehra/das/mock/definitions/awcts/sample/CareCoordinatorsSample.xml" />
+					</map>
+				</entry>
+				<entry key="1001">
+					<map>
+						<entry key="1001" value="classpath:org/osehra/das/mock/definitions/awcts/sample/CareCoordinatorsSample.xml" />
+					</map>
+				</entry>
+			</map>
+		</property>
+		<property name="metadataResources">
+			<map>
+				<entry key="${awcts.homeCommunityOid}">
+					<map>
+						<entry key="${awcts.remoteRepositoryId}_1001" value="classpath:org/osehra/das/mock/definitions/awcts/sample/Sample-PreviewCareCoordinatorProfile.xml" />
+					</map>
+				</entry>
+				<entry key="1001">
+					<map>
+						<entry key="1001" value="classpath:org/osehra/das/mock/definitions/awcts/sample/Sample-PreviewCareCoordinatorProfile.xml" />
+					</map>
+				</entry>
+			</map>
+		</property>
+
+		<property name="previewResources">
+			<map>
+				<entry key="1012581676V377802">
+					<map>
+						<entry key="careCoordinators">
+							<list>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/awcts/sample/Sample-PreviewCareCoordinatorProfile.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1001" />
+									<property name="remoteRepositoryId" value="${awcts.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${awcts.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+								</bean>
+							</list>
+						</entry>
+						<entry key="careCoordinatorProfiles">
+							<list>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/awcts/sample/Sample-PreviewCareCoordinatorProfile.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1001" />
+									<property name="remoteRepositoryId" value="${awcts.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${awcts.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+								</bean>
+							</list>
+						</entry>
+					</map>
+				</entry>
+				<entry key="6660015010">
+					<map>
+						<entry key="careCoordinators">
+							<list>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/awcts/sample/Sample-PreviewCareCoordinatorProfile.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1001" />
+									<property name="remoteRepositoryId" value="${awcts.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${awcts.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+								</bean>
+							</list>
+						</entry>
+						<entry key="careCoordinatorProfiles">
+							<list>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/awcts/sample/Sample-PreviewCareCoordinatorProfile.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1001" />
+									<property name="remoteRepositoryId" value="${awcts.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${awcts.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+								</bean>
+							</list>
+						</entry>
+					</map>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+</beans>

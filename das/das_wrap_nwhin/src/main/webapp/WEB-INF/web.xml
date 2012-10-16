@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- Makes the application web-aware: makes request, session scopes available -->
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:beanRefContext.xml</param-value>
+	</context-param>
+
+	<!--
+	- Loads the root application context of this web app at startup. - The
+	application context is then available via -
+	WebApplicationContextUtils.getWebApplicationContext(servletContext).
+	-->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>dasv1</servlet-name>
+		<servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>org.osehra.das.wrapper</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dasv1</servlet-name>
+		<url-pattern>/v1/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>

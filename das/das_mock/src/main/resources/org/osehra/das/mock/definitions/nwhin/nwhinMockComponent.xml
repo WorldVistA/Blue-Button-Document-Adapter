@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-2.5.xsd
+      	   http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<import resource="classpath:org/osehra/das/common/xml/commonXmlConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/common/http/commonHttpConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/common/feed/commonFeedConfiguration.xml" />
+
+	<import resource="classpath:org/osehra/das/cdm/vdata/vDataXmlFeedEntryConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/cdm/vdata/vDataSubjectDocumentConfiguration.xml" />
+
+	<bean id="nwhinServiceInvoker" class="org.osehra.das.mock.http.NamedRestServiceInvoker">
+		<property name="restService" ref="nwhinService" />
+	</bean>
+
+	<bean id="nwhinService" class="org.osehra.das.mock.http.RestServiceImpl">
+		<property name="stringToXml" ref="defaultStringToXmlTransformer" />
+		<property name="dataStore" ref="nwhinDataStore" />
+		<property name="xmlToEntryFactory" ref="xmlToFeedEntryCreatorFactory" />
+		<property name="baseUri" value="${nwhin.das.baseUri.href}" />
+		<property name="dasExtensionUtil" ref="dasExtensionUtil" />
+		<property name="xmlAttachmentToString" ref="c62XmlAttachmentToString" />
+		<property name="feedToString" ref="defaultFeedToStringTransformer" />
+	</bean>
+	
+	<bean id="dasExtensionUtil" class="org.osehra.integration.feed.handler.DasExtensionUtil">
+		<property name="dasextensionNamespace" value="${dasextension.namespace}" />		
+	</bean>
+
+	<bean id="nwhinDataStore" class="org.osehra.das.mock.registry.DocumentDataStoreImpl">
+		<property name="documentResources">
+			<map>
+				<entry key="${nwhin.homeCommunityOid}">
+					<map>
+						<entry key="${nwhin.remoteRepositoryId}_1001" value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c62/Joseph Nhinpatient XDS-SD.xml" />
+						<entry key="${nwhin.remoteRepositoryId}_2001" value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c32/Utah 2011 03 05 CCD.XML" />
+						<entry key="${nwhin.remoteRepositoryId}_2002" value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c32/CCD-South Carolina.xml" />
+						<entry key="${nwhin.remoteRepositoryId}_2003" value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c32/CCD-Puget Sound Multicare.xml" />
+						<entry key="${nwhin.remoteRepositoryId}_2004" value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c32/CCD-Minnesota.xml" />
+						<entry key="${nwhin.remoteRepositoryId}_2005" value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c32/CCD-Indiana.xml" />
+						<entry key="${nwhin.remoteRepositoryId}_2006" value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c32/CCD-Utah.xml" />
+					</map>
+				</entry>
+			</map>
+		</property>
+		<property name="metadataResources">
+			<map>
+				<entry key="${nwhin.homeCommunityOid}">
+					<map>
+						<entry key="${nwhin.remoteRepositoryId}_1001" value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c62/Joseph Nhinpatient XDS-SD_Preview.xml" />
+						<entry key="${nwhin.remoteRepositoryId}_1002"
+							value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c62/Joseph Nhinpatient XDS-SD_Test_Preview.xml" />
+						<entry key="${nwhin.remoteRepositoryId}_2001" value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c32/C32-Preview-CHDRONE_1_VA.xml" />
+						<entry key="${nwhin.remoteRepositoryId}_2002" value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c32/C32-Preview-CHDRONE_1_South_Carolina.xml" />
+						<entry key="${nwhin.remoteRepositoryId}_2003" value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c32/C32-Preview-CHDRONE_1_PugetSound.xml" />
+						<entry key="${nwhin.remoteRepositoryId}_2004" value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c32/C32-Preview-CHDRONE_1_Minnesota.xml" />
+						<entry key="${nwhin.remoteRepositoryId}_2005" value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c32/C32-Preview-CHDRONE_1_Indiana.xml" />
+						<entry key="${nwhin.remoteRepositoryId}_2006" value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c32/C32-Preview-CHDRONE_1_Utah.xml" />
+					</map>
+				</entry>
+			</map>
+		</property>
+		<property name="previewResources">
+			<map>
+				<entry key="1012581676V377802">
+					<map>
+						<entry key="medicalNotes">
+							<list>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/defintions/nwhin/sample/c62/Joseph Nhinpatient XDS-SD_Preview.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1001" />
+									<property name="remoteRepositoryId" value="${nwhin.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${nwhin.homeCommunityOid}" />
+									<property name="documentSize" value="14000" />
+									<property name="documentType" value="application/xml" />
+									<property name="attachmentDocumentExtension" value="pdf" />
+									<property name="attachmentDocumentSize" value="50000" />
+									<property name="attachmentDocumentType" value="application/pdf" />
+								</bean>
+							</list>
+						</entry>
+						<entry key="healthSummary">
+							<list>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document" value="classpath:org/osehra/das/mock/definitions/nwhin/sample/c32/C32-Preview-CHDRONE_1_VA.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="2001" />
+									<property name="remoteRepositoryId" value="${nwhin.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${nwhin.homeCommunityOid}" />
+									<property name="documentSize" value="14000" />
+									<property name="documentType" value="application/xml" />
+								</bean>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/nwhin/sample/c32/C32-Preview-CHDRONE_1_South_Carolina.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="2002" />
+									<property name="remoteRepositoryId" value="${nwhin.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${nwhin.homeCommunityOid}" />
+									<property name="documentSize" value="14000" />
+									<property name="documentType" value="application/xml" />
+								</bean>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/nwhin/sample/c32/C32-Preview-CHDRONE_1_PugetSound.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="2003" />
+									<property name="remoteRepositoryId" value="${nwhin.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${nwhin.homeCommunityOid}" />
+									<property name="documentSize" value="14000" />
+									<property name="documentType" value="application/xml" />
+								</bean>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/nwhin/sample/c32/C32-Preview-CHDRONE_1_Minnesota.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="2004" />
+									<property name="remoteRepositoryId" value="${nwhin.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${nwhin.homeCommunityOid}" />
+									<property name="documentSize" value="14000" />
+									<property name="documentType" value="application/xml" />
+								</bean>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/nwhin/sample/c32/C32-Preview-CHDRONE_1_Indiana.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="2005" />
+									<property name="remoteRepositoryId" value="${nwhin.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${nwhin.homeCommunityOid}" />
+									<property name="documentSize" value="14000" />
+									<property name="documentType" value="application/xml" />
+								</bean>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document" value="classpath:org/osehra/das/mock/definitions/nwhin/sample/c32/C32-Preview-CHDRONE_1_Utah.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="2006" />
+									<property name="remoteRepositoryId" value="${nwhin.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${nwhin.homeCommunityOid}" />
+									<property name="documentSize" value="14000" />
+									<property name="documentType" value="application/xml" />
+								</bean>
+							</list>
+						</entry>
+					</map>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CareCoordinatorProfile 
+   xsi:noNamespaceSchemaLocation="CareCoordinatorProfile.xsd" 
+   xmlns:vler="http://mynamespace.com/schemas/vcp/0.1/otherAdmin/CareCoordinatorProfile/0.2/subset/vler/0.2" 
+   xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<vler:Client>
+		<vler:ClientIdentifier>
+			<nc:IdentificationID>1012581676V377802</nc:IdentificationID>
+			<vler:AssigningAuthority>2.16.840.1.113883.3.42.10001.100001.12</vler:AssigningAuthority>
+		</vler:ClientIdentifier>
+		<nc:RoleOfPersonReference/>
+	</vler:Client>
+	<vler:ServiceProvider s:id="VTA_Provider001_e6c4bf10-5d14-49a9-962f-e6decde75511">
+		<vler:ServiceProviderRoleTitle>VHA Liaison
+		</vler:ServiceProviderRoleTitle>
+		<nc:ContactInformation>
+			<nc:ContactEmailID>test@test.test</nc:ContactEmailID>
+			<nc:ContactMailingAddress>
+				<nc:StructuredAddress>
+					<nc:LocationStreet>
+						<nc:StreetFullText></nc:StreetFullText>
+					</nc:LocationStreet>
+					<nc:LocationCityName></nc:LocationCityName>
+					<nc:LocationStateUSPostalServiceCode>VA
+					</nc:LocationStateUSPostalServiceCode>
+					<nc:LocationPostalCode></nc:LocationPostalCode>
+				</nc:StructuredAddress>
+			</nc:ContactMailingAddress>
+			<nc:ContactTelephoneNumber>
+				<nc:FullTelephoneNumber>
+					<nc:TelephoneNumberFullID>1234567891</nc:TelephoneNumberFullID>
+				</nc:FullTelephoneNumber>
+			</nc:ContactTelephoneNumber>
+		</nc:ContactInformation>
+   	<nc:Organization s:id="VTA_Org001_e6c4bf10-5d14-49a9-962f-e6decde75511">
+   		<nc:OrganizationAbbreviationText>VA</nc:OrganizationAbbreviationText>
+   		<nc:OrganizationDescriptionText>Veterans Affairs</nc:OrganizationDescriptionText>
+   		<nc:OrganizationName>Veterans Affairs</nc:OrganizationName>
+	   </nc:Organization>		
+		<nc:RoleOfPersonReference s:ref="VTA_Person002_e6c4bf10-5d14-49a9-962f-e6decde75511" />
+	</vler:ServiceProvider>
+	<vler:ServiceProviderClientAssociation>
+		<nc:AssociationBeginDate>
+			<nc:Date>2011-06-10</nc:Date>
+		</nc:AssociationBeginDate>
+		<nc:AssociationEndDate>
+			<nc:Date>2011-06-10</nc:Date>
+		</nc:AssociationEndDate>
+		<vler:ServiceProviderReference s:ref="VTA_Provider001_e6c4bf10-5d14-49a9-962f-e6decde75511" />
+		<vler:ClientReference/>
+		<vler:AssociationActiveIndicator>false</vler:AssociationActiveIndicator>
+	</vler:ServiceProviderClientAssociation>
+	<nc:Person>
+		<nc:PersonName>
+			<nc:PersonFullName>Test Patient 13</nc:PersonFullName>
+		</nc:PersonName>
+	</nc:Person>
+	<nc:Person s:id="VTA_Person002_e6c4bf10-5d14-49a9-962f-e6decde75511">
+		<nc:PersonName>
+			<nc:PersonGivenName>SonjaTEST</nc:PersonGivenName>
+			<nc:PersonSurName>Benson</nc:PersonSurName>
+		</nc:PersonName>
+	</nc:Person>
+	<nc:Organization s:id="VTA_Org001_e6c4bf10-5d14-49a9-962f-e6decde75511">
+		<nc:OrganizationAbbreviationText>VA</nc:OrganizationAbbreviationText>
+		<nc:OrganizationDescriptionText>Veterans Affairs</nc:OrganizationDescriptionText>
+		<nc:OrganizationName>Veterans Affairs</nc:OrganizationName>
+	</nc:Organization>
+	<nc:Facility s:id="VTA_Fac001_e6c4bf10-5d14-49a9-962f-e6decde75511">
+		<nc:FacilityName>MADIGAN AMC-FT. LEWIS</nc:FacilityName>
+	</nc:Facility>
+	<nc:FacilityOrganizationAssociation>
+		<nc:FacilityReference
+			s:ref="VTA_Fac001_e6c4bf10-5d14-49a9-962f-e6decde75511" />
+		<nc:OrganizationReference
+			s:ref="VTA_Org001_e6c4bf10-5d14-49a9-962f-e6decde75511" />
+	</nc:FacilityOrganizationAssociation>
+</CareCoordinatorProfile>

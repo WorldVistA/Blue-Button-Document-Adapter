@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-2.5.xsd
+      	   http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<import resource="classpath:org/osehra/das/common/xml/commonXmlConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/common/http/commonHttpConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/common/feed/commonFeedConfiguration.xml" />
+
+	<import resource="classpath:org/osehra/das/cdm/vdata/vDataXmlFeedEntryConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/cdm/vdata/vDataSubjectDocumentConfiguration.xml" />
+
+	<bean id="dasServiceInvoker" class="org.osehra.das.mock.http.DASRestServiceInvoker">
+		<property name="restService" ref="dasService" />
+	</bean>
+
+	<bean id="dasService" class="org.osehra.das.mock.http.DASRestServiceImpl">
+		<property name="stringToXml" ref="defaultStringToXmlTransformer" />
+		<property name="dataStore" ref="dasDataStore" />
+		<property name="xmlToEntryFactory" ref="xmlToFeedEntryCreatorFactory" />
+		<property name="baseUri" value="${dod.das.baseUri.href}" />
+		<property name="xmlAttachmentToString" ref="c62XmlAttachmentToString" />
+		<property name="feedToString" ref="defaultFeedToStringTransformer" />
+	</bean>
+
+	<bean id="dasDataStore" class="org.osehra.das.mock.registry.DASDocumentDataStoreImpl">
+		<property name="documentResources">
+			<map>
+				<entry key="${dod.homeCommunityOid}">
+					<map>
+						<entry key="${dod.remoteRepositoryId}_1001" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/C62_IMAGE.xml" />
+						<entry key="${dod.remoteRepositoryId}_1002" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/C62 - Consult Note.xml" />
+						<entry key="${dod.remoteRepositoryId}_1003" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/C62 - Discharge Summary.xml" />
+						<entry key="${dod.remoteRepositoryId}_1004" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/C62 - Pathology.xml" />
+						<entry key="${dod.remoteRepositoryId}_1005" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/CHDRONE_C62_DS.xml" />
+						<entry key="${dod.remoteRepositoryId}_1006" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/DoD_sampleRadiologyReport_pdf.xml" />
+						<entry key="${dod.remoteRepositoryId}_1007" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/DoD_sampleRadiologyReport_text.xml" />
+						<entry key="${dod.remoteRepositoryId}_1008" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/VA_CHDRONE_c62_10292010.xml" />
+						<entry key="${dod.remoteRepositoryId}_1009" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/VA CHDRONE C62-DischargeSummaries 2011 06 09.xml" />
+						<entry key="${dod.remoteRepositoryId}_1010" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/VA CHDRONE C62-Radiology Surgery Reports 2011 06 09.xml" />
+					</map>
+				</entry>
+			</map>
+		</property>
+		<property name="metadataResources">
+			<map>
+				<entry key="${dod.homeCommunityOid}">
+					<map>
+						<entry key="${dod.remoteRepositoryId}_1001" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/Sample-UnstructuredC62_CHDRONE_Image.xml" />
+						<entry key="${dod.remoteRepositoryId}_1002"	value="classpath:org/osehra/das/mock/definitions/das/sample/c62/Sample-UnstructuredC62_CHDRONE_ConsultNote.xml" />
+						<entry key="${dod.remoteRepositoryId}_1003" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/Sample-UnstructuredC62_CHDRONE_DischargeSummary.xml" />
+						<entry key="${dod.remoteRepositoryId}_1004" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/Sample-UnstructuredC62_CHDRONE_Pathology.xml" />
+						<entry key="${dod.remoteRepositoryId}_1005" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/Sample-UnstructuredC62_CHDRONE_DS2.xml" />
+						<entry key="${dod.remoteRepositoryId}_1006" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/Sample-UnstructuredC62_CHDRONE_Radiology.xml" />
+						<entry key="${dod.remoteRepositoryId}_1007" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/Sample-UnstructuredC62_CHDRONE_RR.xml" />
+						<entry key="${dod.remoteRepositoryId}_1008" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/Sample-UnstructuredC62_CHDRONE_DS4.xml" />
+						<entry key="${dod.remoteRepositoryId}_1009" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/Sample-UnstructuredC62_CHDRONE_DS3.xml" />
+						<entry key="${dod.remoteRepositoryId}_1010" value="classpath:org/osehra/das/mock/definitions/das/sample/c62/Sample-UnstructuredC62_CHDRONE_RRS.xml" />
+					</map>
+				</entry>
+			</map>
+		</property>
+      <property name="previewResources">
+			<map>
+				<entry key="1012581676V377802">
+					<map>
+						<entry key="medicalNotes">
+							<list>
+							</list>
+						</entry>
+					</map>
+				</entry>
+			</map>
+		</property>
+	</bean>
+</beans>

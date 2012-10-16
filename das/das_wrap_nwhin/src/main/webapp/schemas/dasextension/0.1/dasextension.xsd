@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://org/osehra/das/schemas/dasextension/0.1/" 
+	xmlns="http://org/osehra/das/schemas/dasextension/0.1/" 
+	elementFormDefault="qualified" attributeFormDefault="unqualified" 
+	version="0.1" xml:lang="en">
+	
+	<xs:complexType name="multiValuedMap">
+		<xs:sequence>
+			<xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="key" minOccurs="0" type="xs:string" />
+						<xs:element name="value" minOccurs="0" type="xs:string"
+							maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:element name="site">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string" minOccurs="0" maxOccurs="1"  />
+				<xs:element name="name" type="xs:string" />
+				<xs:element name="expectedCount" type="xs:string" minOccurs="0" maxOccurs="1" />
+				<xs:element name="retrievedCount" type="xs:string" minOccurs="0" maxOccurs="1"  />
+				<xs:element name="status" type="xs:string" />
+				<xs:element name="error" type="xs:string" minOccurs="0" maxOccurs="1"  />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="sites">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="site" minOccurs="1" maxOccurs="unbounded" />				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+	<xs:element name="error">
+		<xs:complexType>
+			<xs:sequence minOccurs="0">
+				<xs:element name="errorSeverity" type="xs:string" minOccurs="0" maxOccurs="1"  />
+				<xs:element name="errorCode" type="xs:string"  minOccurs="0" maxOccurs="1" />
+				<xs:element name="errorValue" type="xs:string" minOccurs="0" maxOccurs="1" />
+				<xs:element name="errorLocation" type="xs:string" minOccurs="0" maxOccurs="1"  />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="errors">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="error" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="path">
+		<xs:complexType>			
+			<xs:sequence>
+				<xs:element name="parameters" type="multiValuedMap" />				
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>	
+
+	<xs:element name="query">
+		<xs:complexType>			
+			<xs:sequence>
+				<xs:element name="parameters" type="multiValuedMap" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="sites" />
+				<xs:element ref="errors"  minOccurs="0" maxOccurs="1" />
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="management">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="responseTime" type="xs:dateTime" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="dasextension">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="path" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="query" />
+				<xs:element ref="management" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
+

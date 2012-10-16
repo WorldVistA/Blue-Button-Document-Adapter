@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uriInfo xmlns="http://org/osehra/integration/http">
+	<pathParametersExt>
+		<entry>
+			<key>remoteRepositoryId</key>
+			<value>Test</value>
+			<value>Value2</value>
+		</entry>
+		<entry>
+			<key>pathParameterKey2</key>
+			<value>Value1</value>
+			<value>Value2</value>
+		</entry>
+		<entry>
+			<key>queryParameterKey1</key>
+			<value>Value1</value>
+			<value>Value2</value>
+		</entry>
+		<entry>
+			<key>queryParameterKey2</key>
+			<value>Value1</value>
+			<value>Value2</value>
+		</entry>
+	</pathParametersExt>
+	<queryParametersExt />
+	<baseUriExt>http://localhost:7171</baseUriExt>
+	<requestUriExt>http://localhost:7171/path/123</requestUriExt>
+	<absolutePathExt>someAbsolutePath/anotherPath</absolutePathExt>
+	<pathExt>http://localhost:7171/path/123</pathExt>
+</uriInfo>

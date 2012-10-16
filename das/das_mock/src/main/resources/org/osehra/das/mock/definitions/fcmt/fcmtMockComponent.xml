@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-2.5.xsd
+      	   http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<import resource="classpath:org/osehra/das/common/xml/commonXmlConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/common/http/commonHttpConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/common/feed/commonFeedConfiguration.xml" />
+
+	<import resource="classpath:org/osehra/das/cdm/vdata/vDataXmlFeedEntryConfiguration.xml" />
+	<import resource="classpath:org/osehra/das/cdm/vdata/vDataSubjectDocumentConfiguration.xml" />
+
+	<bean id="fcmtServiceInvoker" class="org.osehra.das.mock.http.NamedRestServiceInvoker">
+		<property name="restService" ref="fcmtService" />
+	</bean>
+
+	<bean id="fcmtService" class="org.osehra.das.mock.http.RestServiceImpl">
+		<property name="componentName" value="FCMT" />	
+		<property name="stringToXml" ref="defaultStringToXmlTransformer" />
+		<property name="dataStore" ref="fcmtDataStore" />
+		<property name="xmlToEntryFactory" ref="xmlToFeedEntryCreatorFactory" />
+		<property name="baseUri" value="${fcmt.das.baseUri.href}" />
+		<property name="dasExtensionUtil" ref="dasExtensionUtil" />
+		<property name="feedToString" ref="defaultFeedToStringTransformer" />
+	</bean>
+	 	
+	<bean id="dasExtensionUtil" class="org.osehra.integration.feed.handler.DasExtensionUtil">
+		<property name="dasextensionNamespace" value="${dasextension.namespace}" />		
+	</bean>
+
+	<bean id="fcmtDataStore" class="org.osehra.das.mock.registry.DocumentDataStoreImpl">
+		<property name="documentResources">
+			<map>
+				<entry key="${fcmt.homeCommunityOid}">
+					<map>
+						<entry key="${fcmt.remoteRepositoryId}_1001" value="classpath:org/osehra/das/mock/definitions/fcmt/sample/CareCoordinatorsSample.xml" />
+					</map>
+				</entry>
+				<entry key="1001">
+					<map>
+						<entry key="1001" value="classpath:org/osehra/das/mock/definitions/fcmt/sample/CareCoordinatorsSample.xml" />
+					</map>
+				</entry>
+			</map>
+		</property>
+		<property name="metadataResources">
+			<map>
+				<entry key="${fcmt.homeCommunityOid}">
+					<map>
+						<entry key="${fcmt.remoteRepositoryId}_1001" value="classpath:org/osehra/das/mock/definitions/fcmt/sample/Sample-PreviewCareCoordinatorProfile.xml" />
+					</map>
+				</entry>
+				<entry key="1001">
+					<map>
+						<entry key="1001" value="classpath:org/osehra/das/mock/definitions/fcmt/sample/Sample-PreviewCareCoordinatorProfile.xml" />
+					</map>
+				</entry>
+			</map>
+		</property>
+
+		<property name="previewResources">
+			<map>
+				<entry key="1012581676V377802">
+					<map>
+						<entry key="careCoordinators">
+							<list>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/fcmt/sample/Sample-PreviewCareCoordinatorProfile.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1001" />
+									<property name="remoteRepositoryId" value="${fcmt.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${fcmt.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+								</bean>
+							</list>
+						</entry>
+						<entry key="careCoordinatorProfiles">
+							<list>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/fcmt/sample/Sample-PreviewCareCoordinatorProfile.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1001" />
+									<property name="remoteRepositoryId" value="${fcmt.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${fcmt.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+								</bean>
+							</list>
+						</entry>
+					</map>
+				</entry>
+				<entry key="6660015010">
+					<map>
+						<entry key="careCoordinators">
+							<list>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/fcmt/sample/Sample-PreviewCareCoordinatorProfile.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1001" />
+									<property name="remoteRepositoryId" value="${fcmt.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${fcmt.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+								</bean>
+							</list>
+						</entry>
+						<entry key="careCoordinatorProfiles">
+							<list>
+								<bean class="org.osehra.das.mock.registry.DocumentResource">
+									<property name="document"
+										value="classpath:org/osehra/das/mock/definitions/fcmt/sample/Sample-PreviewCareCoordinatorProfile.xml" />
+									<property name="documentExtension" value="xml" />
+									<property name="documentUniqueId" value="1001" />
+									<property name="remoteRepositoryId" value="${fcmt.remoteRepositoryId}" />
+									<property name="homeCommunityId" value="${fcmt.homeCommunityOid}" />
+									<property name="documentSize" value="10000" />
+									<property name="documentType" value="application/xml" />
+								</bean>
+							</list>
+						</entry>
+					</map>
+				</entry>
+			</map>
+		</property>
+	</bean>
+		
+</beans>

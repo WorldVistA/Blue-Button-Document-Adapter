@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RSP_K22>
+	<MSH>
+		<MSH.1>^</MSH.1>
+		<MSH.2>~|\&amp;</MSH.2>
+		<MSH.3>
+			<HD.1>MPI</HD.1>
+		</MSH.3>
+		<MSH.4>
+			<HD.1>200M</HD.1>
+		</MSH.4>
+		<MSH.5>
+			<HD.1>NHIN</HD.1>
+		</MSH.5>
+		<MSH.6>
+			<HD.1>200CPP</HD.1>
+		</MSH.6>
+		<MSH.7>
+			<TS.1>20110512011554-0400</TS.1>
+		</MSH.7>
+		<MSH.9>
+			<MSG.1>RSP</MSG.1>
+			<MSG.2>K22</MSG.2>
+		</MSH.9>
+		<MSH.10>200618542186</MSH.10>
+		<MSH.11>
+			<PT.1>D</PT.1>
+		</MSH.11>
+		<MSH.12>
+			<VID.1>2.4</VID.1>
+		</MSH.12>
+		<MSH.15>NE</MSH.15>
+		<MSH.16>NE</MSH.16>
+		<MSH.17>USA</MSH.17>
+	</MSH>
+	<MSA>
+		<MSA.1>AE</MSA.1>
+		<MSA.2>c15c2d917c5611e0af17</MSA.2>
+		<MSA.3>MVI Unavailable</MSA.3>
+	</MSA>
+	<ERR />
+	<QAK>
+		<QAK.1>Q22</QAK.1>
+		<QAK.2>NF</QAK.2>
+		<QAK.3>
+			<CE.1>Q22</CE.1>
+			<CE.2>Find Candidates</CE.2>
+			<CE.3>HL72.4</CE.3>
+		</QAK.3>
+		<QAK.4>0</QAK.4>
+	</QAK>
+	<QPD>
+		<QPD.1>
+			<CE.1>Q22</CE.1>
+			<CE.2>Find Candidates</CE.2>
+			<CE.3>HL72.4</CE.3>
+		</QPD.1>
+		<QPD.2>1</QPD.2>
+		<QPD.3>
+			<UNKNOWN.1>@PID.5</UNKNOWN.1>
+			<UNKNOWN.2>CHDRZZZTESTPATIENT</UNKNOWN.2>
+			<UNKNOWN.3>CHDRONE</UNKNOWN.3>
+			<UNKNOWN.8>L</UNKNOWN.8>
+		</QPD.3>
+		<QPD.3>
+			<UNKNOWN.1>@PID.11</UNKNOWN.1>
+			<UNKNOWN.8>P</UNKNOWN.8>
+		</QPD.3>
+		<QPD.3>@PID.7</QPD.3>
+		<QPD.3>@PID.8</QPD.3>
+		<QPD.3>
+			<UNKNOWN.1>@PID.3</UNKNOWN.1>
+			<UNKNOWN.2>666000001</UNKNOWN.2>
+			<UNKNOWN.5>
+				<UNKNOWN.1>USSSA</UNKNOWN.1>
+				<UNKNOWN.3>0363</UNKNOWN.3>
+			</UNKNOWN.5>
+			<UNKNOWN.6>SS</UNKNOWN.6>
+			<UNKNOWN.7>
+				<UNKNOWN.1>VA FACILITY ID</UNKNOWN.1>
+				<UNKNOWN.2>200CPP</UNKNOWN.2>
+				<UNKNOWN.3>L</UNKNOWN.3>
+			</UNKNOWN.7>
+		</QPD.3>
+		<QPD.3>
+			<UNKNOWN.1>@PID.13</UNKNOWN.1>
+			<UNKNOWN.3>PRN</UNKNOWN.3>
+			<UNKNOWN.4>PH</UNKNOWN.4>
+		</QPD.3>
+		<QPD.4>INITIATE</QPD.4>
+		<QPD.5>7.5</QPD.5>
+		<QPD.6>NT</QPD.6>
+	</QPD>
+</RSP_K22>
+<!--MSH^~|\&^MPI^200M^NHIN^200CPP^20110512011554-0400^^RSP~K22^200618542186^D^2.4^^^NE^NE^USA
+	MSA^AE^c15c2d917c5611e0af17^MVI Unavailable
+	QAK^Q22~Find Candidates~HL72.4^NF^Q22~Find Candidates~HL72.4^0
+	QPD^Q22~Find Candidates~HL72.4^1^@PID.5~CHDRZZZTESTPATIENT~CHDRONE~~~~~L|@PID.11~~~~~~~P|@PID.7|@PID.8|@PID.3~666000001~~~USSSA&&0363~SS~VA FACILITY ID&200CPP&L|@PID.13~~PRN~PH^INITIATE^7.5^NT-->

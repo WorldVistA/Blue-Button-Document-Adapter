@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-2.5.xsd
+      http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<import resource="classpath:org/osehra/das/common/xml/commonXmlConfiguration.xml" />
+	
+
+	
+	<bean id="defaultJmsBytesMessageConverter" parent="baseMessageConverter"
+		p:fromMessageType="BYTES" p:toMessageType="BYTES">
+		<qualifier value="defaultJmsBytesMessageConverter" />
+	</bean>
+
+	<bean id="defaultJmsXmlMessageConverter" parent="baseMessageConverter"
+		p:fromMessageType="XML" p:toMessageType="XML">
+		<qualifier value="defaultJmsXmlMessageConverter" />
+	</bean>
+
+	<bean id="baseMessageConverter"
+		class="org.osehra.integration.jms.service.MessageConverterImpl"
+		abstract="true" p:messageToObject-ref="jmsMessageToObject"
+		p:messageToString-ref="jmsMessageToString" p:messageToXML-ref="jmsMessageToXmlDocument"
+		p:xmlToString-ref="defaultXmlToStringTransformer" />
+
+	<bean id="jmsMessageToXmlDocument"
+		class="org.osehra.integration.jms.transformer.JMSMessageToXML"
+		p:messageToString-ref="jmsMessageToString" p:stringToXML-ref="defaultStringToXmlTransformer" />
+
+	<bean id="jmsMessageToObject"
+		class="org.osehra.integration.jms.transformer.JMSMessageToObject"
+		p:messageToString-ref="jmsMessageToString" />
+
+	<bean id="jmsMessageToString"
+		class="org.osehra.integration.jms.transformer.JMSMessageToString"
+		p:xmlToString-ref="defaultXmlToStringTransformer" />
+
+
+</beans>

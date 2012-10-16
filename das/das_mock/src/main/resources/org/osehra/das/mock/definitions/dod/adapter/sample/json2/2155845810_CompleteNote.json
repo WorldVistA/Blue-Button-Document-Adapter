@@ -1,0 +1,16 @@
+{ "dataRecord" : { "CompleteNote" : "CONSULT REPORT\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n                                                                       Order Request for AATEST, AARON\n\nRequesting HCP:  SJF, TWENTY FOUR\nRequesting Location:  BLUE MTF\nOrder ID number:  120119-00005\nMCP Referral #:  20120000130\nNo. of Visits:  1\nReferral Authorized Until:  18 Feb 2012\nReason for Consult:\nPatient doesn't feel well\nPriority:  ROUTINE\nProvisional Diagnosis:\nATYPICAL FACE PAIN\nACV:\nReviewed Date/Time:  19 Feb 2012@21:00:00\nAppoint Status:  ADMIN CLOSURE - 30 DAY AUTO\nAppointment Review Comment:\nThis referral/consult order has been administratively closed. It has been\n30 days or greater since it was ordered, and has no related appointment.\nReviewer:  POSTMASTER,  \n\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n                                                                                    CONSULT RESULT\n\nAppointment Date:\nRequesting HCP:  SJF, TWENTY FOUR\nClinic:  BLUE MTF\nConsulting HCP:  ,  \n\nProblem List:\nNote:\nThis referral/consult order has been administratively closed. It has been\n30 days or greater since it was ordered, and has no related appointment.\nAdministratively Closed on 19 Feb 2012?",
+      "CustodianId" : "2.16.840.1.113883.3.42.126.100001.13",
+      "CustodianName" : "ahlta",
+      "EnteredBy" : "",
+      "EnteredByDate" : "",
+      "Facility" : "4th Medical Group/0090",
+      "NoteFormat" : "plaintext",
+      "NoteTitle" : "Consultation Report",
+      "NoteTypeCode" : "",
+      "NoteTypeName" : "Consultation Report",
+      "RepositoryId" : "2.16.840.1.113883.3.42.126.100001.13",
+      "VerifiedBy" : "",
+      "VerifiedDate" : "20120220020014"
+    },
+  "dataType" : 12
+}
