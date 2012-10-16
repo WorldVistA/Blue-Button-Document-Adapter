@@ -24,15 +24,15 @@
 			<artifactId>javaee-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.osehra.vistalink</groupId>
+			<groupId>gov.va.med.vistalink</groupId>
 			<artifactId>vljconnector</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.osehra.vistalink</groupId>
+			<groupId>gov.va.med.vistalink</groupId>
 			<artifactId>vljfoundationlibs</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.osehra.vistalink</groupId>
+			<groupId>gov.va.med.vistalink</groupId>
 			<artifactId>vljsecurity</artifactId>
 		</dependency>
 		<dependency>

@@ -399,19 +399,19 @@
 				<type>jar</type>
 			</dependency>
 			<dependency>
-				<groupId>org.osehra.vistalink</groupId>
+				<groupId>gov.va.med.vistalink</groupId>
 				<artifactId>vljconnector</artifactId>
 				<version>1.5.1.002</version>
 				<type>jar</type>
 			</dependency>
 			<dependency>
-				<groupId>org.osehra.vistalink</groupId>
+				<groupId>gov.va.med.vistalink</groupId>
 				<artifactId>vljfoundationlibs</artifactId>
 				<version>1.5.1.002</version>
 				<type>jar</type>
 			</dependency>
 			<dependency>
-				<groupId>org.osehra.vistalink</groupId>
+				<groupId>gov.va.med.vistalink</groupId>
 				<artifactId>vljsecurity</artifactId>
 				<version>1.5.1.002</version>
 				<type>jar</type>
