@@ -17,6 +17,7 @@
 	</parent>
 	<properties>
 		<propertyFile.name>web.properties</propertyFile.name>
+		<!-- Need for duplicate web.properties files probably related to here. -->
 		<propertyFile.srcDir>src/main/application/org/osehra/das/wrapper/nwhin</propertyFile.srcDir>
 		<propertyFile.deployDir>${DAS_DOMAIN_HOME}/lib/org/osehra/das/wrapper/nwhin</propertyFile.deployDir>
 	</properties>

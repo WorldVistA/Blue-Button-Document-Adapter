@@ -12,6 +12,18 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:beanRefContext.xml</param-value>
 	</context-param>
+	<context-param>
+    	<param-name>resteasy.scan</param-name>
+    	<param-value>false</param-value>
+	</context-param>
+	<context-param>
+   	 	<param-name>resteasy.scan.providers</param-name>
+    	<param-value>false</param-value>
+	</context-param>
+	<context-param>
+    	<param-name>resteasy.scan.resources</param-name>
+    	<param-value>false</param-value>
+	</context-param>
 
 	<!--
 	- Loads the root application context of this web app at startup. - The
