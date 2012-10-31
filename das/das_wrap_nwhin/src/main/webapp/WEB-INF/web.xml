@@ -37,10 +37,10 @@
 	<servlet>
 		<servlet-name>dasv1</servlet-name>
 		<servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
-		<init-param>
+<!-- 		<init-param>
 			<param-name>com.sun.jersey.config.property.packages</param-name>
 			<param-value>org.osehra.das.wrapper</param-value>
-		</init-param>
+		</init-param> -->
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>dasv1</servlet-name>
