@@ -18,6 +18,10 @@
 		<property name="adapterDocQueryRetrieveFacade" ref="adapterDocQueryRetrieveFacade" />
 	</bean>
 
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+ 		<property name="persistenceUnitName" value="c32"/>
+   </bean>
+
 	<bean id="adapterDocQueryRetrieveFacade"
 		class="org.osehra.das.wrapper.nwhin.doc.AdapterDocQueryRetrieveFacade">
 		<qualifier value="adapterDocQueryRetrieveFacade" />
