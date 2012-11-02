@@ -44,12 +44,11 @@ public class WrapperResource extends ComponentImpl implements
 	AdapterDocQueryRetrieveFacade adapterDocQueryRetrieveFacade;
 	Transformer<Document, String> xmlToHtmlTransformer;
 
-	//@PersistenceContext(name="mhvWrapperEntityManager")
-	//EntityManager em;
+	@PersistenceContext(unitName="c32") EntityManager em;
 	/**
 	 * Reverse Proxy Cache for storing results.
 	 */
-	String REVERSE_PROXY_CACHE = "org.osehra.das.core.ReverseProxyCache";
+	//String REVERSE_PROXY_CACHE = "org.osehra.das.core.ReverseProxyCache";
 
 	/**
 	 * The Incoming URI Info Context from the Consumer request.
