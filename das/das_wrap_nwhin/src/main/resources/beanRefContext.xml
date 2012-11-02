@@ -11,7 +11,8 @@
       http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-	<context:component-scan base-package="org.osehra.das.wrapper.nwhin" />
+ 	<context:annotation-config />
+	<context:component-scan base-package="org.osehra.das.wrapper" />
 
   	<!-- PROPERTY FILE FOR THE CORE PROJECT. WILL BE PICKED UP IN THE SERVER CLASSPATH -->
 	<context:property-placeholder location="classpath:org/osehra/das/wrapper/nwhin/web.properties" />
