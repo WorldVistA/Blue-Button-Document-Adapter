@@ -68,8 +68,15 @@ public class WrapperResource extends ComponentImpl implements
 				new Date(), userName);
 
 		C32DocumentEntity entity = new C32DocumentEntity();
+
+		try {
 		entity.setDocument(c32Document);
-		//em.persist(entity);
+		em.persist(entity);
+		System.out.println("FLUSHED!");
+		} catch (Exception ex) {
+			throw new RuntimeException(ex);
+		}
+
 
 		//Query query = em.createQuery("hql query";)
 		//String filteredC32Doc = query.list();
