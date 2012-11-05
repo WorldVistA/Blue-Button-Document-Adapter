@@ -6,13 +6,16 @@
       <persistence-unit name="c32" transaction-type="JTA">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
             <jta-data-source>java:/c32connection</jta-data-source>
+            <class>org.osehra.das.wrapper.nwhin.C32DocumentEntity</class>
 
             <properties>
             	<property name="hibernate.generate_statistics" value="true" />
               	<property name="hibernate.show_sql" value="true" />
+              	<property name="hibernate.format_sql" value="true" />
                 <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
-                <property name="hibernate.cache.use_query_cache" value="true"/>
+<!--                 <property name="hibernate.cache.use_query_cache" value="true"/> -->
                 <property name="hibernate.cache.use_second_level_cache" value="true" /> 
+                <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
             </properties>
       </persistence-unit>
 </persistence>
