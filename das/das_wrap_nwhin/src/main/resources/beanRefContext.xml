@@ -12,7 +12,7 @@
       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
  	<context:annotation-config />
-	<context:component-scan base-package="org.osehra.das.wrapper" />
+	<context:component-scan base-package="org.osehra.das.wrapper.nwhin" />
 
   	<!-- PROPERTY FILE FOR THE CORE PROJECT. WILL BE PICKED UP IN THE SERVER CLASSPATH -->
 	<context:property-placeholder location="classpath:org/osehra/das/wrapper/nwhin/web.properties" />
