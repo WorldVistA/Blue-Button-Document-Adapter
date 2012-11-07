@@ -1,15 +1,20 @@
 package org.osehra.das.wrapper.nwhin;
 
+import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Lob;
 
 
 @Entity
 @Table(name="C32_DOCUMENT")
-public class C32DocumentEntity {
+public class C32DocumentEntity implements Serializable {
 
 	@Id
 	@GeneratedValue
@@ -17,7 +22,8 @@ public class C32DocumentEntity {
 	private int id;
 	
 	@Column(name="DOCUMENT")
-	private String document;
+        @Lob
+	private byte[] document;
 	
 
 	public void setId(int id) {
@@ -29,10 +35,17 @@ public class C32DocumentEntity {
 	}
 
 	public void setDocument(String document) {
-		this.document = document;
+            this.document = document.getBytes();
 	}
 
 	public String getDocument() {
-		return document;
+		return document.toString();
 	}
+
+        @Override
+        public String toString() {
+            return "C32DocumentEntity{" + "id=" + id + ", document=" + document + '}';
+        }
+        
+        
 }

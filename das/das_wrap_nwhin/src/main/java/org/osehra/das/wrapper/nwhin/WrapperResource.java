@@ -11,6 +11,8 @@ import org.osehra.integration.core.transformer.xml.StringToXML;
 import java.util.Date;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -24,6 +26,8 @@ import javax.ws.rs.core.UriInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.context.annotation.Scope;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.w3c.dom.Document;
 
 /**
@@ -44,7 +48,15 @@ public class WrapperResource extends ComponentImpl implements
 	AdapterDocQueryRetrieveFacade adapterDocQueryRetrieveFacade;
 	Transformer<Document, String> xmlToHtmlTransformer;
 
-	@PersistenceContext(unitName="c32") EntityManager em;
+	@PersistenceContext(unitName="c32")
+        private EntityManagerFactory emf;
+        public void setEntityManagerFactory(EntityManagerFactory emf) {
+            this.emf = emf;
+        }
+
+        private EntityManager getEntityManager() {
+            return  emf.createEntityManager();
+        }
 	/**
 	 * Reverse Proxy Cache for storing results.
 	 */
@@ -60,6 +72,7 @@ public class WrapperResource extends ComponentImpl implements
 	@Path("/2.16.840.1.113883.4.349/{pid}/{profile}/{domain}/{speciality}/{homeCommunityId}_{remoteRepositoryId}_{documentUniqueId}.{fileExtension:xml}")
 	@GET
 	@Produces({ MediaType.APPLICATION_XML + ENCODING })
+        @Transactional(propagation = Propagation.REQUIRED)
 	public Object getDomainXml(@PathParam("pid") String patientId,
 			@QueryParam("userName") String userName) {
 		// Go to adapter, get the C32 - return the C32 XML document for that
@@ -68,18 +81,30 @@ public class WrapperResource extends ComponentImpl implements
 				new Date(), userName);
 
 		C32DocumentEntity entity = new C32DocumentEntity();
-
-		try {
 		entity.setDocument(c32Document);
-		em.persist(entity);
-		System.out.println("FLUSHED!");
-		} catch (Exception ex) {
-			throw new RuntimeException(ex);
-		}
-
-
-		//Query query = em.createQuery("hql query";)
-		//String filteredC32Doc = query.list();
+                LOG.info(entity);
+                
+                EntityManager entityManager = getEntityManager();
+                EntityTransaction t = entityManager.getTransaction();
+                t.begin();
+                try {
+                   entityManager.persist(entity);
+                }
+                catch (Exception up) {
+                    LOG.error(up);
+                    t.rollback();
+                    //throw up;
+                }
+                finally{
+                    try {
+                       if(t.isActive())
+                       {
+                            t.commit();
+                       }
+                    } catch (Exception ex) {
+                       t.rollback();
+                    }
+                }
 
 		return c32Document;
 	}

@@ -3,19 +3,16 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	version="1.0">
 	
-      <persistence-unit name="c32" transaction-type="JTA">
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-            <jta-data-source>java:/c32connection</jta-data-source>
-            <class>org.osehra.das.wrapper.nwhin.C32DocumentEntity</class>
+      <persistence-unit name="c32" transaction-type="RESOURCE_LOCAL">
+          <provider>org.hibernate.ejb.HibernatePersistence</provider>
+          <jta-data-source>java:/c32connection</jta-data-source>
+          <class>org.osehra.das.wrapper.nwhin.C32DocumentEntity</class>
 
             <properties>
             	<property name="hibernate.generate_statistics" value="true" />
               	<property name="hibernate.show_sql" value="true" />
-              	<property name="hibernate.format_sql" value="true" />
                 <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
-<!--                 <property name="hibernate.cache.use_query_cache" value="true"/> -->
-                <property name="hibernate.cache.use_second_level_cache" value="true" /> 
-                <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
+                <property name="hibernate.hbm2ddl.auto" value="create"/>
             </properties>
       </persistence-unit>
 </persistence>
