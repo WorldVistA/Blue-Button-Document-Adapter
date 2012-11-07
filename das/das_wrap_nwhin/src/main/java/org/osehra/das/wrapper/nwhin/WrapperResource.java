@@ -80,10 +80,6 @@ public class WrapperResource extends ComponentImpl implements
 		String c32Document = adapterDocQueryRetrieveFacade.getDocument(patientId, new Date(),
 				new Date(), userName);
 
-		//Injection of Filtering.
-		
-		//String c32DocumentFiltered = C32DocumentLogic.filterDocument(c32Document);
-		
 		C32DocumentEntity entity = new C32DocumentEntity();
 		entity.setDocument(c32Document);
                 LOG.info(entity);
