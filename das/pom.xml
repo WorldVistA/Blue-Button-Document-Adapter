@@ -702,12 +702,12 @@
 		<repository>
 			<id>libs-release-local</id>
 			<!-- Benjamin Hardin -This URL has been changed from JDC to the PCB servers -->
-			<url>http://das.dynalias.org:8081/artifactory/libs-release-local</url>
+			<url>http://das.dynalias.org:8080/artifactory/libs-release-local</url>
 		</repository>
 		<snapshotRepository>
 			<id>libs-snapshot-local</id>
 			<!-- Benjamin Hardin -This URL has been changed from JDC to the PCB servers -->
-			<url>http://das.dynalias.org:8081/artifactory/libs-snapshot-local</url>
+			<url>http://das.dynalias.org:8080/artifactory/libs-snapshot-local</url>
 		</snapshotRepository>
 		<!-- <site> <id>das-site</id> <url>${das.build.reports.outputsite}/${project.version}
 			</url> </site> -->
@@ -737,7 +737,7 @@
 			<id>artifactory-libs-release</id>
 			<name>libs-release</name>
 			<!-- Benjamin Hardin -This URL has been changed from JDC to the PCB servers -->
-			<url>http://das.dynalias.org:8081/artifactory/libs-release</url>
+			<url>http://das.dynalias.org:8080/artifactory/libs-release</url>
 			<releases>
 				<enabled>true</enabled>
 				<updatePolicy>always</updatePolicy>
@@ -750,7 +750,7 @@
 			<id>artifactory-libs-snapshot</id>
 			<name>libs-snapshot</name>
 			<!-- Benjamin Hardin -This URL has been changed from JDC to the PCB servers -->
-			<url>http://das.dynalias.org:8081/artifactory/libs-snapshot</url>
+			<url>http://das.dynalias.org:8080/artifactory/libs-snapshot</url>
 			<releases>
 				<enabled>true</enabled>
 				<updatePolicy>always</updatePolicy>
@@ -761,7 +761,7 @@
 			<name>Maven Repository Switchboard</name>
 			<layout>default</layout>
 			<!-- Benjamin Hardin -This URL has been changed from JDC to the PCB servers -->
-			<url>http://das.dynalias.org:8081/artifactory/libs-release</url>
+			<url>http://das.dynalias.org:8080/artifactory/libs-release</url>
 			<releases>
 				<enabled>true</enabled>
 				<updatePolicy>always</updatePolicy>
@@ -784,7 +784,7 @@
 			<id>central</id>
 			<name>Maven Plugin Repository</name>
 			<!-- Benjamin Hardin -This URL has been changed from JDC to the PCB servers -->
-			<url>http://das.dynalias.org:8081/artifactory/libs-release</url>
+			<url>http://das.dynalias.org:8080/artifactory/libs-release</url>
 			<layout>default</layout>
 			<snapshots>
 				<enabled>false</enabled>
