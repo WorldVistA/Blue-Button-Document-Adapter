@@ -1,13 +1,16 @@
 package org.osehra.das.wrapper.nwhin;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.Serializable;
+import java.io.StringReader;
+
+import nu.xom.Builder;
+import nu.xom.Document;
+import nu.xom.Element;
+import nu.xom.ParsingException;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import nu.xom.*;
-import java.util.*;
-import javax.xml.xpath.*;
 
 
 public class C32DocumentLogic implements Serializable{
