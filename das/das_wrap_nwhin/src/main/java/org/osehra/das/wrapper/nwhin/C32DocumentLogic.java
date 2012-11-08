@@ -22,7 +22,7 @@ public class C32DocumentLogic implements Serializable{
 				Document doc = builder.build(new StringReader(document));
 
 				/* Just Here to Demonstrate xom reviewing the file, will need to integrate XPATH or XSLT */
-				//Element root = doc.getRootElement();
+				Element root = doc.getRootElement();
 				
 				/*Print Root Val */
 				System.out.println("Root:" + root);
