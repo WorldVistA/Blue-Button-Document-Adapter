@@ -6,6 +6,10 @@
 package org.osehra.das.wrapper.nwhin.doc;
 
 import gov.hhs.fha.nhinc.common.nhinccommonadapter.RespondingGatewayCrossGatewayQueryRequest;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.osehra.das.wrapper.nwhin.WrapperResource;
 import org.osehra.integration.util.NullChecker;
 
 import java.text.SimpleDateFormat;
@@ -58,6 +62,18 @@ public class AdapterDocQueryEndpoint {
 	private String homeCommunityOid;
 	private String homeCommunityOidExt;
 
+	//MRM Added Log Here.
+	//private static final Log LOG = LogFactory.getLog(AdapterDocQueryEndpoint.class);
+
+	 /** category to use for message tracing. */
+			    final String MESSAGE_TRACING_LOG_CATEGORY = "org.springframework.ws.client.MessageTracing";
+	 /** Additional logger to use for sent message tracing. */
+			    Log sentMessageTracingLogger = LogFactory.getLog(WebServiceTemplate.MESSAGE_TRACING_LOG_CATEGORY + ".sent");
+	 /** Additional logger to use for received message tracing. */
+			    Log receivedMessageTracingLogger = LogFactory.getLog(WebServiceTemplate.MESSAGE_TRACING_LOG_CATEGORY + ".received");
+		
+	
+	
 	private String extractDocumentName(final ExtrinsicObjectType eot) {
 		String ret = null;
 
@@ -150,6 +166,7 @@ public class AdapterDocQueryEndpoint {
 			final Date fromDate, final Date toDate) {
 		// Constrcut the query
 		final List<Map<String, String>> ret = new ArrayList<Map<String, String>>();
+		//Creates request which will incorporate 
 		final RespondingGatewayCrossGatewayQueryRequest request = new RespondingGatewayCrossGatewayQueryRequest();
 		final String classCodeValues = "34133-9";
 		final String classCodeScheme = "2.16.840.1.113883.6.1";
@@ -199,6 +216,8 @@ public class AdapterDocQueryEndpoint {
 							AdapterDocQueryEndpoint.EBXML_DOCENTRY_SERVICE_STOP_TIME_TO));
 		}
 		// Call the adapter's query webserivce
+		
+
 		final AdhocQueryResponse response = (AdhocQueryResponse) this.adapterDocQueryServiceTemplate
 				.marshalSendAndReceive(request);
 
@@ -212,7 +231,7 @@ public class AdapterDocQueryEndpoint {
 					final ExtrinsicObjectType eot = (ExtrinsicObjectType) i
 							.getValue();
 					final String homeCommunityId = eot.getHome();
-					final String repositoryId = this.extractRepositoryId(eot
+				final String repositoryId = this.extractRepositoryId(eot
 							.getSlot());
 					final String documentUniqueId = this
 							.extractExternalIdentifier(
