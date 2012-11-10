@@ -529,13 +529,13 @@
 			<dependency>
 				<groupId>org.atmosphere</groupId>
 				<artifactId>atmosphere-annotations</artifactId>
-				<version>0.7.2</version>
+				<version>1.0.1</version>
 				<type>jar</type>
 			</dependency>
 			<dependency>
 				<groupId>org.atmosphere</groupId>
 				<artifactId>atmosphere-jersey</artifactId>
-				<version>0.7.2</version>
+				<version>1.0.1</version>
 				<type>jar</type>
 			</dependency>
 			<dependency>
