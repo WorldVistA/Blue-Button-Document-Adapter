@@ -17,7 +17,7 @@
 	<bean id="adapterDocRetrieveWebServiceTemplate" class="org.osehra.das.mock.adapter.MockAdapterDocRetrievePortImpl">
 		<property name="randomFiles">
 			<list>
-				<value>classpath:org/osehra/das/mock/definitions/adapter/report/Utah 2011 03 05 CCD.XML</value>
+				<!-- <value>classpath:org/osehra/das/mock/definitions/adapter/report/Utah 2011 03 05 CCD.XML</value>
 				<value>classpath:org/osehra/das/mock/definitions/adapter/report/C62_IMAGE.xml</value>
 				<value>classpath:org/osehra/das/mock/definitions/adapter/report/DoD_sampleRadiologyReport_pdf.xml</value>
 				<value>classpath:org/osehra/das/mock/definitions/adapter/report/DoD_sampleRadiologyReport_text.xml</value>
@@ -25,7 +25,10 @@
 				<value>classpath:org/osehra/das/mock/definitions/adapter/report/VA_CHDRONE_c62_10292010.xml</value>
 				<value>classpath:org/osehra/das/mock/definitions/adapter/report/VA CHDRONE C62-DischargeSummaries 2011 06 09.xml</value>
 				<value>classpath:org/osehra/das/mock/definitions/adapter/report/VA CHDRONE C62-Radiology Surgery Reports 2011 06 09.xml
-				</value>
+				</value> -->
+				<!-- MRM Added Modification so mock only uses Sample NwHIN C32 Records.  -->
+				<value>classpath:org/osehra/das/mock/definitions/adapter/report/VA C32 NWHINTHREE.xml</value>
+				<value>classpath:org/osehra/das/mock/definitions/adapter/report/VA C32 NWHINONE.xml</value>
 			</list>
 		</property>
 	</bean>
