@@ -51,7 +51,7 @@
 	</bean>
 
 	<bean id="adapterDocRetrieveWebServiceTemplate" class="org.springframework.ws.client.core.WebServiceTemplate">
-		<constructor-arg ref="messageFactory12" />
+		<constructor-arg ref="messageFactory" />
 		<property name="messageSender" ref="commonsHttpMessageSender"/>
 		<property name="marshaller" ref="adapterDocRetrieveWebServiceMarshaller" />
 		<property name="unmarshaller" ref="adapterDocRetrieveWebServiceMarshaller" />
@@ -76,7 +76,7 @@
 	</bean>
 
 	<bean id="adapterDocQueryServiceTemplate" class="org.springframework.ws.client.core.WebServiceTemplate">
-		<constructor-arg ref="messageFactory12" />
+		<constructor-arg ref="messageFactory" />
 		<property name="messageSender" ref="commonsHttpMessageSender" />
 		<property name="marshaller" ref="adapterDocQueryServiceTemplateMarshaller" />
 		<property name="unmarshaller" ref="adapterDocQueryServiceTemplateMarshaller" />
