@@ -4,6 +4,12 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.io.StringReader;
 import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.joda.time.*;
+import org.joda.time.format.*;
 
 import nu.xom.Builder;
 import nu.xom.Document;
@@ -24,6 +30,8 @@ public class C32DocumentLogic implements Serializable{
 
 	public String filterDocument (String document) {
 	
+		int LabDelayDays = 14;
+		
 		  try {
 
 				Builder builder = new Builder();
@@ -63,12 +71,40 @@ public class C32DocumentLogic implements Serializable{
 												// Identify Labs Section by code.
 												Elements children5 = children4.get(d).getChildElements();
 												for(int e = 0; e < children5.size(); e++) {
-													 String Attr1 = children5.get(e).getAttributeValue("code");
-													 System.out.println(Attr1);
-													 if (Attr1 == "47519-4") {
-														System.out.println(children5.get(e).getLocalName());
-														System.out.println(children5.get(e).getAttributeValue("code"));
-													
+													 if ("30954-2".equals(children5.get(e).getAttributeValue("code"))) {
+														Elements children6 = children4.get(d).getChildElements();
+														for(int f = 0; f < children5.size(); f++) {
+															if (children6.get(f).getLocalName() =="entry") {
+																//System.out.println(children6.get(f).getLocalName());
+																Elements children7 = children6.get(f).getChildElements();
+																for(int g = 0; g < children7.size(); g++) {
+																	if (children7.get(g).getLocalName() == "organizer") {
+																	//System.out.println(children7.get(g).getLocalName());
+																	Elements children8 = children7.get(g).getChildElements();
+																	for(int h = 0; h < children8.size(); h++) {
+																		if (children8.get(h).getLocalName() == "effectiveTime") {
+																		//System.out.println(children8.get(h).getLocalName());
+																		//System.out.println(children8.get(h).getAttributeValue("value"));
+																		String LabDate = children8.get(h).getAttributeValue("value");
+																		
+																			//This is the format in the demo file's lab values.  May vary by element.
+																			DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyyMMddHHmmss");
+																			DateTime dt = formatter.parseDateTime(LabDate);
+																			LocalDate labDate = dt.toLocalDate();
+																			LocalDate currentDate = LocalDate.now();
+																			LocalDate minDate = currentDate.plusDays(LabDelayDays);
+																			
+																			System.out.println(labDate.toString());
+																			System.out.println(currentDate.toString());
+																			System.out.println(minDate.toString());
+
+																		
+																		}
+																		} 
+																	}			
+																}
+															}
+														}			
 													}	
 												}
 											}

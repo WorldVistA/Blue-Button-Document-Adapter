@@ -102,6 +102,12 @@
 			<version>1.1</version>
 			<type>jar</type>
 		</dependency>
+				<!-- MRM Added for date/time comparisons. -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.1</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
