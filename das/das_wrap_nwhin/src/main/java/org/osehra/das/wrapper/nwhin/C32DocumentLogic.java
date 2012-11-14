@@ -23,6 +23,10 @@ import nu.xom.XPathContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class C32DocumentLogic implements Serializable{
 	
@@ -30,10 +34,12 @@ public class C32DocumentLogic implements Serializable{
 
 	public String filterDocument (String document) {
 	
+		//Variable represents # of days delay on results.
 		int LabDelayDays = 14;
 		
+		String filteredDocument = "";
+		
 		  try {
-
 				Builder builder = new Builder();
 				Document doc = builder.build(new StringReader(document));
 
@@ -93,12 +99,28 @@ public class C32DocumentLogic implements Serializable{
 																			LocalDate labDate = dt.toLocalDate();
 																			LocalDate currentDate = LocalDate.now();
 																			LocalDate minDate = currentDate.plusDays(LabDelayDays);
-																			
 																			System.out.println(labDate.toString());
 																			System.out.println(currentDate.toString());
 																			System.out.println(minDate.toString());
-
-																		
+																			
+																			
+																			
+																			//Also blanks entire <text> element, since cannot walk as XML.
+																			if (minDate.isBefore(labDate)) {
+																				System.out.println("AAAAAHHH");
+																				//Logic to destroy <entry> element.
+																				children6.get(f).removeChildren();
+																				//Blanks entire <text> element for labs,
+																				//since cannot be individually filtered, and contain non-XML data.
+																				Elements children9 = children4.get(d).getChildElements();
+																				for(int i = 0; i < children9.size(); i++) {
+																					System.out.println(children9.get(i).getLocalName());
+																					if (children9.get(i).getLocalName() =="text") {
+																						children9.get(i).removeChildren();
+																					}
+																				}
+																			}
+																	
 																		}
 																		} 
 																	}			
@@ -115,23 +137,10 @@ public class C32DocumentLogic implements Serializable{
 						}
 					}
 				}
+				
+				//Return XML if successfully filtered.
+				filteredDocument = doc.toXML();
 
-				
-				
-				
-				
-/*				for(int x = 0; x < children1.size(); x = x+1){
-					System.out.println(children1.get(x).getValue());
-				}*/
-				//System.out.println(nodes.get(0).getValue());
-				
-				
-/*				for(int x = 0; x < nodes.size(); x ++){
-					//System.out.println("node "+x+": "+nodes.get(x).toXML());
-					System.out.println(nodes.get(x).getValue());
-				}	*/		
-				
-				
 			  } catch (IOException io) {
 				System.out.println(io.getMessage());
 				LOG.error(io);
@@ -139,13 +148,33 @@ public class C32DocumentLogic implements Serializable{
 				LOG.error(parserr);
 			  }
 		
+		//If parser failed, return original document?
+		  
+		//Output Test File.  
+		outputFile(filteredDocument);
 		
-		
-		String filteredDocument = document;		
 		return filteredDocument;
 		
 		}
-		
 
+	//This class only used in testing.
+	private void outputFile (String outputDocument) {
+	try {
+		 
+		File file = new File("/SAMPLE_RECORD_CONTENT.xml");
+
+		if (!file.exists()) {
+			file.createNewFile();
+		}
+
+		FileWriter fw = new FileWriter(file.getAbsoluteFile());
+		BufferedWriter bw = new BufferedWriter(fw);
+		bw.write(outputDocument);
+		bw.close();
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+	
+	}	
 	
 }

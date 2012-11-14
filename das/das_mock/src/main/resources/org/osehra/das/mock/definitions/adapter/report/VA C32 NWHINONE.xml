@@ -4294,7 +4294,7 @@
 							<!-- Lab Result Organizer Status, static-->
 							<statusCode code="completed"/>
 							<!-- Lab Result Organizer  Date/Time-->
-							<effectiveTime value="20111101171133"/> <!--Collected Date/Time -->
+							<effectiveTime value="20131201171133"/> <!--Collected Date/Time -->
 							<!-- INFORMATION SOURCE FOR LAB RESULT ORGANIZER, Optional -->	
 							<author>
 								<time nullFlavor="UNK"/>
