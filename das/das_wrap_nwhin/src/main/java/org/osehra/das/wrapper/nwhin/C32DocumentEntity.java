@@ -27,6 +27,9 @@ public class C32DocumentEntity implements Serializable {
 	@Column(name = "PATIENT_ID")
 	private String patientId;
 
+	@Column(name = "DOCUMENT_PATIENT_ID")
+	private String documentPatientId;	
+	
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -53,6 +56,18 @@ public class C32DocumentEntity implements Serializable {
 		return patientId;
 	}
 
+	public void setDocumentPatientId(String document) {
+		C32DocumentLogic pidLogic = new C32DocumentLogic();
+		String documentPatientId = pidLogic.getPatientId(document);
+		this.documentPatientId = documentPatientId;
+	}
+
+	public String getDocumentPatientId() {
+		return documentPatientId;
+	}	
+	
+	
+	
 	@Override
 	public String toString() {
 		return "C32DocumentEntity{" + "id=" + id + ", document=" + document

@@ -43,20 +43,10 @@ public class C32DocumentLogic implements Serializable{
 				Builder builder = new Builder();
 				Document doc = builder.build(new StringReader(document));
 
-				/* Just Here to Demonstrate xom reviewing the file, will need to integrate XPATH or XSLT */
-
-				//Nodes nodes = doc.query("/ClinicalDocument/realmCode");
-				//Elements els = doc.
-				//System.out.println(nodes.get(1).getValue());
-				
 				/*Print Root Val */
 				Element root = doc.getRootElement();
 				Elements children1 = root.getChildElements();
 
-				System.out.println("Root:" + root);
-				System.out.println("Sub Count:" + children1.size());
-				
-				
 				/* Walk the file to find labs */
 				
 				for(int a = 0; a < children1.size(); a ++){				
@@ -99,15 +89,14 @@ public class C32DocumentLogic implements Serializable{
 																			LocalDate labDate = dt.toLocalDate();
 																			LocalDate currentDate = LocalDate.now();
 																			LocalDate minDate = currentDate.plusDays(LabDelayDays);
-																			System.out.println(labDate.toString());
-																			System.out.println(currentDate.toString());
-																			System.out.println(minDate.toString());
+																			//System.out.println(labDate.toString());
+																			//System.out.println(currentDate.toString());
+																			//System.out.println(minDate.toString());
 																			
 																			
 																			
 																			//Also blanks entire <text> element, since cannot walk as XML.
 																			if (minDate.isBefore(labDate)) {
-																				System.out.println("AAAAAHHH");
 																				//Logic to destroy <entry> element.
 																				children6.get(f).removeChildren();
 																				//Blanks entire <text> element for labs,
@@ -147,16 +136,63 @@ public class C32DocumentLogic implements Serializable{
 			  } catch (ParsingException parserr) {
 				LOG.error(parserr);
 			  }
-		
-		//If parser failed, return original document?
-		  
 		//Output Test File.  
-		outputFile(filteredDocument);
+		//outputFile(filteredDocument);
 		
 		return filteredDocument;
 		
 		}
 
+	public String getPatientId (String document) {
+		
+		String patientIdentifier = "";
+		
+		  try {
+				Builder builder = new Builder();
+				Document doc = builder.build(new StringReader(document));
+				// Build Document Root.
+				Element root = doc.getRootElement();
+				Elements children1 = root.getChildElements();
+
+				/* Walk the file to find patient id. */
+				for(int a = 0; a < children1.size(); a ++){				
+					//System.out.println(children1.get(a).getLocalName());
+					if (children1.get(a).getLocalName() == "recordTarget") {
+						Elements children2 = children1.get(a).getChildElements();
+						for(int b = 0; b < children2.size(); b ++){
+							//System.out.println(children2.get(b).getLocalName());
+							if (children2.get(b).getLocalName() == "patientRole") {		
+								Elements children3 = children2.get(b).getChildElements();
+								for(int c = 0; c < children3.size(); c ++){
+								System.out.println(children3.get(c).getLocalName());
+									if (children3.get(c).getLocalName() == "id") {
+										System.out.println(children3.get(c).getAttributeValue("extension"));
+										patientIdentifier = children3.get(c).getAttributeValue("extension");
+									}
+								}	
+							}						
+						}
+					}
+				}
+
+			  } catch (IOException io) {
+				System.out.println(io.getMessage());
+				LOG.error(io);
+			  } catch (ParsingException parserr) {
+				LOG.error(parserr);
+			  }
+		
+		//Output Test File if Testing.
+		//outputFile(patientIdentifier);
+		
+		return patientIdentifier;
+		
+		}
+	
+	
+	
+	
+	
 	//This class only used in testing.
 	private void outputFile (String outputDocument) {
 	try {

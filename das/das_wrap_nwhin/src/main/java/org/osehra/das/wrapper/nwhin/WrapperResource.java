@@ -83,6 +83,7 @@ public class WrapperResource extends ComponentImpl implements
 		C32DocumentEntity entity = new C32DocumentEntity();
 		entity.setDocument(c32Document);
                 entity.setPatientId(patientId);
+                entity.setDocumentPatientId(c32Document);
                 LOG.info(entity);
                 
                 EntityManager entityManager = getEntityManager();
