@@ -17,8 +17,8 @@ public class RepositoryWS {
 	Log logger = LogFactory.getLog(this.getClass());
 
 	@WebMethod
-	public List<DocStatus> getStatus(String patientId) {
-		return getRepository().getStatus(patientId);
+	public List<DocStatus> getStatus(String patientId, String patientName) {
+		return getRepository().getStatus(patientId, patientName);
 	}
 
 	@WebMethod

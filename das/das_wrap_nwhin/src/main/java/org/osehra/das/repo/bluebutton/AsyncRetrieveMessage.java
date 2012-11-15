@@ -5,15 +5,17 @@ import java.util.Date;
 public class AsyncRetrieveMessage {
 	protected Date date;
 	protected String patientId;
+	protected String ptName;
 	
 	public AsyncRetrieveMessage() {
 		super();
 	}
 	
-	public AsyncRetrieveMessage(Date date, String patientId) {
+	public AsyncRetrieveMessage(Date date, String patientId, String name) {
 		this();
 		this.date = date;
 		this.patientId = patientId;
+		this.ptName = name;
 	}
 
 	public Date getDate() {
@@ -32,4 +34,12 @@ public class AsyncRetrieveMessage {
 		this.patientId = patientId;
 	}
 
+	public String getPatientName() {
+		return ptName;
+	}
+	
+	public void setPatientName(String name) {
+		ptName = name;
+	}
+	
 }

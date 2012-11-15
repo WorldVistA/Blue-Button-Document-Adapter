@@ -6,6 +6,6 @@ import java.util.List;
 import org.osehra.das.C32Document;
 
 public interface Repository {
-	List<DocStatus> getStatus(String patientId);
+	List<DocStatus> getStatus(String patientId, String patientName);
 	C32Document getDocument(Date docDate, String patientId);
 }

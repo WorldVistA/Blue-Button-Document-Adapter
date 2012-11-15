@@ -14,6 +14,7 @@ public class AsyncRetrieveMessageFormat extends Format {
 	private static final long serialVersionUID = 1L;
 	protected Format dateFormat = new SimpleDateFormat();
 	protected Log logger = LogFactory.getLog(this.getClass());
+	protected static String SEPARATOR = ":";
 
 	public Format getDateFormat() {
 		return dateFormat;
@@ -28,9 +29,11 @@ public class AsyncRetrieveMessageFormat extends Format {
 			FieldPosition fieldPos) {
 		if (item!=null) {
 			AsyncRetrieveMessage msg = (AsyncRetrieveMessage)item;
-			buffer.append(msg.getPatientId());
-			buffer.append(':');
-			buffer.append(dateFormat.format(msg.getDate()));
+			buffer.append(getStringOrBlank(dateFormat.format(msg.getDate())));
+			buffer.append(SEPARATOR);
+			buffer.append(getStringOrBlank(msg.getPatientId()));
+			buffer.append(SEPARATOR);
+			buffer.append(getStringOrBlank(msg.getPatientName()));
 		}
 		return buffer;
 	}
@@ -38,10 +41,10 @@ public class AsyncRetrieveMessageFormat extends Format {
 	@Override
 	public Object parseObject(String data, ParsePosition pos) {
 		if (data!=null && data.length()>0) {
-			String[] items = data.split(":");
+			String[] items = data.split(SEPARATOR);
 			pos.setIndex(data.length());
 			try {
-				return new AsyncRetrieveMessage((Date)dateFormat.parseObject(items[1]), items[0]);
+				return new AsyncRetrieveMessage((Date)dateFormat.parseObject(items[0]), items[1], items[2]);
 			} catch (ParseException e) {
 				logger.error("parsing error with " + data, e);
 			}
@@ -50,4 +53,10 @@ public class AsyncRetrieveMessageFormat extends Format {
 		return null;
 	}
 
+	protected static String getStringOrBlank(String aString) {
+		if (aString==null) {
+			return "";
+		}
+		return aString;
+	}
 }

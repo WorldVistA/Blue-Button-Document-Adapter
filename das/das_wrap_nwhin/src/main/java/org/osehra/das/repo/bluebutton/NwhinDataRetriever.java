@@ -11,6 +11,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.osehra.das.wrapper.nwhin.WrapperResource;
 
+//@MessageDriven(messageListenerInterface=MessageListener.class)
 public class NwhinDataRetriever extends AbstractAsyncMsgFormatAware implements MessageListener {
 	protected WrapperResource _nwhinResource;
 	protected Log logger = LogFactory.getLog(this.getClass());

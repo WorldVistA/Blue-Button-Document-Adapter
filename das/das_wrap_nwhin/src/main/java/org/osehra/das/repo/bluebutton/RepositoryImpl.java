@@ -39,11 +39,11 @@ public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repos
 	}
 
 	@Override
-	public List<DocStatus> getStatus(String patientId) {
+	public List<DocStatus> getStatus(String patientId, String patientName) {
 		List<C32DocumentEntity> docList = getAllStoredDocuments(patientId);
 		Date today = new Date();
 		if (getDocumentByDate(today, docList)==null) {
-			sendMessageToRetrieve(today, patientId);
+			sendMessageToRetrieve(today, patientId, patientName);
 			return getDocStatusNotThere(patientId, today);
 		}
 		return buildStatusList(docList);
@@ -105,11 +105,11 @@ public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repos
 		return docList;
 	}
 
-	protected void sendMessageToRetrieve(final Date today, final String patientId) {
+	protected void sendMessageToRetrieve(final Date today, final String patientId, final String ptName) {
 		this.jmsTemplate.send(this.queue, new MessageCreator() {
 			@Override
 			public Message createMessage(Session session) throws JMSException {
-				return session.createTextMessage(getAsyncMessageFormat().format(new AsyncRetrieveMessage(today, patientId)));
+				return session.createTextMessage(getAsyncMessageFormat().format(new AsyncRetrieveMessage(today, patientId, ptName)));
 			}
 		});
 	}
