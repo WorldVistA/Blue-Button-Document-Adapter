@@ -9,11 +9,13 @@ import org.osehra.integration.core.transformer.TransformerException;
 import org.osehra.integration.core.transformer.xml.StringToXML;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -72,7 +74,7 @@ public class WrapperResource extends ComponentImpl implements
 	@Path("/2.16.840.1.113883.4.349/{pid}/{profile}/{domain}/{speciality}/{homeCommunityId}_{remoteRepositoryId}_{documentUniqueId}.{fileExtension:xml}")
 	@GET
 	@Produces({ MediaType.APPLICATION_XML + ENCODING })
-        @Transactional(propagation = Propagation.REQUIRED)
+    @Transactional(propagation = Propagation.REQUIRED)
 	public Object getDomainXml(@PathParam("pid") String patientId,
 			@QueryParam("userName") String userName) {
 		// Go to adapter, get the C32 - return the C32 XML document for that
@@ -130,6 +132,21 @@ public class WrapperResource extends ComponentImpl implements
 		}
 
 	}
+	
+	@Transactional(propagation = Propagation.REQUIRED)
+    public List<C32DocumentEntity> getAllDocuments(String patientId) {
+      EntityManager entityManager = getEntityManager();
+      List<C32DocumentEntity> list = RetrieveStatusListByIcn(entityManager, patientId);
+      return list ;
+    }
+
+
+  private List<C32DocumentEntity> RetrieveStatusListByIcn(EntityManager em, String patientId) {
+    Query query = em.createQuery("SELECT d FROM C32DocumentEntity d WHERE d.icn = :icn");
+    query.setParameter("icn", patientId);
+    return (List<C32DocumentEntity>) query.getResultList();
+  }
+
 
 	@Override
 	public Object receive(UriInfo uriInfo) throws MessageReceiverException {
