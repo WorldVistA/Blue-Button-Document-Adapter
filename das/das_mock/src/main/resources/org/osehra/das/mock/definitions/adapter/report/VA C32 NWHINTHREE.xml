@@ -1241,7 +1241,7 @@
 							<statusCode code="completed"/>
 							<!--  7.01 PROBLEM DATE (cda:low=Date of Onset, cda:high=Date Resolved), Optional R2 -->
 							<effectiveTime>
-								<low value="20120801"/>
+								<low value="20130801"/>
                                                                 <high nullFlavor="UNK"/>
 							</effectiveTime>
 						    <!-- 7.05 TREATING PROVIDER id link to HealthCare Provider Entry--> 
