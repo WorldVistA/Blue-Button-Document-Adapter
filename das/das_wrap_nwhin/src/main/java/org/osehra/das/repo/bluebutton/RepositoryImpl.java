@@ -12,12 +12,13 @@ import javax.jms.Session;
 
 import org.osehra.das.C32Document;
 import org.osehra.das.wrapper.nwhin.C32DocumentEntity;
+import org.osehra.das.wrapper.nwhin.WrapperResource;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 
 public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repository {
-	protected String completeStatusString = "COMPLETE";
-	protected String incompleteStatusString = "INCOMPLETE";
+	protected final String completeStatusString = "COMPLETE";
+	protected final String incompleteStatusString = "INCOMPLETE";
 	protected JmsTemplate jmsTemplate;
 	protected Queue queue;
 
@@ -33,16 +34,8 @@ public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repos
 		return incompleteStatusString;
 	}
 
-	public void setIncompleteStatusString(String incompleteStatusString) {
-		this.incompleteStatusString = incompleteStatusString;
-	}
-
 	public String getCompleteStatusString() {
 		return completeStatusString;
-	}
-
-	public void setCompleteStatusString(String completeStatus) {
-		this.completeStatusString = completeStatus;
 	}
 
 	@Override
@@ -51,7 +44,7 @@ public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repos
 		Date today = new Date();
 		if (getDocumentByDate(today, docList)==null) {
 			sendMessageToRetrieve(today, patientId);
-			return getDocStatusNotThere(patientId);
+			return getDocStatusNotThere(patientId, today);
 		}
 		return buildStatusList(docList);
 	}
@@ -85,8 +78,8 @@ public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repos
 	}
 
 	protected List<C32DocumentEntity> getAllStoredDocuments(String patientId) {
-		// TODO Auto-generated method stub
-		return null;
+		WrapperResource wr = new WrapperResource();
+		return wr.getAllDocuments(patientId);
 	}
 
 	protected List<DocStatus> buildStatusList(List<C32DocumentEntity> docList) {
@@ -103,10 +96,10 @@ public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repos
 		return statusList;
 	}
 
-	protected List<DocStatus> getDocStatusNotThere(String ptId) {
+	protected List<DocStatus> getDocStatusNotThere(String ptId, Date today) {
 		List<DocStatus> docList = new ArrayList<DocStatus>(1);
 		docList.add(new DocStatus());
-		docList.get(0).setDateGenerated(new Date());
+		docList.get(0).setDateGenerated(today);
 		docList.get(0).setPatientId(ptId);
 		docList.get(0).setStatus(getIncompleteStatusString());
 		return docList;
