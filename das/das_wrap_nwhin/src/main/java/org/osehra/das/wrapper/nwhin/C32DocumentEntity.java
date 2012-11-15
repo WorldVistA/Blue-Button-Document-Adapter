@@ -18,10 +18,10 @@ public class C32DocumentEntity implements Serializable {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "ID")
+	@Column(name = "audit_message_id")
 	private int id;
 
-	@Column(name = "DOCUMENT")
+	@Column(name = "document")
 	@Lob
 	private byte[] document;
 
@@ -77,8 +77,6 @@ public class C32DocumentEntity implements Serializable {
 	public String getDocumentPatientId() {
 		return documentPatientId;
 	}	
-	
-	
 	
 	@Override
 	public String toString() {

@@ -72,7 +72,7 @@ public class WrapperResource extends ComponentImpl implements
 	@Path("/2.16.840.1.113883.4.349/{pid}/{profile}/{domain}/{speciality}/{homeCommunityId}_{remoteRepositoryId}_{documentUniqueId}.{fileExtension:xml}")
 	@GET
 	@Produces({ MediaType.APPLICATION_XML + ENCODING })
-        @Transactional(propagation = Propagation.REQUIRED)
+	@Transactional(propagation = Propagation.REQUIRED)
 	public Object getDomainXml(@PathParam("pid") String patientId,
 			@QueryParam("userName") String userName) {
 		// Go to adapter, get the C32 - return the C32 XML document for that
@@ -82,31 +82,31 @@ public class WrapperResource extends ComponentImpl implements
 
 		C32DocumentEntity entity = new C32DocumentEntity();
 		entity.setDocument(c32Document);
-                entity.setIcn(patientId);
-                entity.setDocumentPatientId(c32Document);
-                LOG.info(entity);
-                
-                EntityManager entityManager = getEntityManager();
-                EntityTransaction t = entityManager.getTransaction();
-                t.begin();
-                try {
-                   entityManager.persist(entity);
-                }
-                catch (Exception up) {
-                    LOG.error(up);
-                    t.rollback();
-                    //throw up;
-                }
-                finally{
-                    try {
-                       if(t.isActive())
-                       {
-                            t.commit();
-                       }
-                    } catch (Exception ex) {
-                       t.rollback();
-                    }
-                }
+		entity.setIcn(patientId);
+		entity.setDocumentPatientId(c32Document);
+		LOG.info(entity);
+
+		EntityManager entityManager = getEntityManager();
+		EntityTransaction t = entityManager.getTransaction();
+		t.begin();
+		try {
+			entityManager.persist(entity);
+		}
+		catch (Exception up) {
+			LOG.error(up);
+			t.rollback();
+			//throw up;
+		}
+		finally{
+			try {
+				if(t.isActive())
+				{
+					t.commit();
+				}
+			} catch (Exception ex) {
+				t.rollback();
+			}
+		}
 
 		return c32Document;
 	}
