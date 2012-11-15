@@ -1,6 +1,7 @@
 package org.osehra.das.wrapper.nwhin;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,8 +25,11 @@ public class C32DocumentEntity implements Serializable {
 	@Lob
 	private byte[] document;
 
-	@Column(name = "PATIENT_ID")
-	private String patientId;
+	@Column(name = "icn")
+	private String icn ;
+
+	@Column(name = "createDate")
+	private Date createDate;
 
 	public void setId(int id) {
 		this.id = id;
@@ -45,18 +49,57 @@ public class C32DocumentEntity implements Serializable {
 		return document.toString();
 	}
 
-	public void setPatientId(String patientId) {
-		this.patientId = patientId;
+	public Date getCreateDate() {
+		return createDate;
 	}
 
-	public String getPatientId() {
-		return patientId;
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public String getIcn() {
+		return icn;
+	}
+
+	public void setIcn(String icn) {
+		this.icn = icn;
 	}
 
 	@Override
 	public String toString() {
 		return "C32DocumentEntity{" + "id=" + id + ", document=" + document
 				+ '}';
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof C32DocumentEntity)) {
+			return false;
+		}
+		C32DocumentEntity other = (C32DocumentEntity)obj;
+		return equalsNullSafe(this.getId(), other.getId());
+	}
+	
+	@Override
+	public int hashCode() {
+		return hashCodeNullSafe(getId());
+	}
+
+	protected static boolean equalsNullSafe(Object item1, Object item2) {
+		if (item1==null && item2==null) {
+			return true;
+		}
+		if (item1!=null) {
+			return item1.equals(item2);
+		}
+		return item2.equals(item1);
+	}
+	
+	protected static int hashCodeNullSafe(Object item) {
+		if (item==null) {
+			return 0;
+		}
+		return item.hashCode();
 	}
 
 }

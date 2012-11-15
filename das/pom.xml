@@ -38,7 +38,7 @@
 				</os>
 			</activation>
 			<properties>
-				<org.springframework.version>3.0.5.RELEASE</org.springframework.version>
+				<org.springframework.version>3.0.7.RELEASE</org.springframework.version>
 				<com.sun.jersey.version>1.8</com.sun.jersey.version>
 				<integration.project.groupId>org.osehra.integration</integration.project.groupId>
 				<!-- CHANGES MADE BY BENJAMIN HARDIN / AUTOMATICALLY KEEPS UPDATES FOR

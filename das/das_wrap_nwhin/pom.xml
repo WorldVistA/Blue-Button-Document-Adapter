@@ -1,10 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.osehra.das</groupId>
 	<artifactId>das_wrap_nwhin</artifactId>
 	<!-- NEW VERSION FORMAT -->
 	<!-- DasVersion.Sprint.SprintVersion.Buildnumber -->
-	<version>2.10.1.24-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>das_wrap_nwhin</name>
 	<parent>
@@ -223,6 +221,10 @@
 		<dependency>
     		<groupId>com.mockrunner</groupId>
     		<artifactId>mockrunner-jms</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
 		</dependency>
 	</dependencies>
 	<build>
