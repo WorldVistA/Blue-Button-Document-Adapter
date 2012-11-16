@@ -86,6 +86,8 @@ public class WrapperResource extends ComponentImpl implements
 		entity.setDocument(c32Document);
 		entity.setIcn(patientId);
 		entity.setDocumentPatientId(c32Document);
+		Date uDate = new java.util.Date();
+		entity.setCreateDate(new java.sql.Date(uDate.getTime()));
 		LOG.info(entity);
 
 		EntityManager entityManager = getEntityManager();
@@ -132,7 +134,7 @@ public class WrapperResource extends ComponentImpl implements
 		}
 
 	}
-	
+
 	@Transactional(propagation = Propagation.REQUIRED)
     public List<C32DocumentEntity> getAllDocuments(String patientId) {
       EntityManager entityManager = getEntityManager();

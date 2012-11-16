@@ -8,21 +8,21 @@ public class DocStatus implements Serializable {
 	protected String _ptId;
 	protected Date _dateGenerated;
 	protected String _status;
-	
+
 	public String getPatientId() {
 		return _ptId;
 	}
 	public void setPatientId(String ptId) {
 		this._ptId = ptId;
 	}
-	
+
 	public Date getDateGenerated() {
 		return _dateGenerated;
 	}
 	public void setDateGenerated(Date _docDate) {
 		this._dateGenerated = _docDate;
 	}
-	
+
 	public String getStatus() {
 		return _status;
 	}
