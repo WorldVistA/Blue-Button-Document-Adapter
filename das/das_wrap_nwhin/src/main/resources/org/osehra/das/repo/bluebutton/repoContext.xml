@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-2.5.xsd
+      http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<bean id="asyncMsgFormatter" class="org.osehra.das.repo.bluebutton.AsyncRetrieveMessageFormat"/>
+	
+	<bean id="abstractAsyncMsgFormatAware" abstract="true">
+		<property name="asyncMessageFormat" ref="asyncMsgFormatter"/>
+	</bean>
+	
+	<bean id="repositoryImpl" class="org.osehra.das.repo.bluebutton.RepositoryImpl" parent="abstractAsyncMsgFormatAware">
+		<property name="jmsTemplate" ref="producerTemplate"/>
+	</bean>
+
+	<bean id="jmsConnectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:/ConnectionFactory"/>
+		<!-- property name="lookupOnStartup" value="false"/-->
+		<property name="cache" value="true"/>
+		<property name="proxyInterface" value="javax.jms.ConnectionFactory"/>
+	</bean>
+    
+	<bean id="producerTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="cachedConnectionFactory"/>
+		<property name="destinationResolver" ref="jmsDestResolver"/>
+		<property name="defaultDestinationName" value="data/nwhin"/>
+	</bean> 
+
+	<bean id="cachedConnectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+		<property name="targetConnectionFactory" ref="jmsConnectionFactory"/>
+		<property name="sessionCacheSize" value="10" />
+	</bean>
+	
+	<bean id="jmsDestResolver" class="org.springframework.jms.support.destination.JndiDestinationResolver"/>
+
+	<bean id="nwhinDataRetriever" class="org.osehra.das.repo.bluebutton.NwhinDataRetriever" parent="abstractAsyncMsgFormatAware">
+		<property name="wrapperResource" ref="nwhinWrapperResource"/>
+	</bean>
+	
+	<bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+		<property name="connectionFactory" ref="jmsConnectionFactory"/>
+		<property name="destinationResolver" ref="jmsDestResolver"/>
+		<property name="destinationName" value="data/nwhin"/>
+		<property name="messageListener" ref="nwhinDataRetriever" />
+	</bean>
+
+</beans>

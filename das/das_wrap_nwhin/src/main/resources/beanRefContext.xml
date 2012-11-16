@@ -20,6 +20,7 @@
   	<!-- Common XML Definitions -->
 	<import resource="classpath:org/osehra/das/wrapper/nwhin/definitions/coreWrapperComponent.xml" />
 	<import resource="classpath:org/osehra/das/common/http/commonHttpConfiguration-jee.xml" />
+	<import resource="classpath:org/osehra/das/repo/bluebutton/repoContext.xml"/>
 	<!-- Mock - COMMENT FOR LIVE TESTING -->
 	<import resource="classpath:org/osehra/das/mock/definitions/adapter/doc/nwhinAdapterConfiguration.xml" />
 

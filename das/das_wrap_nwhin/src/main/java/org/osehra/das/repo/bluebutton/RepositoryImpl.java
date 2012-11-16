@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.jms.ConnectionFactory;
 import javax.jms.JMSException;
 import javax.jms.Message;
-import javax.jms.Queue;
 import javax.jms.Session;
 
 import org.osehra.das.C32Document;
@@ -17,25 +15,28 @@ import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 
 public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repository {
-	protected final String completeStatusString = "COMPLETE";
-	protected final String incompleteStatusString = "INCOMPLETE";
+	protected String completeStatusString = "COMPLETE";
+	protected String incompleteStatusString = "INCOMPLETE";
 	protected JmsTemplate jmsTemplate;
-	protected Queue queue;
 
-	public void setConnectionFactory(ConnectionFactory cf) {
-        this.jmsTemplate = new JmsTemplate(cf);
+	public void setJmsTemplate(JmsTemplate template) {
+        this.jmsTemplate = template;
     }
 
-    public void setQueue(Queue queue) {
-        this.queue = queue;
-    }
-    
 	public String getIncompleteStatusString() {
 		return incompleteStatusString;
+	}
+	
+	public void setIncompleteStatusString(String incompleteString) {
+		incompleteStatusString = incompleteString;
 	}
 
 	public String getCompleteStatusString() {
 		return completeStatusString;
+	}
+	
+	public void setCompleteStatusString(String completeString) {
+		completeStatusString = completeString;
 	}
 
 	@Override
@@ -106,10 +107,10 @@ public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repos
 	}
 
 	protected void sendMessageToRetrieve(final Date today, final String patientId, final String ptName) {
-		this.jmsTemplate.send(this.queue, new MessageCreator() {
+		this.jmsTemplate.send(new MessageCreator() {
 			@Override
 			public Message createMessage(Session session) throws JMSException {
-				return session.createTextMessage(getAsyncMessageFormat().format(new AsyncRetrieveMessage(today, patientId, ptName)));
+				return session.createTextMessage(getAsyncMessageFormat().formatObject(new AsyncRetrieveMessage(today, patientId, ptName)));
 			}
 		});
 	}

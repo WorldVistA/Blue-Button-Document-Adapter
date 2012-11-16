@@ -1,53 +1,53 @@
 package org.osehra.das.repo.bluebutton;
 
-import java.text.FieldPosition;
-import java.text.Format;
-import java.text.ParseException;
-import java.text.ParsePosition;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.osehra.das.IFormatTS;
+import org.osehra.das.SimpleDateFormatTS;
 
-public class AsyncRetrieveMessageFormat extends Format {
-	private static final long serialVersionUID = 1L;
-	protected Format dateFormat = new SimpleDateFormat();
+public class AsyncRetrieveMessageFormat implements IFormatTS {
+	protected IFormatTS dateFormat = new SimpleDateFormatTS();
 	protected Log logger = LogFactory.getLog(this.getClass());
-	protected static String SEPARATOR = ":";
+	protected String separator = ":";
 
-	public Format getDateFormat() {
+	public String getSeparator() {
+		return separator;
+	}
+
+	public void setSeparator(String separator) {
+		this.separator = separator;
+	}
+
+	public IFormatTS getDateFormat() {
 		return dateFormat;
 	}
 
-	public void setDateFormat(Format dateFormat) {
+	public void setDateFormat(IFormatTS dateFormat) {
 		this.dateFormat = dateFormat;
 	}
 
 	@Override
-	public StringBuffer format(Object item, StringBuffer buffer,
-			FieldPosition fieldPos) {
+	public String formatObject(Object item) {
 		if (item!=null) {
 			AsyncRetrieveMessage msg = (AsyncRetrieveMessage)item;
-			buffer.append(getStringOrBlank(dateFormat.format(msg.getDate())));
-			buffer.append(SEPARATOR);
+			StringBuffer buffer = new StringBuffer();
+			buffer.append(getStringOrBlank(dateFormat.formatObject(msg.getDate())));
+			buffer.append(getSeparator());
 			buffer.append(getStringOrBlank(msg.getPatientId()));
-			buffer.append(SEPARATOR);
+			buffer.append(getSeparator());
 			buffer.append(getStringOrBlank(msg.getPatientName()));
+			return buffer.toString();
 		}
-		return buffer;
+		return null;
 	}
 
 	@Override
-	public Object parseObject(String data, ParsePosition pos) {
+	public Object parse(String data) {
 		if (data!=null && data.length()>0) {
-			String[] items = data.split(SEPARATOR);
-			pos.setIndex(data.length());
-			try {
-				return new AsyncRetrieveMessage((Date)dateFormat.parseObject(items[0]), items[1], items[2]);
-			} catch (ParseException e) {
-				logger.error("parsing error with " + data, e);
-			}
+			String[] items = data.split(getSeparator());
+			return new AsyncRetrieveMessage((Date)dateFormat.parse(items[0]), items[1], items[2]);
 		}
 		// TODO Update for handling parsing errors
 		return null;

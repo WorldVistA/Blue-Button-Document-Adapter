@@ -1,15 +1,16 @@
 package org.osehra.das.repo.bluebutton;
 
-import java.text.Format;
+import org.osehra.das.IFormatTS;
+
 
 public abstract class AbstractAsyncMsgFormatAware {
-	protected Format asyncMessageFormat;
+	protected IFormatTS asyncMessageFormat;
 	
-	public Format getAsyncMessageFormat() {
+	public IFormatTS getAsyncMessageFormat() {
 		return asyncMessageFormat;
 	}
 
-	public void setAsyncMessageFormat(Format asyncMessageFormat) {
+	public void setAsyncMessageFormat(IFormatTS asyncMessageFormat) {
 		this.asyncMessageFormat = asyncMessageFormat;
 	}
 

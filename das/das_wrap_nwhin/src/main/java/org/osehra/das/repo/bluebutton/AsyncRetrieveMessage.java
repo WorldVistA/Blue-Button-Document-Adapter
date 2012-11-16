@@ -42,4 +42,14 @@ public class AsyncRetrieveMessage {
 		ptName = name;
 	}
 	
+	@Override
+	public String toString() {
+		StringBuilder str = new StringBuilder();
+		str.append(getDate());
+		str.append(':');
+		str.append(getPatientId());
+		str.append(':');
+		str.append(getPatientName());
+		return str.toString();
+	}
 }
