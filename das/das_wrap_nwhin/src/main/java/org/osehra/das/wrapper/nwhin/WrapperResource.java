@@ -89,26 +89,26 @@ public class WrapperResource extends ComponentImpl implements
 		LOG.info(entity);
 
 		EntityManager entityManager = getEntityManager();
-		EntityTransaction t = entityManager.getTransaction();
-		t.begin();
-		try {
+//		EntityTransaction t = entityManager.getTransaction();
+//		t.begin();
+//		try {
 			entityManager.persist(entity);
-		}
-		catch (Exception up) {
-			LOG.error(up);
-			t.rollback();
-			//throw up;
-		}
-		finally{
-			try {
-				if(t.isActive())
-				{
-					t.commit();
-				}
-			} catch (Exception ex) {
-				t.rollback();
-			}
-		}
+//		}
+//		catch (Exception up) {
+//			LOG.error(up);
+//			t.rollback();
+//			//throw up;
+//		}
+//		finally{
+//			try {
+//				if(t.isActive())
+//				{
+//					t.commit();
+//				}
+//			} catch (Exception ex) {
+//				t.rollback();
+//			}
+//		}
 
 		return c32Document;
 	}

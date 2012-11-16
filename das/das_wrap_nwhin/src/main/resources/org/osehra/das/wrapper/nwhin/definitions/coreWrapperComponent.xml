@@ -21,10 +21,33 @@
 	<bean id="nwhinWrapperResource" class="org.osehra.das.wrapper.nwhin.WrapperResource">
 		<property name="adapterDocQueryRetrieveFacade" ref="adapterDocQueryRetrieveFacade" />
 	</bean>
-
-	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+	
+	<!-- <jee:jndi-lookup id="dataSource" jndi-name="java:/c32connection"/> -->
+	<bean id="C32DataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:/c32connection" />
+	</bean> 
+	
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
  		<property name="persistenceUnitName" value="c32"/>
+		<property name="dataSource" ref="C32DataSource" />
+     	<property name="persistenceXmlLocation" value="classpath:META-INF/spring-persistence.xml"/>
+     	<property name="jpaVendorAdapter">
+	       	<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+	        	<property name="databasePlatform" value="org.hibernate.dialect.MySQL5Dialect"/>
+	        	<property name="showSql" value="true"/>
+	        	<property name="generateDdl" value="false"/>
+	        </bean>
+		</property>
+		<property name="jpaProperties">
+			<props>
+				<!-- <prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JTATransactionFactory</prop> -->
+				<prop key="hibernate.transaction.manager_lookup_class">org.hibernate.transaction.JBossTransactionManagerLookup</prop>
+				<prop key="jta.UserTransaction">java:jboss/UserTransaction</prop>
+			</props>
+		</property>
    </bean>
+
+	<!-- <bean id="repositoryDAO" class="org.osehra.das.repo.bluebutton.C32DocumentDao" /> -->
 
 	<bean id="adapterDocQueryRetrieveFacade"
 		class="org.osehra.das.wrapper.nwhin.doc.AdapterDocQueryRetrieveFacade">

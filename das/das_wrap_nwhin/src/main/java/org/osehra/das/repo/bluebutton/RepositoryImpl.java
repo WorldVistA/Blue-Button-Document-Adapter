@@ -16,11 +16,33 @@ import org.osehra.das.wrapper.nwhin.WrapperResource;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.web.context.ContextLoader;
+import org.springframework.web.context.WebApplicationContext;
+
 public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repository {
 	protected final String completeStatusString = "COMPLETE";
 	protected final String incompleteStatusString = "INCOMPLETE";
+	Log logger = LogFactory.getLog(this.getClass());
 	protected JmsTemplate jmsTemplate;
 	protected Queue queue;
+	protected C32DocumentDao repositoryDAO;
+
+	public C32DocumentDao getRepositoryDAO() {
+		if (repositoryDAO==null) {
+			WebApplicationContext cc = ContextLoader.getCurrentWebApplicationContext();
+			repositoryDAO = cc.getBean(C32DocumentDao.class);
+			if (repositoryDAO==null) {
+				logger.warn("repositoryDAO is null");
+			}
+		}
+		return repositoryDAO;
+	}
+
+	public void setRepositoryDAO(C32DocumentDao c32s) {
+		this.repositoryDAO = c32s;
+	}
 
 	public void setConnectionFactory(ConnectionFactory cf) {
         this.jmsTemplate = new JmsTemplate(cf);
@@ -40,6 +62,9 @@ public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repos
 
 	@Override
 	public List<DocStatus> getStatus(String patientId, String patientName) {
+		//test
+		getRepositoryDAO().createAndPersistC32(patientId);
+		
 		List<C32DocumentEntity> docList = getAllStoredDocuments(patientId);
 		Date today = new Date();
 		if (getDocumentByDate(today, docList)==null) {
@@ -78,8 +103,9 @@ public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repos
 	}
 
 	protected List<C32DocumentEntity> getAllStoredDocuments(String patientId) {
-		WrapperResource wr = new WrapperResource();
-		return wr.getAllDocuments(patientId);
+		//WrapperResource wr = new WrapperResource();
+		//return wr.getAllDocuments(patientId);
+		return getRepositoryDAO().getAllDocuments(patientId);
 	}
 
 	protected List<DocStatus> buildStatusList(List<C32DocumentEntity> docList) {
