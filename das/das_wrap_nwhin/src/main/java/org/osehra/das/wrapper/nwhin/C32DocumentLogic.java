@@ -49,6 +49,8 @@ public class C32DocumentLogic implements Serializable{
 		
 		String filteredDocument = "";
 		
+		if (document!=null) {
+		
 		  try {
 				Builder builder = new Builder();
 				Document doc = builder.build(new StringReader(document));
@@ -160,6 +162,7 @@ public class C32DocumentLogic implements Serializable{
 			  } catch (ParsingException parserr) {
 				LOG.error(parserr);
 			  }
+		}
 		//Output Test File.  
 		//outputFile(filteredDocument);
 		
@@ -173,7 +176,7 @@ public class C32DocumentLogic implements Serializable{
 		int LabDelayDays = 7;
 		
 		String filteredDocument = "";
-		
+		if (document!=null) {
 		  try {
 				Builder builder = new Builder();
 				Document doc = builder.build(new StringReader(document));
@@ -271,6 +274,7 @@ public class C32DocumentLogic implements Serializable{
 			  } catch (ParsingException parserr) {
 				LOG.error(parserr);
 			  }
+		}
 		//Output Test File.  
 		//outputFile(filteredDocument);
 		
@@ -282,6 +286,7 @@ public class C32DocumentLogic implements Serializable{
 		
 		String patientIdentifier = "";
 		
+		if (document!=null) {
 		  try {
 				Builder builder = new Builder();
 				Document doc = builder.build(new StringReader(document));
@@ -316,7 +321,7 @@ public class C32DocumentLogic implements Serializable{
 			  } catch (ParsingException parserr) {
 				LOG.error(parserr);
 			  }
-		
+		}
 		//Output Test File if Testing.
 		//outputFile(patientIdentifier);
 		

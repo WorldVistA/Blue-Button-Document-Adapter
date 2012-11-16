@@ -43,9 +43,11 @@ public class C32DocumentEntity implements Serializable {
 	}
 
 	public void setDocument(String document) {
-		C32DocumentLogic logic = new C32DocumentLogic();
-		String filteredDocument = logic.filterDocument(document);
-		this.document = filteredDocument.getBytes();
+		if (document!=null) {
+			C32DocumentLogic logic = new C32DocumentLogic();
+			String filteredDocument = logic.filterDocument(document);
+			this.document = filteredDocument.getBytes();
+		}
 	}
 
 	public String getDocument() {
