@@ -128,7 +128,14 @@ public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repos
 
 	protected List<DocStatus> getDocStatusNotThere(String ptId, Date today, List<C32DocumentEntity> docList) {
 		if (docList==null || docList.isEmpty()) {
-			return null;
+			List<DocStatus> statusList = new ArrayList<DocStatus>(1);
+			statusList.add(new DocStatus());
+			statusList.get(0).setDateGenerated(today);
+			statusList.get(0).setPatientId(ptId);
+			statusList.get(0).setStatus(getIncompleteStatusString());
+			
+			return statusList;
+			
 		}
 		int arraySize = docList.size() + 1;
 		List<DocStatus> statusList = new ArrayList<DocStatus>(arraySize);
