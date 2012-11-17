@@ -53,6 +53,7 @@ public class C32DocumentEntity implements Serializable {
 	}
 
 	public String getDocument() {
+		if (document==null) return "";
 		String stringDocument = new String(document);
 		return stringDocument;
 	}

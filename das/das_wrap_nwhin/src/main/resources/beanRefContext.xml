@@ -11,6 +11,8 @@
       http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+
  	<context:annotation-config />
  	<context:component-scan base-package="org.osehra.das.repo.bluebutton" />
 	<context:component-scan base-package="org.osehra.das.wrapper.nwhin" />

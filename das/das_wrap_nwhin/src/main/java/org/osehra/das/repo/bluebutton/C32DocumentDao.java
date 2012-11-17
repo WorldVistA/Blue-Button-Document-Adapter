@@ -1,63 +1,43 @@
 package org.osehra.das.repo.bluebutton;
 
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
 import javax.persistence.Query;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.osehra.das.wrapper.nwhin.C32DocumentEntity;
-import org.osehra.integration.core.component.ComponentImpl;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-@org.springframework.stereotype.Repository
-public class C32DocumentDao extends ComponentImpl {
+public class C32DocumentDao {
 	Log logger = LogFactory.getLog(this.getClass());
 	
-	@PersistenceContext(unitName="c32")
-    private EntityManagerFactory entityManagerFactory;
+	@PersistenceUnit(unitName="c32")
+	private EntityManager entityManager;
 	
-    public void setEntityManagerFactory(EntityManagerFactory emf) {
-        this.entityManagerFactory = emf;
-    }
-    
-    public EntityManagerFactory getEntityManagerFactory() {
-    	return entityManagerFactory;
-    }
-
-    private EntityManager getEntityManager() {
-        return  entityManagerFactory.createEntityManager();
-    }
-    
-	public C32DocumentEntity createAndPersistC32(String patientId) {
-		logger.debug("attempting persist for: " +patientId);
+	@Transactional(propagation = Propagation.REQUIRED)
+	public C32DocumentEntity createAndPersistC32(String patientId, String c32) {
+		logger.error("attempting persist for: " +patientId);
 		C32DocumentEntity entity = new C32DocumentEntity();
-		String c32Document = "";
-		entity.setDocument(c32Document);
+		entity.setDocument(c32);
 		entity.setIcn(patientId);
-		entity.setDocumentPatientId(c32Document);
+		entity.setDocumentPatientId(c32);
 		
-		EntityManager entityManager = getEntityManager();
+		Date uDate = new java.util.Date();
+		entity.setCreateDate(new java.sql.Date(uDate.getTime()));
+		
 		entityManager.persist(entity);
-		
-		logger.debug("should have just persisted an entity: " + entity);
 		return entity;
 	}
 	
+    @Transactional
     public List<C32DocumentEntity> getAllDocuments(String patientId) {
-        EntityManager entityManager = getEntityManager();    
-        List<C32DocumentEntity> list = RetrieveStatusListByIcn(entityManager, patientId);
-        return list ;
-      }
-
-    private List<C32DocumentEntity> RetrieveStatusListByIcn(EntityManager em, String patientId) {
-    	Query query = em.createQuery("SELECT d FROM C32DocumentEntity d WHERE d.icn = :icn");
-      query.setParameter("icn", patientId);   
-      return (List<C32DocumentEntity>) query.getResultList();
+        Query query = entityManager.createQuery("SELECT d FROM C32DocumentEntity d WHERE d.icn = :icn");
+        query.setParameter("icn", patientId);
+        return (List<C32DocumentEntity>) query.getResultList();
     }
 }
