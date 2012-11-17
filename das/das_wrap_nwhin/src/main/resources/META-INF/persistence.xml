@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+   xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/persistence">
+   <persistence-unit name="c32" transaction-type="RESOURCE_LOCAL">
+      <jta-data-source>java:/c32connection</jta-data-source>
+      <properties>
+         <!-- Bind entity manager factory to JNDI at java:jboss/C32EMF -->
+         <property name="jboss.entity.manager.factory.jndi.name" value="java:jboss/C32EMF" />
+         <property name="showSql" value="true"/>
+         <property name="hibernate.hbm2ddl.auto" value="create" />
+      </properties>
+   </persistence-unit>
+</persistence>
