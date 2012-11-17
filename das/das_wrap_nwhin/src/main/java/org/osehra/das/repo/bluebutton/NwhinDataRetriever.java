@@ -11,10 +11,15 @@ import org.osehra.das.wrapper.nwhin.WrapperResource;
 
 public class NwhinDataRetriever extends AbstractAsyncMsgFormatAware implements MessageListener {
 	protected WrapperResource _nwhinResource;
+	protected C32DocumentDao _c32dao;
 	protected Log logger = LogFactory.getLog(this.getClass());
 	
 	public void setWrapperResource(WrapperResource resource) {
 		_nwhinResource = resource;
+	}
+	
+	public void setC32DocumentDao(C32DocumentDao c32dao) {
+		_c32dao = c32dao;
 	}
 
 	@Override
@@ -26,7 +31,10 @@ public class NwhinDataRetriever extends AbstractAsyncMsgFormatAware implements M
 			if (logger.isDebugEnabled()) {
 				logger.debug("calling getDomainXml for " + aMsg);
 			}
-			_nwhinResource.getDomainXml(aMsg.getPatientId(), aMsg.getPatientName());
+			String patientId = aMsg.getPatientId();
+			String xml = (String)_nwhinResource.getDomainXml(patientId, aMsg.getPatientName());
+			logger.error("attempting to persist domain XML: " + xml);
+			_c32dao.createAndPersistC32(patientId, xml);
 		} catch (JMSException e) {
 			logger.error("JMS exception for " + msg, e);
 		} catch (Exception e) {

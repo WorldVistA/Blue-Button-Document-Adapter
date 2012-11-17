@@ -46,6 +46,7 @@
 
 	<bean id="nwhinDataRetriever" class="org.osehra.das.repo.bluebutton.NwhinDataRetriever" parent="abstractAsyncMsgFormatAware">
 		<property name="wrapperResource" ref="nwhinWrapperResource"/>
+		<property name="C32DocumentDao" ref="repositoryDAO" />
 	</bean>
 	
 	<bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
