@@ -71,7 +71,7 @@ public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repos
 		
 		if (getDocumentByDate(today, docList)==null) {
 			sendMessageToRetrieve(today, patientId, patientName);
-			return getDocStatusNotThere(patientId, today);
+			return getDocStatusNotThere(patientId, today, docList);
 		}
 		return buildStatusList(docList);
 	}
@@ -126,13 +126,31 @@ public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repos
 		return statusList;
 	}
 
-	protected List<DocStatus> getDocStatusNotThere(String ptId, Date today) {
-		List<DocStatus> docList = new ArrayList<DocStatus>(1);
-		docList.add(new DocStatus());
-		docList.get(0).setDateGenerated(today);
-		docList.get(0).setPatientId(ptId);
-		docList.get(0).setStatus(getIncompleteStatusString());
-		return docList;
+	protected List<DocStatus> getDocStatusNotThere(String ptId, Date today, List<C32DocumentEntity> docList) {
+		if (docList==null || docList.isEmpty()) {
+			return null;
+		}
+		int arraySize = docList.size() + 1;
+		List<DocStatus> statusList = new ArrayList<DocStatus>(arraySize);
+	
+
+
+		for (int i=0;i<docList.size();i++) {
+			statusList.add(new DocStatus());
+			statusList.get(i).setDateGenerated(docList.get(i).getCreateDate());
+			statusList.get(i).setPatientId(docList.get(i).getIcn());
+			statusList.get(i).setStatus(getCompleteStatusString());
+		}
+		
+		//Append today's entry.
+		statusList.add(new DocStatus());
+		statusList.get(docList.size()).setDateGenerated(today);
+		statusList.get(docList.size()).setPatientId(ptId);
+		statusList.get(docList.size()).setStatus(getIncompleteStatusString());
+		
+
+		return statusList;		
+
 	}
 
 	protected void sendMessageToRetrieve(final Date today, final String patientId, final String ptName) {
