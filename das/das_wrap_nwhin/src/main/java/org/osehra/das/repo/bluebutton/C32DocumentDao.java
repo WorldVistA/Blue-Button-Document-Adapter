@@ -1,5 +1,6 @@
 package org.osehra.das.repo.bluebutton;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -11,6 +12,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.osehra.das.wrapper.nwhin.C32DocumentEntity;
 import org.osehra.integration.core.component.ComponentImpl;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 @org.springframework.stereotype.Repository
 public class C32DocumentDao extends ComponentImpl {
@@ -47,15 +50,14 @@ public class C32DocumentDao extends ComponentImpl {
 	}
 	
     public List<C32DocumentEntity> getAllDocuments(String patientId) {
-        EntityManager entityManager = getEntityManager();
-        
+        EntityManager entityManager = getEntityManager();    
         List<C32DocumentEntity> list = RetrieveStatusListByIcn(entityManager, patientId);
         return list ;
       }
 
     private List<C32DocumentEntity> RetrieveStatusListByIcn(EntityManager em, String patientId) {
-      Query query = em.createQuery("SELECT d FROM C32DocumentEntity d WHERE d.icn = :icn");
-      query.setParameter("icn", patientId);
+    	Query query = em.createQuery("SELECT d FROM C32DocumentEntity d WHERE d.icn = :icn");
+      query.setParameter("icn", patientId);   
       return (List<C32DocumentEntity>) query.getResultList();
     }
 }
