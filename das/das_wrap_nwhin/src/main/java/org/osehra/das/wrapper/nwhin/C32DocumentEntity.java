@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
+import org.apache.commons.codec.binary.Base64;
+
 @Entity
 @Table(name = "C32_DOCUMENT")
 public class C32DocumentEntity implements Serializable {
@@ -46,12 +48,13 @@ public class C32DocumentEntity implements Serializable {
 		if (document!=null) {
 			C32DocumentLogic logic = new C32DocumentLogic();
 			String filteredDocument = logic.filterDocument(document);
-			this.document = filteredDocument.getBytes();
+			this.document = Base64.encodeBase64(filteredDocument.getBytes());
 		}
 	}
 
 	public String getDocument() {
-		return document.toString();
+		String stringDocument = new String(document);
+		return stringDocument;
 	}
 
 	public Date getCreateDate() {
