@@ -19,6 +19,8 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.web.context.ContextLoader;
 import org.springframework.web.context.WebApplicationContext;
 
+import org.joda.time.LocalDate;
+
 public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repository {
 	protected String completeStatusString = "COMPLETE";
 	protected String incompleteStatusString = "INCOMPLETE";
@@ -64,7 +66,9 @@ public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repos
 	@Override
 	public List<DocStatus> getStatus(String patientId, String patientName) {
 		List<C32DocumentEntity> docList = getAllStoredDocuments(patientId);
+
 		Date today = new Date();
+		
 		if (getDocumentByDate(today, docList)==null) {
 			sendMessageToRetrieve(today, patientId, patientName);
 			return getDocStatusNotThere(patientId, today);
@@ -92,7 +96,11 @@ public class RepositoryImpl extends AbstractAsyncMsgFormatAware implements Repos
 	protected C32DocumentEntity getDocumentByDate(Date today, List<C32DocumentEntity> docList) {
 		if (docList!=null && !docList.isEmpty()) {
 			for (int i=0;i<docList.size();i++) {
-				if (today.equals(docList.get(i).getCreateDate())) {
+
+				LocalDate fileDate = LocalDate.fromDateFields(docList.get(i).getCreateDate());
+				LocalDate todayDate = LocalDate.fromDateFields(today);
+
+				if (todayDate.equals(fileDate)) {
 					return docList.get(i);
 				}
 			}
