@@ -156,10 +156,10 @@
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-json</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey.contribs</groupId>
+<!--		<dependency>
+ 			<groupId>com.sun.jersey.contribs</groupId>
 			<artifactId>jersey-atom-abdera</artifactId>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-atom</artifactId>
