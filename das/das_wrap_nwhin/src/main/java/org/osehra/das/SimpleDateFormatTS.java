@@ -31,6 +31,6 @@ public class SimpleDateFormatTS implements IFormatTS {
 	}
 
 	protected static Format getDateFormatterInstance() {
-		return new SimpleDateFormat("yyyyMMddhhmmss");
+		return new SimpleDateFormat("yyyyMMddkkmmss");
 	}
 }

@@ -9,6 +9,17 @@ public class DocStatus implements Serializable {
 	protected Date _dateGenerated;
 	protected String _status;
 
+	public DocStatus() {
+		super();
+	}
+	
+	public DocStatus(String ptId, Date dateGenerated, String status) {
+		this();
+		setPatientId(ptId);
+		setDateGenerated(dateGenerated);
+		setStatus(status);
+	}
+	
 	public String getPatientId() {
 		return _ptId;
 	}

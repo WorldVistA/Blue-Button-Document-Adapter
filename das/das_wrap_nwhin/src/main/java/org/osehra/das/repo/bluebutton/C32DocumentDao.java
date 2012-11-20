@@ -1,6 +1,5 @@
 package org.osehra.das.repo.bluebutton;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -13,31 +12,38 @@ import org.osehra.das.wrapper.nwhin.C32DocumentEntity;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-public class C32DocumentDao {
+public class C32DocumentDao implements IC32DocumentDao {
 	Log logger = LogFactory.getLog(this.getClass());
 	
 	@PersistenceUnit(unitName="c32")
 	private EntityManager entityManager;
 	
 	@Transactional(propagation = Propagation.REQUIRED)
-	public C32DocumentEntity createAndPersistC32(String patientId, String c32) {
-		logger.error("attempting persist for: " +patientId);
-		C32DocumentEntity entity = new C32DocumentEntity();
-		entity.setDocument(c32);
-		entity.setIcn(patientId);
-		entity.setDocumentPatientId(c32);
+	public void insert(C32DocumentEntity document) {
+		if (logger.isDebugEnabled()) {
+			logger.debug("attempting persist for: " + document);
+		}
 		
-		Date uDate = new java.util.Date();
-		entity.setCreateDate(new java.sql.Date(uDate.getTime()));
-		
-		entityManager.persist(entity);
-		return entity;
+		entityManager.persist(document);
 	}
 	
-    @Transactional
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void update(C32DocumentEntity document) {
+		if (logger.isDebugEnabled()) {
+			logger.debug("updating document with:" + document);
+		}
+		entityManager.merge(document);
+	}
+	
+    @SuppressWarnings("unchecked")
+	@Transactional
     public List<C32DocumentEntity> getAllDocuments(String patientId) {
+    	if (logger.isDebugEnabled()) {
+    		logger.debug("getAllDocuments with :" + patientId);
+    	}
         Query query = entityManager.createQuery("SELECT d FROM C32DocumentEntity d WHERE d.icn = :icn");
         query.setParameter("icn", patientId);
         return (List<C32DocumentEntity>) query.getResultList();
     }
+    
 }

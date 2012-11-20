@@ -32,7 +32,7 @@ import org.w3c.dom.Document;
 @Path("/")
 @Scope("request")
 public class WrapperResource extends ComponentImpl implements
-		MessageReceiver<UriInfo, Object> {
+		MessageReceiver<UriInfo, Object>, IWrapperResource {
 
 	private static final Log LOG = LogFactory.getLog(WrapperResource.class);
 

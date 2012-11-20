@@ -10,13 +10,24 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
-import org.apache.commons.codec.binary.Base64;
+import org.osehra.das.BeanUtils;
 
 @Entity
 @Table(name = "C32_DOCUMENT")
-public class C32DocumentEntity implements Serializable {
-
+public class C32DocumentEntity implements Serializable, Comparable<C32DocumentEntity> {
 	private static final long serialVersionUID = 1L;
+	
+	public C32DocumentEntity() {
+		super();
+	}
+	
+	public C32DocumentEntity(String icn, String documentPatientId, Date creationDate, String document) {
+		this();
+		setIcn(icn);
+		setDocumentPatientId(documentPatientId);
+		setCreateDate(creationDate);
+		setDocument(document);
+	}
 
 	@Id
 	@GeneratedValue
@@ -25,7 +36,7 @@ public class C32DocumentEntity implements Serializable {
 
 	@Column(name = "document")
 	@Lob
-	private byte[] document;
+	private String document;
 
 	@Column(name = "icn")
 	private String icn ;
@@ -45,17 +56,11 @@ public class C32DocumentEntity implements Serializable {
 	}
 
 	public void setDocument(String document) {
-		if (document!=null) {
-			C32DocumentLogic logic = new C32DocumentLogic();
-			String filteredDocument = logic.filterDocument(document);
-			this.document = Base64.encodeBase64(filteredDocument.getBytes());
-		}
+		this.document = document;
 	}
 
 	public String getDocument() {
-		if (document==null) return "";
-		String stringDocument = new String(document);
-		return stringDocument;
+		return this.document;
 	}
 
 	public Date getCreateDate() {
@@ -74,10 +79,8 @@ public class C32DocumentEntity implements Serializable {
 		this.icn = icn;
 	}
 
-	public void setDocumentPatientId(String document) {
-		C32DocumentLogic pidLogic = new C32DocumentLogic();
-		String documentPatientId = pidLogic.getPatientId(document);
-		this.documentPatientId = documentPatientId;
+	public void setDocumentPatientId(String docPtId) {
+		this.documentPatientId = docPtId;
 	}
 
 	public String getDocumentPatientId() {
@@ -96,29 +99,47 @@ public class C32DocumentEntity implements Serializable {
 			return false;
 		}
 		C32DocumentEntity other = (C32DocumentEntity)obj;
-		return equalsNullSafe(this.getId(), other.getId());
+		return BeanUtils.equalsNullSafe(this.getId(), other.getId()) && 
+				BeanUtils.equalsNullSafe(this.getIcn(), other.getIcn()) && 
+				BeanUtils.equalsNullSafe(this.getCreateDate(), other.getCreateDate());
 	}
 	
 	@Override
 	public int hashCode() {
-		return hashCodeNullSafe(getId());
+		return hashCodeNullSafe(getId()) + hashCodeNullSafe(getIcn()) + hashCodeNullSafe(getCreateDate());
 	}
 
-	protected static boolean equalsNullSafe(Object item1, Object item2) {
-		if (item1==null && item2==null) {
-			return true;
+	@Override
+	public int compareTo(C32DocumentEntity that) {
+		int result = compareNullSafe(this.getIcn(), that.getIcn());
+		if (result==0) {
+			result = compareNullSafe(this.getCreateDate(), that.getCreateDate());
+			if (result==0) {
+				result = this.getId()-that.getId();
+			}
 		}
-		if (item1!=null) {
-			return item1.equals(item2);
-		}
-		return item2.equals(item1);
+		return result;
 	}
-	
+
 	protected static int hashCodeNullSafe(Object item) {
 		if (item==null) {
 			return 0;
 		}
 		return item.hashCode();
+	}
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	protected static int compareNullSafe(Comparable item1, Comparable item2) {
+		if (item1!=null && item2!=null) {
+			return item1.compareTo(item2);
+		}
+		if (item1==null && item2==null) {
+			return 0;
+		}
+		if (item1==null) {
+			return -1;
+		}
+		return 1;
 	}
 
 }
