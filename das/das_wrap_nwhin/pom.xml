@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>das_wrap_nwhin</artifactId>
+	<artifactId>mhv_bluebutton</artifactId>
 	<!-- NEW VERSION FORMAT -->
 	<!-- DasVersion.Sprint.SprintVersion.Buildnumber -->
 	<packaging>war</packaging>
@@ -11,7 +11,7 @@
 		<relativePath>../</relativePath>
 		<!-- NEW VERSION FORMAT -->
 		<!-- DasVersion.Sprint.SprintVersion.Buildnumber -->
-		<version>2.10.1.24-SNAPSHOT</version>
+		<version>1.1.1.1-SNAPSHOT</version>
 	</parent>
 	<properties>
 		<propertyFile.name>web.properties</propertyFile.name>

@@ -4,7 +4,7 @@
 	<artifactId>das_mock</artifactId>
 	<!-- NEW VERSION FORMAT -->
 	<!-- DasVersion.Sprint.SprintVersion.Buildnumber -->
-	<version>2.10.1.24-SNAPSHOT</version>
+	<version>1.1.1.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>das_mock</name>
 	<parent>
@@ -13,7 +13,7 @@
 		<relativePath>../</relativePath>
 		<!-- NEW VERSION FORMAT -->
 		<!-- DasVersion.Sprint.SprintVersion.Buildnumber -->
-		<version>2.10.1.24-SNAPSHOT</version>
+		<version>1.1.1.1-SNAPSHOT</version>
 	</parent>
 	<dependencies>
 		<dependency>
