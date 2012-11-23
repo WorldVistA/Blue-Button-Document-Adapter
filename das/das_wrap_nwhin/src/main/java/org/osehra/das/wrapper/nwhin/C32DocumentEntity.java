@@ -31,17 +31,17 @@ public class C32DocumentEntity implements Serializable, Comparable<C32DocumentEn
 
 	@Id
 	@GeneratedValue
-	@Column(name = "audit_message_id")
+	@Column(name = "AUDIT_MESSAGE_ID")
 	private int id;
 
-	@Column(name = "document")
+	@Column(name = "DOCUMENT")
 	@Lob
 	private String document;
 
-	@Column(name = "icn")
+	@Column(name = "PATIENT_ID")
 	private String icn ;
 
-	@Column(name = "createDate")
+	@Column(name = "CREATE_DATE")
 	private Date createDate;
 
 	@Column(name = "DOCUMENT_PATIENT_ID")
