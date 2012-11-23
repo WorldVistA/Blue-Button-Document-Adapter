@@ -8,7 +8,7 @@
          <!-- Bind entity manager factory to JNDI at java:jboss/C32EMF -->
          <property name="jboss.entity.manager.factory.jndi.name" value="java:jboss/C32EMF" />
          <property name="showSql" value="true"/>
-         <property name="hibernate.hbm2ddl.auto" value="create" />
+        <!--  <property name="hibernate.hbm2ddl.auto" value="create" /> -->
       </properties>
    </persistence-unit>
 </persistence>
