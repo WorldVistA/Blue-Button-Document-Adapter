@@ -49,6 +49,7 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 	public void onMessage(Message msg) {
 		TextMessage tMsg = (TextMessage)msg;
 		AsyncRetrieveMessage aMsg;
+		System.out.println("Whaaa, a message?");
 		try {
 			aMsg = (AsyncRetrieveMessage)getAsyncMessageFormat().parse(tMsg.getText());
 			if (logger.isDebugEnabled()) {
@@ -74,6 +75,8 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 			getC32DocumentDao().insert(newDoc);
 			return;
 		}
+		
+		if (newDoc.getDocument() != null && newDoc.getDocument().isEmpty() == false) {
 		oldDocument.setCreateDate(newDoc.getCreateDate());
 		oldDocument.setDocument(newDoc.getDocument());
 		oldDocument.setDocumentPatientId(newDoc.getDocumentPatientId());
@@ -81,6 +84,7 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 			logger.debug("merging (updating) document:" + oldDocument);
 		}
 		getC32DocumentDao().update(oldDocument);
+		}
 	}
 
 	protected C32DocumentEntity getOldDocument(C32DocumentEntity newDoc) {

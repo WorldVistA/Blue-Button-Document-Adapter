@@ -57,6 +57,7 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 		if (doc==null) {
 			throw new RuntimeException("document for date:" + docDate + " & id:" + patientId + " does not exist");
 		}
+		
 		return getC32Doc(doc);
 	}
 	
@@ -84,6 +85,7 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 		}
 		newDoc.setDocument(Base64.encodeBase64String(xmlDoc.getBytes()));
 		newDoc.setPatientId(doc.getIcn());
+		System.out.println("Returning:" + newDoc.getDocument());
 		return newDoc;
 	}
 	
@@ -101,6 +103,9 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 
 				LocalDate fileDate = LocalDate.fromDateFields(docList.get(i).getCreateDate());
 				LocalDate todayDate = LocalDate.fromDateFields(today);
+				
+				System.out.println("FD:" + fileDate);
+				System.out.println("TD:" + todayDate);
 				
 				if (todayDate.equals(fileDate)) {
 						return docList.get(i);
@@ -186,7 +191,7 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 	}
 	
 	/**
-	 * Limits the number of documents returned in getStatus to the Value in the integer field.
+	 * Limits the number of documents returned in getStatus to two.
 	 * 
 	 * @param today			Date to be used in the filtering process.
 	 * @param docList		List of C32 Documents to be filtered.
@@ -198,15 +203,28 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 			return null;
 		}
 		
-		//Stub method, needs comparator sort to return only the 2 most recent records.
+		int maxReturn = 2;
+		int arraySize = 0;
 		
-		int arraySize = docList.size();
+		if (docList.size() <= maxReturn) {
+			arraySize = docList.size();	
+		} else {
+			arraySize = maxReturn;
+		};
+		
 		List<C32DocumentEntity> statusList = new ArrayList<C32DocumentEntity>(arraySize);
 		
-		for (int i=0;i<docList.size();i++) {
-			statusList.add(docList.get(i));
-			System.out.println(statusList.get(i).getCreateDate());
-			
+		Collections.sort(docList, new Comparator<C32DocumentEntity>() {
+			public int compare (C32DocumentEntity e1, C32DocumentEntity e2) {
+				System.out.println(e1.getCreateDate().compareTo(e2.getCreateDate()));
+				return e1.getCreateDate().compareTo(e2.getCreateDate());
+			}
+		});
+		
+		Collections.sort(docList, Collections.reverseOrder());
+		
+		for (int i=0;i<arraySize;i++) {
+			statusList.add(docList.get(i));			
 		}		
 		return statusList;		
 	}
