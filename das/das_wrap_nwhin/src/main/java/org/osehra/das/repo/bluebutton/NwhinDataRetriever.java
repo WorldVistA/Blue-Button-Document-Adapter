@@ -49,7 +49,6 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 	public void onMessage(Message msg) {
 		TextMessage tMsg = (TextMessage)msg;
 		AsyncRetrieveMessage aMsg;
-		System.out.println("Whaaa, a message?");
 		try {
 			aMsg = (AsyncRetrieveMessage)getAsyncMessageFormat().parse(tMsg.getText());
 			if (logger.isDebugEnabled()) {

@@ -85,7 +85,6 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 		}
 		newDoc.setDocument(Base64.encodeBase64String(xmlDoc.getBytes()));
 		newDoc.setPatientId(doc.getIcn());
-		System.out.println("Returning:" + newDoc.getDocument());
 		return newDoc;
 	}
 	
@@ -103,9 +102,6 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 
 				LocalDate fileDate = LocalDate.fromDateFields(docList.get(i).getCreateDate());
 				LocalDate todayDate = LocalDate.fromDateFields(today);
-				
-				System.out.println("FD:" + fileDate);
-				System.out.println("TD:" + todayDate);
 				
 				if (todayDate.equals(fileDate)) {
 						return docList.get(i);

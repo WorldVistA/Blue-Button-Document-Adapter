@@ -33,22 +33,11 @@ public class RepositoryImplTest extends AbstractDateAwareTests implements IC32Do
 	}
 
 	@Test
-	public void getStatus_nothingStoredOrStarted() {
-		List<DocStatus> list = repo.getStatus("1234", "fred");
-		Assert.assertEquals(1, list.size());
-		assertTodayIncomplete(list.get(0), "1234");
-		
-		assertMessageSent("1234", "fred");
-		assertOnePersisted("1234");
-	}
-
-	@Test
-	public void getStatus_oneOldDocStored() {
+	public void getStatus_oneDocStored() {
 		docsRetrieved = new ArrayList<C32DocumentEntity>(1);
-		docsRetrieved.add(new C32DocumentEntity("112233", "112233v10", getDate(2012, 10, 10, 9, 8, 7), "<doc>hi there</doc>"));
+		docsRetrieved.add(new C32DocumentEntity("112233", "<doc>hi there</doc>", getDate(2012, 10, 10, 9, 8, 7), "112233v10"));
 		List<DocStatus> list = repo.getStatus("112233", "jones");
-		Assert.assertEquals(2, list.size());
-		assertTodayIncomplete(list.get(1), "112233");
+		Assert.assertEquals(1, list.size());
 		assertDateEquals(list.get(0).getDateGenerated(), 2012, 10, 10, 9, 8, 7);
 		Assert.assertEquals("COMPLETE", list.get(0).getStatus());
 		Assert.assertEquals("112233", list.get(0).getPatientId());
