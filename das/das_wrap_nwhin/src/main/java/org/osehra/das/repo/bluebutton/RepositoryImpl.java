@@ -212,7 +212,6 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 		
 		Collections.sort(docList, new Comparator<C32DocumentEntity>() {
 			public int compare (C32DocumentEntity e1, C32DocumentEntity e2) {
-				System.out.println(e1.getCreateDate().compareTo(e2.getCreateDate()));
 				return e1.getCreateDate().compareTo(e2.getCreateDate());
 			}
 		});
