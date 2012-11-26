@@ -55,8 +55,8 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 				logger.debug("calling getDomainXml for " + aMsg);
 			}
 			String xml = (String)_nwhinResource.getDomainXml(aMsg.getPatientId(), aMsg.getPatientName());
-			logger.error("attempting to persist domain XML: " + xml);
-			updateDocumentWithNewDocument(getDocumentFactory().createDocument(aMsg.getPatientId(), xml));
+			logger.debug("Attempting to Persist Domain XML for: " + aMsg.getPatientId());
+			updateDocumentWithNewDocument(aMsg.getPatientId(), getDocumentFactory().createDocument(aMsg.getPatientId(), xml));
 		} catch (JMSException e) {
 			logger.error("JMS exception for " + msg, e);
 		} catch (Exception e) {
@@ -64,18 +64,17 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 		}
 	}
 	
-	protected void updateDocumentWithNewDocument(C32DocumentEntity newDoc) {
+	protected void updateDocumentWithNewDocument(String patientId, C32DocumentEntity newDoc) {
 		boolean debugging = logger.isDebugEnabled();
 		C32DocumentEntity oldDocument = getOldDocument(newDoc);
 		if (oldDocument==null) {
 			if (debugging) {
-				logger.debug("no old document, so inserting new:" + newDoc);
+				logger.info("no old document, so inserting new:" + newDoc);
 			}
 			getC32DocumentDao().insert(newDoc);
 			return;
 		}
-		
-		if (newDoc.getDocument() != null && newDoc.getDocument().isEmpty() == false) {
+		if (newDoc.getDocument() != null && newDoc.getDocument().isEmpty() == false && newDoc.getDocumentPatientId().substring(0, 17) != patientId) {
 		oldDocument.setCreateDate(newDoc.getCreateDate());
 		oldDocument.setDocument(newDoc.getDocument());
 		oldDocument.setDocumentPatientId(newDoc.getDocumentPatientId());
@@ -83,6 +82,8 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 			logger.debug("merging (updating) document:" + oldDocument);
 		}
 		getC32DocumentDao().update(oldDocument);
+		} else {
+			logger.info("No valid record available for patient ID: " + patientId);
 		}
 	}
 

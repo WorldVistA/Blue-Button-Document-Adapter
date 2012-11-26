@@ -35,7 +35,6 @@ public class JmsMessageSender implements IMessageSendable {
 		this.jmsTemplate.send(new MessageCreator() {
 			@Override
 			public Message createMessage(Session session) throws JMSException {
-				System.out.println("Message being created for: " + patientId);
 				return session.createTextMessage(getAsyncMessageFormat().formatObject(new AsyncRetrieveMessage(documentDate, patientId, patientName)));
 			}
 		});
