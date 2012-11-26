@@ -1,18 +1,20 @@
-CREATE TABLE C32.C32_DOCUMENT (
-	AUDIT_MESSAGE_ID INT NOT NULL AUTO_INCREMENT,
-	CREATE_DATE date,
-	DOCUMENT blob,	
-	PATIENT_ID	varchar(255),
-	DOCUMENT_PATIENT_ID varchar(255),
-	Primary key (AUDIT_MESSAGE_ID)
-);
+use C32;
 
-ALTER TABLE C32.C32_DOCUMENT
-ADD INDEX `PATIENT_ID` (`PATIENT_ID` ASC);
+--drop table if exists C32_DOCUMENT;
 
-CREATE TABLE C32.HIBERNATE_SEQUENCE (
-	NEXT_VAL bigint(20) NOT NULL,
-	Primary key (NEXT_VAL)
-);
+--drop table if exists hibernate_sequence;
 
-insert into C32.HIBERNATE_SEQUENCE values(1);
+create table C32_DOCUMENT (
+AUDIT_MESSAGE_ID integer not null,
+CREATE_DATE date,
+DOCUMENT blob,
+DOCUMENT_PATIENT_ID varchar(255),
+PATIENT_ID varchar(255),
+primary key (AUDIT_MESSAGE_ID)) ENGINE = InnoDB;
+
+alter table C32_DOCUMENT
+add index `PATIENT_ID` (`PATIENT_ID` ASC);
+
+create table hibernate_sequence (next_val bigint) ENGINE = InnoDB;
+
+insert into hibernate_sequence values ( 1 );
