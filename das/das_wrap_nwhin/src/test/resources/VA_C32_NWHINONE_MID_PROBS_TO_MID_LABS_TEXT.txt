@@ -1,0 +1,1593 @@
+                </section>
+			</component>
+ 			<!-- 
+			********************************************************
+			MEDICATIONS (RX & Non-RX)  SECTION
+			********************************************************
+			-->
+			<component> <!-- Component 3 -->
+				<section>
+					<!-- CCD Medication Template Id-->
+					<templateId root="2.16.840.1.113883.10.20.1.8"/>
+					<!-- HITSP C32 V2.5:  Medications Section Template -->
+					<templateId root="2.16.840.1.113883.3.88.11.83.112"/>
+				    <!-- HITSP C32 V2.5:  IHE Medications Section Template -->
+				    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+					<code code="10160-0" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Medications - Prescription and Non-Prescription</title>
+					<!--  MEDICATIONS NARRATIVE BLOCK, REQUIRED -->
+					<text>
+					<!-- VLER SEG 1B: Medication Business Rules for Medical Content  -->
+                        <table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Department of Veterans Affairs</th>
+									<th>Business Rules for Construction of Medical Information</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Medications</td>
+									<td>This VA Document contains all medications (outpatient and self-reported) for the patient, from all VA treatment facilities, where the dispense date was within the last 15 months.  It only contains medications that have an active Prescription status.</td>
+								</tr>
+							</tbody>
+						</table>
+						<table ID="medicationNarritive" border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Medication</th>
+									<th>Status</th>
+									<th>Quantity</th>
+									<th>Order Expiration</th>
+									<th>Provider</th>
+									<th>Prescription</th>
+									<th>Dispense Date</th>
+									<th>Sig</th>
+									<th>Source</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<content ID="mndMedication1">INSULIN REG HUMAN INJ</content>
+									</td>
+									<td>
+										<content ID="mndStatus1">Active</content>
+									</td>
+									<td>
+										<content ID="mndQuantity1">4</content>
+									</td>
+									<td>
+										<content ID="mndOrderExpiration1">20121030</content>
+									</td>
+									<td>
+										<content ID="mndProvider1">PATEL,TUSHAR</content>
+									</td>
+									<td>
+										<content ID="mndPrescription1">7133766</content>
+									</td>
+									<td>
+										<content ID="mndDispenseDate1">20111101</content>
+									</td>
+									<td>
+										<content ID="mndSig1">INJECT 2 TIMES DAILY SUBCUTANEOUSLY EVERY MORNING BEFORE BREAKFAST FOR 4 DAYS</content>
+									</td>
+									<td>
+										<content ID="mndSource1">MARTINSBURG VAMC</content>
+									</td>
+								</tr><tr>
+									<td>
+										<content ID="mndMedication2">CYCLOBENZAPRINE HCL 10MG TAB</content>
+									</td>
+									<td>
+										<content ID="mndStatus2">Active</content>
+									</td>
+									<td>
+										<content ID="mndQuantity2">2160</content>
+									</td>
+									<td>
+										<content ID="mndOrderExpiration2">20121101</content>
+									</td>
+									<td>
+										<content ID="mndProvider2">PATEL,TUSHAR</content>
+									</td>
+									<td>
+										<content ID="mndPrescription2">7133765</content>
+									</td>
+									<td>
+										<content ID="mndDispenseDate2">20111101</content>
+									</td>
+									<td>
+										<content ID="mndSig2">TAKE ONE TABLET BY MOUTH EVERY HOUR AS NEEDED FOR MUSCLE SPASM - AVOID ALCOHOL</content>
+									</td>
+									<td>
+										<content ID="mndSource2">MARTINSBURG VAMC</content>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<!-- CCD Medication Act Template Id -->
+							<templateId root="2.16.840.1.113883.10.20.1.24"/>
+							<!-- HITSP V2.5:  Templates for Medications Module/Entry -->
+							<templateId root="2.16.840.1.113883.3.88.11.83.8"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+							<templateId assigningAuthorityName="IHE PCC" root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+							<!-- CCD Medication Act ID as nullflavor -->
+							<id nullFlavor="UNK"/>
+							<!--   8.01 FREE TEXT SIG REFERENCE, Optional -->
+							<id assigningAuthorityName="Department of Veterans Affairs" extension="nullFlavor" root="2.16.840.1.113883.4.349"/>
+							<text>
+								<reference value="#mndSig1"/>					
+							</text>
+							<statusCode code="completed"/>
+							<!-- 8.02 INDICATE MEDICATION STOPPPED, Optional, Removed b/c data not yet available via VA VistA RPCs -->
+							<!-- 8.03 ADMINISTRATION TIMING, Optional, Removed b/c data not yet available via VA VistA RPCs -->
+							<!-- 8.04 FREQUENCY, Optional, Removed b/c data not yet available via VA VistA RPCs -->
+							<!-- 8.05 INTERVAL, Optional,Removed b/c data not yet available via VA VistA RPCs -->
+							<!-- 8.06 DURATION, Optional, Removed b/c data not yet available via VA VistA RPCs -->
+							<!-- 8.07 ROUTE, Optional, Removed b/c data not yet available via VA VistA RPCs -->
+							<!-- 8.08 DOSE, Optional, Removed b/c data not yet available via VA VistA RPCs -->
+							<consumable>
+								<manufacturedProduct>
+									<templateId root="2.16.840.1.113883.10.20.1.53"/>
+									<!-- HITSP C32 V2.5:  C83 Medication Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.8.2"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+									<!--  Added medications template -->
+									<templateId root="2.16.840.1.113883.3.88.11.32.9"/>
+									<!-- HITSP C32 V2.5:  C83 Manufactured Material Attributes -->
+									<manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+										<!--  8.13 CODED PRODUCT NAME, Optional-R2, UNII, RXNorm, NDF-RT, NDC Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- 8.14 CODED BRAND NAME, Optional-R2, UNII, RXNorm, NDF-RT, NDC, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- 8.15 FREE TEXT PRODUCT NAME, REQUIRED -->
+										<code code="UNK" nullFlavor="UNK">
+											<originalText>
+												<reference value="#mndMedication1"/>
+											</originalText>
+										</code>
+										<!-- 8.16 FREE TEXT BRAND NAME, Optional R2, Removed b/c data not yet available via VA VistA RPCs -->
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+							<!-- INFORMATION SOURCE FOR MEDICATIONS, Optional -->
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<!-- HITSP C32 V2.5:   Address Required for assignedAuthor, but VA VistA data not yet available -->
+									<addr/>
+									<!-- HITSP C32 V2.5:    Telecom Required for assignedAuthor, but VA VistA data not yet available -->
+									<telecom/>
+									<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<!-- INFORMATION SOURCE FACILITY OID (ID = VA OID, EXT = TREATING FACILITY NBR) -->
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+										<name>MARTINSBURG VAMC</name>
+										<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+										<telecom/>
+										<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN"> <templateId root="2.16.840.1.113883.3.88.11.83.8.1"/>
+									<!-- VLER SEG 1B:  8.19-TYPE OF MEDICATION, Optional-R2, SNOMED CT -->
+									<code code="73639000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prescription drug">
+										<originalText>Prescription</originalText>
+									</code>
+									<statusCode code="completed"/> 
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<statusCode code="completed"/>
+									<!-- VLER SEG 1B: 8.20 STATUS OF MEDICATION, Optional-R2, SNOMED CT -->
+									<!--  8.20 STATUS OF MEDICATION as originalText b/c SNOMED CT translation not yet available -->
+									<value code="55561003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Active" nullFlavor="UNK" xsi:type="CE">
+										<originalText>ACTIVE</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+							<!-- 8.22 PATIENT INSTRUCTIONS, Optional ,  Removed b/c data not yet available via VA VistA RPCs -->
+							<!-- ORDER INFORMATION -->
+							<entryRelationship typeCode="REFR">
+								<supply classCode="SPLY" moodCode="INT">
+									<templateId root="2.16.840.1.113883.10.20.1.34"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.8.3"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.3"/>
+									<!-- VLER SEG 1B:  8.26 ORDER NUMBER, Optional-R2  -->
+									<id extension="15246019" root="2.16.840.1.113883.4.349"/>
+									<!-- 8.29 ORDER EXPIRATION DATE/TIME, Optional-R2 -->
+									<effectiveTime value="20121030" xsi:type="SXCM_TS"/>
+									<!-- VLER SEG 1B:  8.27 FILLS, Optional -->
+									<repeatNumber value="1"/>
+                                                                        <!-- VLER SEG 8.28 Quantity Ordered omitted until unit of measure available in VistA -->
+									<!--  8.31 ORDERING PROVIDER as author/assignedAuthor-->
+									<author>
+										<!--  VLER SEG 1B:  8.30 ORDER DATE/TIME, Optional-R2 -->
+										<time value="20111030110709"/>
+										<assignedAuthor>
+											<id nullFlavor="UNK"/>
+											<!-- HITSP C32 V2.5:   Address Required for assignedAuthor, but VA VistA data not yet available -->
+											<addr/>
+											<!-- HITSP C32 V2.5:    Telecom Required for assignedAuthor, but VA VistA data not yet available -->
+											<telecom/>
+											<assignedPerson>
+												<!--  8.31 ORDERING PROVIDER, Optional -->
+												<name>PATEL,TUSHAR</name>
+											</assignedPerson>
+										</assignedAuthor>
+									</author>
+								</supply>
+							</entryRelationship>
+							<!-- FULFILLMENT HISTORY INFORMATION -->
+							<entryRelationship typeCode="REFR">
+									<supply classCode="SPLY" moodCode="INT">
+										<templateId root="2.16.840.1.113883.10.20.1.34"/>										
+										<!-- 8.34 PRESCRIPTION NUMBER, Optional-R2 -->
+										<id extension="7133766" root="2.16.840.1.113883.4.349"/>
+										<!-- 8.37 DISPENSE DATE, Optional-R2 -->
+										<effectiveTime value="20111101"/>										
+									</supply>
+							</entryRelationship>
+						</substanceAdministration>
+					</entry><entry typeCode="DRIV">
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<!-- CCD Medication Act Template Id -->
+							<templateId root="2.16.840.1.113883.10.20.1.24"/>
+							<!-- HITSP V2.5:  Templates for Medications Module/Entry -->
+							<templateId root="2.16.840.1.113883.3.88.11.83.8"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+							<templateId assigningAuthorityName="IHE PCC" root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+							<!-- CCD Medication Act ID as nullflavor -->
+							<id nullFlavor="UNK"/>
+							<!--   8.01 FREE TEXT SIG REFERENCE, Optional -->
+							<id assigningAuthorityName="Department of Veterans Affairs" extension="nullFlavor" root="2.16.840.1.113883.4.349"/>
+							<text>
+								<reference value="#mndSig2"/>					
+							</text>
+							<statusCode code="completed"/>
+							<!-- 8.02 INDICATE MEDICATION STOPPPED, Optional, Removed b/c data not yet available via VA VistA RPCs -->
+							<!-- 8.03 ADMINISTRATION TIMING, Optional, Removed b/c data not yet available via VA VistA RPCs -->
+							<!-- 8.04 FREQUENCY, Optional, Removed b/c data not yet available via VA VistA RPCs -->
+							<!-- 8.05 INTERVAL, Optional,Removed b/c data not yet available via VA VistA RPCs -->
+							<!-- 8.06 DURATION, Optional, Removed b/c data not yet available via VA VistA RPCs -->
+							<!-- 8.07 ROUTE, Optional, Removed b/c data not yet available via VA VistA RPCs -->
+							<!-- 8.08 DOSE, Optional, Removed b/c data not yet available via VA VistA RPCs -->
+							<consumable>
+								<manufacturedProduct>
+									<templateId root="2.16.840.1.113883.10.20.1.53"/>
+									<!-- HITSP C32 V2.5:  C83 Medication Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.8.2"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+									<!--  Added medications template -->
+									<templateId root="2.16.840.1.113883.3.88.11.32.9"/>
+									<!-- HITSP C32 V2.5:  C83 Manufactured Material Attributes -->
+									<manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+										<!--  8.13 CODED PRODUCT NAME, Optional-R2, UNII, RXNorm, NDF-RT, NDC Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- 8.14 CODED BRAND NAME, Optional-R2, UNII, RXNorm, NDF-RT, NDC, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- 8.15 FREE TEXT PRODUCT NAME, REQUIRED -->
+										<code code="UNK" nullFlavor="UNK">
+											<originalText>
+												<reference value="#mndMedication2"/>
+											</originalText>
+										</code>
+										<!-- 8.16 FREE TEXT BRAND NAME, Optional R2, Removed b/c data not yet available via VA VistA RPCs -->
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+							<!-- INFORMATION SOURCE FOR MEDICATIONS, Optional -->
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<!-- HITSP C32 V2.5:   Address Required for assignedAuthor, but VA VistA data not yet available -->
+									<addr/>
+									<!-- HITSP C32 V2.5:    Telecom Required for assignedAuthor, but VA VistA data not yet available -->
+									<telecom/>
+									<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<!-- INFORMATION SOURCE FACILITY OID (ID = VA OID, EXT = TREATING FACILITY NBR) -->
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+										<name>MARTINSBURG VAMC</name>
+										<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+										<telecom/>
+										<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN"> <templateId root="2.16.840.1.113883.3.88.11.83.8.1"/>
+									<!-- VLER SEG 1B:  8.19-TYPE OF MEDICATION, Optional-R2, SNOMED CT -->
+									<code code="73639000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prescription drug">
+										<originalText>Prescription</originalText>
+									</code>
+									<statusCode code="completed"/> 
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<statusCode code="completed"/>
+									<!-- VLER SEG 1B: 8.20 STATUS OF MEDICATION, Optional-R2, SNOMED CT -->
+									<!--  8.20 STATUS OF MEDICATION as originalText b/c SNOMED CT translation not yet available -->
+									<value code="55561003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Active" nullFlavor="UNK" xsi:type="CE">
+										<originalText>ACTIVE</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+							<!-- 8.22 PATIENT INSTRUCTIONS, Optional ,  Removed b/c data not yet available via VA VistA RPCs -->
+							<!-- ORDER INFORMATION -->
+							<entryRelationship typeCode="REFR">
+								<supply classCode="SPLY" moodCode="INT">
+									<templateId root="2.16.840.1.113883.10.20.1.34"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.8.3"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.3"/>
+									<!-- VLER SEG 1B:  8.26 ORDER NUMBER, Optional-R2  -->
+									<id extension="15246023" root="2.16.840.1.113883.4.349"/>
+									<!-- 8.29 ORDER EXPIRATION DATE/TIME, Optional-R2 -->
+									<effectiveTime value="20121101" xsi:type="SXCM_TS"/>
+									<!-- VLER SEG 1B:  8.27 FILLS, Optional -->
+									<repeatNumber value="1"/>
+                                                                        <!-- VLER SEG 8.28 Quantity Ordered omitted until unit of measure available in VistA -->
+									<!--  8.31 ORDERING PROVIDER as author/assignedAuthor-->
+									<author>
+										<!--  VLER SEG 1B:  8.30 ORDER DATE/TIME, Optional-R2 -->
+										<time value="20111101151306"/>
+										<assignedAuthor>
+											<id nullFlavor="UNK"/>
+											<!-- HITSP C32 V2.5:   Address Required for assignedAuthor, but VA VistA data not yet available -->
+											<addr/>
+											<!-- HITSP C32 V2.5:    Telecom Required for assignedAuthor, but VA VistA data not yet available -->
+											<telecom/>
+											<assignedPerson>
+												<!--  8.31 ORDERING PROVIDER, Optional -->
+												<name>PATEL,TUSHAR</name>
+											</assignedPerson>
+										</assignedAuthor>
+									</author>
+								</supply>
+							</entryRelationship>
+							<!-- FULFILLMENT HISTORY INFORMATION -->
+							<entryRelationship typeCode="REFR">
+									<supply classCode="SPLY" moodCode="INT">
+										<templateId root="2.16.840.1.113883.10.20.1.34"/>										
+										<!-- 8.34 PRESCRIPTION NUMBER, Optional-R2 -->
+										<id extension="7133765" root="2.16.840.1.113883.4.349"/>
+										<!-- 8.37 DISPENSE DATE, Optional-R2 -->
+										<effectiveTime value="20111101"/>										
+									</supply>
+							</entryRelationship>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+			********************************************************
+			VLER SEG 1B:  VITAL SIGNS SECTION
+			********************************************************
+			-->
+			<component> <!-- Component 4 -->
+				<section>
+					<!-- HITSP C32 V2.5:  HL7 CCD Vital signs section template -->
+					<templateId root="2.16.840.1.113883.10.20.1.16"/> 
+					<!-- HITSP C32 V2.5:  HITSP CDA Vital Signs Section Template -->
+					<templateId root="2.16.840.1.113883.3.88.11.83.119"/> 
+					<!-- HITSP C32 V2.5:  IHE Coded Vital Signs Section Templates -->
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.25"/> 
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2"/> 
+					<!-- HITSP C32 V2.5:  HL7 CCD 8716-3 LOINC Code for Physical Findings/Vital Signs -->
+					<code code="8716-3" codeSystem="2.16.840.1.113883.6.1" displayName="VITAL SIGNS"/>
+					<title>Vital Signs</title>
+					<!--  VITAL SIGNS NARRATIVE BLOCK , REQUIRED -->
+					<text>
+					 <!-- VLER SEG 1B: Vital Signs Business Rules for Medical Content  -->
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Department of Veterans Affairs</th>
+									<th>Business Rules for Construction of Medical Information</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Vital Signs</td>
+									<td>This VA Document contains all vital signs (inpatient and outpatient) for the patient, from all VA treatment facilities, where the panel Date Taken is within 12 months up to a maximum of the 10 most recent panels.  If more than one panel was taken on the same date, only the most recent panel is populated for that date. 
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table ID="vitalNarritive" border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Date</th>
+									<th>Measurements</th>
+									<th>Source</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<content ID="vndDate1">20120515132054</content>
+									</td>
+									<td>
+										<list>
+											<item>
+												<content ID="vndMeasurement1-1">Heart rate: 85/min</content>
+											</item><item>
+												<content ID="vndMeasurement1-2">Body temperature: 99[degF]</content>
+											</item>
+										</list>
+									</td>
+									<td>
+										<content ID="vndSource1">MARTINSBURG VAMC</content>
+									</td>
+								</tr><tr>
+									<td>
+										<content ID="vndDate2">20120113092623</content>
+									</td>
+									<td>
+										<list>
+											<item>
+												<content ID="vndMeasurement2-1">Bdy height: 75[in_us]</content>
+											</item><item>
+												<content ID="vndMeasurement2-2">Heart rate: 50/min</content>
+											</item><item>
+												<content ID="vndMeasurement2-3">SaO2% BldC Oximetry: 34%</content>
+											</item><item>
+												<content ID="vndMeasurement2-4">Resp rate: 35/min</content>
+											</item><item>
+												<content ID="vndMeasurement2-5">Body temperature: 105[degF]</content>
+											</item><item>
+												<content ID="vndMeasurement2-6">Weight Measured: 250[lb_av]</content>
+											</item><item>
+												<content ID="vndMeasurement2-7">BP sys: 130mm[Hg]</content>
+											</item><item>
+												<content ID="vndMeasurement2-8">BP dias: 75mm[Hg]</content>
+											</item>
+										</list>
+									</td>
+									<td>
+										<content ID="vndSource2">CHEYENNE VAMC</content>
+									</td>
+								</tr><tr>
+									<td>
+										<content ID="vndDate3">20111101120538</content>
+									</td>
+									<td>
+										<list>
+											<item>
+												<content ID="vndMeasurement3-1">Bdy height: 70[in_us]</content>
+											</item><item>
+												<content ID="vndMeasurement3-2">Heart rate: 74/min</content>
+											</item><item>
+												<content ID="vndMeasurement3-3">SaO2% BldC Oximetry: 65%</content>
+											</item><item>
+												<content ID="vndMeasurement3-4">Resp rate: 95/min</content>
+											</item><item>
+												<content ID="vndMeasurement3-5">Body temperature: 100[degF]</content>
+											</item><item>
+												<content ID="vndMeasurement3-6">Weight Measured: 175[lb_av]</content>
+											</item><item>
+												<content ID="vndMeasurement3-7">BP sys: 120mm[Hg]</content>
+											</item><item>
+												<content ID="vndMeasurement3-8">BP dias: 80mm[Hg]</content>
+											</item>
+										</list>
+									</td>
+									<td>
+										<content ID="vndSource3">MARTINSBURG VAMC</content>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+							<!--  CDA Observation Text as a Reference tag -->
+							<content ID="vital1" revised="delete">Vital Sign Observation Text Not Available</content>
+					</text>          
+					<entry typeCode="DRIV"> <!-- Repeat Entry/Organizer block for each vital sign panel -->
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, Organizer parent templates -->
+							<templateId root="2.16.840.1.113883.10.20.1.32"/> 
+							<templateId root="2.16.840.1.113883.10.20.1.35"/> 
+							<!-- HITSP C32 V2.5:  Vital Signs Organizer Template, REQUIRED -->
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/> 
+							<!-- Vital Sign Organizer ID as nullFlavor b/c data not yet available via VA VistA RPCs -->
+							<id nullFlavor="UNK"/>
+							<code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vital signs"/>
+							<statusCode code="completed"/>
+							<!-- HITSP C32 V2.5:  All Vital Signs Recorded on this date will be grouped under the observation block -->
+							<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+							<effectiveTime value="20120515132054"/>
+							<!-- INFORMATION SOURCE FOR VITAL SIGN ORGANIZER/PANEL, Optional -->
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<!-- HITSP C32 V2.5:   Address Required for assignedAuthor, but VA VistA data not yet available -->
+									<addr/>
+									<!-- HITSP C32 V2.5:    Telecom Required for assignedAuthor, but VA VistA data not yet available -->
+									<telecom/>
+									<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+									<assignedPerson>
+											<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<!-- INFORMATION SOURCE FACILITY OID (ID = VA OID, EXT = TREATING FACILITY NBR) -->
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+										<name>MARTINSBURG VAMC</name>
+										<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+										<telecom/>
+										<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<!-- HITSP C32 V2.5:  One component block for each Vital Sign -->
+							<component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="7002034" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="8867-4" codeSystem="2.16.840.1.113883.6.1" displayName="Heart rate">
+										<originalText>PULSE</originalText>
+										<translation code="4500636" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="PULSE"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20120515132432"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="/min" value="85" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component><component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="7002033" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="8310-5" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature">
+										<originalText>TEMPERATURE</originalText>
+										<translation code="4500638" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="TEMPERATURE"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20120515132432"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="[degF]" value="99" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component>
+						</organizer>
+					</entry><entry typeCode="DRIV"> <!-- Repeat Entry/Organizer block for each vital sign panel -->
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, Organizer parent templates -->
+							<templateId root="2.16.840.1.113883.10.20.1.32"/> 
+							<templateId root="2.16.840.1.113883.10.20.1.35"/> 
+							<!-- HITSP C32 V2.5:  Vital Signs Organizer Template, REQUIRED -->
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/> 
+							<!-- Vital Sign Organizer ID as nullFlavor b/c data not yet available via VA VistA RPCs -->
+							<id nullFlavor="UNK"/>
+							<code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vital signs"/>
+							<statusCode code="completed"/>
+							<!-- HITSP C32 V2.5:  All Vital Signs Recorded on this date will be grouped under the observation block -->
+							<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+							<effectiveTime value="20120113092623"/>
+							<!-- INFORMATION SOURCE FOR VITAL SIGN ORGANIZER/PANEL, Optional -->
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<!-- HITSP C32 V2.5:   Address Required for assignedAuthor, but VA VistA data not yet available -->
+									<addr/>
+									<!-- HITSP C32 V2.5:    Telecom Required for assignedAuthor, but VA VistA data not yet available -->
+									<telecom/>
+									<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+									<assignedPerson>
+											<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<!-- INFORMATION SOURCE FACILITY OID (ID = VA OID, EXT = TREATING FACILITY NBR) -->
+										<id extension="442" root="2.16.840.1.113883.4.349"/>
+										<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+										<name>CHEYENNE VAMC</name>
+										<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+										<telecom/>
+										<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<!-- HITSP C32 V2.5:  One component block for each Vital Sign -->
+							<component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="2662414" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="8302-2" codeSystem="2.16.840.1.113883.6.1" displayName="Bdy height">
+										<originalText>HEIGHT</originalText>
+										<translation code="4688724" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="HEIGHT"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20120113092739"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="[in_us]" value="75" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component><component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="2662408" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="8867-4" codeSystem="2.16.840.1.113883.6.1" displayName="Heart rate">
+										<originalText>PULSE</originalText>
+										<translation code="4500636" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="PULSE"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20120113092739"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="/min" value="50" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component><component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="2662412" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="2710-2" codeSystem="2.16.840.1.113883.6.1" displayName="SaO2% BldC Oximetry">
+										<originalText>PULSE OXIMETRY</originalText>
+										<translation code="4500637" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="PULSE OXIMETRY"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20120113092739"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="%" value="34" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component><component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="2662409" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="9279-1" codeSystem="2.16.840.1.113883.6.1" displayName="Resp rate">
+										<originalText>RESPIRATION</originalText>
+										<translation code="4688725" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="RESPIRATION"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20120113092739"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="/min" value="35" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component><component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="2662407" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="8310-5" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature">
+										<originalText>TEMPERATURE</originalText>
+										<translation code="4500638" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="TEMPERATURE"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20120113092739"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="[degF]" value="105" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component><component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="2662411" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="3141-9" codeSystem="2.16.840.1.113883.6.1" displayName="Weight Measured">
+										<originalText>WEIGHT</originalText>
+										<translation code="4500639" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="WEIGHT"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20120113092739"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="[lb_av]" value="250" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component><component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="2662410~1" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="8480-6" codeSystem="2.16.840.1.113883.6.1" displayName="BP sys">
+										<originalText>SYSTOLIC BLOOD PRESSURE</originalText>
+										<translation code="4500634~1" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="SYSTOLIC BLOOD PRESSURE"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20120113092739"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="mm[Hg]" value="130" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component><component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="2662410~2" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="8462-4" codeSystem="2.16.840.1.113883.6.1" displayName="BP dias">
+										<originalText>DIASTOLIC BLOOD PRESSURE</originalText>
+										<translation code="4500634~2" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="DIASTOLIC BLOOD PRESSURE"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20120113092739"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="mm[Hg]" value="75" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component>
+						</organizer>
+					</entry><entry typeCode="DRIV"> <!-- Repeat Entry/Organizer block for each vital sign panel -->
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, Organizer parent templates -->
+							<templateId root="2.16.840.1.113883.10.20.1.32"/> 
+							<templateId root="2.16.840.1.113883.10.20.1.35"/> 
+							<!-- HITSP C32 V2.5:  Vital Signs Organizer Template, REQUIRED -->
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/> 
+							<!-- Vital Sign Organizer ID as nullFlavor b/c data not yet available via VA VistA RPCs -->
+							<id nullFlavor="UNK"/>
+							<code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vital signs"/>
+							<statusCode code="completed"/>
+							<!-- HITSP C32 V2.5:  All Vital Signs Recorded on this date will be grouped under the observation block -->
+							<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+							<effectiveTime value="20111101120538"/>
+							<!-- INFORMATION SOURCE FOR VITAL SIGN ORGANIZER/PANEL, Optional -->
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<!-- HITSP C32 V2.5:   Address Required for assignedAuthor, but VA VistA data not yet available -->
+									<addr/>
+									<!-- HITSP C32 V2.5:    Telecom Required for assignedAuthor, but VA VistA data not yet available -->
+									<telecom/>
+									<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+									<assignedPerson>
+											<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<!-- INFORMATION SOURCE FACILITY OID (ID = VA OID, EXT = TREATING FACILITY NBR) -->
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+										<name>MARTINSBURG VAMC</name>
+										<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+										<telecom/>
+										<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<!-- HITSP C32 V2.5:  One component block for each Vital Sign -->
+							<component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="7001896" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="8302-2" codeSystem="2.16.840.1.113883.6.1" displayName="Bdy height">
+										<originalText>HEIGHT</originalText>
+										<translation code="4688724" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="HEIGHT"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101120842"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="[in_us]" value="70" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component><component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="7001893" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="8867-4" codeSystem="2.16.840.1.113883.6.1" displayName="Heart rate">
+										<originalText>PULSE</originalText>
+										<translation code="4500636" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="PULSE"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101120842"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="/min" value="74" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component><component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="7001899" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="2710-2" codeSystem="2.16.840.1.113883.6.1" displayName="SaO2% BldC Oximetry">
+										<originalText>PULSE OXIMETRY</originalText>
+										<translation code="4500637" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="PULSE OXIMETRY"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101120842"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="%" value="65" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component><component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="7001894" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="9279-1" codeSystem="2.16.840.1.113883.6.1" displayName="Resp rate">
+										<originalText>RESPIRATION</originalText>
+										<translation code="4688725" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="RESPIRATION"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101120842"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="/min" value="95" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component><component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="7001892" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="8310-5" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature">
+										<originalText>TEMPERATURE</originalText>
+										<translation code="4500638" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="TEMPERATURE"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101120842"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="[degF]" value="100" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component><component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="7001897" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="3141-9" codeSystem="2.16.840.1.113883.6.1" displayName="Weight Measured">
+										<originalText>WEIGHT</originalText>
+										<translation code="4500639" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="WEIGHT"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101120842"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="[lb_av]" value="175" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component><component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="7001895~1" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="8480-6" codeSystem="2.16.840.1.113883.6.1" displayName="BP sys">
+										<originalText>SYSTOLIC BLOOD PRESSURE</originalText>
+										<translation code="4500634~1" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="SYSTOLIC BLOOD PRESSURE"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101120842"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="mm[Hg]" value="120" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component><component> <!-- Repeat Component/Organizer block for each vital sign in the panel -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<!-- HITSP C32 V2.5:  Vital Sign Module/Entry Templates -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<!-- HITSP C32 V2.5:  ASTM/HL7 CCD Specification for Vital Signs, parent templates -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/> 
+									<!-- HITSP C32 V2.5:  14.01-VITAL SIGN RESULT ID, REQUIRED  -->
+									<!-- 14.01-VITAL SIGN RESULT ID  -->
+									<id extension="7001895~2" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  14.03-VITAL SIGN RESULT TYPE, REQUIRED, LOINC  -->
+									<code code="8462-4" codeSystem="2.16.840.1.113883.6.1" displayName="BP dias">
+										<originalText>DIASTOLIC BLOOD PRESSURE</originalText>
+										<translation code="4500634~2" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="DIASTOLIC BLOOD PRESSURE"/>
+									</code>
+									<!-- CDA based uses of Simple Observations Text element Required -->
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  14.04-VITAL SIGN RESULT STATUS, REQUIRED, Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  14.02-VITAL SIGN RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101120842"/>
+									<!-- HITSP C32 V2.5:  14.05-VITAL SIGN RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- 14.05-VITAL SIGN RESULT VALUE with Unit of Measure -->
+									<value unit="mm[Hg]" value="80" xsi:type="PQ"/>
+									<!-- 14.05-VITAL SIGN RESULT VALUE when Unit of Measure is blank then omit unit attribute-->
+									<!-- value xsi:type="PQ" value="" -->
+									<!-- HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Optional, HL7 Result Normalcy Status Value Set -->
+									<!--  HITSP C32 V2.5:  14.06-VITAL SIGN RESULT INTERPRETATION, Removed b/c data not yet available via VA VistA RPCs -->
+										<!-- HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Optional, -->
+										<!--   HITSP C32 V2.5:  14.07-VITAL SIGN RESULT REFERENCE RANGE, Removed b/c data not yet available via VA VistA RPCs -->
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+            <!-- 
+			********************************************************
+			VLER SEG 1B:  LAB RESULTS SECTION (Chemistry/Hematology)
+			********************************************************
+			-->
+			<component> 
+				<section><!-- Component 5 -->
+					<!-- HITSP C32 V2.5:  HL7 CCD Lab Results section template -->
+					<templateId root="2.16.840.1.113883.10.20.1.14"/> 
+					<!-- HITSP C32 V2.5:  HITSP CDA Diagniostic Results Section Template -->
+					<templateId root="2.16.840.1.113883.3.88.11.83.122"/> 
+					<!-- HITSP C32 V2.5:  IHE Coded Results Section Templates -->
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.28"/> 
+					<!-- HITSP C32 V2.5:  HL7 CCD 30954-2 LOINC Code (Required) for Diagnostic tests and/or Laboratory Data -->
+					<code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Relevant diagnostic tests and/or laboratory data"/>
+					<title>Lab Results - Chemistry and Hematology</title>
+					<!--  LAB RESULTS  NARRATIVE BLOCK , REQUIRED -->
+					<text>
+							 <!-- VLER SEG 1B: Lab Results Business Rules for Medical Content  -->
+							<table border="1" width="100%">
+								<thead>
+									<tr>
+										<th>Department of Veterans Affairs</th>
+										<th>Business Rules for Construction of Medical Information</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Lab Results</td>
+										<td>This VA Document contains all Chemistry and Hematology Lab Results for the patient, from all VA treatment facilities, where the result date was within the last 12 months, up to a limit of the most recent 5 panels.</td>
+									</tr>
+								</tbody>
+							</table>
+							<table ID="labNarritive" border="1" width="100%">
+								<thead>
+									<tr>
+										<th>Date/Time</th>
+										<th>Result Type</th>
+										<th>Source</th>
+										<th>Result - Unit</th>
+										<th>Interpretation</th>
+										<th>Reference Range</th>
+										<th>Status</th>
+										<th>Comment</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<content ID="lndDateTime1">20111101171133</content>
+										</td>
+										<td>
+											<content ID="lndResultType1">GLUCOSE</content>
+										</td>
+										<td>
+											<content ID="lndSource1">MARTINSBURG VAMC</content>
+										</td>
+										<td>
+											<content/>
+										</td>
+										<td>
+											<content/>
+										</td>
+										<td>
+											<content/>
+										</td>
+										<td>
+											<content ID="lndStatus1">completed</content>
+										</td>
+										<td>
+											<content ID="lndComment1">~For Test: GLUCOSE ~Patient may have high blood sugar Patient has good blood sugar level </content>
+										</td>
+									</tr><tr>
+										<td>
+											<content>20111101171133</content>
+										</td>
+										<td>
+											<content ID="lndResultType1-1">Glucose [Mass/volume] in Serum or Plasma</content>
+										</td>
+										<td>
+											<content>MARTINSBURG VAMC</content>
+										</td>
+										<td>
+											<content ID="lndResultUnit1-1">89 MG/DL</content>
+										</td>
+										<td>
+											<content ID="lndInterpretation1-1"/>
+										</td>
+										<td>
+											<content ID="lndReferenceRange1-1">74-118</content>
+										</td>
+										<td>
+											<content>completed</content>
+										</td>
+										<td>
+											<content>~For Test: GLUCOSE ~Patient may have high blood sugar Patient has good blood sugar level </content>
+										</td>
+									</tr><tr>
+										<td>
+											<content ID="lndDateTime2">20111101150315</content>
+										</td>
+										<td>
+											<content ID="lndResultType2">CHEM 7</content>
+										</td>
+										<td>
+											<content ID="lndSource2">MARTINSBURG VAMC</content>
+										</td>
+										<td>
+											<content/>
+										</td>
+										<td>
+											<content/>
+										</td>
+										<td>
+											<content/>
+										</td>
+										<td>
+											<content ID="lndStatus2">completed</content>
+										</td>
+										<td>
+											<content ID="lndComment2">TEST 11012011 </content>
+										</td>
+									</tr><tr>
+										<td>
+											<content>20111101150315</content>
+										</td>
+										<td>
+											<content ID="lndResultType2-1">Glucose [Mass/volume] in Serum or Plasma</content>
+										</td>
+										<td>
+											<content>MARTINSBURG VAMC</content>
+										</td>
+										<td>
+											<content ID="lndResultUnit2-1">97 MG/DL</content>
+										</td>
+										<td>
+											<content ID="lndInterpretation2-1"/>
+										</td>
+										<td>
+											<content ID="lndReferenceRange2-1">74-118</content>
+										</td>
+										<td>
+											<content>completed</content>
+										</td>
+										<td>
+											<content>TEST 11012011 </content>
+										</td>
+									</tr><tr>
+										<td>
+											<content>20111101150315</content>
+										</td>
+										<td>
+											<content ID="lndResultType2-2">Urea nitrogen [Mass/volume] in Serum or Plasma</content>
+										</td>
+										<td>
+											<content>MARTINSBURG VAMC</content>
+										</td>
+										<td>
+											<content ID="lndResultUnit2-2">10 MG/DL</content>
+										</td>
+										<td>
+											<content ID="lndInterpretation2-2"/>
+										</td>
+										<td>
+											<content ID="lndReferenceRange2-2">9-20</content>
+										</td>
+										<td>
+											<content>completed</content>
+										</td>
+										<td>
+											<content>TEST 11012011 </content>
+										</td>
+									</tr><tr>
+										<td>
+											<content>20111101150315</content>
+										</td>
+										<td>
+											<content ID="lndResultType2-3">Creatinine [Mass/volume] in Serum or Plasma</content>
+										</td>
+										<td>
+											<content>MARTINSBURG VAMC</content>
+										</td>
+										<td>
+											<content ID="lndResultUnit2-3">0.9 MG/DL</content>
+										</td>
+										<td>
+											<content ID="lndInterpretation2-3"/>
+										</td>
+										<td>
+											<content ID="lndReferenceRange2-3">0.7-1.5</content>
+										</td>
+										<td>
+											<content>completed</content>
+										</td>
+										<td>
+											<content>TEST 11012011 </content>
+										</td>
+									</tr><tr>
+										<td>
+											<content>20111101150315</content>
+										</td>
+										<td>
+											<content ID="lndResultType2-4">Sodium [Moles/volume] in Serum or Plasma</content>
+										</td>
+										<td>
+											<content>MARTINSBURG VAMC</content>
+										</td>
+										<td>
+											<content ID="lndResultUnit2-4">130 MMOL/L</content>
+										</td>
+										<td>
+											<content ID="lndInterpretation2-4">L</content>
+										</td>
+										<td>
+											<content ID="lndReferenceRange2-4">133-145</content>
+										</td>
+										<td>
+											<content>completed</content>
+										</td>
+										<td>
+											<content>TEST 11012011 </content>
+										</td>
+									</tr><tr>
+										<td>
+											<content>20111101150315</content>
+										</td>
+										<td>
+											<content ID="lndResultType2-5">Potassium [Moles/volume] in Serum or Plasma</content>
+										</td>
+										<td>
+											<content>MARTINSBURG VAMC</content>
+										</td>
+										<td>
+											<content ID="lndResultUnit2-5">4.5 MMOL/L</content>
+										</td>
+										<td>
+											<content ID="lndInterpretation2-5"/>
+										</td>
+										<td>
+											<content ID="lndReferenceRange2-5">3.5-5.0</content>
+										</td>
+										<td>
+											<content>completed</content>
+										</td>
+										<td>
+											<content>TEST 11012011 </content>
+										</td>
+									</tr><tr>
+										<td>
+											<content>20111101150315</content>
+										</td>
+										<td>
+											<content ID="lndResultType2-6">Chloride [Moles/volume] in Serum or Plasma</content>
+										</td>
+										<td>
+											<content>MARTINSBURG VAMC</content>
+										</td>
+										<td>
+											<content ID="lndResultUnit2-6">72 MMOL/L</content>
+										</td>
+										<td>
+											<content ID="lndInterpretation2-6">L</content>
+										</td>
+										<td>
+											<content ID="lndReferenceRange2-6">98-111</content>
+										</td>
+										<td>
+											<content>completed</content>
+										</td>
+										<td>
+											<content>TEST 11012011 </content>
+										</td>
+									</tr><tr>
+										<td>
+											<content>20111101150315</content>
+										</td>
+										<td>
+											<content ID="lndResultType2-7">Carbon dioxide, total [Moles/volume] in Serum or Plasma</content>
+										</td>
+										<td>
+											<content>MARTINSBURG VAMC</content>
+										</td>
+										<td>
+											<content ID="lndResultUnit2-7">30.0 MMOL/L</content>
+										</td>
+										<td>
+											<content ID="lndInterpretation2-7"/>
+										</td>
+										<td>
+											<content ID="lndReferenceRange2-7">22.0-30.0</content>
+										</td>
+										<td>
+											<content>completed</content>
+										</td>
+										<td>
+											<content>TEST 11012011 </content>
+										</td>
+									</tr>
