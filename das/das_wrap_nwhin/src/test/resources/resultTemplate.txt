@@ -1,0 +1,400 @@
+<entry typeCode="DRIV"> 
+	<organizer classCode="BATTERY" moodCode="EVN">
+		<templateId root="2.16.840.1.113883.10.20.1.32"/>
+		<id extension="613;1519399;3111101;3;1" root="2.16.840.1.113883.4.349"/>
+		<code nullFlavor="UNK">
+			<originalText>GENERATED SAMPLE</originalText>
+		</code>
+		<statusCode code="completed"/>
+		<effectiveTime value="%1$s"/>
+		<!--Collected Date/Time -->
+		<author>
+			<time nullFlavor="UNK"/>
+			<assignedAuthor>
+				<id nullFlavor="NI"/>
+				<addr/>
+				<telecom/>
+				<assignedPerson>
+					<name/>
+				</assignedPerson>
+				<representedOrganization>
+					<id extension="613" root="2.16.840.1.113883.4.349"/>
+					<name>MARTINSBURG VAMC</name>
+					<telecom/>
+					<addr/>
+				</representedOrganization>
+			</assignedAuthor>
+		</author>
+		<component>
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+				<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+				<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+				<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+				<id extension="CH;6888897.849685;2" root="2.16.840.1.113883.4.349"/>
+				<code code="2345-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Glucose [Mass/volume] in Serum or Plasma">
+					<originalText>GLUCOSE</originalText>
+				</code>
+				<text>
+					<reference value="#lab-1"/>
+				</text>
+				<statusCode code="completed"/>
+				<effectiveTime value="%1$s"/>
+				<value representation="TXT" xsi:type="ST">97 MG/DL</value>
+				<interpretationCode nullFlavor="UNK">
+					<originalText/>
+				</interpretationCode>
+				<entryRelationship inversionInd="true" typeCode="SUBJ">
+					<act classCode="ACT" moodCode="EVN">
+						<templateId root="2.16.840.1.113883.10.20.1.40"/>
+						<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+						<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+						<text>
+							<reference value="#lndComment%2$s"/>
+						</text>
+						<statusCode code="completed"/>
+						<author>
+							<time nullFlavor="UNK"/>
+							<assignedAuthor>
+								<id nullFlavor="NI"/>
+								<addr/>
+								<telecom/>
+								<assignedPerson>
+									<name/>
+								</assignedPerson>
+								<representedOrganization>
+									<name/>
+									<telecom/>
+									<addr/>
+								</representedOrganization>
+							</assignedAuthor>
+						</author>
+					</act>
+				</entryRelationship>
+				<referenceRange>
+					<observationRange>
+						<text>74-118</text>
+					</observationRange>
+				</referenceRange>
+			</observation>
+		</component>
+		<component>
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+				<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+				<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+				<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+				<id extension="CH;6888897.849685;3" root="2.16.840.1.113883.4.349"/>
+				<code code="3094-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Urea nitrogen [Mass/volume] in Serum or Plasma">
+					<originalText>UREA NITROGEN (BUN)</originalText>
+				</code>
+				<text>
+					<reference value="#lab-1"/>
+				</text>
+				<statusCode code="completed"/>
+				<effectiveTime value="%1$s"/>
+				<value representation="TXT" xsi:type="ST">10 MG/DL</value>
+				<interpretationCode nullFlavor="UNK">
+					<originalText/>
+				</interpretationCode>
+				<entryRelationship inversionInd="true" typeCode="SUBJ">
+					<act classCode="ACT" moodCode="EVN">
+						<templateId root="2.16.840.1.113883.10.20.1.40"/>
+						<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+						<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+						<text>
+							<reference value="#lndComment%2$s"/>
+						</text>
+						<statusCode code="completed"/>
+						<author>
+							<time nullFlavor="UNK"/>
+							<assignedAuthor>
+								<id nullFlavor="NI"/>
+								<addr/>
+								<telecom/>
+								<assignedPerson>
+									<name/>
+								</assignedPerson>
+								<representedOrganization>
+									<name/>
+									<telecom/>
+									<addr/>
+								</representedOrganization>
+							</assignedAuthor>
+						</author>
+					</act>
+				</entryRelationship>
+				<referenceRange>
+					<observationRange>
+						<text>9-20</text>
+					</observationRange>
+				</referenceRange>
+			</observation>
+		</component>
+		<component>
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+				<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+				<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+				<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+				<id extension="CH;6888897.849685;4" root="2.16.840.1.113883.4.349"/>
+				<code code="2160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Creatinine [Mass/volume] in Serum or Plasma">
+					<originalText>CREATININE</originalText>
+				</code>
+				<text>
+					<reference value="#lab-1"/>
+				</text>
+				<statusCode code="completed"/>
+				<effectiveTime value="%1$s"/>
+				<value representation="TXT" xsi:type="ST">0.9 MG/DL</value>
+				<interpretationCode nullFlavor="UNK">
+					<originalText/>
+				</interpretationCode>
+				<entryRelationship inversionInd="true" typeCode="SUBJ">
+					<act classCode="ACT" moodCode="EVN">
+						<templateId root="2.16.840.1.113883.10.20.1.40"/>
+						<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+						<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+						<text>
+							<reference value="#lndComment%2$s"/>
+						</text>
+						<statusCode code="completed"/>
+						<author>
+							<time nullFlavor="UNK"/>
+							<assignedAuthor>
+								<id nullFlavor="NI"/>
+								<addr/>
+								<telecom/>
+								<assignedPerson>
+									<name/>
+								</assignedPerson>
+								<representedOrganization>
+									<name/>
+									<telecom/>
+									<addr/>
+								</representedOrganization>
+							</assignedAuthor>
+						</author>
+					</act>
+				</entryRelationship>
+				<referenceRange>
+					<observationRange>
+						<text>0.7-1.5</text>
+					</observationRange>
+				</referenceRange>
+			</observation>
+		</component>
+		<component>
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+				<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+				<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+				<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+				<id extension="CH;6888897.849685;5" root="2.16.840.1.113883.4.349"/>
+				<code code="2951-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Sodium [Moles/volume] in Serum or Plasma">
+					<originalText>SODIUM</originalText>
+				</code>
+				<text>
+					<reference value="#lab-1"/>
+				</text>
+				<statusCode code="completed"/>
+				<effectiveTime value="%1$s"/>
+				<value representation="TXT" xsi:type="ST">130 MMOL/L</value>
+				<interpretationCode nullFlavor="UNK">
+					<originalText>L</originalText>
+				</interpretationCode>
+				<entryRelationship inversionInd="true" typeCode="SUBJ">
+					<act classCode="ACT" moodCode="EVN">
+						<templateId root="2.16.840.1.113883.10.20.1.40"/>
+						<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+						<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+						<text>
+							<reference value="#lndComment%2$s"/>
+						</text>
+						<statusCode code="completed"/>
+						<author>
+							<time nullFlavor="UNK"/>
+							<assignedAuthor>
+								<id nullFlavor="NI"/>
+								<addr/>
+								<telecom/>
+								<assignedPerson>
+									<name/>
+								</assignedPerson>
+								<representedOrganization>
+									<name/>
+									<telecom/>
+									<addr/>
+								</representedOrganization>
+							</assignedAuthor>
+						</author>
+					</act>
+				</entryRelationship>
+				<referenceRange>
+					<observationRange>
+						<text>133-145</text>
+					</observationRange>
+				</referenceRange>
+			</observation>
+		</component>
+		<component>
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+				<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+				<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+				<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+				<id extension="CH;6888897.849685;6" root="2.16.840.1.113883.4.349"/>
+				<code code="2823-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Potassium [Moles/volume] in Serum or Plasma">
+					<originalText>POTASSIUM</originalText>
+				</code>
+				<text>
+					<reference value="#lab-1"/>
+				</text>
+				<statusCode code="completed"/>
+				<effectiveTime value="%1$s"/>
+				<value representation="TXT" xsi:type="ST">4.5 MMOL/L</value>
+				<interpretationCode nullFlavor="UNK">
+					<originalText/>
+				</interpretationCode>
+				<entryRelationship inversionInd="true" typeCode="SUBJ">
+					<act classCode="ACT" moodCode="EVN">
+						<templateId root="2.16.840.1.113883.10.20.1.40"/>
+						<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+						<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+						<text>
+							<reference value="#lndComment%2$s"/>
+						</text>
+						<statusCode code="completed"/>
+						<author>
+							<time nullFlavor="UNK"/>
+							<assignedAuthor>
+								<id nullFlavor="NI"/>
+								<addr/>
+								<telecom/>
+								<assignedPerson>
+									<name/>
+								</assignedPerson>
+								<representedOrganization>
+									<name/>
+									<telecom/>
+									<addr/>
+								</representedOrganization>
+							</assignedAuthor>
+						</author>
+					</act>
+				</entryRelationship>
+				<referenceRange>
+					<observationRange>
+						<text>3.5-5.0</text>
+					</observationRange>
+				</referenceRange>
+			</observation>
+		</component>
+		<component>
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+				<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+				<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+				<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+				<id extension="CH;6888897.849685;7" root="2.16.840.1.113883.4.349"/>
+				<code code="2075-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Chloride [Moles/volume] in Serum or Plasma">
+					<originalText>CHLORIDE</originalText>
+				</code>
+				<text>
+					<reference value="#lab-1"/>
+				</text>
+				<statusCode code="completed"/>
+				<effectiveTime value="%1$s"/>
+				<value representation="TXT" xsi:type="ST">72 MMOL/L</value>
+				<interpretationCode nullFlavor="UNK">
+					<originalText>L</originalText>
+				</interpretationCode>
+				<entryRelationship inversionInd="true" typeCode="SUBJ">
+					<act classCode="ACT" moodCode="EVN">
+						<templateId root="2.16.840.1.113883.10.20.1.40"/>
+						<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+						<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+						<text>
+							<reference value="#lndComment%2$s"/>
+						</text>
+						<statusCode code="completed"/>
+						<author>
+							<time nullFlavor="UNK"/>
+							<assignedAuthor>
+								<id nullFlavor="NI"/>
+								<addr/>
+								<telecom/>
+								<assignedPerson>
+									<name/>
+								</assignedPerson>
+								<representedOrganization>
+									<name/>
+									<telecom/>
+									<addr/>
+								</representedOrganization>
+							</assignedAuthor>
+						</author>
+					</act>
+				</entryRelationship>
+				<referenceRange>
+					<observationRange>
+						<text>98-111</text>
+					</observationRange>
+				</referenceRange>
+			</observation>
+		</component>
+		<component>
+			<observation classCode="OBS" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+				<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+				<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+				<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+				<id extension="CH;6888897.849685;8" root="2.16.840.1.113883.4.349"/>
+				<code code="2028-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Carbon dioxide, total [Moles/volume] in Serum or Plasma">
+					<originalText>CO2</originalText>
+				</code>
+				<text>
+					<reference value="#lab-1"/>
+				</text>
+				<statusCode code="completed"/>
+				<effectiveTime value="%1$s"/>
+				<value representation="TXT" xsi:type="ST">30.0 MMOL/L</value>
+				<interpretationCode nullFlavor="UNK">
+					<originalText/>
+				</interpretationCode>
+				<entryRelationship inversionInd="true" typeCode="SUBJ">
+					<act classCode="ACT" moodCode="EVN">
+						<templateId root="2.16.840.1.113883.10.20.1.40"/>
+						<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+						<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+						<text>
+							<reference value="#lndComment%2$s"/>
+						</text>
+						<statusCode code="completed"/>
+						<author>
+							<time nullFlavor="UNK"/>
+							<assignedAuthor>
+								<id nullFlavor="NI"/>
+								<addr/>
+								<telecom/>
+								<assignedPerson>
+									<name/>
+								</assignedPerson>
+								<representedOrganization>
+									<name/>
+									<telecom/>
+									<addr/>
+								</representedOrganization>
+							</assignedAuthor>
+						</author>
+					</act>
+				</entryRelationship>
+				<referenceRange>
+					<observationRange>
+						<text>22.0-30.0</text>
+					</observationRange>
+				</referenceRange>
+			</observation>
+		</component>
+	</organizer>
+</entry>

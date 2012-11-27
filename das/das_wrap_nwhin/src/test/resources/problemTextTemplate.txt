@@ -1,0 +1,20 @@
+<tr>
+	<td>
+		<content ID="pndProblem%2$s">Hypertension</content>
+	</td>
+	<td>
+		<content ID="pndStatus%2$s">Active</content>
+	</td>
+	<td>
+		<content ID="pndProblemCode%2$s">401.9</content>
+	</td>
+	<td>
+		<content ID="pndDateOfOnset%2$s">%1$s</content>
+	</td>
+	<td>
+		<content ID="pndProvider%2$s">POND,NEAL</content>
+	</td>
+	<td>
+		<content ID="pndSource%2$s">CHEYENNE HDR SQA</content>
+	</td>
+</tr>

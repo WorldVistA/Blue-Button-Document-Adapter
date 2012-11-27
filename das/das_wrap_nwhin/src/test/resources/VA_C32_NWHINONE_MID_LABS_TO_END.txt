@@ -1,0 +1,1244 @@
+				</section>
+			</component>
+				<!-- 
+				********************************************************
+				VLER SEGMENT 1B:  IMMUNIZATION SECTION
+				********************************************************
+				-->
+				<component> <!-- Component 6 -->
+					<section>
+						<!-- Immunizations section template -->
+						<templateId root="2.16.840.1.113883.10.20.1.6"/>                                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.23"/>
+                                                 <templateId root="2.16.840.1.113883.3.88.11.83.117"/>
+ 
+						<code code="11369-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName=" History of immunizations "/>
+						<title>Immunizations</title>
+						<!--  IMMUNIZATIONS NARRATIVE BLOCK , REQUIRED -->
+						<text>
+						<!-- VLER SEG 1B: Immunization Business Rules for Medical Content  -->
+							<table border="1" width="100%">
+								<thead>
+									<tr>
+										<th>Department of Veterans Affairs</th>
+										<th>Business Rules for Construction of Medical Information</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Immunizations</td>
+										<td>This VA Document contains all immunizations for the patient, from all VA treatment facilities. </td>
+									</tr>
+								</tbody>
+							</table>
+							<table ID="immunizationNarritive" border="1" width="100%">
+								<thead>
+									<tr>
+										<th>Immunization</th>
+										<th>Series</th>
+										<th>Date Issued</th>
+										<th>Reaction</th>
+										<th>Comments</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<content ID="indImmunization1">ADENOVIRUS,TYPE 7</content>
+										</td>
+										<td>
+											<content ID="indSeries1"/>
+										</td>
+										<td>
+											<content ID="indDateIssued1">20111102</content>
+										</td>
+										<td>
+											<content ID="indReaction1"/>
+										</td>
+										<td>
+											<content ID="indComments1">first immunization NO CONTRAINDICATION; OK TO USE IN FUTURE.</content>
+										</td>
+									</tr><tr>
+										<td>
+											<content ID="indImmunization2">CHOLERA, ORAL</content>
+										</td>
+										<td>
+											<content ID="indSeries2"/>
+										</td>
+										<td>
+											<content ID="indDateIssued2">20111102</content>
+										</td>
+										<td>
+											<content ID="indReaction2"/>
+										</td>
+										<td>
+											<content ID="indComments2">second immunization NO CONTRAINDICATION; OK TO USE IN FUTURE.</content>
+										</td>
+									</tr><tr>
+										<td>
+											<content ID="indImmunization3">CHICKENPOX</content>
+										</td>
+										<td>
+											<content ID="indSeries3">1</content>
+										</td>
+										<td>
+											<content ID="indDateIssued3">20111101</content>
+										</td>
+										<td>
+											<content ID="indReaction3">FEVER</content>
+										</td>
+										<td>
+											<content ID="indComments3"> NO CONTRAINDICATION; OK TO USE IN FUTURE.</content>
+										</td>
+									</tr><tr>
+										<td>
+											<content ID="indImmunization4">CHOLERA</content>
+										</td>
+										<td>
+											<content ID="indSeries4"/>
+										</td>
+										<td>
+											<content ID="indDateIssued4">20111101</content>
+										</td>
+										<td>
+											<content ID="indReaction4">IRRITABILITY</content>
+										</td>
+										<td>
+											<content ID="indComments4">Irritability NO CONTRAINDICATION; OK TO USE IN FUTURE.</content>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</text>
+						<entry typeCode="DRIV"> <!-- Repeat entry/substanceAdminstration block for each Immunization -->
+							<!-- 13.01-REFUSAL, REQUIRED, static value of "false" -->
+							<!-- HITSP C32 V2.5:  HL7 CDA R2-If Immunization was administered, @negationInd=false -->
+							<substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+								<!-- HITSP C32 V2.5:  Immunization Templates  -->
+								<templateId root="2.16.840.1.113883.10.20.1.24"/>
+								<templateId root="2.16.840.1.113883.3.88.11.83.13"/>
+								<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+								<!-- HITSP C32 V2.5: Immunization Id as nullFlavor  -->
+								<id nullFlavor="UNK"/>
+								<code code="IMMUNIZ" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+								<!-- COMMENT REFERENCE points to Narrative Block -->
+								<text><reference value="#indComments1"/></text>
+								<statusCode code="completed"/>
+								<!-- 13.02-ADMINISTERED DATE, REQUIRED,  -->
+								<effectiveTime value="20111102"/>
+								<consumable>
+									<!-- HITSP C32 V2.5:  Immunization Medication  -->
+									<manufacturedProduct>
+										<!-- Product template -->
+										<templateId root="2.16.840.1.113883.10.20.1.53"/> 
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+										<id nullFlavor="UNK"/>
+											<!--manufacturedLabeledDrug></manufacturedLabeledDrug -->
+											<manufacturedMaterial>
+											<!-- 13.06-CODED PRODUCT NAME, Optional, nullFlavor b/c data not yet available thru VistA RPCs -->
+											<!-- HITSP C32 V2.5:  CODED PRODUCT NAME, Optional, Requires CVX-Vaccines Adminstered , VA provides CPT-4-->
+												<code code="UNK" codeSystem="2.16.840.1.113883.6.59" codeSystemName="CVX" nullFlavor="UNK">
+													<!-- 13.07-FREE TEXTPRODUCT NAME, REQUIRED, Pointer to Narrative Block  -->
+													<originalText>
+														<reference value="#indImmunization1"/>
+													</originalText>
+													
+												</code>
+												<!-- 13.09-LOT NUMBER, Optional, XML omitted b/c not yet  data available thru VistA RPCs -->
+											</manufacturedMaterial>
+											<manufacturerOrganization>
+												<!-- 13.08 DRUG MANUFACTURER, Optional, XML omitted b/c not yet data available thru VistA RPCs -->
+											</manufacturerOrganization>
+									</manufacturedProduct>
+								</consumable>
+								<!-- 13.05-PERFORMER, Optional  -->
+								<performer typeCode="PRF">
+									<!-- Provider Template Id  -->
+									<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+									<time>
+										 <high nullFlavor="UNK"/>
+									</time>
+									<assignedEntity>
+									<!-- Provider ID, extension = Provider ID, root=VA OID  -->
+									<id extension="65587" root="2.16.840.1.113883.4.349"/>
+										<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+										<addr/>
+										<!-- HITSP C32 V2.5:    Telecom Required for iassignedEntity, but VA VistA data not yet available -->
+										<telecom/>
+										<assignedPerson>
+											<name>TESTER,JOHN G</name>
+										</assignedPerson>
+									</assignedEntity>
+								</performer>
+								<!-- INFORMATION SOURCE FOR IMMUNIZATION, Optional -->	
+								<author>
+									<time nullFlavor="UNK"/>
+									<assignedAuthor>
+										<id nullFlavor="NI"/>
+										<!-- HITSP C32 V2.5:   Address Required for assignedAuthor, but VA VistA data not yet available -->
+										<addr/>
+										<!-- HITSP C32 V2.5:    Telecom Required for assignedAuthor, but VA VistA data not yet available -->
+										<telecom/>
+										<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+										<assignedPerson>
+											<name/>
+										</assignedPerson>
+										<representedOrganization>
+											<!-- INFORMATION SOURCE FACILITY OID (ID = VA OID, EXT = TREATING FACILITY NBR) -->
+											<id extension="613" root="2.16.840.1.113883.4.349"/>
+											<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+											<name>MARTINSBURG VAMC</name>
+											<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+											<telecom/>
+											<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+											<addr/>
+										</representedOrganization>
+									</assignedAuthor>
+								</author>
+								<!-- HITSP C32 V2.5:  Immunization Medication Series Nbr -->
+								<entryRelationship typeCode="SUBJ"> 
+									<observation classCode="OBS" moodCode="EVN">
+										<templateId root="2.16.840.1.113883.10.20.1.46"/>
+										<!-- HITSP C32 V2.5:  Required Code under Observation -->
+										<code code="30973-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dose Number"/>
+										<!-- HITSP C32 V2.5:  Required statusCode under Observation -->
+										  <statusCode code="completed"/>
+										<!-- 13.03-MEDICATION SERIES NUMBER,  Optional, Sent as STring not INTeger  to accommodate VA VistA data such as P-Partial, B-Booster, C-Complete -->
+										<value nullFlavor="UNK" xsi:type="INT"/>
+									</observation>	
+								</entryRelationship>
+								<!-- HITSP C32 V2.5:  Immunization Reaction  -->
+								
+							</substanceAdministration>
+						</entry><entry typeCode="DRIV"> <!-- Repeat entry/substanceAdminstration block for each Immunization -->
+							<!-- 13.01-REFUSAL, REQUIRED, static value of "false" -->
+							<!-- HITSP C32 V2.5:  HL7 CDA R2-If Immunization was administered, @negationInd=false -->
+							<substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+								<!-- HITSP C32 V2.5:  Immunization Templates  -->
+								<templateId root="2.16.840.1.113883.10.20.1.24"/>
+								<templateId root="2.16.840.1.113883.3.88.11.83.13"/>
+								<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+								<!-- HITSP C32 V2.5: Immunization Id as nullFlavor  -->
+								<id nullFlavor="UNK"/>
+								<code code="IMMUNIZ" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+								<!-- COMMENT REFERENCE points to Narrative Block -->
+								<text><reference value="#indComments2"/></text>
+								<statusCode code="completed"/>
+								<!-- 13.02-ADMINISTERED DATE, REQUIRED,  -->
+								<effectiveTime value="20111102"/>
+								<consumable>
+									<!-- HITSP C32 V2.5:  Immunization Medication  -->
+									<manufacturedProduct>
+										<!-- Product template -->
+										<templateId root="2.16.840.1.113883.10.20.1.53"/> 
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+										<id nullFlavor="UNK"/>
+											<!--manufacturedLabeledDrug></manufacturedLabeledDrug -->
+											<manufacturedMaterial>
+											<!-- 13.06-CODED PRODUCT NAME, Optional, nullFlavor b/c data not yet available thru VistA RPCs -->
+											<!-- HITSP C32 V2.5:  CODED PRODUCT NAME, Optional, Requires CVX-Vaccines Adminstered , VA provides CPT-4-->
+												<code code="UNK" codeSystem="2.16.840.1.113883.6.59" codeSystemName="CVX" nullFlavor="UNK">
+													<!-- 13.07-FREE TEXTPRODUCT NAME, REQUIRED, Pointer to Narrative Block  -->
+													<originalText>
+														<reference value="#indImmunization2"/>
+													</originalText>
+													
+												</code>
+												<!-- 13.09-LOT NUMBER, Optional, XML omitted b/c not yet  data available thru VistA RPCs -->
+											</manufacturedMaterial>
+											<manufacturerOrganization>
+												<!-- 13.08 DRUG MANUFACTURER, Optional, XML omitted b/c not yet data available thru VistA RPCs -->
+											</manufacturerOrganization>
+									</manufacturedProduct>
+								</consumable>
+								<!-- 13.05-PERFORMER, Optional  -->
+								<performer typeCode="PRF">
+									<!-- Provider Template Id  -->
+									<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+									<time>
+										 <high nullFlavor="UNK"/>
+									</time>
+									<assignedEntity>
+									<!-- Provider ID, extension = Provider ID, root=VA OID  -->
+									<id extension="65587" root="2.16.840.1.113883.4.349"/>
+										<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+										<addr/>
+										<!-- HITSP C32 V2.5:    Telecom Required for iassignedEntity, but VA VistA data not yet available -->
+										<telecom/>
+										<assignedPerson>
+											<name>TESTER,JOHN G</name>
+										</assignedPerson>
+									</assignedEntity>
+								</performer>
+								<!-- INFORMATION SOURCE FOR IMMUNIZATION, Optional -->	
+								<author>
+									<time nullFlavor="UNK"/>
+									<assignedAuthor>
+										<id nullFlavor="NI"/>
+										<!-- HITSP C32 V2.5:   Address Required for assignedAuthor, but VA VistA data not yet available -->
+										<addr/>
+										<!-- HITSP C32 V2.5:    Telecom Required for assignedAuthor, but VA VistA data not yet available -->
+										<telecom/>
+										<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+										<assignedPerson>
+											<name/>
+										</assignedPerson>
+										<representedOrganization>
+											<!-- INFORMATION SOURCE FACILITY OID (ID = VA OID, EXT = TREATING FACILITY NBR) -->
+											<id extension="613" root="2.16.840.1.113883.4.349"/>
+											<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+											<name>MARTINSBURG VAMC</name>
+											<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+											<telecom/>
+											<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+											<addr/>
+										</representedOrganization>
+									</assignedAuthor>
+								</author>
+								<!-- HITSP C32 V2.5:  Immunization Medication Series Nbr -->
+								<entryRelationship typeCode="SUBJ"> 
+									<observation classCode="OBS" moodCode="EVN">
+										<templateId root="2.16.840.1.113883.10.20.1.46"/>
+										<!-- HITSP C32 V2.5:  Required Code under Observation -->
+										<code code="30973-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dose Number"/>
+										<!-- HITSP C32 V2.5:  Required statusCode under Observation -->
+										  <statusCode code="completed"/>
+										<!-- 13.03-MEDICATION SERIES NUMBER,  Optional, Sent as STring not INTeger  to accommodate VA VistA data such as P-Partial, B-Booster, C-Complete -->
+										<value nullFlavor="UNK" xsi:type="INT"/>
+									</observation>	
+								</entryRelationship>
+								<!-- HITSP C32 V2.5:  Immunization Reaction  -->
+								
+							</substanceAdministration>
+						</entry><entry typeCode="DRIV"> <!-- Repeat entry/substanceAdminstration block for each Immunization -->
+							<!-- 13.01-REFUSAL, REQUIRED, static value of "false" -->
+							<!-- HITSP C32 V2.5:  HL7 CDA R2-If Immunization was administered, @negationInd=false -->
+							<substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+								<!-- HITSP C32 V2.5:  Immunization Templates  -->
+								<templateId root="2.16.840.1.113883.10.20.1.24"/>
+								<templateId root="2.16.840.1.113883.3.88.11.83.13"/>
+								<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+								<!-- HITSP C32 V2.5: Immunization Id as nullFlavor  -->
+								<id nullFlavor="UNK"/>
+								<code code="IMMUNIZ" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+								<!-- COMMENT REFERENCE points to Narrative Block -->
+								<text><reference value="#indComments3"/></text>
+								<statusCode code="completed"/>
+								<!-- 13.02-ADMINISTERED DATE, REQUIRED,  -->
+								<effectiveTime value="20111101"/>
+								<consumable>
+									<!-- HITSP C32 V2.5:  Immunization Medication  -->
+									<manufacturedProduct>
+										<!-- Product template -->
+										<templateId root="2.16.840.1.113883.10.20.1.53"/> 
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+										<id nullFlavor="UNK"/>
+											<!--manufacturedLabeledDrug></manufacturedLabeledDrug -->
+											<manufacturedMaterial>
+											<!-- 13.06-CODED PRODUCT NAME, Optional, nullFlavor b/c data not yet available thru VistA RPCs -->
+											<!-- HITSP C32 V2.5:  CODED PRODUCT NAME, Optional, Requires CVX-Vaccines Adminstered , VA provides CPT-4-->
+												<code code="UNK" codeSystem="2.16.840.1.113883.6.59" codeSystemName="CVX" nullFlavor="UNK">
+													<!-- 13.07-FREE TEXTPRODUCT NAME, REQUIRED, Pointer to Narrative Block  -->
+													<originalText>
+														<reference value="#indImmunization3"/>
+													</originalText>
+													
+												</code>
+												<!-- 13.09-LOT NUMBER, Optional, XML omitted b/c not yet  data available thru VistA RPCs -->
+											</manufacturedMaterial>
+											<manufacturerOrganization>
+												<!-- 13.08 DRUG MANUFACTURER, Optional, XML omitted b/c not yet data available thru VistA RPCs -->
+											</manufacturerOrganization>
+									</manufacturedProduct>
+								</consumable>
+								<!-- 13.05-PERFORMER, Optional  -->
+								<performer typeCode="PRF">
+									<!-- Provider Template Id  -->
+									<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+									<time>
+										 <high nullFlavor="UNK"/>
+									</time>
+									<assignedEntity>
+									<!-- Provider ID, extension = Provider ID, root=VA OID  -->
+									<id extension="65587" root="2.16.840.1.113883.4.349"/>
+										<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+										<addr/>
+										<!-- HITSP C32 V2.5:    Telecom Required for iassignedEntity, but VA VistA data not yet available -->
+										<telecom/>
+										<assignedPerson>
+											<name>TESTER,JOHN G</name>
+										</assignedPerson>
+									</assignedEntity>
+								</performer>
+								<!-- INFORMATION SOURCE FOR IMMUNIZATION, Optional -->	
+								<author>
+									<time nullFlavor="UNK"/>
+									<assignedAuthor>
+										<id nullFlavor="NI"/>
+										<!-- HITSP C32 V2.5:   Address Required for assignedAuthor, but VA VistA data not yet available -->
+										<addr/>
+										<!-- HITSP C32 V2.5:    Telecom Required for assignedAuthor, but VA VistA data not yet available -->
+										<telecom/>
+										<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+										<assignedPerson>
+											<name/>
+										</assignedPerson>
+										<representedOrganization>
+											<!-- INFORMATION SOURCE FACILITY OID (ID = VA OID, EXT = TREATING FACILITY NBR) -->
+											<id extension="613" root="2.16.840.1.113883.4.349"/>
+											<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+											<name>MARTINSBURG VAMC</name>
+											<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+											<telecom/>
+											<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+											<addr/>
+										</representedOrganization>
+									</assignedAuthor>
+								</author>
+								<!-- HITSP C32 V2.5:  Immunization Medication Series Nbr -->
+								<entryRelationship typeCode="SUBJ"> 
+									<observation classCode="OBS" moodCode="EVN">
+										<templateId root="2.16.840.1.113883.10.20.1.46"/>
+										<!-- HITSP C32 V2.5:  Required Code under Observation -->
+										<code code="30973-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dose Number"/>
+										<!-- HITSP C32 V2.5:  Required statusCode under Observation -->
+										  <statusCode code="completed"/>
+										<!-- 13.03-MEDICATION SERIES NUMBER,  Optional, Sent as STring not INTeger  to accommodate VA VistA data such as P-Partial, B-Booster, C-Complete -->
+										<value value="1" xsi:type="INT"/>
+									</observation>	
+								</entryRelationship>
+								<!-- HITSP C32 V2.5:  Immunization Reaction  -->
+								<entryRelationship inversionInd="false" typeCode="CAUS">  <!-- Repeat entryRelationship/observation block for each immuniz reaction -->
+									<observation classCode="OBS" moodCode="EVN">
+										<templateId root="2.16.840.1.113883.10.20.1.28"/>
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+										<templateId root="2.16.840.1.113883.10.20.1.54"/>
+										<!-- 13.04-REACTION,  Optional, Repeatable -->
+										<!-- 13.04-REACTION,  Pointer to IMMUNIZATION NARRATIVE BLOCK not Allergy Entry per IHE Template -->
+										<id extension="#indReaction3" root="2.16.840.1.113883.4.349"/>
+										<!-- HITSP C32 V2.5:  Required Code under Observation -->
+										<code nullFlavor="UNK"/>
+										<!-- HITSP C32 V2.5:  Required statusCode under Observation -->
+										<statusCode code="completed"/>
+										<!-- HITSP C32 V2.5:  IHE Template requires low value entry -->
+										<effectiveTime>
+											<low nullFlavor="UNK"/>
+										</effectiveTime>
+										<!-- HITSP C32 V2.5:  IHE Template requires value entry -->
+										<value nullFlavor="UNK" xsi:type="CD"/>
+									</observation>
+								</entryRelationship>
+							</substanceAdministration>
+						</entry><entry typeCode="DRIV"> <!-- Repeat entry/substanceAdminstration block for each Immunization -->
+							<!-- 13.01-REFUSAL, REQUIRED, static value of "false" -->
+							<!-- HITSP C32 V2.5:  HL7 CDA R2-If Immunization was administered, @negationInd=false -->
+							<substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+								<!-- HITSP C32 V2.5:  Immunization Templates  -->
+								<templateId root="2.16.840.1.113883.10.20.1.24"/>
+								<templateId root="2.16.840.1.113883.3.88.11.83.13"/>
+								<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+								<!-- HITSP C32 V2.5: Immunization Id as nullFlavor  -->
+								<id nullFlavor="UNK"/>
+								<code code="IMMUNIZ" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+								<!-- COMMENT REFERENCE points to Narrative Block -->
+								<text><reference value="#indComments4"/></text>
+								<statusCode code="completed"/>
+								<!-- 13.02-ADMINISTERED DATE, REQUIRED,  -->
+								<effectiveTime value="20111101"/>
+								<consumable>
+									<!-- HITSP C32 V2.5:  Immunization Medication  -->
+									<manufacturedProduct>
+										<!-- Product template -->
+										<templateId root="2.16.840.1.113883.10.20.1.53"/> 
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+										<id nullFlavor="UNK"/>
+											<!--manufacturedLabeledDrug></manufacturedLabeledDrug -->
+											<manufacturedMaterial>
+											<!-- 13.06-CODED PRODUCT NAME, Optional, nullFlavor b/c data not yet available thru VistA RPCs -->
+											<!-- HITSP C32 V2.5:  CODED PRODUCT NAME, Optional, Requires CVX-Vaccines Adminstered , VA provides CPT-4-->
+												<code code="UNK" codeSystem="2.16.840.1.113883.6.59" codeSystemName="CVX" nullFlavor="UNK">
+													<!-- 13.07-FREE TEXTPRODUCT NAME, REQUIRED, Pointer to Narrative Block  -->
+													<originalText>
+														<reference value="#indImmunization4"/>
+													</originalText>
+													
+												</code>
+												<!-- 13.09-LOT NUMBER, Optional, XML omitted b/c not yet  data available thru VistA RPCs -->
+											</manufacturedMaterial>
+											<manufacturerOrganization>
+												<!-- 13.08 DRUG MANUFACTURER, Optional, XML omitted b/c not yet data available thru VistA RPCs -->
+											</manufacturerOrganization>
+									</manufacturedProduct>
+								</consumable>
+								<!-- 13.05-PERFORMER, Optional  -->
+								<performer typeCode="PRF">
+									<!-- Provider Template Id  -->
+									<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+									<time>
+										 <high nullFlavor="UNK"/>
+									</time>
+									<assignedEntity>
+									<!-- Provider ID, extension = Provider ID, root=VA OID  -->
+									<id extension="65587" root="2.16.840.1.113883.4.349"/>
+										<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+										<addr/>
+										<!-- HITSP C32 V2.5:    Telecom Required for iassignedEntity, but VA VistA data not yet available -->
+										<telecom/>
+										<assignedPerson>
+											<name>TESTER,JOHN G</name>
+										</assignedPerson>
+									</assignedEntity>
+								</performer>
+								<!-- INFORMATION SOURCE FOR IMMUNIZATION, Optional -->	
+								<author>
+									<time nullFlavor="UNK"/>
+									<assignedAuthor>
+										<id nullFlavor="NI"/>
+										<!-- HITSP C32 V2.5:   Address Required for assignedAuthor, but VA VistA data not yet available -->
+										<addr/>
+										<!-- HITSP C32 V2.5:    Telecom Required for assignedAuthor, but VA VistA data not yet available -->
+										<telecom/>
+										<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+										<assignedPerson>
+											<name/>
+										</assignedPerson>
+										<representedOrganization>
+											<!-- INFORMATION SOURCE FACILITY OID (ID = VA OID, EXT = TREATING FACILITY NBR) -->
+											<id extension="613" root="2.16.840.1.113883.4.349"/>
+											<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+											<name>MARTINSBURG VAMC</name>
+											<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+											<telecom/>
+											<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+											<addr/>
+										</representedOrganization>
+									</assignedAuthor>
+								</author>
+								<!-- HITSP C32 V2.5:  Immunization Medication Series Nbr -->
+								<entryRelationship typeCode="SUBJ"> 
+									<observation classCode="OBS" moodCode="EVN">
+										<templateId root="2.16.840.1.113883.10.20.1.46"/>
+										<!-- HITSP C32 V2.5:  Required Code under Observation -->
+										<code code="30973-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dose Number"/>
+										<!-- HITSP C32 V2.5:  Required statusCode under Observation -->
+										  <statusCode code="completed"/>
+										<!-- 13.03-MEDICATION SERIES NUMBER,  Optional, Sent as STring not INTeger  to accommodate VA VistA data such as P-Partial, B-Booster, C-Complete -->
+										<value nullFlavor="UNK" xsi:type="INT"/>
+									</observation>	
+								</entryRelationship>
+								<!-- HITSP C32 V2.5:  Immunization Reaction  -->
+								<entryRelationship inversionInd="false" typeCode="CAUS">  <!-- Repeat entryRelationship/observation block for each immuniz reaction -->
+									<observation classCode="OBS" moodCode="EVN">
+										<templateId root="2.16.840.1.113883.10.20.1.28"/>
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+										<templateId root="2.16.840.1.113883.10.20.1.54"/>
+										<!-- 13.04-REACTION,  Optional, Repeatable -->
+										<!-- 13.04-REACTION,  Pointer to IMMUNIZATION NARRATIVE BLOCK not Allergy Entry per IHE Template -->
+										<id extension="#indReaction4" root="2.16.840.1.113883.4.349"/>
+										<!-- HITSP C32 V2.5:  Required Code under Observation -->
+										<code nullFlavor="UNK"/>
+										<!-- HITSP C32 V2.5:  Required statusCode under Observation -->
+										<statusCode code="completed"/>
+										<!-- HITSP C32 V2.5:  IHE Template requires low value entry -->
+										<effectiveTime>
+											<low nullFlavor="UNK"/>
+										</effectiveTime>
+										<!-- HITSP C32 V2.5:  IHE Template requires value entry -->
+										<value nullFlavor="UNK" xsi:type="CD"/>
+									</observation>
+								</entryRelationship>
+							</substanceAdministration>
+						</entry>
+					</section>
+				</component>
+			<!-- 
+			********************************************************
+			NHIN_CR_101, CR100
+			VLER Segment 1Bii:  ENCOUNTER SECTION 
+           	********************************************************
+			-->
+			<component> <!-- Component 7 -->
+				<section>
+				<!--CCD Encounters Section Conformance Identifier-->
+				  <templateId root="2.16.840.1.113883.10.20.1.3"/>
+				  <!--C83 Encounters Section Conformance Identifier-->
+				  <templateId root="2.16.840.1.113883.3.88.11.83.127"/>
+				  <!--IHE Encounters History Section Conformance Identifier-->
+				  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.3"/>
+				  <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of Encounters"/>
+				  <title>History of Encounters</title>
+				  <!--  ENCOUNTER NARRATIVE BLOCK -->
+                    <text>
+                        <!-- VLER SEG 1B: Encounter Business Rules for Medical Content  -->
+                        <table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Department of Veterans Affairs</th>
+									<th>Business Rules for Construction of Encounter Information</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Encounters</td>
+									<td>This VA Document contains all historical (completed) Outpatient Encounters for the patient, from all VA treatment facilities where the Encounter Date was within the last 36 months, up to a maximum of the most recent 25 encounters.  Ancillary visits are not included.  Lists of associated note titles for each encounter are limited to a maximum of 10.</td>
+								</tr>
+							</tbody>
+						</table>
+						<table ID="encounterNarritive" border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Date Time</th>
+									<th>Encounter Type</th>
+									<th>Encounter Description</th>
+									<th>Reason</th>
+									<th>Arrival</th>
+									<th>Departure</th>
+									<th>Provider</th>
+									<th>Source</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<content ID="endDateTime1">20120201103858</content>
+									</td>
+									<td>
+										<content ID="endEncounterType1"/>
+									</td>
+									<td>
+										<content ID="endEncounterDescription1">PRIMARY CARE/MEDICINE</content>
+									</td>
+									<td>
+										<content ID="endReason1">UNSPECIFIED DISORDER OF EYE MOVEMENTS ICD9 378.9 with Provider Comments A pattern strabismus (SNOMED CT 413380004)</content>
+									</td>
+									<td>
+										<content ID="endArrival1"/>
+									</td>
+									<td>
+										<content ID="endDepature1"/>
+									</td>
+									<td>
+										<content ID="endProvider1">POST,WALTER</content>
+									</td>
+									<td>
+										<content ID="endSource1">MARTINSBURG VAMC</content>
+									</td>
+								</tr><tr>
+									<td>
+										<content ID="endDateTime2">20120111155950</content>
+									</td>
+									<td>
+										<content ID="endEncounterType2"/>
+									</td>
+									<td>
+										<content ID="endEncounterDescription2">GENERAL INTERNAL MEDICINE</content>
+									</td>
+									<td>
+										<content ID="endReason2"/>
+									</td>
+									<td>
+										<content ID="endArrival2"/>
+									</td>
+									<td>
+										<content ID="endDepature2"/>
+									</td>
+									<td>
+										<content ID="endProvider2"/>
+									</td>
+									<td>
+										<content ID="endSource2">CHEYENNE VAMC</content>
+									</td>
+								</tr><tr>
+									<td>
+										<content ID="endDateTime3">20120110134536</content>
+									</td>
+									<td>
+										<content ID="endEncounterType3"/>
+									</td>
+									<td>
+										<content ID="endEncounterDescription3">ADMIN PAT ACTIVTIES (MASNONCT)</content>
+									</td>
+									<td>
+										<content ID="endReason3"/>
+									</td>
+									<td>
+										<content ID="endArrival3"/>
+									</td>
+									<td>
+										<content ID="endDepature3"/>
+									</td>
+									<td>
+										<content ID="endProvider3"/>
+									</td>
+									<td>
+										<content ID="endSource3">CHEYENNE VAMC</content>
+									</td>
+								</tr><tr>
+									<td>
+										<content ID="endDateTime4">20111102142604</content>
+									</td>
+									<td>
+										<content ID="endEncounterType4"/>
+									</td>
+									<td>
+										<content ID="endEncounterDescription4">PRIMARY CARE/MEDICINE with associated notes REFERRAL NOTE</content>
+									</td>
+									<td>
+										<content ID="endReason4">RHEUMATOID ARTHRITIS ICD9 714.0 with Provider Comments Arthritis, Rheumatoid</content>
+									</td>
+									<td>
+										<content ID="endArrival4"/>
+									</td>
+									<td>
+										<content ID="endDepature4"/>
+									</td>
+									<td>
+										<content ID="endProvider4">TESTER,JOHN G</content>
+									</td>
+									<td>
+										<content ID="endSource4">MARTINSBURG VAMC</content>
+									</td>
+								</tr><tr>
+									<td>
+										<content ID="endDateTime5">20111101080241</content>
+									</td>
+									<td>
+										<content ID="endEncounterType5"/>
+									</td>
+									<td>
+										<content ID="endEncounterDescription5">PRIMARY CARE/MEDICINE</content>
+									</td>
+									<td>
+										<content ID="endReason5">OBESITY, UNSPECIFIED ICD9 278.00 with Provider Comments Obesity in Diabetes</content>
+									</td>
+									<td>
+										<content ID="endArrival5"/>
+									</td>
+									<td>
+										<content ID="endDepature5"/>
+									</td>
+									<td>
+										<content ID="endProvider5">TESTER,JOHN G</content>
+									</td>
+									<td>
+										<content ID="endSource5">MARTINSBURG VAMC</content>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+                        <!--  CDA Observation Text as a Reference tag -->
+						<content ID="encNote-1" revised="delete">IHE Encounter Template Text not used by VA</content>
+					</text>
+				  <entry> <!-- Entry block repeats for each Encounter -->
+					<encounter classCode="ENC" moodCode="EVN">
+					  <!--CCD Encounter Activity-->
+					  <templateId root="2.16.840.1.113883.10.20.1.21"/>
+					  <!--C83 Encounter Entry-->
+					  <templateId root="2.16.840.1.113883.3.88.11.83.16"/>
+					  <!--IHE Encounter Entry-->
+					  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+					  <!--16.01 - ENCOUNTER ID,  REQUIRED -->
+					  <id nullFlavor="UNK"/>
+					<!--  <id root="2.16.840.1.113883.4.349" extension="enc1234"/>-->
+					  <!--16.02 - ENCOUNTER TYPE, R2-Optional,  VA Provides CPT -->
+					  <!--16.02 - When CPT code not present, then code nullFlavor="UNK" -->
+					  <code nullFlavor="UNK">
+						<!--16.03 - ENCOUNTER FREE TEXT TYPE, REQUIRED-->
+						<originalText>
+						  <reference value="#endEncounterDescription1"/>
+						</originalText>
+					  </code>
+					  <!-- Required per IHE Template, not use by VA  -->
+					  <text>
+						<reference value="#encNote-1"/>
+					  </text>
+					  <!--16.04 - ENCOUNTER DATE / TIME, REQUIRED-->
+					  <effectiveTime>
+						<low value="20120201103858"/>
+					  </effectiveTime>
+					  <!--16.07 - ADMISSION TYPE, Optional,  VA VistA Data not yet available -->
+					    <priorityCode nullFlavor="UNK"/>	
+					  <!--16.05 - ENCOUNTER PROVIDER, R2-Optional -->
+					  	<performer typeCode="PRF">
+							<!-- Provider Template Id  -->
+							<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+							<time>
+								<high nullFlavor="UNK"/>
+							</time>
+							<assignedEntity>
+								<!-- Provider ID nullFlavor="UNK" b/c VA VistA data not yet available -->
+								<id nullFlavor="UNK"/>
+								<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+								<addr/>
+								<!-- HITSP C32 V2.5:    Telecom Required for iassignedEntity, but VA VistA data not yet available -->
+								<telecom/> 
+								<assignedPerson>
+									<name>POST,WALTER</name>
+								</assignedPerson>
+							</assignedEntity>
+						</performer>
+					  <!-- INFORMATION SOURCE FOR ENCOUNTER, Optional -->
+						<author>
+							<!--  ADD TIME TO INFORMATION SOURCE FOR ENCOUNTER -->
+							<time nullFlavor="UNK"/>
+							<assignedAuthor>
+								<id nullFlavor="NI"/>
+								<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+								<addr/>
+								<!-- HITSP C32 V2.5:    Telecom Required for assignedEntity, but VA VistA data not yet available -->
+								<telecom/>
+								<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+								<assignedPerson>
+									<name/>
+								</assignedPerson>
+								<representedOrganization>
+									<!-- INFORMATION SOURCE FOR FACILITY ID=VA OID, EXT= VAMC TREATING FACILITY NBR -->
+									<id extension="613" root="2.16.840.1.113883.4.349"/>
+									<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+									<name>MARTINSBURG VAMC</name>
+									<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+									<telecom/>
+									<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+									<addr/>
+								</representedOrganization>
+							</assignedAuthor>
+						</author>
+					  <!--16.06 - ADMISSION SOURCE, Optional, Not Yet Available from VA VistA -->
+					  <!--16.11 - FACILITY LOCATION, Optional -->
+					  <participant typeCode="LOC">
+						<templateId root="2.16.840.1.113883.10.20.1.45"/>
+						<!--16.20 - IN FACILITY LOCATION DURATION, Optional -->
+						<time>
+						  <!--16.12 - ARRIVAL DATE/TIME, Optional -->
+						  <low nullFlavor="UNK"/>
+						  <!-- 16.12 - DEPARTURE DATE/TIME, Optional -->
+						  <high nullFlavor="UNK"/>
+						</time>
+						<participantRole classCode="SDLOC">
+						  <playingEntity classCode="PLC"/>
+						</participantRole>
+					  </participant>
+					  <entryRelationship typeCode="RSON">
+						<observation classCode="OBS" moodCode="EVN">
+						  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+						  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+						  <id nullFlavor="UNK"/>
+						  <code nullFlavor="UNK"/>
+						  <!--16.13 - REASON FOR VISIT, Optional -->
+						  <text>
+							  <reference value="#endReason1"/>
+						  </text>
+						  <statusCode code="completed"/>
+						  <effectiveTime>
+							<low nullFlavor="UNK"/>
+						  </effectiveTime>
+						 <value xsi:type="CD"/>
+						</observation>
+					  </entryRelationship>
+					</encounter>
+				  </entry><entry> <!-- Entry block repeats for each Encounter -->
+					<encounter classCode="ENC" moodCode="EVN">
+					  <!--CCD Encounter Activity-->
+					  <templateId root="2.16.840.1.113883.10.20.1.21"/>
+					  <!--C83 Encounter Entry-->
+					  <templateId root="2.16.840.1.113883.3.88.11.83.16"/>
+					  <!--IHE Encounter Entry-->
+					  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+					  <!--16.01 - ENCOUNTER ID,  REQUIRED -->
+					  <id nullFlavor="UNK"/>
+					<!--  <id root="2.16.840.1.113883.4.349" extension="enc1234"/>-->
+					  <!--16.02 - ENCOUNTER TYPE, R2-Optional,  VA Provides CPT -->
+					  <!--16.02 - When CPT code not present, then code nullFlavor="UNK" -->
+					  <code nullFlavor="UNK">
+						<!--16.03 - ENCOUNTER FREE TEXT TYPE, REQUIRED-->
+						<originalText>
+						  <reference value="#endEncounterDescription2"/>
+						</originalText>
+					  </code>
+					  <!-- Required per IHE Template, not use by VA  -->
+					  <text>
+						<reference value="#encNote-1"/>
+					  </text>
+					  <!--16.04 - ENCOUNTER DATE / TIME, REQUIRED-->
+					  <effectiveTime>
+						<low value="20120111155950"/>
+					  </effectiveTime>
+					  <!--16.07 - ADMISSION TYPE, Optional,  VA VistA Data not yet available -->
+					    <priorityCode nullFlavor="UNK"/>	
+					  <!--16.05 - ENCOUNTER PROVIDER, R2-Optional -->
+					  	
+					  <!-- INFORMATION SOURCE FOR ENCOUNTER, Optional -->
+						<author>
+							<!--  ADD TIME TO INFORMATION SOURCE FOR ENCOUNTER -->
+							<time nullFlavor="UNK"/>
+							<assignedAuthor>
+								<id nullFlavor="NI"/>
+								<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+								<addr/>
+								<!-- HITSP C32 V2.5:    Telecom Required for assignedEntity, but VA VistA data not yet available -->
+								<telecom/>
+								<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+								<assignedPerson>
+									<name/>
+								</assignedPerson>
+								<representedOrganization>
+									<!-- INFORMATION SOURCE FOR FACILITY ID=VA OID, EXT= VAMC TREATING FACILITY NBR -->
+									<id extension="442" root="2.16.840.1.113883.4.349"/>
+									<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+									<name>CHEYENNE VAMC</name>
+									<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+									<telecom/>
+									<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+									<addr/>
+								</representedOrganization>
+							</assignedAuthor>
+						</author>
+					  <!--16.06 - ADMISSION SOURCE, Optional, Not Yet Available from VA VistA -->
+					  <!--16.11 - FACILITY LOCATION, Optional -->
+					  <participant typeCode="LOC">
+						<templateId root="2.16.840.1.113883.10.20.1.45"/>
+						<!--16.20 - IN FACILITY LOCATION DURATION, Optional -->
+						<time>
+						  <!--16.12 - ARRIVAL DATE/TIME, Optional -->
+						  <low nullFlavor="UNK"/>
+						  <!-- 16.12 - DEPARTURE DATE/TIME, Optional -->
+						  <high nullFlavor="UNK"/>
+						</time>
+						<participantRole classCode="SDLOC">
+						  <playingEntity classCode="PLC"/>
+						</participantRole>
+					  </participant>
+					  <entryRelationship typeCode="RSON">
+						<observation classCode="OBS" moodCode="EVN">
+						  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+						  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+						  <id nullFlavor="UNK"/>
+						  <code nullFlavor="UNK"/>
+						  <!--16.13 - REASON FOR VISIT, Optional -->
+						  <text>
+							  <reference value="#endReason2"/>
+						  </text>
+						  <statusCode code="completed"/>
+						  <effectiveTime>
+							<low nullFlavor="UNK"/>
+						  </effectiveTime>
+						 <value xsi:type="CD"/>
+						</observation>
+					  </entryRelationship>
+					</encounter>
+				  </entry><entry> <!-- Entry block repeats for each Encounter -->
+					<encounter classCode="ENC" moodCode="EVN">
+					  <!--CCD Encounter Activity-->
+					  <templateId root="2.16.840.1.113883.10.20.1.21"/>
+					  <!--C83 Encounter Entry-->
+					  <templateId root="2.16.840.1.113883.3.88.11.83.16"/>
+					  <!--IHE Encounter Entry-->
+					  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+					  <!--16.01 - ENCOUNTER ID,  REQUIRED -->
+					  <id nullFlavor="UNK"/>
+					<!--  <id root="2.16.840.1.113883.4.349" extension="enc1234"/>-->
+					  <!--16.02 - ENCOUNTER TYPE, R2-Optional,  VA Provides CPT -->
+					  <!--16.02 - When CPT code not present, then code nullFlavor="UNK" -->
+					  <code nullFlavor="UNK">
+						<!--16.03 - ENCOUNTER FREE TEXT TYPE, REQUIRED-->
+						<originalText>
+						  <reference value="#endEncounterDescription3"/>
+						</originalText>
+					  </code>
+					  <!-- Required per IHE Template, not use by VA  -->
+					  <text>
+						<reference value="#encNote-1"/>
+					  </text>
+					  <!--16.04 - ENCOUNTER DATE / TIME, REQUIRED-->
+					  <effectiveTime>
+						<low value="20120110134536"/>
+					  </effectiveTime>
+					  <!--16.07 - ADMISSION TYPE, Optional,  VA VistA Data not yet available -->
+					    <priorityCode nullFlavor="UNK"/>	
+					  <!--16.05 - ENCOUNTER PROVIDER, R2-Optional -->
+					  	
+					  <!-- INFORMATION SOURCE FOR ENCOUNTER, Optional -->
+						<author>
+							<!--  ADD TIME TO INFORMATION SOURCE FOR ENCOUNTER -->
+							<time nullFlavor="UNK"/>
+							<assignedAuthor>
+								<id nullFlavor="NI"/>
+								<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+								<addr/>
+								<!-- HITSP C32 V2.5:    Telecom Required for assignedEntity, but VA VistA data not yet available -->
+								<telecom/>
+								<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+								<assignedPerson>
+									<name/>
+								</assignedPerson>
+								<representedOrganization>
+									<!-- INFORMATION SOURCE FOR FACILITY ID=VA OID, EXT= VAMC TREATING FACILITY NBR -->
+									<id extension="442" root="2.16.840.1.113883.4.349"/>
+									<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+									<name>CHEYENNE VAMC</name>
+									<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+									<telecom/>
+									<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+									<addr/>
+								</representedOrganization>
+							</assignedAuthor>
+						</author>
+					  <!--16.06 - ADMISSION SOURCE, Optional, Not Yet Available from VA VistA -->
+					  <!--16.11 - FACILITY LOCATION, Optional -->
+					  <participant typeCode="LOC">
+						<templateId root="2.16.840.1.113883.10.20.1.45"/>
+						<!--16.20 - IN FACILITY LOCATION DURATION, Optional -->
+						<time>
+						  <!--16.12 - ARRIVAL DATE/TIME, Optional -->
+						  <low nullFlavor="UNK"/>
+						  <!-- 16.12 - DEPARTURE DATE/TIME, Optional -->
+						  <high nullFlavor="UNK"/>
+						</time>
+						<participantRole classCode="SDLOC">
+						  <playingEntity classCode="PLC"/>
+						</participantRole>
+					  </participant>
+					  <entryRelationship typeCode="RSON">
+						<observation classCode="OBS" moodCode="EVN">
+						  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+						  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+						  <id nullFlavor="UNK"/>
+						  <code nullFlavor="UNK"/>
+						  <!--16.13 - REASON FOR VISIT, Optional -->
+						  <text>
+							  <reference value="#endReason3"/>
+						  </text>
+						  <statusCode code="completed"/>
+						  <effectiveTime>
+							<low nullFlavor="UNK"/>
+						  </effectiveTime>
+						 <value xsi:type="CD"/>
+						</observation>
+					  </entryRelationship>
+					</encounter>
+				  </entry><entry> <!-- Entry block repeats for each Encounter -->
+					<encounter classCode="ENC" moodCode="EVN">
+					  <!--CCD Encounter Activity-->
+					  <templateId root="2.16.840.1.113883.10.20.1.21"/>
+					  <!--C83 Encounter Entry-->
+					  <templateId root="2.16.840.1.113883.3.88.11.83.16"/>
+					  <!--IHE Encounter Entry-->
+					  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+					  <!--16.01 - ENCOUNTER ID,  REQUIRED -->
+					  <id nullFlavor="UNK"/>
+					<!--  <id root="2.16.840.1.113883.4.349" extension="enc1234"/>-->
+					  <!--16.02 - ENCOUNTER TYPE, R2-Optional,  VA Provides CPT -->
+					  <!--16.02 - When CPT code not present, then code nullFlavor="UNK" -->
+					  <code nullFlavor="UNK">
+						<!--16.03 - ENCOUNTER FREE TEXT TYPE, REQUIRED-->
+						<originalText>
+						  <reference value="#endEncounterDescription4"/>
+						</originalText>
+					  </code>
+					  <!-- Required per IHE Template, not use by VA  -->
+					  <text>
+						<reference value="#encNote-1"/>
+					  </text>
+					  <!--16.04 - ENCOUNTER DATE / TIME, REQUIRED-->
+					  <effectiveTime>
+						<low value="20111102142604"/>
+					  </effectiveTime>
+					  <!--16.07 - ADMISSION TYPE, Optional,  VA VistA Data not yet available -->
+					    <priorityCode nullFlavor="UNK"/>	
+					  <!--16.05 - ENCOUNTER PROVIDER, R2-Optional -->
+					  	<performer typeCode="PRF">
+							<!-- Provider Template Id  -->
+							<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+							<time>
+								<high nullFlavor="UNK"/>
+							</time>
+							<assignedEntity>
+								<!-- Provider ID nullFlavor="UNK" b/c VA VistA data not yet available -->
+								<id nullFlavor="UNK"/>
+								<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+								<addr/>
+								<!-- HITSP C32 V2.5:    Telecom Required for iassignedEntity, but VA VistA data not yet available -->
+								<telecom/> 
+								<assignedPerson>
+									<name>TESTER,JOHN G</name>
+								</assignedPerson>
+							</assignedEntity>
+						</performer>
+					  <!-- INFORMATION SOURCE FOR ENCOUNTER, Optional -->
+						<author>
+							<!--  ADD TIME TO INFORMATION SOURCE FOR ENCOUNTER -->
+							<time nullFlavor="UNK"/>
+							<assignedAuthor>
+								<id nullFlavor="NI"/>
+								<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+								<addr/>
+								<!-- HITSP C32 V2.5:    Telecom Required for assignedEntity, but VA VistA data not yet available -->
+								<telecom/>
+								<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+								<assignedPerson>
+									<name/>
+								</assignedPerson>
+								<representedOrganization>
+									<!-- INFORMATION SOURCE FOR FACILITY ID=VA OID, EXT= VAMC TREATING FACILITY NBR -->
+									<id extension="613" root="2.16.840.1.113883.4.349"/>
+									<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+									<name>MARTINSBURG VAMC</name>
+									<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+									<telecom/>
+									<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+									<addr/>
+								</representedOrganization>
+							</assignedAuthor>
+						</author>
+					  <!--16.06 - ADMISSION SOURCE, Optional, Not Yet Available from VA VistA -->
+					  <!--16.11 - FACILITY LOCATION, Optional -->
+					  <participant typeCode="LOC">
+						<templateId root="2.16.840.1.113883.10.20.1.45"/>
+						<!--16.20 - IN FACILITY LOCATION DURATION, Optional -->
+						<time>
+						  <!--16.12 - ARRIVAL DATE/TIME, Optional -->
+						  <low nullFlavor="UNK"/>
+						  <!-- 16.12 - DEPARTURE DATE/TIME, Optional -->
+						  <high nullFlavor="UNK"/>
+						</time>
+						<participantRole classCode="SDLOC">
+						  <playingEntity classCode="PLC"/>
+						</participantRole>
+					  </participant>
+					  <entryRelationship typeCode="RSON">
+						<observation classCode="OBS" moodCode="EVN">
+						  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+						  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+						  <id nullFlavor="UNK"/>
+						  <code nullFlavor="UNK"/>
+						  <!--16.13 - REASON FOR VISIT, Optional -->
+						  <text>
+							  <reference value="#endReason4"/>
+						  </text>
+						  <statusCode code="completed"/>
+						  <effectiveTime>
+							<low nullFlavor="UNK"/>
+						  </effectiveTime>
+						 <value xsi:type="CD"/>
+						</observation>
+					  </entryRelationship>
+					</encounter>
+				  </entry><entry> <!-- Entry block repeats for each Encounter -->
+					<encounter classCode="ENC" moodCode="EVN">
+					  <!--CCD Encounter Activity-->
+					  <templateId root="2.16.840.1.113883.10.20.1.21"/>
+					  <!--C83 Encounter Entry-->
+					  <templateId root="2.16.840.1.113883.3.88.11.83.16"/>
+					  <!--IHE Encounter Entry-->
+					  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+					  <!--16.01 - ENCOUNTER ID,  REQUIRED -->
+					  <id nullFlavor="UNK"/>
+					<!--  <id root="2.16.840.1.113883.4.349" extension="enc1234"/>-->
+					  <!--16.02 - ENCOUNTER TYPE, R2-Optional,  VA Provides CPT -->
+					  <!--16.02 - When CPT code not present, then code nullFlavor="UNK" -->
+					  <code nullFlavor="UNK">
+						<!--16.03 - ENCOUNTER FREE TEXT TYPE, REQUIRED-->
+						<originalText>
+						  <reference value="#endEncounterDescription5"/>
+						</originalText>
+					  </code>
+					  <!-- Required per IHE Template, not use by VA  -->
+					  <text>
+						<reference value="#encNote-1"/>
+					  </text>
+					  <!--16.04 - ENCOUNTER DATE / TIME, REQUIRED-->
+					  <effectiveTime>
+						<low value="20111101080241"/>
+					  </effectiveTime>
+					  <!--16.07 - ADMISSION TYPE, Optional,  VA VistA Data not yet available -->
+					    <priorityCode nullFlavor="UNK"/>	
+					  <!--16.05 - ENCOUNTER PROVIDER, R2-Optional -->
+					  	<performer typeCode="PRF">
+							<!-- Provider Template Id  -->
+							<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+							<time>
+								<high nullFlavor="UNK"/>
+							</time>
+							<assignedEntity>
+								<!-- Provider ID nullFlavor="UNK" b/c VA VistA data not yet available -->
+								<id nullFlavor="UNK"/>
+								<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+								<addr/>
+								<!-- HITSP C32 V2.5:    Telecom Required for iassignedEntity, but VA VistA data not yet available -->
+								<telecom/> 
+								<assignedPerson>
+									<name>TESTER,JOHN G</name>
+								</assignedPerson>
+							</assignedEntity>
+						</performer>
+					  <!-- INFORMATION SOURCE FOR ENCOUNTER, Optional -->
+						<author>
+							<!--  ADD TIME TO INFORMATION SOURCE FOR ENCOUNTER -->
+							<time nullFlavor="UNK"/>
+							<assignedAuthor>
+								<id nullFlavor="NI"/>
+								<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+								<addr/>
+								<!-- HITSP C32 V2.5:    Telecom Required for assignedEntity, but VA VistA data not yet available -->
+								<telecom/>
+								<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+								<assignedPerson>
+									<name/>
+								</assignedPerson>
+								<representedOrganization>
+									<!-- INFORMATION SOURCE FOR FACILITY ID=VA OID, EXT= VAMC TREATING FACILITY NBR -->
+									<id extension="613" root="2.16.840.1.113883.4.349"/>
+									<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+									<name>MARTINSBURG VAMC</name>
+									<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+									<telecom/>
+									<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+									<addr/>
+								</representedOrganization>
+							</assignedAuthor>
+						</author>
+					  <!--16.06 - ADMISSION SOURCE, Optional, Not Yet Available from VA VistA -->
+					  <!--16.11 - FACILITY LOCATION, Optional -->
+					  <participant typeCode="LOC">
+						<templateId root="2.16.840.1.113883.10.20.1.45"/>
+						<!--16.20 - IN FACILITY LOCATION DURATION, Optional -->
+						<time>
+						  <!--16.12 - ARRIVAL DATE/TIME, Optional -->
+						  <low nullFlavor="UNK"/>
+						  <!-- 16.12 - DEPARTURE DATE/TIME, Optional -->
+						  <high nullFlavor="UNK"/>
+						</time>
+						<participantRole classCode="SDLOC">
+						  <playingEntity classCode="PLC"/>
+						</participantRole>
+					  </participant>
+					  <entryRelationship typeCode="RSON">
+						<observation classCode="OBS" moodCode="EVN">
+						  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+						  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+						  <id nullFlavor="UNK"/>
+						  <code nullFlavor="UNK"/>
+						  <!--16.13 - REASON FOR VISIT, Optional -->
+						  <text>
+							  <reference value="#endReason5"/>
+						  </text>
+						  <statusCode code="completed"/>
+						  <effectiveTime>
+							<low nullFlavor="UNK"/>
+						  </effectiveTime>
+						 <value xsi:type="CD"/>
+						</observation>
+					  </entryRelationship>
+					</encounter>
+				  </entry>
+				</section>
+			</component>
+	     <!-- 
+			********************************************************
+			NHIN_CR95, CR94
+			VLER Segment 1Bii:  PROCEDURE SECTION 
+			********************************************************
+			-->
+			
+    	</structuredBody>
+	</component>
+</ClinicalDocument>

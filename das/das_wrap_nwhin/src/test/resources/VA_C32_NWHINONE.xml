@@ -1733,7 +1733,7 @@
 							<statusCode code="completed"/>
 							<!--  7.01 PROBLEM DATE (cda:low=Date of Onset, cda:high=Date Resolved), Optional R2 -->
 							<effectiveTime>
-								<low value="20130314"/>
+								<low value="20120314"/>
                                                                 <high nullFlavor="UNK"/>
 							</effectiveTime>
 						    <!-- 7.05 TREATING PROVIDER id link to HealthCare Provider Entry--> 
@@ -4294,7 +4294,7 @@
 							<!-- Lab Result Organizer Status, static-->
 							<statusCode code="completed"/>
 							<!-- Lab Result Organizer  Date/Time-->
-							<effectiveTime value="20131201171133"/> <!--Collected Date/Time -->
+							<effectiveTime value="20111201171133"/> <!--Collected Date/Time -->
 							<!-- INFORMATION SOURCE FOR LAB RESULT ORGANIZER, Optional -->	
 							<author>
 								<time nullFlavor="UNK"/>

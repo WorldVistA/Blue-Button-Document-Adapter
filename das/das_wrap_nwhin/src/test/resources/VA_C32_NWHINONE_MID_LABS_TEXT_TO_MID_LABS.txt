@@ -1,0 +1,665 @@
+								</tbody>
+							</table>
+							<!--  CDA Observation Text as a Reference tag -->
+							<!-- IHE Simple Observations Text Element Required, For 15.03-LAB RESULT TYPE  Static "Observation Text Not Available" -->
+							<content ID="lab-1" revised="delete">Result Observation Text Not Available</content>	
+							<!-- IHE Procedure Text Element Required,  Static "Procedure Text Not Available" -->	
+							<content ID="labproc1" revised="delete">Result Procedure Text Not Available</content>		
+					</text>
+					<entry> <!-- Do Not Repeat per Result  -->
+							<!-- Required IHE Procedure Entry element, REQUIRED -->
+							<!-- HITSP 32 V2.5:  IHE Proceure Element Required, but data not available through VistA RPCs -->
+							<procedure classCode="PROC" moodCode="EVN">	    
+													<templateId assigningAuthorityName="HITSP C83" root="2.16.840.1.113883.3.88.11.83.17"/>
+													<templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.29"/>
+													<templateId assigningAuthorityName="IHE PCC" root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+								  <id nullFlavor="UNK"/>
+								  <code nullFlavor="UNK">
+										<originalText>
+											<reference value="#labproc1"/>
+										</originalText>
+								  </code>
+								  <text>
+										<reference value="#labproc1"/>
+								  </text>
+								  <statusCode code="completed"/>
+							</procedure>
+					</entry>
+					<!-- Required IHE Simple Oberservation Entry element -->
+					<entry typeCode="DRIV"> 
+						<!-- VLER 1Bii:  Lab Result Organizer, Reapeats for Each VA Order -->
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<!-- HL7 CCD Lab Result Organizer Template, Required  -->
+							<templateId root="2.16.840.1.113883.10.20.1.32"/>
+							<!-- Lab Result Organizer Id -->
+							<id extension="613;1519402;3111101;6;1" root="2.16.840.1.113883.4.349"/>
+							<!-- Lab Result Organizer Code-->
+							<code nullFlavor="UNK">
+								<originalText>GLUCOSE</originalText>
+							</code>
+							<!-- Lab Result Organizer Status, static-->
+							<statusCode code="completed"/>
+							<!-- Lab Result Organizer  Date/Time-->
+							<effectiveTime value="20111201171133"/> <!--Collected Date/Time -->
+							<!-- INFORMATION SOURCE FOR LAB RESULT ORGANIZER, Optional -->	
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<!-- HITSP C32 V2.5:   Address Required for assignedAuthor, but VA VistA data not yet available -->
+									<addr/>
+									<!-- HITSP C32 V2.5:    Telecom Required for assignedAuthor, but VA VistA data not yet available -->
+									<telecom/>
+									<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<!-- INFORMATION SOURCE FACILITY OID (ID = VA OID, EXT = TREATING FACILITY NBR) -->
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+										<name>MARTINSBURG VAMC</name>
+										<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+										<telecom/>
+										<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<component> <!-- Component Repeats for Each VA Test Result -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<!-- IHE Simple Observation template -->
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<!--  HITSP C32 V2.5:  15.01-LAB RESULT ID, REQUIRED  -->
+									<!-- 15.01-LAB RESULT ID  -->
+									<id extension="CH;6888897.828867;2" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  15.03-LAB RESULT TYPE, REQUIRED, LOINC  -->
+									<!-- 15.03-LAB RESULT TYPE,  Adapter must obtain LOINC Code Long Common Name from LOINC DB  -->
+									<code code="2345-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Glucose [Mass/volume] in Serum or Plasma">
+										<originalText>GLUCOSE</originalText>
+									</code>
+									<!-- IHE Simple Observations Text element Required -->
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  15.04-RESULT STATUS, REQUIRED, IHE Requires Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  15.02-RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101171133"/>
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, Sent as String (not INT) for VistA results that are POS, NEG, pending -->
+									<value representation="TXT" xsi:type="ST">89 MG/DL</value>
+									<!-- HITSP C32 V2.5:  15.06-RESULT INTERPRETATION, Optional, Translation to HL7 Result Normalcy Status Value Set not yet available -->
+									<!-- If 15.06-RESULT INTERPRETATION is blank, omit XML tags -->
+									<!-- interpretationCode code="H" codeSystem="2.16.840.1.113883.1.11.78" codeSystemName="HL7 Result Normalcy Status Value Set" displayName="High"/ -->
+									<interpretationCode nullFlavor="UNK">
+										<originalText/>
+									</interpretationCode>
+									<!-- COMMENT FOR LAB RESULT, Optional -->	
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										  <act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<!-- COMMENT REFERENCE points to Narrative Block -->
+											<text><reference value="#lndComment1"/></text>
+											<statusCode code="completed"/>
+											<author>
+											  <time nullFlavor="UNK"/>
+											  <assignedAuthor>
+												<id nullFlavor="NI"/>
+												<addr/>
+												<telecom/>
+												<assignedPerson>
+													<name/>
+												</assignedPerson>
+												<representedOrganization>
+													<name/>
+													<telecom/>
+													<addr/>
+												</representedOrganization>
+											  </assignedAuthor>
+											</author>
+										  </act>
+									</entryRelationship>
+									<!-- HITSP C32 V2.5: 15.07-RESULT REFERENCE RANGE, Optional, Lo:Hi -->
+									<!-- If 15.07-RESULT REFERENCE RANGE is blank, omit XML tags -->
+									<referenceRange>
+										<observationRange>
+											<text>74-118</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+						</organizer>
+					</entry><entry typeCode="DRIV"> 
+						<!-- VLER 1Bii:  Lab Result Organizer, Reapeats for Each VA Order -->
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<!-- HL7 CCD Lab Result Organizer Template, Required  -->
+							<templateId root="2.16.840.1.113883.10.20.1.32"/>
+							<!-- Lab Result Organizer Id -->
+							<id extension="613;1519399;3111101;3;1" root="2.16.840.1.113883.4.349"/>
+							<!-- Lab Result Organizer Code-->
+							<code nullFlavor="UNK">
+								<originalText>CHEM 7</originalText>
+							</code>
+							<!-- Lab Result Organizer Status, static-->
+							<statusCode code="completed"/>
+							<!-- Lab Result Organizer  Date/Time-->
+							<effectiveTime value="20111101150315"/> <!--Collected Date/Time -->
+							<!-- INFORMATION SOURCE FOR LAB RESULT ORGANIZER, Optional -->	
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<!-- HITSP C32 V2.5:   Address Required for assignedAuthor, but VA VistA data not yet available -->
+									<addr/>
+									<!-- HITSP C32 V2.5:    Telecom Required for assignedAuthor, but VA VistA data not yet available -->
+									<telecom/>
+									<!-- HITSP C32 V2.5:   C83 author/assignedPerson/Name  Required but VA VistA data not yet available -->
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<!-- INFORMATION SOURCE FACILITY OID (ID = VA OID, EXT = TREATING FACILITY NBR) -->
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+										<name>MARTINSBURG VAMC</name>
+										<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+										<telecom/>
+										<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<component> <!-- Component Repeats for Each VA Test Result -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<!-- IHE Simple Observation template -->
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<!--  HITSP C32 V2.5:  15.01-LAB RESULT ID, REQUIRED  -->
+									<!-- 15.01-LAB RESULT ID  -->
+									<id extension="CH;6888897.849685;2" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  15.03-LAB RESULT TYPE, REQUIRED, LOINC  -->
+									<!-- 15.03-LAB RESULT TYPE,  Adapter must obtain LOINC Code Long Common Name from LOINC DB  -->
+									<code code="2345-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Glucose [Mass/volume] in Serum or Plasma">
+										<originalText>GLUCOSE</originalText>
+									</code>
+									<!-- IHE Simple Observations Text element Required -->
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  15.04-RESULT STATUS, REQUIRED, IHE Requires Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  15.02-RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101150315"/>
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, Sent as String (not INT) for VistA results that are POS, NEG, pending -->
+									<value representation="TXT" xsi:type="ST">97 MG/DL</value>
+									<!-- HITSP C32 V2.5:  15.06-RESULT INTERPRETATION, Optional, Translation to HL7 Result Normalcy Status Value Set not yet available -->
+									<!-- If 15.06-RESULT INTERPRETATION is blank, omit XML tags -->
+									<!-- interpretationCode code="H" codeSystem="2.16.840.1.113883.1.11.78" codeSystemName="HL7 Result Normalcy Status Value Set" displayName="High"/ -->
+									<interpretationCode nullFlavor="UNK">
+										<originalText/>
+									</interpretationCode>
+									<!-- COMMENT FOR LAB RESULT, Optional -->	
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										  <act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<!-- COMMENT REFERENCE points to Narrative Block -->
+											<text><reference value="#lndComment2"/></text>
+											<statusCode code="completed"/>
+											<author>
+											  <time nullFlavor="UNK"/>
+											  <assignedAuthor>
+												<id nullFlavor="NI"/>
+												<addr/>
+												<telecom/>
+												<assignedPerson>
+													<name/>
+												</assignedPerson>
+												<representedOrganization>
+													<name/>
+													<telecom/>
+													<addr/>
+												</representedOrganization>
+											  </assignedAuthor>
+											</author>
+										  </act>
+									</entryRelationship>
+									<!-- HITSP C32 V2.5: 15.07-RESULT REFERENCE RANGE, Optional, Lo:Hi -->
+									<!-- If 15.07-RESULT REFERENCE RANGE is blank, omit XML tags -->
+									<referenceRange>
+										<observationRange>
+											<text>74-118</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component><component> <!-- Component Repeats for Each VA Test Result -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<!-- IHE Simple Observation template -->
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<!--  HITSP C32 V2.5:  15.01-LAB RESULT ID, REQUIRED  -->
+									<!-- 15.01-LAB RESULT ID  -->
+									<id extension="CH;6888897.849685;3" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  15.03-LAB RESULT TYPE, REQUIRED, LOINC  -->
+									<!-- 15.03-LAB RESULT TYPE,  Adapter must obtain LOINC Code Long Common Name from LOINC DB  -->
+									<code code="3094-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Urea nitrogen [Mass/volume] in Serum or Plasma">
+										<originalText>UREA NITROGEN (BUN)</originalText>
+									</code>
+									<!-- IHE Simple Observations Text element Required -->
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  15.04-RESULT STATUS, REQUIRED, IHE Requires Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  15.02-RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101150315"/>
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, Sent as String (not INT) for VistA results that are POS, NEG, pending -->
+									<value representation="TXT" xsi:type="ST">10 MG/DL</value>
+									<!-- HITSP C32 V2.5:  15.06-RESULT INTERPRETATION, Optional, Translation to HL7 Result Normalcy Status Value Set not yet available -->
+									<!-- If 15.06-RESULT INTERPRETATION is blank, omit XML tags -->
+									<!-- interpretationCode code="H" codeSystem="2.16.840.1.113883.1.11.78" codeSystemName="HL7 Result Normalcy Status Value Set" displayName="High"/ -->
+									<interpretationCode nullFlavor="UNK">
+										<originalText/>
+									</interpretationCode>
+									<!-- COMMENT FOR LAB RESULT, Optional -->	
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										  <act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<!-- COMMENT REFERENCE points to Narrative Block -->
+											<text><reference value="#lndComment2"/></text>
+											<statusCode code="completed"/>
+											<author>
+											  <time nullFlavor="UNK"/>
+											  <assignedAuthor>
+												<id nullFlavor="NI"/>
+												<addr/>
+												<telecom/>
+												<assignedPerson>
+													<name/>
+												</assignedPerson>
+												<representedOrganization>
+													<name/>
+													<telecom/>
+													<addr/>
+												</representedOrganization>
+											  </assignedAuthor>
+											</author>
+										  </act>
+									</entryRelationship>
+									<!-- HITSP C32 V2.5: 15.07-RESULT REFERENCE RANGE, Optional, Lo:Hi -->
+									<!-- If 15.07-RESULT REFERENCE RANGE is blank, omit XML tags -->
+									<referenceRange>
+										<observationRange>
+											<text>9-20</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component><component> <!-- Component Repeats for Each VA Test Result -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<!-- IHE Simple Observation template -->
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<!--  HITSP C32 V2.5:  15.01-LAB RESULT ID, REQUIRED  -->
+									<!-- 15.01-LAB RESULT ID  -->
+									<id extension="CH;6888897.849685;4" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  15.03-LAB RESULT TYPE, REQUIRED, LOINC  -->
+									<!-- 15.03-LAB RESULT TYPE,  Adapter must obtain LOINC Code Long Common Name from LOINC DB  -->
+									<code code="2160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Creatinine [Mass/volume] in Serum or Plasma">
+										<originalText>CREATININE</originalText>
+									</code>
+									<!-- IHE Simple Observations Text element Required -->
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  15.04-RESULT STATUS, REQUIRED, IHE Requires Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  15.02-RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101150315"/>
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, Sent as String (not INT) for VistA results that are POS, NEG, pending -->
+									<value representation="TXT" xsi:type="ST">0.9 MG/DL</value>
+									<!-- HITSP C32 V2.5:  15.06-RESULT INTERPRETATION, Optional, Translation to HL7 Result Normalcy Status Value Set not yet available -->
+									<!-- If 15.06-RESULT INTERPRETATION is blank, omit XML tags -->
+									<!-- interpretationCode code="H" codeSystem="2.16.840.1.113883.1.11.78" codeSystemName="HL7 Result Normalcy Status Value Set" displayName="High"/ -->
+									<interpretationCode nullFlavor="UNK">
+										<originalText/>
+									</interpretationCode>
+									<!-- COMMENT FOR LAB RESULT, Optional -->	
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										  <act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<!-- COMMENT REFERENCE points to Narrative Block -->
+											<text><reference value="#lndComment2"/></text>
+											<statusCode code="completed"/>
+											<author>
+											  <time nullFlavor="UNK"/>
+											  <assignedAuthor>
+												<id nullFlavor="NI"/>
+												<addr/>
+												<telecom/>
+												<assignedPerson>
+													<name/>
+												</assignedPerson>
+												<representedOrganization>
+													<name/>
+													<telecom/>
+													<addr/>
+												</representedOrganization>
+											  </assignedAuthor>
+											</author>
+										  </act>
+									</entryRelationship>
+									<!-- HITSP C32 V2.5: 15.07-RESULT REFERENCE RANGE, Optional, Lo:Hi -->
+									<!-- If 15.07-RESULT REFERENCE RANGE is blank, omit XML tags -->
+									<referenceRange>
+										<observationRange>
+											<text>0.7-1.5</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component><component> <!-- Component Repeats for Each VA Test Result -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<!-- IHE Simple Observation template -->
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<!--  HITSP C32 V2.5:  15.01-LAB RESULT ID, REQUIRED  -->
+									<!-- 15.01-LAB RESULT ID  -->
+									<id extension="CH;6888897.849685;5" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  15.03-LAB RESULT TYPE, REQUIRED, LOINC  -->
+									<!-- 15.03-LAB RESULT TYPE,  Adapter must obtain LOINC Code Long Common Name from LOINC DB  -->
+									<code code="2951-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Sodium [Moles/volume] in Serum or Plasma">
+										<originalText>SODIUM</originalText>
+									</code>
+									<!-- IHE Simple Observations Text element Required -->
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  15.04-RESULT STATUS, REQUIRED, IHE Requires Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  15.02-RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101150315"/>
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, Sent as String (not INT) for VistA results that are POS, NEG, pending -->
+									<value representation="TXT" xsi:type="ST">130 MMOL/L</value>
+									<!-- HITSP C32 V2.5:  15.06-RESULT INTERPRETATION, Optional, Translation to HL7 Result Normalcy Status Value Set not yet available -->
+									<!-- If 15.06-RESULT INTERPRETATION is blank, omit XML tags -->
+									<!-- interpretationCode code="H" codeSystem="2.16.840.1.113883.1.11.78" codeSystemName="HL7 Result Normalcy Status Value Set" displayName="High"/ -->
+									<interpretationCode nullFlavor="UNK">
+										<originalText>L</originalText>
+									</interpretationCode>
+									<!-- COMMENT FOR LAB RESULT, Optional -->	
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										  <act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<!-- COMMENT REFERENCE points to Narrative Block -->
+											<text><reference value="#lndComment2"/></text>
+											<statusCode code="completed"/>
+											<author>
+											  <time nullFlavor="UNK"/>
+											  <assignedAuthor>
+												<id nullFlavor="NI"/>
+												<addr/>
+												<telecom/>
+												<assignedPerson>
+													<name/>
+												</assignedPerson>
+												<representedOrganization>
+													<name/>
+													<telecom/>
+													<addr/>
+												</representedOrganization>
+											  </assignedAuthor>
+											</author>
+										  </act>
+									</entryRelationship>
+									<!-- HITSP C32 V2.5: 15.07-RESULT REFERENCE RANGE, Optional, Lo:Hi -->
+									<!-- If 15.07-RESULT REFERENCE RANGE is blank, omit XML tags -->
+									<referenceRange>
+										<observationRange>
+											<text>133-145</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component><component> <!-- Component Repeats for Each VA Test Result -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<!-- IHE Simple Observation template -->
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<!--  HITSP C32 V2.5:  15.01-LAB RESULT ID, REQUIRED  -->
+									<!-- 15.01-LAB RESULT ID  -->
+									<id extension="CH;6888897.849685;6" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  15.03-LAB RESULT TYPE, REQUIRED, LOINC  -->
+									<!-- 15.03-LAB RESULT TYPE,  Adapter must obtain LOINC Code Long Common Name from LOINC DB  -->
+									<code code="2823-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Potassium [Moles/volume] in Serum or Plasma">
+										<originalText>POTASSIUM</originalText>
+									</code>
+									<!-- IHE Simple Observations Text element Required -->
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  15.04-RESULT STATUS, REQUIRED, IHE Requires Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  15.02-RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101150315"/>
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, Sent as String (not INT) for VistA results that are POS, NEG, pending -->
+									<value representation="TXT" xsi:type="ST">4.5 MMOL/L</value>
+									<!-- HITSP C32 V2.5:  15.06-RESULT INTERPRETATION, Optional, Translation to HL7 Result Normalcy Status Value Set not yet available -->
+									<!-- If 15.06-RESULT INTERPRETATION is blank, omit XML tags -->
+									<!-- interpretationCode code="H" codeSystem="2.16.840.1.113883.1.11.78" codeSystemName="HL7 Result Normalcy Status Value Set" displayName="High"/ -->
+									<interpretationCode nullFlavor="UNK">
+										<originalText/>
+									</interpretationCode>
+									<!-- COMMENT FOR LAB RESULT, Optional -->	
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										  <act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<!-- COMMENT REFERENCE points to Narrative Block -->
+											<text><reference value="#lndComment2"/></text>
+											<statusCode code="completed"/>
+											<author>
+											  <time nullFlavor="UNK"/>
+											  <assignedAuthor>
+												<id nullFlavor="NI"/>
+												<addr/>
+												<telecom/>
+												<assignedPerson>
+													<name/>
+												</assignedPerson>
+												<representedOrganization>
+													<name/>
+													<telecom/>
+													<addr/>
+												</representedOrganization>
+											  </assignedAuthor>
+											</author>
+										  </act>
+									</entryRelationship>
+									<!-- HITSP C32 V2.5: 15.07-RESULT REFERENCE RANGE, Optional, Lo:Hi -->
+									<!-- If 15.07-RESULT REFERENCE RANGE is blank, omit XML tags -->
+									<referenceRange>
+										<observationRange>
+											<text>3.5-5.0</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component><component> <!-- Component Repeats for Each VA Test Result -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<!-- IHE Simple Observation template -->
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<!--  HITSP C32 V2.5:  15.01-LAB RESULT ID, REQUIRED  -->
+									<!-- 15.01-LAB RESULT ID  -->
+									<id extension="CH;6888897.849685;7" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  15.03-LAB RESULT TYPE, REQUIRED, LOINC  -->
+									<!-- 15.03-LAB RESULT TYPE,  Adapter must obtain LOINC Code Long Common Name from LOINC DB  -->
+									<code code="2075-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Chloride [Moles/volume] in Serum or Plasma">
+										<originalText>CHLORIDE</originalText>
+									</code>
+									<!-- IHE Simple Observations Text element Required -->
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  15.04-RESULT STATUS, REQUIRED, IHE Requires Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  15.02-RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101150315"/>
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, Sent as String (not INT) for VistA results that are POS, NEG, pending -->
+									<value representation="TXT" xsi:type="ST">72 MMOL/L</value>
+									<!-- HITSP C32 V2.5:  15.06-RESULT INTERPRETATION, Optional, Translation to HL7 Result Normalcy Status Value Set not yet available -->
+									<!-- If 15.06-RESULT INTERPRETATION is blank, omit XML tags -->
+									<!-- interpretationCode code="H" codeSystem="2.16.840.1.113883.1.11.78" codeSystemName="HL7 Result Normalcy Status Value Set" displayName="High"/ -->
+									<interpretationCode nullFlavor="UNK">
+										<originalText>L</originalText>
+									</interpretationCode>
+									<!-- COMMENT FOR LAB RESULT, Optional -->	
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										  <act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<!-- COMMENT REFERENCE points to Narrative Block -->
+											<text><reference value="#lndComment2"/></text>
+											<statusCode code="completed"/>
+											<author>
+											  <time nullFlavor="UNK"/>
+											  <assignedAuthor>
+												<id nullFlavor="NI"/>
+												<addr/>
+												<telecom/>
+												<assignedPerson>
+													<name/>
+												</assignedPerson>
+												<representedOrganization>
+													<name/>
+													<telecom/>
+													<addr/>
+												</representedOrganization>
+											  </assignedAuthor>
+											</author>
+										  </act>
+									</entryRelationship>
+									<!-- HITSP C32 V2.5: 15.07-RESULT REFERENCE RANGE, Optional, Lo:Hi -->
+									<!-- If 15.07-RESULT REFERENCE RANGE is blank, omit XML tags -->
+									<referenceRange>
+										<observationRange>
+											<text>98-111</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component><component> <!-- Component Repeats for Each VA Test Result -->
+								<observation classCode="OBS" moodCode="EVN">
+									 <!-- Result observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/> 
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<!-- IHE Simple Observation template -->
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<!--  HITSP C32 V2.5:  15.01-LAB RESULT ID, REQUIRED  -->
+									<!-- 15.01-LAB RESULT ID  -->
+									<id extension="CH;6888897.849685;8" root="2.16.840.1.113883.4.349"/>
+									<!-- HITSP C32 V2.5:  15.03-LAB RESULT TYPE, REQUIRED, LOINC  -->
+									<!-- 15.03-LAB RESULT TYPE,  Adapter must obtain LOINC Code Long Common Name from LOINC DB  -->
+									<code code="2028-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Carbon dioxide, total [Moles/volume] in Serum or Plasma">
+										<originalText>CO2</originalText>
+									</code>
+									<!-- IHE Simple Observations Text element Required -->
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<!-- HITSP C32 V2.5:  15.04-RESULT STATUS, REQUIRED, IHE Requires Static value of completed  -->
+									<statusCode code="completed"/>
+									<!-- HITSP C32 V2.5:  15.02-RESULT DATE/TIME, REQURIED  -->
+									<!-- HITSP C32 V2.5: if blank, then effectiveTime nullFlavor="UNK" -->
+									<effectiveTime value="20111101150315"/>
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, CONDITIONAL REQUIRED when moodCode=EVN  -->
+									<!-- HITSP C32 V2.5:  15.05- RESULT VALUE, Sent as String (not INT) for VistA results that are POS, NEG, pending -->
+									<value representation="TXT" xsi:type="ST">30.0 MMOL/L</value>
+									<!-- HITSP C32 V2.5:  15.06-RESULT INTERPRETATION, Optional, Translation to HL7 Result Normalcy Status Value Set not yet available -->
+									<!-- If 15.06-RESULT INTERPRETATION is blank, omit XML tags -->
+									<!-- interpretationCode code="H" codeSystem="2.16.840.1.113883.1.11.78" codeSystemName="HL7 Result Normalcy Status Value Set" displayName="High"/ -->
+									<interpretationCode nullFlavor="UNK">
+										<originalText/>
+									</interpretationCode>
+									<!-- COMMENT FOR LAB RESULT, Optional -->	
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										  <act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<!-- COMMENT REFERENCE points to Narrative Block -->
+											<text><reference value="#lndComment2"/></text>
+											<statusCode code="completed"/>
+											<author>
+											  <time nullFlavor="UNK"/>
+											  <assignedAuthor>
+												<id nullFlavor="NI"/>
+												<addr/>
+												<telecom/>
+												<assignedPerson>
+													<name/>
+												</assignedPerson>
+												<representedOrganization>
+													<name/>
+													<telecom/>
+													<addr/>
+												</representedOrganization>
+											  </assignedAuthor>
+											</author>
+										  </act>
+									</entryRelationship>
+									<!-- HITSP C32 V2.5: 15.07-RESULT REFERENCE RANGE, Optional, Lo:Hi -->
+									<!-- If 15.07-RESULT REFERENCE RANGE is blank, omit XML tags -->
+									<referenceRange>
+										<observationRange>
+											<text>22.0-30.0</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
