@@ -49,13 +49,16 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 	public void onMessage(Message msg) {
 		TextMessage tMsg = (TextMessage)msg;
 		AsyncRetrieveMessage aMsg;
+		boolean debugging = logger.isDebugEnabled();
 		try {
 			aMsg = (AsyncRetrieveMessage)getAsyncMessageFormat().parse(tMsg.getText());
-			if (logger.isDebugEnabled()) {
+			if (debugging) {
 				logger.debug("calling getDomainXml for " + aMsg);
 			}
 			String xml = (String)_nwhinResource.getDomainXml(aMsg.getPatientId(), aMsg.getPatientName());
-			logger.debug("Attempting to Persist Domain XML for: " + aMsg.getPatientId());
+			if (debugging) {
+				logger.debug("Attempting to Persist Domain XML for: " + aMsg.getPatientId());
+			}
 			updateDocumentWithNewDocument(aMsg.getPatientId(), getDocumentFactory().createDocument(aMsg.getPatientId(), xml));
 		} catch (JMSException e) {
 			logger.error("JMS exception for " + msg, e);
@@ -74,16 +77,16 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 			getC32DocumentDao().insert(newDoc);
 			return;
 		}
-		if (newDoc.getDocument() != null && newDoc.getDocument().isEmpty() == false && newDoc.getDocumentPatientId().substring(0, 17) != patientId) {
-		oldDocument.setCreateDate(newDoc.getCreateDate());
-		oldDocument.setDocument(newDoc.getDocument());
-		oldDocument.setDocumentPatientId(newDoc.getDocumentPatientId());
-		if (debugging) {
-			logger.debug("merging (updating) document:" + oldDocument);
-		}
-		getC32DocumentDao().update(oldDocument);
+		if (newDoc.getDocument() != null && newDoc.getDocument().isEmpty() == false && stringsEqualNullSafe(newDoc.getDocumentPatientId(), patientId)) {
+			oldDocument.setCreateDate(newDoc.getCreateDate());
+			oldDocument.setDocument(newDoc.getDocument());
+			oldDocument.setDocumentPatientId(newDoc.getDocumentPatientId());
+			if (debugging) {
+				logger.debug("merging (updating) document:" + oldDocument);
+			}
+			getC32DocumentDao().update(oldDocument);
 		} else {
-			logger.info("No valid record available for patient ID: " + patientId);
+			logger.warn("No valid record available for patient ID: " + patientId);
 		}
 	}
 
@@ -125,5 +128,16 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 		return date1==null && date2==null;
 	}
     
+	protected static boolean stringsEqualNullSafe(String s1, String s2) {
+		if (s1==null && s2==null) {
+			return true;
+		}
+		if (s1!=null && s2!=null) {
+			String temp1 = s1.trim().toLowerCase();
+			String temp2 = s2.trim().toLowerCase();
+			return temp1.equals(temp2);
+		}
+		return false;
+	}
 
 }

@@ -42,11 +42,11 @@ public class NwhinDataRetrieverTest extends AbstractDateAwareTests implements IC
 	@Test
 	public void onMessage() {
 		ptNameToAssert = "fred";
-		ptIdToAssert = "1234";
+		ptIdToAssert = "112233v10";
 		returnXml = "<stuff></stuff>";
 		docList = new ArrayList<C32DocumentEntity>();
 		docList.add(new C32DocumentEntity(ptIdToAssert, ptIdToAssert, new java.sql.Date(new Date().getTime()), BlueButtonConstants.INCOMPLETE_STATUS_STRING));
-		retriever.onMessage(new TestTextMessage("20120908070605:1234:fred"));
+		retriever.onMessage(new TestTextMessage("20120908070605:112233v10:fred"));
 		Assert.assertEquals(0, insertedList.size());
 		Assert.assertEquals(1, updatedList.size());
 		Assert.assertEquals(returnXml, updatedList.get(0).getDocument());
