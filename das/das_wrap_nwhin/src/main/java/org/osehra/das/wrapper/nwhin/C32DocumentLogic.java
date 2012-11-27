@@ -20,6 +20,24 @@ import org.joda.time.format.DateTimeFormatter;
 public class C32DocumentLogic implements IC32DocumentLogic, Serializable{
 	private static final long serialVersionUID = 1L;
 	private static final Log LOG = LogFactory.getLog(C32DocumentLogic.class);
+	protected DateTimeFormatter jodaDateFormat = DateTimeFormat.forPattern("yyyyMMdd");
+	protected DateTimeFormatter jodaDateTimeFormat = DateTimeFormat.forPattern("yyyyMMddHHmmss");
+
+	public DateTimeFormatter getJodaDateTimeFormat() {
+		return jodaDateTimeFormat;
+	}
+
+	public void setJodaDateTimeFormat(DateTimeFormatter jodaDateTimeFormat) {
+		this.jodaDateTimeFormat = jodaDateTimeFormat;
+	}
+
+	public DateTimeFormatter getJodaDateFormat() {
+		return jodaDateFormat;
+	}
+
+	public void setJodaDateFormat(DateTimeFormatter jodaDateFormat) {
+		this.jodaDateFormat = jodaDateFormat;
+	}
 
 	public String filterDocument (String document) {
 		filterProblemList(document);
@@ -84,8 +102,7 @@ public class C32DocumentLogic implements IC32DocumentLogic, Serializable{
 																						//If Problem Date null, no filter applied.
 																						if (ProblemDate != null && !ProblemDate.isEmpty()) {	
 																							//Labs seem to have a different date, may need to adjust for prod.
-																							DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyyMMdd");
-																							DateTime dt = formatter.parseDateTime(ProblemDate);
+																							DateTime dt = getJodaDateFormat().parseDateTime(ProblemDate);
 																							LocalDate probDate = dt.toLocalDate();
 																							LocalDate currentDate = LocalDate.now();
 																							LocalDate minDate = currentDate.minusDays(problemListDelayDays);
@@ -108,18 +125,9 @@ public class C32DocumentLogic implements IC32DocumentLogic, Serializable{
 																									}
 																								}
 																							}
-
-
-
-
 																						}
-
-
-
 																					}
-
 																				}
-
 																			}
 																		} 
 																	}			
@@ -206,8 +214,7 @@ public class C32DocumentLogic implements IC32DocumentLogic, Serializable{
 																				String LabDate = children8.get(h).getAttributeValue("value");
 
 																				//This is the format in the demo file's lab values.  May vary by element.
-																				DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyyMMddHHmmss");
-																				DateTime dt = formatter.parseDateTime(LabDate);
+																				DateTime dt = getJodaDateTimeFormat().parseDateTime(LabDate);
 																				LocalDate labDate = dt.toLocalDate();
 																				LocalDate currentDate = LocalDate.now();
 																				LocalDate minDate = currentDate.minusDays(LabDelayDays);
@@ -267,10 +274,10 @@ public class C32DocumentLogic implements IC32DocumentLogic, Serializable{
 	}
 
 	public String getPatientId (String document) {
-
+		boolean debugging = LOG.isDebugEnabled();
 		String patientIdentifier = "";
 
-		if (document!=null) {
+		if (document!=null && !"".equals(document.trim())) {
 			try {
 				Builder builder = new Builder();
 				Document doc = builder.build(new StringReader(document));
@@ -279,18 +286,26 @@ public class C32DocumentLogic implements IC32DocumentLogic, Serializable{
 				Elements children1 = root.getChildElements();
 
 				/* Walk the file to find patient id. */
-				for(int a = 0; a < children1.size(); a ++){				
-					//System.out.println(children1.get(a).getLocalName());
+				for(int a = 0; a < children1.size(); a ++){
+					if (debugging) {
+						LOG.debug("a:"+children1.get(a).getLocalName());
+					}
 					if (children1.get(a).getLocalName() == "recordTarget") {
 						Elements children2 = children1.get(a).getChildElements();
 						for(int b = 0; b < children2.size(); b ++){
-							//System.out.println(children2.get(b).getLocalName());
+							if (debugging) {
+								LOG.debug("b:"+children2.get(b).getLocalName());
+							}
 							if (children2.get(b).getLocalName() == "patientRole") {		
 								Elements children3 = children2.get(b).getChildElements();
 								for(int c = 0; c < children3.size(); c ++){
-									//System.out.println(children3.get(c).getLocalName());
+									if (debugging) {
+										LOG.debug("c:"+children3.get(c).getLocalName());
+									}
 									if (children3.get(c).getLocalName() == "id") {
-										//System.out.println(children3.get(c).getAttributeValue("extension"));
+										if (debugging) {
+											LOG.debug("c(extension):"+children3.get(c).getAttributeValue("extension"));
+										}
 										patientIdentifier = children3.get(c).getAttributeValue("extension");
 									}
 								}	
@@ -300,13 +315,16 @@ public class C32DocumentLogic implements IC32DocumentLogic, Serializable{
 				}
 
 			} catch (IOException io) {
-				System.out.println(io.getMessage());
 				LOG.error(io);
 			} catch (ParsingException parserr) {
 				LOG.error(parserr);
 			}
 		}
 
+		int carrotIndex = patientIdentifier.indexOf('^');
+		if (carrotIndex>-1) {
+			return patientIdentifier.substring(0, carrotIndex);
+		}
 		return patientIdentifier;
 	}
 
