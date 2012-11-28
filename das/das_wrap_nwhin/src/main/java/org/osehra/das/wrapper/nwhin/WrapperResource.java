@@ -61,7 +61,7 @@ public class WrapperResource extends ComponentImpl implements
 		// Go to adapter, get the C32 - return the C32 XML document for that
 		// patient
 		String c32Document = adapterDocQueryRetrieveFacade.getDocument(patientId, new Date(),
-				new Date(), userName);
+				new Date(), "MHV - " + userName);
 		return c32Document;
 	}
 
