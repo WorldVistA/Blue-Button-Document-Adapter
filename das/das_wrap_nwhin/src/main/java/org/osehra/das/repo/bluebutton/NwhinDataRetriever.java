@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.TextMessage;
@@ -60,8 +59,6 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 				logger.debug("Attempting to Persist Domain XML for: " + aMsg.getPatientId());
 			}
 			updateDocumentWithNewDocument(aMsg.getPatientId(), getDocumentFactory().createDocument(aMsg.getPatientId(), xml));
-		} catch (JMSException e) {
-			logger.error("JMS exception for " + msg, e);
 		} catch (Exception e) {
 			logger.error("general exception for " + msg, e);
 		}
@@ -77,14 +74,19 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 			getC32DocumentDao().insert(newDoc);
 			return;
 		}
-		if (newDoc.getDocument() != null && newDoc.getDocument().isEmpty() == false && stringsEqualNullSafe(newDoc.getDocumentPatientId(), patientId)) {
-			oldDocument.setCreateDate(newDoc.getCreateDate());
-			oldDocument.setDocument(newDoc.getDocument());
-			oldDocument.setDocumentPatientId(newDoc.getDocumentPatientId());
-			if (debugging) {
-				logger.debug("merging (updating) document:" + oldDocument);
+		if (newDoc.getDocument() != null && !newDoc.getDocument().isEmpty()) {
+			if (stringsEqualNullSafe(newDoc.getDocumentPatientId(), patientId)) {
+				oldDocument.setCreateDate(newDoc.getCreateDate());
+				oldDocument.setDocument(newDoc.getDocument());
+				oldDocument.setDocumentPatientId(newDoc.getDocumentPatientId());
+				if (debugging) {
+					logger.debug("merging (updating) document:" + oldDocument);
+				}
+				getC32DocumentDao().update(oldDocument);
 			}
-			getC32DocumentDao().update(oldDocument);
+			else {
+				logger.warn("Patient ID's don't match: requested ID:" + patientId + " document ID:" + newDoc.getDocumentPatientId());
+			}
 		} else {
 			logger.warn("No valid record available for patient ID: " + patientId);
 		}

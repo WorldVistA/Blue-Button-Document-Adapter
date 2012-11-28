@@ -54,11 +54,7 @@
 		<property name="asyncMessageFormat" ref="asyncMsgFormatter"/>
 	</bean>
 	
-	<bean id="documentFactory" class="org.osehra.das.wrapper.nwhin.C32DocumentEntityFactory">
-		<property name="C32DocumentLogic">
-			<bean class="org.osehra.das.wrapper.nwhin.C32DocumentLogic"/>
-		</property>
-	</bean>
+	<bean id="documentFactory" class="org.osehra.das.wrapper.nwhin.C32DocumentLogic"/>
 	
 	<bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
 		<property name="connectionFactory" ref="jmsConnectionFactory"/>

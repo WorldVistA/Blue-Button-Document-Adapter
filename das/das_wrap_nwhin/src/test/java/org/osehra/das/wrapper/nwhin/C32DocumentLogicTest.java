@@ -20,7 +20,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class C32DocumentLogicTest {
-	protected IC32DocumentLogic docLogic;
+	protected C32DocumentLogic docLogic;
 	protected DateTimeFormatter dateFormat = DateTimeFormat.forPattern("yyyyMMdd");
 	protected DateTimeFormatter dateTimeFormat = DateTimeFormat.forPattern("yyyyMMddHHmmss");
 	
@@ -30,35 +30,38 @@ public class C32DocumentLogicTest {
 	}
 	
 	@Test
-	public void getPatientId_happyPath() throws IOException {
-		Assert.assertEquals("1012638924V546709", docLogic.getPatientId(getFileAsString("/VA_C32_NWHINONE.xml")));
+	public void createDocument_happyPath() throws Exception {
+		C32DocumentEntity doc = docLogic.createDocument("1012638924V546709", getFileAsString("/VA_C32_NWHINONE.xml"));
+		Assert.assertEquals("1012638924V546709", doc.getDocumentPatientId());
 	}
 	
 	@Test
-	public void getPatientId_emptyString() {
-		Assert.assertEquals("", docLogic.getPatientId(""));
+	public void createDocument_emptyString() throws Exception {
+		C32DocumentEntity doc = docLogic.createDocument("fred", "");
+		Assert.assertEquals("", doc.getDocumentPatientId());
 	}
 	
 	@Test
-	public void getPatientId_nullString() {
-		Assert.assertEquals("", docLogic.getPatientId(null));
+	public void createDocument_nullString() throws Exception {
+		C32DocumentEntity doc = docLogic.createDocument("jill", null);
+		Assert.assertEquals("", doc.getDocumentPatientId());
 	}
 	
 	@Test
-	public void filterDocument_noFiltering() throws Exception {
+	public void createDocument_noFiltering() throws Exception {
 		String aDoc = getFileAsString("/VA_C32_NWHINONE.xml");
 		Builder builder = new Builder();
 		Document doc = builder.build(new StringReader(aDoc));
 		String expectedDoc = doc.toXML();
-		String resultDoc = docLogic.filterDocument(aDoc);
-		boolean matched = expectedDoc.equals(resultDoc);
+		C32DocumentEntity c32 = docLogic.createDocument("1012638924V546709", aDoc);
+		boolean matched = expectedDoc.equals(c32.getDocument());
 		if (!matched) {
 			FileWriter fileWriter = new FileWriter("errorOutput.txt");
 			PrintWriter printWriter = new PrintWriter(fileWriter);
 			printWriter.println("===============");
 			printWriter.println(expectedDoc);
 			printWriter.println("===============");
-			printWriter.println(resultDoc);
+			printWriter.println(c32.getDocument());
 			printWriter.close();
 		}
 		Assert.assertTrue(matched);
@@ -73,10 +76,10 @@ public class C32DocumentLogicTest {
 				getProblemEntry(youngParams)+getProblemEntry(olderParams), 
 				null, 
 				null);
-		String filteredDoc = docLogic.filterDocument(aDoc);
-		Assert.assertTrue(filteredDoc.indexOf("#pndProblem" + youngParams.getIndex())<0);
-		Assert.assertTrue(filteredDoc.indexOf("#pndProblem" + olderParams.getIndex())>=0);
-		Assert.assertTrue(filteredDoc.indexOf("pndDateOfOnset" + youngParams.getIndex())<0);
+		C32DocumentEntity filteredDoc = docLogic.createDocument("1012638924V546709",aDoc);
+		Assert.assertTrue(filteredDoc.getDocument().indexOf("#pndProblem" + youngParams.getIndex())<0);
+		Assert.assertTrue(filteredDoc.getDocument().indexOf("#pndProblem" + olderParams.getIndex())>=0);
+		Assert.assertTrue(filteredDoc.getDocument().indexOf("pndDateOfOnset" + youngParams.getIndex())<0);
 	}
 	
 	@Test
@@ -87,11 +90,11 @@ public class C32DocumentLogicTest {
 				null, 
 				getLabTextEntry(youngParams)+getLabTextEntry(olderParams), 
 				getLabEntry(youngParams)+getLabEntry(olderParams));
-		String filteredDoc = docLogic.filterDocument(aDoc);
-		Assert.assertTrue(filteredDoc.indexOf("#lndComment"+olderParams.getIndex())>=0);
-		Assert.assertTrue(filteredDoc.indexOf("#lndComment"+youngParams.getIndex())<0);
-		Assert.assertTrue(filteredDoc.indexOf("lndDateTime"+olderParams.getIndex())<0);
-		Assert.assertTrue(filteredDoc.indexOf("lndDateTime"+youngParams.getIndex())<0);
+		C32DocumentEntity filteredDoc = docLogic.createDocument("1012638924V546709", aDoc);
+		Assert.assertTrue(filteredDoc.getDocument().indexOf("#lndComment"+olderParams.getIndex())>=0);
+		Assert.assertTrue(filteredDoc.getDocument().indexOf("#lndComment"+youngParams.getIndex())<0);
+		Assert.assertTrue(filteredDoc.getDocument().indexOf("lndDateTime"+olderParams.getIndex())<0);
+		Assert.assertTrue(filteredDoc.getDocument().indexOf("lndDateTime"+youngParams.getIndex())<0);
 	}
 	
 	protected String getLabEntry(DocElementTestParams testParams) throws IOException {

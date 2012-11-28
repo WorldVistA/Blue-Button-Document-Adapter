@@ -1,11 +1,10 @@
 package org.osehra.das.repo.bluebutton;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
-import java.util.Comparator;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.logging.Log;

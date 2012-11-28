@@ -10,10 +10,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.osehra.das.wrapper.nwhin.C32DocumentEntity;
 import org.osehra.das.wrapper.nwhin.C32DocumentEntityFactory;
-import org.osehra.das.wrapper.nwhin.IC32DocumentLogic;
 import org.osehra.das.wrapper.nwhin.IWrapperResource;
 
-public class NwhinDataRetrieverTest extends AbstractDateAwareTests implements IC32DocumentDao, IC32DocumentLogic, IWrapperResource {
+public class NwhinDataRetrieverTest extends AbstractDateAwareTests implements IC32DocumentDao, C32DocumentEntityFactory, IWrapperResource {
 	NwhinDataRetriever retriever;
 	List<C32DocumentEntity> insertedList;
 	List<C32DocumentEntity> updatedList;
@@ -27,9 +26,7 @@ public class NwhinDataRetrieverTest extends AbstractDateAwareTests implements IC
 		retriever = new NwhinDataRetriever();
 		retriever.setAsyncMessageFormat(new AsyncRetrieveMessageFormat());
 		retriever.setC32DocumentDao(this);
-		C32DocumentEntityFactory docFactory = new C32DocumentEntityFactory();
-		docFactory.setC32DocumentLogic(this);
-		retriever.setDocumentFactory(docFactory);
+		retriever.setDocumentFactory(this);
 		retriever.setWrapperResource(this);
 		
 		insertedList = new ArrayList<C32DocumentEntity>();
@@ -83,16 +80,10 @@ public class NwhinDataRetrieverTest extends AbstractDateAwareTests implements IC
 
 	//================
 
-	@Override
-	public String filterDocument(String document) {
-		return document;
+	public C32DocumentEntity createDocument(String ptId, String xml) {
+		return new C32DocumentEntity(ptId, "112233v10", new java.sql.Date(new Date().getTime()), xml);
 	}
-
-	@Override
-	public String getPatientId(String document) {
-		return "112233v10";
-	}
-
+	
 	//================
 
 	@Override
