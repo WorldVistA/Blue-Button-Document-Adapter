@@ -13,14 +13,14 @@
 
 use c32;
 
---drop table if exists C32_DOCUMENT;
+-- drop table if exists C32_DOCUMENT;
 
---drop table if exists hibernate_sequence;
+-- drop table if exists hibernate_sequence;
 
 create table C32_DOCUMENT (
 AUDIT_MESSAGE_ID integer not null,
 CREATE_DATE date,
-DOCUMENT blob,
+DOCUMENT mediumblob,
 DOCUMENT_PATIENT_ID varchar(255),
 PATIENT_ID varchar(255),
 primary key (AUDIT_MESSAGE_ID)) ENGINE = InnoDB;
