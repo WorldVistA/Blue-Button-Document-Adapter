@@ -116,6 +116,7 @@ public class C32DocumentLogic implements C32DocumentEntityFactory, Serializable{
 																				//If Problem Date null, no filter applied.
 																				if (ProblemDate != null && !ProblemDate.isEmpty()) {	
 																					//Labs seem to have a different date, may need to adjust for prod.
+																					ProblemDate = ProblemDate.substring(0, 8);
 																					DateTime dt = getJodaDateFormat().parseDateTime(ProblemDate);
 																					LocalDate probDate = dt.toLocalDate();
 																					LocalDate currentDate = LocalDate.now();
@@ -218,9 +219,10 @@ public class C32DocumentLogic implements C32DocumentEntityFactory, Serializable{
 																		maybeDebugLocalName(debugging, children8, h);
 																		//System.out.println(children8.get(h).getAttributeValue("value"));
 																		String LabDate = children8.get(h).getAttributeValue("value");
-
+																		if (LabDate != null && !LabDate.isEmpty()) {
+																		LabDate = LabDate.substring(0, 8);
 																		//This is the format in the demo file's lab values.  May vary by element.
-																		DateTime dt = getJodaDateTimeFormat().parseDateTime(LabDate);
+																		DateTime dt = getJodaDateFormat().parseDateTime(LabDate);
 																		LocalDate labDate = dt.toLocalDate();
 																		LocalDate currentDate = LocalDate.now();
 																		LocalDate minDate = currentDate.minusDays(LabDelayDays);
@@ -245,7 +247,7 @@ public class C32DocumentLogic implements C32DocumentEntityFactory, Serializable{
 																				}
 																			}
 																		}
-
+																		}
 																	}
 																} 
 															}			
