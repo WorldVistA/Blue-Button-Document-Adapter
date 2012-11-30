@@ -49,7 +49,7 @@ public class RepositoryImplTest extends AbstractDateAwareTests implements IC32Do
 	@Test
 	public void getStatus_todayAlreadyRequested() {
 		docsRetrieved = new ArrayList<C32DocumentEntity>(1);
-		docsRetrieved.add(new C32DocumentEntity("223344", "223344v10", new java.sql.Date(new Date().getTime()), "incomplete"));
+		docsRetrieved.add(new C32DocumentEntity("223344", "223344v10", new java.sql.Timestamp(new Date().getTime()), "incomplete"));
 		List<DocStatus> list = repo.getStatus("223344", "jill");
 		Assert.assertEquals(1, list.size());
 		
@@ -73,7 +73,7 @@ public class RepositoryImplTest extends AbstractDateAwareTests implements IC32Do
 	public void getDocument() {
 		String xml = "<hiThere></hiThere>";
 		docsRetrieved = new ArrayList<C32DocumentEntity>();
-		docsRetrieved.add(new C32DocumentEntity("12321", "12321", new java.sql.Date(new Date().getTime()), xml));
+		docsRetrieved.add(new C32DocumentEntity("12321", "12321", new java.sql.Timestamp(new Date().getTime()), xml));
 		C32Document doc = repo.getDocument(new Date(), "12321");
 		Assert.assertNotNull(doc);
 		Assert.assertEquals("12321", doc.getPatientId());
@@ -91,10 +91,19 @@ public class RepositoryImplTest extends AbstractDateAwareTests implements IC32Do
 	protected void assertMessageSent(String ptId, String ptName) {
 		Assert.assertEquals(1, asyncMessageList.size());
 		assertDatePartEqualsToday(asyncMessageList.get(0).getDate());
+		assertTimePartNotZeros(asyncMessageList.get(0).getDate());
 		Assert.assertEquals(ptId, asyncMessageList.get(0).getPatientId());
 		Assert.assertEquals(ptName, asyncMessageList.get(0).getPatientName());
 	}
 	
+	protected void assertTimePartNotZeros(Date aDate) {
+		GregorianCalendar cDate = new GregorianCalendar();
+		cDate.setTime(aDate);
+		Assert.assertFalse(cDate.get(GregorianCalendar.HOUR_OF_DAY)==0 &&
+				cDate.get(GregorianCalendar.MINUTE)==0 &&
+				cDate.get(GregorianCalendar.SECOND)==0);
+	}
+
 	protected void assertTodayIncomplete(DocStatus docStatus, String expectedPtId) {
 		Assert.assertNotNull(docStatus);
 		assertDatePartEqualsToday(docStatus.getDateGenerated());

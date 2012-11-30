@@ -13,17 +13,23 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 public class C32DocumentDao implements IC32DocumentDao {
-	Log logger = LogFactory.getLog(this.getClass());
-	
+	protected static final Log logger = LogFactory.getLog(C32DocumentDao.class);
 	@PersistenceUnit(unitName="c32")
 	private EntityManager entityManager;
 	
+	public EntityManager getEntityManager() {
+		return entityManager;
+	}
+
+	public void setEntityManager(EntityManager entityManager) {
+		this.entityManager = entityManager;
+	}
+
 	@Transactional(propagation = Propagation.REQUIRED)
 	public void insert(C32DocumentEntity document) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("attempting persist for: " + document);
 		}
-		
 		entityManager.persist(document);
 	}
 	

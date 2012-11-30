@@ -68,7 +68,7 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 	 */
 
 	protected void saveIncompleteDocument(Date docDate, String ptId) {
-		getC32DocumentDao().insert(new C32DocumentEntity(ptId, ptId, new java.sql.Date(docDate.getTime()), BlueButtonConstants.INCOMPLETE_STATUS_STRING));
+		getC32DocumentDao().insert(new C32DocumentEntity(ptId, ptId, new java.sql.Timestamp(docDate.getTime()), BlueButtonConstants.INCOMPLETE_STATUS_STRING));
 	}
 	/**
 	 * BASE64 encodes the XML on a document passed to it.
@@ -179,7 +179,7 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 			if (BeanUtils.equalsNullSafe(docList.get(i).getDocument(), BlueButtonConstants.INCOMPLETE_STATUS_STRING)) {
 				statusList.add(new DocStatus(docList.get(i).getIcn(), docList.get(i).getCreateDate(), BlueButtonConstants.INCOMPLETE_STATUS_STRING));
 			} else {
-			statusList.add(new DocStatus(docList.get(i).getIcn(), docList.get(i).getCreateDate(), BlueButtonConstants.COMPLETE_STATUS_STRING));
+				statusList.add(new DocStatus(docList.get(i).getIcn(), docList.get(i).getCreateDate(), BlueButtonConstants.COMPLETE_STATUS_STRING));
 			}
 		}		
 		return statusList;		

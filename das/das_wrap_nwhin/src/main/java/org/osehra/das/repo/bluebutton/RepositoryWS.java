@@ -21,8 +21,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 @WebService(targetNamespace="org.osehra.repo.bluebutton", serviceName="blueButtonRepository")
 public class RepositoryWS {
-	
-	Log logger = LogFactory.getLog(this.getClass());
+	protected static final Log logger = LogFactory.getLog(RepositoryWS.class);
 
 	/**
 	 * Web Service takes two parameters and returns a list of available documents in the repository.
@@ -45,10 +44,9 @@ public class RepositoryWS {
 	 */
 	@WebMethod
 	public C32Document getDocument(Date docDate, String patientId) {
-		logger.debug("date:" + docDate + " id:" + patientId);
 		return getRepository().getDocument(docDate, patientId);
 	}
-
+	
 	protected Repository getRepository() {
 		WebApplicationContext cc = ContextLoader.getCurrentWebApplicationContext();
 		Repository _repoImpl = cc.getBean(Repository.class);

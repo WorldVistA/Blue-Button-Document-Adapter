@@ -1,6 +1,6 @@
 package org.osehra.das.repo.bluebutton;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.GregorianCalendar;
@@ -114,7 +114,7 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 		return null;
 	}
 
-	protected boolean datesEqual(Calendar cal, Date date1, Date date2) {
+	protected boolean datesEqual(Calendar cal, Timestamp date1, Timestamp date2) {
 		if (date1!=null && date2!=null) {
 			cal.setTime(date1);
 			int year1 = cal.get(Calendar.YEAR);

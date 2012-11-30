@@ -19,7 +19,7 @@ use c32;
 
 create table C32_DOCUMENT (
 AUDIT_MESSAGE_ID integer not null,
-CREATE_DATE date,
+CREATE_DATE datetime,
 DOCUMENT mediumblob,
 DOCUMENT_PATIENT_ID varchar(255),
 PATIENT_ID varchar(255),

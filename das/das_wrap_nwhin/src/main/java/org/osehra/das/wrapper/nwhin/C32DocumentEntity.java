@@ -1,7 +1,7 @@
 package org.osehra.das.wrapper.nwhin;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,7 +21,7 @@ public class C32DocumentEntity implements Serializable, Comparable<C32DocumentEn
 		super();
 	}
 	
-	public C32DocumentEntity(String icn, String documentPatientId, Date creationDate, String document) {
+	public C32DocumentEntity(String icn, String documentPatientId, Timestamp creationDate, String document) {
 		this();
 		setIcn(icn);
 		setDocumentPatientId(documentPatientId);
@@ -42,7 +42,7 @@ public class C32DocumentEntity implements Serializable, Comparable<C32DocumentEn
 	private String icn ;
 
 	@Column(name = "CREATE_DATE")
-	private Date createDate;
+	private Timestamp createDate;
 
 	@Column(name = "DOCUMENT_PATIENT_ID")
 	private String documentPatientId;	
@@ -63,11 +63,11 @@ public class C32DocumentEntity implements Serializable, Comparable<C32DocumentEn
 		return this.document;
 	}
 
-	public Date getCreateDate() {
+	public Timestamp getCreateDate() {
 		return createDate;
 	}
 
-	public void setCreateDate(Date createDate) {
+	public void setCreateDate(Timestamp createDate) {
 		this.createDate = createDate;
 	}
 

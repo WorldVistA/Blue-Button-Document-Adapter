@@ -47,7 +47,7 @@ public class C32DocumentLogic implements C32DocumentEntityFactory, Serializable{
 			}
 		}
 
-		return new C32DocumentEntity(patientId, getPatientId(xmlDoc), new java.sql.Date(new java.util.Date().getTime()), getFilteredDocument(xmlDoc));
+		return new C32DocumentEntity(patientId, getPatientId(xmlDoc), new java.sql.Timestamp(new java.util.Date().getTime()), getFilteredDocument(xmlDoc));
 	}
 
 	protected String getFilteredDocument (Document xmlDoc) {

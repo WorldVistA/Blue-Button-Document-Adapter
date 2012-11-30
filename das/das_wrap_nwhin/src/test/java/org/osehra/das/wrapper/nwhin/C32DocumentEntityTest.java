@@ -1,6 +1,6 @@
 package org.osehra.das.wrapper.nwhin;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.GregorianCalendar;
@@ -21,12 +21,12 @@ public class C32DocumentEntityTest {
 		cal.set(GregorianCalendar.HOUR_OF_DAY, 8);
 		cal.set(GregorianCalendar.MINUTE, 20);
 		cal.set(GregorianCalendar.SECOND, 0);
-		Date dt1 = new Date(cal.getTime().getTime());
+		Timestamp dt1 = new Timestamp(cal.getTime().getTime());
 		C32DocumentEntity doc1 = new C32DocumentEntity("111", "1v", dt1, "blah blah blah");
 		doc1.setId(1);
 
 		cal.set(GregorianCalendar.DATE, 10);
-		Date dt2 = new Date(cal.getTime().getTime());
+		Timestamp dt2 = new Timestamp(cal.getTime().getTime());
 		C32DocumentEntity doc2 = new C32DocumentEntity("222", "2v", dt2, "blu blu blu");
 		doc2.setId(2);
 		

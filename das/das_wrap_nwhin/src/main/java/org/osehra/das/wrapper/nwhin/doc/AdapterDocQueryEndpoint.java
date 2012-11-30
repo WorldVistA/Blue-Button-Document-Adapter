@@ -7,11 +7,6 @@ package org.osehra.das.wrapper.nwhin.doc;
 
 import gov.hhs.fha.nhinc.common.nhinccommonadapter.RespondingGatewayCrossGatewayQueryRequest;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.osehra.das.wrapper.nwhin.WrapperResource;
-import org.osehra.integration.util.NullChecker;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,6 +27,9 @@ import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectListType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotType1;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.ValueListType;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.osehra.integration.util.NullChecker;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.ws.client.core.WebServiceTemplate;
 

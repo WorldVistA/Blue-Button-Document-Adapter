@@ -18,7 +18,7 @@ public abstract class AbstractDateAwareTests {
 		Assert.assertEquals(second, cal.get(GregorianCalendar.SECOND));
 	}
 
-	protected java.sql.Date getDate(int year, int month, int day, int hour, int minute, int second) {
+	protected java.sql.Timestamp getDate(int year, int month, int day, int hour, int minute, int second) {
 		GregorianCalendar cal = new GregorianCalendar();
 		cal.set(GregorianCalendar.YEAR, year);
 		cal.set(GregorianCalendar.MONTH, month);
@@ -26,7 +26,7 @@ public abstract class AbstractDateAwareTests {
 		cal.set(GregorianCalendar.HOUR_OF_DAY, hour);
 		cal.set(GregorianCalendar.MINUTE, minute);
 		cal.set(GregorianCalendar.SECOND, second);
-		return new java.sql.Date(cal.getTime().getTime());
+		return new java.sql.Timestamp(cal.getTime().getTime());
 	}
 
 }

@@ -42,7 +42,7 @@ public class NwhinDataRetrieverTest extends AbstractDateAwareTests implements IC
 		ptIdToAssert = "112233v10";
 		returnXml = "<stuff></stuff>";
 		docList = new ArrayList<C32DocumentEntity>();
-		docList.add(new C32DocumentEntity(ptIdToAssert, ptIdToAssert, new java.sql.Date(new Date().getTime()), BlueButtonConstants.INCOMPLETE_STATUS_STRING));
+		docList.add(new C32DocumentEntity(ptIdToAssert, ptIdToAssert, new java.sql.Timestamp(new Date().getTime()), BlueButtonConstants.INCOMPLETE_STATUS_STRING));
 		retriever.onMessage(new TestTextMessage("20120908070605:112233v10:fred"));
 		Assert.assertEquals(0, insertedList.size());
 		Assert.assertEquals(1, updatedList.size());
@@ -81,7 +81,7 @@ public class NwhinDataRetrieverTest extends AbstractDateAwareTests implements IC
 	//================
 
 	public C32DocumentEntity createDocument(String ptId, String xml) {
-		return new C32DocumentEntity(ptId, "112233v10", new java.sql.Date(new Date().getTime()), xml);
+		return new C32DocumentEntity(ptId, "112233v10", new java.sql.Timestamp(new Date().getTime()), xml);
 	}
 	
 	//================
