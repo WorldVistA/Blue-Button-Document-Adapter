@@ -14,6 +14,7 @@ import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.IllegalFieldValueException;
 
 public class C32DocumentLogic implements C32DocumentEntityFactory, Serializable{
 	private static final long serialVersionUID = 1L;
@@ -114,9 +115,12 @@ public class C32DocumentLogic implements C32DocumentEntityFactory, Serializable{
 																			if (children9.get(i).getLocalName() == "low") {
 																				String ProblemDate = children9.get(i).getAttributeValue("value");
 																				//If Problem Date null, no filter applied.
-																				if (ProblemDate != null && !ProblemDate.isEmpty()) {	
+																				if (ProblemDate != null && !ProblemDate.isEmpty()) {
+																					try {
 																					//Labs seem to have a different date, may need to adjust for prod.
+																					if (ProblemDate.length() > 8) {
 																					ProblemDate = ProblemDate.substring(0, 8);
+																					}
 																					DateTime dt = getJodaDateFormat().parseDateTime(ProblemDate);
 																					LocalDate probDate = dt.toLocalDate();
 																					LocalDate currentDate = LocalDate.now();
@@ -141,6 +145,12 @@ public class C32DocumentLogic implements C32DocumentEntityFactory, Serializable{
 																							}
 																						}
 																					}
+																				
+																				}catch (IllegalFieldValueException IFVException) {
+																					LOG.error("Problem Date Field in invalid format: " + ProblemDate);
+																				}catch (IllegalArgumentException IAEException) {
+																					LOG.error("Problem Date Field in unparseable format: " + ProblemDate);
+																				}
 																				}
 																			}
 																		}
@@ -220,7 +230,10 @@ public class C32DocumentLogic implements C32DocumentEntityFactory, Serializable{
 																		//System.out.println(children8.get(h).getAttributeValue("value"));
 																		String LabDate = children8.get(h).getAttributeValue("value");
 																		if (LabDate != null && !LabDate.isEmpty()) {
+																		try {
+																			if (LabDate.length() > 8) {	
 																		LabDate = LabDate.substring(0, 8);
+																			}
 																		//This is the format in the demo file's lab values.  May vary by element.
 																		DateTime dt = getJodaDateFormat().parseDateTime(LabDate);
 																		LocalDate labDate = dt.toLocalDate();
@@ -229,9 +242,6 @@ public class C32DocumentLogic implements C32DocumentEntityFactory, Serializable{
 																		//System.out.println(labDate.toString());
 																		//System.out.println(currentDate.toString());
 																		//System.out.println(minDate.toString());
-
-
-
 																		//Also blanks entire <text> element, since cannot walk as XML.
 																		if (minDate.isBefore(labDate)) {
 																			//Logic to destroy <entry> element.
@@ -246,6 +256,12 @@ public class C32DocumentLogic implements C32DocumentEntityFactory, Serializable{
 																					children9.get(i).removeChildren();
 																				}
 																			}
+																		}
+																		} catch (IllegalFieldValueException IFVException) {
+																			LOG.error("Lab Date Field in invalid format: " + LabDate);
+																		}
+																		 catch (IllegalArgumentException IAEException) {
+																			LOG.error("Lab Date Field in unparseable format: " + LabDate);
 																		}
 																		}
 																	}
