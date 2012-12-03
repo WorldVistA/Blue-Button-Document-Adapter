@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-public class SimpleDateFormatTS implements IFormatTS {
+public class SimpleDateFormatTS implements FormatTS {
 	protected Log logger = LogFactory.getLog(this.getClass());
 	
 	@Override

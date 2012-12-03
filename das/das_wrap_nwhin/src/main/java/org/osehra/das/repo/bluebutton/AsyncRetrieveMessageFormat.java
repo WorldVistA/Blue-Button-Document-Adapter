@@ -4,11 +4,11 @@ import java.util.Date;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.osehra.das.IFormatTS;
+import org.osehra.das.FormatTS;
 import org.osehra.das.SimpleDateFormatTS;
 
-public class AsyncRetrieveMessageFormat implements IFormatTS {
-	protected IFormatTS dateFormat = new SimpleDateFormatTS();
+public class AsyncRetrieveMessageFormat implements FormatTS {
+	protected FormatTS dateFormat = new SimpleDateFormatTS();
 	protected Log logger = LogFactory.getLog(this.getClass());
 	protected String separator = ":";
 
@@ -20,11 +20,11 @@ public class AsyncRetrieveMessageFormat implements IFormatTS {
 		this.separator = separator;
 	}
 
-	public IFormatTS getDateFormat() {
+	public FormatTS getDateFormat() {
 		return dateFormat;
 	}
 
-	public void setDateFormat(IFormatTS dateFormat) {
+	public void setDateFormat(FormatTS dateFormat) {
 		this.dateFormat = dateFormat;
 	}
 

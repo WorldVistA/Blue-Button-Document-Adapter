@@ -16,15 +16,15 @@ import org.junit.Before;
 import org.junit.Test;
 import org.osehra.das.wrapper.nwhin.C32DocumentEntity;
 
-public class C32DocumentDaoTest extends AbstractDateAwareTests implements EntityManager {
-	C32DocumentDao dao;
+public class C32DocumentDaoImplTest extends AbstractDateAwareTests implements EntityManager {
+	C32DocumentDaoImpl dao;
 	@SuppressWarnings("rawtypes")
 	List persistList;
 
 	@SuppressWarnings("rawtypes")
 	@Before
 	public void setup() {
-		dao = new C32DocumentDao();
+		dao = new C32DocumentDaoImpl();
 		dao.setEntityManager(this);
 		persistList = new ArrayList();
 	}

@@ -5,7 +5,7 @@ package org.osehra.das;
  * make their classes thread-safe
  *
  */
-public interface IFormatTS {
+public interface FormatTS {
 	String formatObject(Object item);
 	Object parse(String data);
 }

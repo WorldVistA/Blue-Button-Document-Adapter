@@ -3,10 +3,10 @@ package org.osehra.das.repo.bluebutton;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.osehra.das.IFormatTS;
+import org.osehra.das.FormatTS;
 
 public class AsyncRetrieveMessageFormatTest extends AbstractDateAwareTests {
-	IFormatTS msgFormat;
+	FormatTS msgFormat;
 
 	@Before
 	public void setup() {

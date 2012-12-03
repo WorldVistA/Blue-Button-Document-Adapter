@@ -10,9 +10,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.osehra.das.wrapper.nwhin.C32DocumentEntity;
 import org.osehra.das.wrapper.nwhin.C32DocumentEntityFactory;
-import org.osehra.das.wrapper.nwhin.IWrapperResource;
+import org.osehra.das.wrapper.nwhin.WrapperResource;
 
-public class NwhinDataRetrieverTest extends AbstractDateAwareTests implements IC32DocumentDao, C32DocumentEntityFactory, IWrapperResource {
+public class NwhinDataRetrieverTest extends AbstractDateAwareTests implements C32DocumentDao, C32DocumentEntityFactory, WrapperResource {
 	NwhinDataRetriever retriever;
 	List<C32DocumentEntity> insertedList;
 	List<C32DocumentEntity> updatedList;

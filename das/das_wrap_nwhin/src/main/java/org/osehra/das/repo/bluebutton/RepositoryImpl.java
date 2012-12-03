@@ -21,14 +21,14 @@ import org.osehra.das.wrapper.nwhin.C32DocumentEntity;
  *
  */
 public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
-	protected IMessageSendable messageSender;
+	protected MessageSendable messageSender;
 	protected static final Log logger = LogFactory.getLog(RepositoryImpl.class);
 	
-	public IMessageSendable getMessageSender() {
+	public MessageSendable getMessageSender() {
 		return messageSender;
 	}
 
-	public void setMessageSender(IMessageSendable messageSender) {
+	public void setMessageSender(MessageSendable messageSender) {
 		this.messageSender = messageSender;
 	}
 

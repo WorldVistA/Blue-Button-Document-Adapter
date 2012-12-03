@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class SimpleDateFormatTSTest {
-	IFormatTS simpleDateFormat;
+	FormatTS simpleDateFormat;
 	
 	@Before
 	public void setup() {

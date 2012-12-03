@@ -8,13 +8,13 @@ import javax.jms.Session;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.osehra.das.IFormatTS;
+import org.osehra.das.FormatTS;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 
-public class JmsMessageSender implements IMessageSendable {
+public class JmsMessageSender implements MessageSendable {
 	protected JmsTemplate jmsTemplate;
-	protected IFormatTS asyncMessageFormat;
+	protected FormatTS asyncMessageFormat;
 	protected static final Log logger = LogFactory.getLog(JmsMessageSender.class);
 	
 	public JmsTemplate getJmsTemplate() {
@@ -25,11 +25,11 @@ public class JmsMessageSender implements IMessageSendable {
 		this.jmsTemplate = jmsTemplate;
 	}
 
-	public IFormatTS getAsyncMessageFormat() {
+	public FormatTS getAsyncMessageFormat() {
 		return asyncMessageFormat;
 	}
 
-	public void setAsyncMessageFormat(IFormatTS asyncMessageFormat) {
+	public void setAsyncMessageFormat(FormatTS asyncMessageFormat) {
 		this.asyncMessageFormat = asyncMessageFormat;
 	}
 	

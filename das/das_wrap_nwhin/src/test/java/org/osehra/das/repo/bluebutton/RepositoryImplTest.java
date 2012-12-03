@@ -14,7 +14,7 @@ import org.osehra.das.C32Document;
 import org.osehra.das.wrapper.nwhin.C32DocumentEntity;
 import org.springframework.jms.core.JmsTemplate;
 
-public class RepositoryImplTest extends AbstractDateAwareTests implements IC32DocumentDao, IMessageSendable {
+public class RepositoryImplTest extends AbstractDateAwareTests implements C32DocumentDao, MessageSendable {
 	RepositoryImpl repo;
 	List<C32DocumentEntity> docsInsertedList;
 	List<C32DocumentEntity> docsUpdatedList;

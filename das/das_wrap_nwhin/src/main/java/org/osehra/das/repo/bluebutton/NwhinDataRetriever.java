@@ -13,22 +13,22 @@ import javax.jms.TextMessage;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.osehra.das.BeanUtils;
-import org.osehra.das.IFormatTS;
+import org.osehra.das.FormatTS;
 import org.osehra.das.wrapper.nwhin.C32DocumentEntity;
 import org.osehra.das.wrapper.nwhin.C32DocumentEntityFactory;
-import org.osehra.das.wrapper.nwhin.IWrapperResource;
+import org.osehra.das.wrapper.nwhin.WrapperResource;
 
 public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageListener {
-	protected IWrapperResource _nwhinResource;
-	protected IFormatTS asyncMessageFormat;
+	protected WrapperResource _nwhinResource;
+	protected FormatTS asyncMessageFormat;
 	protected static Log logger = LogFactory.getLog(NwhinDataRetriever.class);
 	protected C32DocumentEntityFactory documentFactory;
 	
-	public IFormatTS getAsyncMessageFormat() {
+	public FormatTS getAsyncMessageFormat() {
 		return asyncMessageFormat;
 	}
 
-	public void setAsyncMessageFormat(IFormatTS asyncMessageFormat) {
+	public void setAsyncMessageFormat(FormatTS asyncMessageFormat) {
 		this.asyncMessageFormat = asyncMessageFormat;
 	}
 
@@ -40,7 +40,7 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 		this.documentFactory = documentFactory;
 	}
 
-	public void setWrapperResource(IWrapperResource resource) {
+	public void setWrapperResource(WrapperResource resource) {
 		_nwhinResource = resource;
 	}
 	

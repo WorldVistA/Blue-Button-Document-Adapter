@@ -14,11 +14,11 @@
       http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-	<bean id="nwhinWrapperResource" class="org.osehra.das.wrapper.nwhin.WrapperResource">
+	<bean id="nwhinWrapperResource" class="org.osehra.das.wrapper.nwhin.WrapperResourceImpl">
 		<property name="adapterDocQueryRetrieveFacade" ref="adapterDocQueryRetrieveFacade" />
 	</bean>
 	
-	<bean id="repositoryDAO" class="org.osehra.das.repo.bluebutton.C32DocumentDao" />
+	<bean id="repositoryDAO" class="org.osehra.das.repo.bluebutton.C32DocumentDaoImpl" />
 	
 	<jee:jndi-lookup id="c32" jndi-name="java:jboss/C32EMF"/>
 	

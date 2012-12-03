@@ -6,13 +6,11 @@ import gov.hhs.fha.nhinc.common.nhinccommon.HomeCommunityType;
 import gov.hhs.fha.nhinc.common.nhinccommon.PersonNameType;
 import gov.hhs.fha.nhinc.common.nhinccommon.UserType;
 import gov.hhs.fha.nhinc.common.nhinccommonadapter.RespondingGatewayCrossGatewayRetrieveRequest;
-import org.osehra.integration.util.NullChecker;
 import ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType;
 import ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType.DocumentRequest;
 import ihe.iti.xds_b._2007.RetrieveDocumentSetResponse;
 import ihe.iti.xds_b._2007.RetrieveDocumentSetResponseType.DocumentResponse;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
@@ -20,6 +18,7 @@ import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Element;
 
+import org.osehra.integration.util.NullChecker;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.ws.client.core.WebServiceTemplate;
 
@@ -96,7 +95,6 @@ public class AdapterDocRetrieveEndpoint {
 		//addressValue.setZipCode(patientDemographics.getResidenceZip4());
 		assertionValue.setAddress(addressValue);
 
-		final SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
 		final Calendar cal = Calendar.getInstance();
 
 		//assertionValue.setDateOfBirth(formatter.format(patientDemographics
