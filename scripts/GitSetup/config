@@ -1,0 +1,6 @@
+[hooks]
+	url = http://code.osehra.org/VistA-FOIA.git
+[gerrit]
+	project = Blue-Button-Document-Adapter
+	site = http://review.code.osehra.org
+	pushurl = $username@review.code.osehra.org:Blue-Button-Document-Adapter
