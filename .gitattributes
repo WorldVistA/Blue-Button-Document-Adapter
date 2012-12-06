@@ -2,3 +2,4 @@
 
 *                text=auto
 *               -whitespace
+*.xml            hooks.MaxObjectKiB=2048
