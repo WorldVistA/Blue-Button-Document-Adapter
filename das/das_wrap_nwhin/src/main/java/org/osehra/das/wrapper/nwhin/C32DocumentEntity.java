@@ -12,6 +12,15 @@ import javax.persistence.Table;
 
 import org.osehra.das.BeanUtils;
 
+/**
+ * Hibernate payload class for a C32 document and related properties, which are
+ * requested patient ID (<code>getIcn</code>), patient ID the C32 document 
+ * itself (<code>getDocumentPatientId</code>), the creation date (<code>getCreateDate</code>), 
+ * and the C32 xml itself (<code>getDocument</code>).  In addition, 
+ * the ID property (<code>getId</code>) holds a number assigned to this entry by Hibernate. 
+ * @author Dept of VA
+ *
+ */
 @Entity
 @Table(name = "C32_DOCUMENT")
 public class C32DocumentEntity implements Serializable, Comparable<C32DocumentEntity> {

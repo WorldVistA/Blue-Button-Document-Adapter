@@ -12,19 +12,36 @@ import org.osehra.das.wrapper.nwhin.C32DocumentEntity;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Implements a <code>C32DocumentDao</code>, using Hibernate.
+ * 
+ * @author Dept of VA
+ *
+ */
 public class C32DocumentDaoImpl implements C32DocumentDao {
 	protected static final Log logger = LogFactory.getLog(C32DocumentDaoImpl.class);
 	@PersistenceUnit(unitName="c32")
 	private EntityManager entityManager;
 	
+	/**
+	 * 
+	 * @return Hibernate entity manager
+	 */
 	public EntityManager getEntityManager() {
 		return entityManager;
 	}
 
+	/**
+	 * 
+	 * @param entityManager Hibernate entity manager
+	 */
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
 
+	/**
+	 * Delegates action to a Hibernate entity manager's <code>persist</code> method. 
+	 */
 	@Transactional(propagation = Propagation.REQUIRED)
 	public void insert(C32DocumentEntity document) {
 		if (logger.isDebugEnabled()) {
@@ -32,7 +49,10 @@ public class C32DocumentDaoImpl implements C32DocumentDao {
 		}
 		entityManager.persist(document);
 	}
-	
+
+	/**
+	 * Delegates action to a Hibernate entity manager's <code>merge</code> method.
+	 */
 	@Transactional(propagation = Propagation.REQUIRED)
 	public void update(C32DocumentEntity document) {
 		if (logger.isDebugEnabled()) {

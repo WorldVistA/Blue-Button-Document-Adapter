@@ -12,6 +12,14 @@ import org.osehra.das.FormatTS;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 
+/**
+ * Implements a <code>MessageSendable</code>; sends a retrieval message using JMS messaging.  
+ * Depends on the Spring Framework helper class 
+ * <code>org.springframework.jms.core.JmsTemplate</code> to send the messages.
+ *   
+ * @author Dept of VA
+ *
+ */
 public class JmsMessageSender implements MessageSendable {
 	protected JmsTemplate jmsTemplate;
 	protected FormatTS asyncMessageFormat;
@@ -21,14 +29,26 @@ public class JmsMessageSender implements MessageSendable {
 		return jmsTemplate;
 	}
 
+	/**
+	 * 
+	 * @param jmsTemplate Spring Frameworks JmsTemplate
+	 */
 	public void setJmsTemplate(JmsTemplate jmsTemplate) {
 		this.jmsTemplate = jmsTemplate;
 	}
 
+	/**
+	 * 
+	 * @return Spring Frameworks JmsTemplate
+	 */
 	public FormatTS getAsyncMessageFormat() {
 		return asyncMessageFormat;
 	}
 
+	/**
+	 * 
+	 * @param asyncMessageFormat Thread-safe formatter for the AsyncMessageFormat
+	 */
 	public void setAsyncMessageFormat(FormatTS asyncMessageFormat) {
 		this.asyncMessageFormat = asyncMessageFormat;
 	}

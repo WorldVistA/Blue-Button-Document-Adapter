@@ -18,32 +18,65 @@ import org.osehra.das.wrapper.nwhin.C32DocumentEntity;
 import org.osehra.das.wrapper.nwhin.C32DocumentEntityFactory;
 import org.osehra.das.wrapper.nwhin.WrapperResource;
 
+/**
+ * Message-driven bean (MDB) to call a <code>WrapperResource</code> to retrieve a C32.  
+ * Uses a <code>C32DocumentEntityFactory</code> to create a 
+ * <code>C32DocumentEntity</code> from the retrieved C32 document, and then uses a 
+ * <code>C32DocumentDao</code> to save the <code>C32DocumentEntity</code> result.
+ * @author Dept of VA
+ *
+ */
 public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageListener {
 	protected WrapperResource _nwhinResource;
 	protected FormatTS asyncMessageFormat;
 	protected static Log logger = LogFactory.getLog(NwhinDataRetriever.class);
 	protected C32DocumentEntityFactory documentFactory;
 	
+	/**
+	 * 
+	 * @return Formatter for an AsyncRetrieveMessage
+	 */
 	public FormatTS getAsyncMessageFormat() {
 		return asyncMessageFormat;
 	}
 
+	/**
+	 * 
+	 * @param asyncMessageFormat Formatter for an AsyncRetrieveMessage
+	 */
 	public void setAsyncMessageFormat(FormatTS asyncMessageFormat) {
 		this.asyncMessageFormat = asyncMessageFormat;
 	}
 
+	/**
+	 * 
+	 * @return Factory for a C32DocumentEntity
+	 */
 	public C32DocumentEntityFactory getDocumentFactory() {
 		return documentFactory;
 	}
 
+	/**
+	 * 
+	 * @param documentFactory Factory for a C32DocumentEntity
+	 */
 	public void setDocumentFactory(C32DocumentEntityFactory documentFactory) {
 		this.documentFactory = documentFactory;
 	}
 
+	/**
+	 * 
+	 * @param resource C32 retriever interface
+	 */
 	public void setWrapperResource(WrapperResource resource) {
 		_nwhinResource = resource;
 	}
-	
+
+	/**
+	 * Retrieves the text from the JMS message, parses it into an AsyncRetrieveMessage, calls
+	 * a WrapperResource for a C32 document, creates a C32DocumentEntity from a C32DocumentEntityFactory,
+	 * and saves the C32DocumentEntity using the C32DocumentDao.
+	 */
 	@Override
 	public void onMessage(Message msg) {
 		TextMessage tMsg = (TextMessage)msg;

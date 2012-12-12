@@ -23,10 +23,22 @@ public class SimpleDateFormatTSTest {
 	}
 	
 	@Test
+	public void formatObject_null() {
+		String dateString = simpleDateFormat.formatObject(null);
+		Assert.assertNull(dateString);
+	}
+	
+	@Test
 	public void parse() {
 		GregorianCalendar cal = new GregorianCalendar();
 		cal.set(2012, 9, 9, 8, 7, 6);
 		cal.set(GregorianCalendar.MILLISECOND, 0);
 		Assert.assertEquals(cal.getTime(), simpleDateFormat.parse("20121009080706"));
 	}
+	
+	@Test
+	public void parse_null() {
+		Assert.assertNull(simpleDateFormat.parse(null));
+	}
+	
 }

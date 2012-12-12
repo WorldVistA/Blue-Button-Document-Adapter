@@ -16,19 +16,22 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.IllegalFieldValueException;
 
+/**
+ * Creates a <Code>C32DocumentEntity</code> programmatically.  The C32 is read into an 
+ * XML DOM object, and then the DOM is used for the following: 1) lookup of the 
+ * patient's ID in the document, and stored as the <code>documentPatientId</code> 
+ * property, 2) filter the problem list in the C32 to only allow entries older than 6 
+ * days, 3) filter the results list in the C32 to only allow entries older than 6 days, 
+ * and then 4) the XML is dumped from the DOM into the <code>C32DocumentEntity</code> as the 
+ * document.
+ *  
+ * @author Dept of VA
+ *
+ */
 public class C32DocumentLogic implements C32DocumentEntityFactory, Serializable{
 	private static final long serialVersionUID = 1L;
 	private static final Log LOG = LogFactory.getLog(C32DocumentLogic.class);
 	protected DateTimeFormatter jodaDateFormat = DateTimeFormat.forPattern("yyyyMMdd");
-	protected DateTimeFormatter jodaDateTimeFormat = DateTimeFormat.forPattern("yyyyMMddHHmmss");
-
-	public DateTimeFormatter getJodaDateTimeFormat() {
-		return jodaDateTimeFormat;
-	}
-
-	public void setJodaDateTimeFormat(DateTimeFormatter jodaDateTimeFormat) {
-		this.jodaDateTimeFormat = jodaDateTimeFormat;
-	}
 
 	public DateTimeFormatter getJodaDateFormat() {
 		return jodaDateFormat;
