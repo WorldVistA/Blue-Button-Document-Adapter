@@ -7,6 +7,7 @@ package org.osehra.das.wrapper.nwhin.doc;
 
 import gov.hhs.fha.nhinc.common.nhinccommonadapter.RespondingGatewayCrossGatewayQueryRequest;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.xml.bind.JAXBElement;
+import javax.xml.transform.TransformerException;
 
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryRequest;
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryResponse;
@@ -31,7 +33,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.osehra.integration.util.NullChecker;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.ws.WebServiceMessage;
+import org.springframework.ws.client.core.WebServiceMessageCallback;
+import org.springframework.ws.client.core.WebServiceOperations;
 import org.springframework.ws.client.core.WebServiceTemplate;
+import org.springframework.ws.soap.SoapMessage;
 
 /**
  * The endpoint to call the adpater's webservice.
@@ -55,7 +61,7 @@ public class AdapterDocQueryEndpoint {
 	private static final String EBXML_RESPONSE_REPOSITORY_UNIQUE_ID_SLOTNAME = "repositoryUniqueId";
 	private static final String EBXML_RESPONSE_SIZE_SLOTNAME = "size";
 
-	private WebServiceTemplate adapterDocQueryServiceTemplate;
+	private WebServiceOperations adapterDocQueryServiceTemplate;
 
 	private String homeCommunityOid;
 	private String homeCommunityOidExt;
@@ -217,7 +223,13 @@ public class AdapterDocQueryEndpoint {
 		
 
 		final AdhocQueryResponse response = (AdhocQueryResponse) this.adapterDocQueryServiceTemplate
-				.marshalSendAndReceive(request);
+				.marshalSendAndReceive(request, new WebServiceMessageCallback() {
+					@Override
+					public void doWithMessage(WebServiceMessage message) throws IOException,
+							TransformerException {
+						((SoapMessage)message).setSoapAction("urn:RespondingGateway_CrossGatewayQuery");
+					}
+				});
 
 		final RegistryObjectListType registryObjectListType = response
 				.getRegistryObjectList();
@@ -269,7 +281,7 @@ public class AdapterDocQueryEndpoint {
 
 	@Required
 	public void setAdapterDocQueryServiceTemplate(
-			final WebServiceTemplate adapterDocQueryServiceTemplate) {
+			final WebServiceOperations adapterDocQueryServiceTemplate) {
 		this.adapterDocQueryServiceTemplate = adapterDocQueryServiceTemplate;
 	}
 

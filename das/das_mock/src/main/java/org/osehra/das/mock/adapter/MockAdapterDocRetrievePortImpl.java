@@ -12,6 +12,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.Resource;
+import org.springframework.ws.client.core.WebServiceMessageCallback;
 import org.springframework.ws.client.core.WebServiceTemplate;
 
 public class MockAdapterDocRetrievePortImpl extends WebServiceTemplate {
@@ -49,6 +50,12 @@ public class MockAdapterDocRetrievePortImpl extends WebServiceTemplate {
 	public Object marshalSendAndReceive(final Object requestPayload) {
 		return this
 				.respondingGatewayCrossGatewayRetrieve((RespondingGatewayCrossGatewayRetrieveRequest) requestPayload);
+	}
+	
+	@Override
+	public Object marshalSendAndReceive(Object requestPayload,
+			WebServiceMessageCallback requestCallback) {
+		return this.marshalSendAndReceive(requestPayload);
 	}
 
 	public RetrieveDocumentSetResponse respondingGatewayCrossGatewayRetrieve(

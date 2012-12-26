@@ -34,6 +34,7 @@ import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryErrorList;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.ws.client.core.WebServiceMessageCallback;
 import org.springframework.ws.client.core.WebServiceTemplate;
 
 public class MockAdapterDocQueryPortImpl extends WebServiceTemplate {
@@ -743,6 +744,12 @@ public class MockAdapterDocQueryPortImpl extends WebServiceTemplate {
 	public Object marshalSendAndReceive(final Object requestPayload) {
 		return this
 				.respondingGatewayCrossGatewayQuery((RespondingGatewayCrossGatewayQueryRequest) requestPayload);
+	}
+	
+	@Override
+	public Object marshalSendAndReceive(Object requestPayload,
+			WebServiceMessageCallback requestCallback) {
+		return this.marshalSendAndReceive(requestPayload);
 	}
 
 	public void parseParamFormattedString(final String paramFormattedString,

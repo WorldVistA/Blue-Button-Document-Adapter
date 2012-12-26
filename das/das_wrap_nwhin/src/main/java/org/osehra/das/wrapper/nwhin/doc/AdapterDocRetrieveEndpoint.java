@@ -11,8 +11,11 @@ import ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType.DocumentRequest;
 import ihe.iti.xds_b._2007.RetrieveDocumentSetResponse;
 import ihe.iti.xds_b._2007.RetrieveDocumentSetResponseType.DocumentResponse;
 
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
+
+import javax.xml.transform.TransformerException;
 
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
@@ -20,7 +23,10 @@ import net.sf.ehcache.Element;
 
 import org.osehra.integration.util.NullChecker;
 import org.springframework.beans.factory.annotation.Required;
-import org.springframework.ws.client.core.WebServiceTemplate;
+import org.springframework.ws.WebServiceMessage;
+import org.springframework.ws.client.core.WebServiceMessageCallback;
+import org.springframework.ws.client.core.WebServiceOperations;
+import org.springframework.ws.soap.SoapMessage;
 
 /**
  * Endpoint that talks to the adapter's document retrieve endpoint. This
@@ -34,7 +40,7 @@ public class AdapterDocRetrieveEndpoint {
 	/**
 	 * The template for calling the adapter's webservice.
 	 */
-	private WebServiceTemplate adapterDocRetrieveWebServiceTemplate;
+	private WebServiceOperations adapterDocRetrieveWebServiceTemplate;
 	// Cache Manager
 	CacheManager cacheManager;
 	/**
@@ -170,7 +176,13 @@ public class AdapterDocRetrieveEndpoint {
 		retrieveRequest.getDocumentRequest().add(documentRequest);
 		// Send request using Spring-WS
 		final RetrieveDocumentSetResponse response = (RetrieveDocumentSetResponse) this.adapterDocRetrieveWebServiceTemplate
-				.marshalSendAndReceive(request);
+				.marshalSendAndReceive(request, new WebServiceMessageCallback() {
+					@Override
+					public void doWithMessage(WebServiceMessage message) throws IOException,
+							TransformerException {
+						((SoapMessage)message).setSoapAction("urn:RespondingGateway_CrossGatewayRetrieve");
+					}
+				});
 		if (NullChecker.isNotEmpty(response)) {
 			final List<DocumentResponse> documentResponses = response
 					.getDocumentResponse();
@@ -202,7 +214,7 @@ public class AdapterDocRetrieveEndpoint {
 	}
 	@Required
 	public void setAdapterDocRetrieveWebServiceTemplate(
-			final WebServiceTemplate adapterDocRetrieveWebServiceTemplate) {
+			final WebServiceOperations adapterDocRetrieveWebServiceTemplate) {
 		this.adapterDocRetrieveWebServiceTemplate = adapterDocRetrieveWebServiceTemplate;
 	}
 
