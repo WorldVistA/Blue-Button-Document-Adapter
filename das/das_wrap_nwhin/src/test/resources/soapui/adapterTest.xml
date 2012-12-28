@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="adapterTest" resourceRoot="${projectDir}" soapui-version="4.5.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="blueButtonRepositorySoapBinding TestSuite"/>
+  <con:entry key="Report to Generate" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="soapui-setings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value="/Users/vacomccalm"/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="blueButtonRepositorySoapBinding" type="wsdl" bindingName="{org.osehra.repo.bluebutton}blueButtonRepositorySoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/das_wrap_nwhin/blueButtonRepository?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/das_wrap_nwhin/blueButtonRepository?wsdl"><con:part><con:url>http://localhost:8080/das_wrap_nwhin/blueButtonRepository?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="blueButtonRepository" targetNamespace="org.osehra.repo.bluebutton" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="org.osehra.repo.bluebutton" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="org.osehra.repo.bluebutton" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getDocument" type="tns:getDocument"/>
+      <xs:element name="getDocumentResponse" type="tns:getDocumentResponse"/>
+      <xs:element name="getStatus" type="tns:getStatus"/>
+      <xs:element name="getStatusResponse" type="tns:getStatusResponse"/>
+      <xs:complexType name="getStatus">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getStatusResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:docStatus"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="docStatus">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dateGenerated" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="patientId" type="xs:string"/>
+          <xs:element minOccurs="0" name="status" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDocument">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDocumentResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:c32Document"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="c32Document">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="document" type="xs:string"/>
+          <xs:element minOccurs="0" name="patientId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getDocument">
+    <wsdl:part element="tns:getDocument" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStatusResponse">
+    <wsdl:part element="tns:getStatusResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStatus">
+    <wsdl:part element="tns:getStatus" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDocumentResponse">
+    <wsdl:part element="tns:getDocumentResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="RepositoryWS">
+    <wsdl:operation name="getStatus">
+      <wsdl:input message="tns:getStatus" name="getStatus"></wsdl:input>
+      <wsdl:output message="tns:getStatusResponse" name="getStatusResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDocument">
+      <wsdl:input message="tns:getDocument" name="getDocument"></wsdl:input>
+      <wsdl:output message="tns:getDocumentResponse" name="getDocumentResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="blueButtonRepositorySoapBinding" type="tns:RepositoryWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDocument">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getDocument">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDocumentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="blueButtonRepository">
+    <wsdl:port binding="tns:blueButtonRepositorySoapBinding" name="RepositoryWSPort">
+      <soap:address location="http://localhost:8080/das_wrap_nwhin/blueButtonRepository"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/das_wrap_nwhin/blueButtonRepository</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="getDocument" bindingOperationName="getDocument" type="Request-Response" outputName="getDocumentResponse" inputName="getDocument" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/das_wrap_nwhin/blueButtonRepository</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:org="org.osehra.repo.bluebutton">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <org:getDocument>
+         <!--Optional:-->
+         <arg0>2012-12-26</arg0>
+         <!--Optional:-->
+         <arg1>1012638924V546709</arg1>
+      </org:getDocument>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="org.osehra.repo.bluebutton/RepositoryWS/getDocument"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getStatus" bindingOperationName="getStatus" type="Request-Response" outputName="getStatusResponse" inputName="getStatus" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/das_wrap_nwhin/blueButtonRepository</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:org="org.osehra.repo.bluebutton">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <org:getStatus>
+         <!--Optional:-->
+         <arg0>1012638924V546709</arg0>
+         <!--Optional:-->
+         <arg1>test</arg1>
+      </org:getStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="org.osehra.repo.bluebutton/RepositoryWS/getStatus"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="Load Test"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Test Case Runner" searchProperties="true" id="a52e2560-e83a-41eb-8201-3f4043430d17"><con:settings/><con:testStep type="groovy" name="Set Parameters for Test"><con:settings/><con:config><script>//Randomly Generate an ICN.
+
+random = new Random()
+randomInt = random.nextInt(20000-10000+1)+10000
+randomInt2 = random.nextInt(20000-10000+1)+10000
+randomInt3 = random.nextInt(200000-100000+1)+100000
+
+def int1 = randomInt.toString()
+def int2 = randomInt2.toString()
+def int3 = randomInt3.toString()
+
+def newicn = int1 + int2 + "V" + int3
+
+//Uncomment below line to run a known good ICN through test env.
+//newicn = "1012581676V377802"
+
+//Create today's date.
+
+def today = new Date()
+def formattedDate = today.format('yyyy-MM-dd')
+
+//Reset increment counter.
+
+def intcount = "0"
+
+def userIdInStep = testRunner.testCase.getTestStepByName("Properties")
+userIdInStep.setPropertyValue("ICN", newicn)
+userIdInStep.setPropertyValue("DATE", formattedDate)
+userIdInStep.setPropertyValue("ATTEMPTS", intcount)
+
+
+
+</script></con:config></con:testStep><con:testStep type="properties" name="Properties"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>ICN</con:name><con:value>1822114697V162580</con:value></con:property><con:property><con:name>DATE</con:name><con:value>2012-12-27</con:value></con:property><con:property><con:name>ATTEMPTS</con:name><con:value>1</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="request" name="getStatus"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>blueButtonRepositorySoapBinding</con:interface><con:operation>getStatus</con:operation><con:request name="getStatus"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/das_wrap_nwhin/blueButtonRepository</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:org="org.osehra.repo.bluebutton">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <org:getStatus>
+         <!--Optional:-->
+         <arg0>${ICN}</arg0>
+         <!--Optional:-->
+         <arg1>loadtest</arg1>
+      </org:getStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="org.osehra.repo.bluebutton/RepositoryWS/getStatus" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Assert ICN Match - getStatus"><con:settings/><con:config><script>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context ) 
+
+// get XmlHolder for request message def
+
+holder = groovyUtils.getXmlHolder("getStatus#response")
+def responseICN = holder.getNodeValue("//patientId")
+def responseDate = holder.getNodeValue('//dateGenerated')
+
+// get User ID from properties file.
+def userIdInStep = testRunner.testCase.getTestStepByName("Properties")
+def userIdStr = userIdInStep.getPropertyValue("ICN");
+
+if (responseDate!=null) {
+	userIdInStep.setPropertyValue("DATE", responseDate[0..9])
+}
+
+//Test Payload User ID equality.
+if (userIdStr != responseICN) { testRunner.fail("Mismatch on getStatus Message for ICN:" + userIdStr)}
+</script></con:config></con:testStep><con:testStep type="goto" name="Status Router"><con:settings/><con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:condition><con:name>File Incomplete</con:name><con:type>XPATH</con:type><con:expression>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns2='org.osehra.repo.bluebutton';
+not(matches(/soap:Envelope/soap:Body/ns2:getStatusResponse/return[1]/status, "COMPLETE"))
+</con:expression><con:targetStep>Delay</con:targetStep></con:condition><con:condition><con:name>File Complete</con:name><con:type>XPATH</con:type><con:expression>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns2='org.osehra.repo.bluebutton';
+matches(/soap:Envelope/soap:Body/ns2:getStatusResponse/return[1]/status, "COMPLETE")
+</con:expression><con:targetStep>getDocument</con:targetStep></con:condition></con:config></con:testStep><con:testStep type="delay" name="Delay"><con:settings/><con:config><delay>25000</delay></con:config></con:testStep><con:testStep type="groovy" name="Increment Attempts"><con:settings/><con:config><script>//Increment Counter.
+
+def userIdInStep = testRunner.testCase.getTestStepByName("Properties")
+def userIdStr = userIdInStep.getPropertyValue("ATTEMPTS");
+
+intcount = userIdStr.toInteger()
+intcount = intcount + 1
+
+//Limit of attempts.
+
+intlimit = 12
+
+if (intcount >= intlimit) { testRunner.fail("No record found within " + intlimit.toString() + " attempts")}
+
+userIdInStep.setPropertyValue("ATTEMPTS", intcount.toString())
+</script></con:config></con:testStep><con:testStep type="goto" name="Rerun getStatus"><con:settings/><con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:condition><con:name>File Incomplete</con:name><con:type>XPATH</con:type><con:expression>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns2='org.osehra.repo.bluebutton';
+not(matches(/soap:Envelope/soap:Body/ns2:getStatusResponse/return[1]/status, "COMPLETE"))
+</con:expression><con:targetStep>getStatus</con:targetStep></con:condition></con:config></con:testStep><con:testStep type="request" name="getDocument"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>blueButtonRepositorySoapBinding</con:interface><con:operation>getDocument</con:operation><con:request name="getDocument"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/das_wrap_nwhin/blueButtonRepository</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:org="org.osehra.repo.bluebutton">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <org:getDocument>
+         <!--Optional:-->
+         <arg0>${DATE}</arg0>
+         <!--Optional:-->
+         <arg1>${ICN}</arg1>
+      </org:getDocument>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="org.osehra.repo.bluebutton/RepositoryWS/getDocument" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Assert ICN Match - getDocument"><con:settings/><con:config><script>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context ) 
+
+// get XmlHolder for request message def
+
+holder = groovyUtils.getXmlHolder("getDocument#response")
+def responseICN = holder.getNodeValue("//patientId")
+
+// get User ID from properties file.
+def userIdInStep = testRunner.testCase.getTestStepByName("Properties")
+def userIdStr = userIdInStep.getPropertyValue("ICN");
+
+//Test Payload User ID equality.
+if (userIdStr != responseICN) { testRunner.fail("Mismatch on getDocument Message for ICN:" + userIdStr)}
+
+
+//Test Decoded XML equality.
+
+def encodedData = holder.getNodeValue("//document")
+def decodedBytes = encodedData.decodeBase64()
+decodedData = new String(decodedBytes)
+def ClinicalDocument = new XmlParser().parseText(decodedData)
+
+def docICN = ClinicalDocument.recordTarget.patientRole.id.@extension
+def docICNString = docICN[0].toString()
+
+def numIndex = docICNString.indexOf('^')
+if (numIndex&lt;0)
+	testRunner.fail('bad patient number index in ' + docICNString)
+
+docICNString = docICNString.substring(0,numIndex)
+
+if (userIdStr != docICNString) { testRunner.fail("Mismatch on Document for ICN:" + userIdStr)}
+
+</script></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>43200</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type><con:config><testDelay>1000</testDelay><randomFactor>0.5</randomFactor></con:config></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:statisticsLogFolder>C:\Users\vhaislmonsos\Desktop\statslog</con:statisticsLogFolder><con:statisticsLogInterval>0</con:statisticsLogInterval><con:logStatisticsOnThreadChange>false</con:logStatisticsOnThreadChange><con:cancelOnReachedLimit>false</con:cancelOnReachedLimit><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval><con:updateStatisticsPerTestStep>false</con:updateStatisticsPerTestStep></con:loadTest><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/></con:soapui-project>

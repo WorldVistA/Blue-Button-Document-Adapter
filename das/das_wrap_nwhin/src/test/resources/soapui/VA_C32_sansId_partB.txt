@@ -1,0 +1,4530 @@
+^^^&amp;2.16.840.1.113883.4.349.1&amp;ISO" root="2.16.840.1.113883.4.349"/>
+			<addr use="HP">
+				<streetAddressLine>1100 Test Street</streetAddressLine>
+				<city>HELENA</city>
+				<state>AL</state>
+				<postalCode>35080-5000</postalCode>
+			</addr>
+			<telecom use="HP" value="tel:+1-205-111-1111"/>
+			<patient>
+				<name use="L">
+					<given>NWHINONE</given>
+					<family>NWHINZZZTESTPATIENT</family>
+				</name>
+				<name use="P">
+					<given nullFlavor="UNK"/>
+					<family nullFlavor="UNK"/>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGenderCode" displayName="Male">
+					<originalText>MALE</originalText>
+				</administrativeGenderCode>
+				<birthTime value="19810101"/>
+				<maritalStatusCode code="M" codeSystem="2.16.840.1.113883.5.2" codeSystemName="MaritalStatusCode" displayName="Married">
+					<originalText>MARRIED</originalText>
+				</maritalStatusCode>
+				<raceCode codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity" nullFlavor="UNK"/>
+				<ethnicGroupCode codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity" nullFlavor="UNK"/>
+				<languageCommunication>
+					<templateId root="2.16.840.1.113883.3.88.11.32.2"/>
+					<languageCode nullFlavor="UNK"/>
+				</languageCommunication>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="20120801140559-0500"/>
+		<assignedAuthor>
+			<id root="2.16.840.1.113883.4.349"/>
+			<addr/>
+			<telecom/>
+			<assignedPerson>
+				<name/>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="2.16.840.1.113883.4.349"/>
+				<name>Department of Veterans Affairs</name>
+				<telecom/>
+				<addr/>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<informant>
+		<assignedEntity>
+			<id nullFlavor="NI"/>
+			<addr/>
+			<telecom/>
+			<assignedPerson>
+				<name>Department of Veterans Affairs</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="2.16.840.1.113883.4.349"/>
+				<name>Department of Veterans Affairs</name>
+				<telecom/>
+				<addr/>
+			</representedOrganization>
+		</assignedEntity>
+	</informant>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="2.16.840.1.113883.4.349"/>
+				<name>Department of Veterans Affairs</name>
+				<telecom/>
+				<addr/>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<legalAuthenticator>
+		<time value="20120801140559-0500"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id nullFlavor="NI"/>
+			<addr/>
+			<telecom/>
+			<assignedPerson>
+				<name>Department of Veterans Affairs</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="2.16.840.1.113883.4.349"/>
+				<name>Department of Veterans Affairs</name>
+				<telecom/>
+				<addr/>
+			</representedOrganization>
+		</assignedEntity>
+	</legalAuthenticator>
+	<participant typeCode="IND">
+		<templateId root="2.16.840.1.113883.3.88.11.32.3"/>
+		<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+		<time nullFlavor="UNK"/>
+		<associatedEntity classCode="ECON">
+			<code code="UNK" codeSystem="2.16.840.1.113883.5.111" codeSystemName="RoleCode">
+				<originalText>Sibling</originalText>
+			</code>
+			<addr use="HP">
+				<city>homeCity</city>
+				<state>homeState</state>
+				<postalCode>homePostal</postalCode>
+			</addr>
+			<telecom nullFlavor="UNK"/>
+			<associatedPerson>
+				<name>
+					<given>EMERGENCY</given>
+					<family>NWHINZZZTESTPATIENT</family>
+				</name>
+			</associatedPerson>
+		</associatedEntity>
+	</participant>
+	<documentationOf>
+		<serviceEvent classCode="PCPR">
+			<effectiveTime>
+				<low value="19000101000000-0600"/>
+				<high value="20120801140559-0500"/>
+			</effectiveTime>
+			<performer typeCode="PRF">
+				<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+				<time>
+					<high nullFlavor="UNK"/>
+				</time>
+				<assignedEntity>
+					<id extension="provider1" root="2.16.840.1.113883.4.349"/>
+					<addr/>
+					<telecom/>
+					<assignedPerson>
+						<name>BRUUN,JESSE</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id extension="613" root="2.16.840.1.113883.4.349"/>
+						<name>MARTINSBURG VAMC</name>
+						<telecom/>
+						<addr/>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+			<performer typeCode="PRF">
+				<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+				<time>
+					<high nullFlavor="UNK"/>
+				</time>
+				<assignedEntity>
+					<id extension="provider2" root="2.16.840.1.113883.4.349"/>
+					<addr/>
+					<telecom/>
+					<assignedPerson>
+						<name>CHDRAMDPROV,ALICIA M</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id extension="613" root="2.16.840.1.113883.4.349"/>
+						<name>MARTINSBURG VAMC</name>
+						<telecom/>
+						<addr/>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+			<performer typeCode="PRF">
+				<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+				<time>
+					<high nullFlavor="UNK"/>
+				</time>
+				<assignedEntity>
+					<id extension="provider3" root="2.16.840.1.113883.4.349"/>
+					<addr/>
+					<telecom/>
+					<assignedPerson>
+						<name>POST,WALTER</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id extension="613" root="2.16.840.1.113883.4.349"/>
+						<name>MARTINSBURG VAMC</name>
+						<telecom/>
+						<addr/>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+			<performer typeCode="PRF">
+				<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+				<time>
+					<high nullFlavor="UNK"/>
+				</time>
+				<assignedEntity>
+					<id extension="provider4" root="2.16.840.1.113883.4.349"/>
+					<addr/>
+					<telecom/>
+					<assignedPerson>
+						<name>PATEL,TUSHAR</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id extension="992" root="2.16.840.1.113883.4.349"/>
+						<name>CHEYENNE HDR SQA</name>
+						<telecom/>
+						<addr/>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+			<performer typeCode="PRF">
+				<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+				<time>
+					<high nullFlavor="UNK"/>
+				</time>
+				<assignedEntity>
+					<id extension="provider5" root="2.16.840.1.113883.4.349"/>
+					<addr/>
+					<telecom/>
+					<assignedPerson>
+						<name>PATEL,TUSHAR</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id extension="992" root="2.16.840.1.113883.4.349"/>
+						<name>CHEYENNE HDR SQA</name>
+						<telecom/>
+						<addr/>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+			<performer typeCode="PRF">
+				<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+				<time>
+					<high nullFlavor="UNK"/>
+				</time>
+				<assignedEntity>
+					<id extension="provider6" root="2.16.840.1.113883.4.349"/>
+					<addr/>
+					<telecom/>
+					<assignedPerson>
+						<name>POND,NEAL</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id extension="992" root="2.16.840.1.113883.4.349"/>
+						<name>CHEYENNE HDR SQA</name>
+						<telecom/>
+						<addr/>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+			<performer typeCode="PRF">
+				<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+				<time>
+					<high nullFlavor="UNK"/>
+				</time>
+				<assignedEntity>
+					<id extension="provider7" root="2.16.840.1.113883.4.349"/>
+					<addr/>
+					<telecom/>
+					<assignedPerson>
+						<name>POND,NEAL</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id extension="992" root="2.16.840.1.113883.4.349"/>
+						<name>CHEYENNE HDR SQA</name>
+						<telecom/>
+						<addr/>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+			<performer typeCode="PRF">
+				<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+				<time>
+					<high nullFlavor="UNK"/>
+				</time>
+				<assignedEntity>
+					<id extension="provider8" root="2.16.840.1.113883.4.349"/>
+					<addr/>
+					<telecom/>
+					<assignedPerson>
+						<name>POND,NEAL</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id extension="992" root="2.16.840.1.113883.4.349"/>
+						<name>CHEYENNE HDR SQA</name>
+						<telecom/>
+						<addr/>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+			<performer typeCode="PRF">
+				<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+				<time>
+					<high nullFlavor="UNK"/>
+				</time>
+				<assignedEntity>
+					<id extension="provider9" root="2.16.840.1.113883.4.349"/>
+					<addr/>
+					<telecom/>
+					<assignedPerson>
+						<name>POND,NEAL</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id extension="992" root="2.16.840.1.113883.4.349"/>
+						<name>CHEYENNE HDR SQA</name>
+						<telecom/>
+						<addr/>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+			<performer typeCode="PRF">
+				<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+				<time>
+					<high nullFlavor="UNK"/>
+				</time>
+				<assignedEntity>
+					<id extension="provider10" root="2.16.840.1.113883.4.349"/>
+					<addr/>
+					<telecom/>
+					<assignedPerson>
+						<name>POND,NEAL</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id extension="992" root="2.16.840.1.113883.4.349"/>
+						<name>CHEYENNE HDR SQA</name>
+						<telecom/>
+						<addr/>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.2"/>
+					<templateId root="2.16.840.1.113883.3.88.11.83.102"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+					<code code="48765-2" codeSystem="2.16.840.1.113883.6.1" displayName="Allergies, adverse reactions, alerts"/>
+					<title>Allergies</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Department of Veterans Affairs</th>
+									<th>Business Rules for Construction of Medical Information</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Allergies</td>
+									<td>This VA Document contains all allergies for the patient, from all VA treatment facilities, but it does not contain allergies that were deleted or entered in error.</td>
+								</tr>
+							</tbody>
+						</table>
+						<table ID="allergyNarritive" border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Allergy</th>
+									<th>Coded Allergy</th>
+									<th>Verification Date</th>
+									<th>Event Type</th>
+									<th>Reaction</th>
+									<th>Severity</th>
+									<th>Source</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<content ID="andAllergy1">LATEX STRAP</content>
+									</td>
+									<td>
+										<content ID="andCodedAllergyName1">Coded Allergy Name Not Available</content>
+									</td>
+									<td>
+										<content ID="andVerificationDate1">20120626141026</content>
+									</td>
+									<td>
+										<content ID="andEventType1">Propensity to adverse reactions to drug</content>
+									</td>
+									<td>
+										<list>
+											<item>
+												<content ID="andReaction1-1">URTICARIA</content>
+											</item>
+										</list>
+									</td>
+									<td>
+										<content ID="andSeverity1"/>
+									</td>
+									<td>
+										<content ID="andSource1">MARTINSBURG VAMC</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="andAllergy2">WATERMELONS</content>
+									</td>
+									<td>
+										<content ID="andCodedAllergyName2">Coded Allergy Name Not Available</content>
+									</td>
+									<td>
+										<content ID="andVerificationDate2">20111024153137</content>
+									</td>
+									<td>
+										<content ID="andEventType2">Propensity to adverse reactions to food</content>
+									</td>
+									<td>
+										<list>
+											<item>
+												<content ID="andReaction2-1">DIARRHEA</content>
+											</item>
+										</list>
+									</td>
+									<td>
+										<content ID="andSeverity2"/>
+									</td>
+									<td>
+										<content ID="andSource2">CHEYENNE HDR SQA</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="andAllergy3">HONEY</content>
+									</td>
+									<td>
+										<content ID="andCodedAllergyName3">Coded Allergy Name Not Available</content>
+									</td>
+									<td>
+										<content ID="andVerificationDate3">20120123095524</content>
+									</td>
+									<td>
+										<content ID="andEventType3">Propensity to adverse reactions to food</content>
+									</td>
+									<td>
+										<list>
+											<item>
+												<content ID="andReaction3-1">WHEEZING</content>
+											</item>
+										</list>
+									</td>
+									<td>
+										<content ID="andSeverity3"/>
+									</td>
+									<td>
+										<content ID="andSource3">CHEYENNE HDR SQA</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="andAllergy4">NUTS</content>
+									</td>
+									<td>
+										<content ID="andCodedAllergyName4">Coded Allergy Name Not Available</content>
+									</td>
+									<td>
+										<content ID="andVerificationDate4">20120123144939</content>
+									</td>
+									<td>
+										<content ID="andEventType4">Propensity to adverse reactions to substance</content>
+									</td>
+									<td>
+										<list>
+											<item>
+												<content ID="andReaction4-1">NAUSEA AND VOMITING</content>
+											</item>
+											<item>
+												<content ID="andReaction4-2">DIARRHEA</content>
+											</item>
+										</list>
+									</td>
+									<td>
+										<content ID="andSeverity4">MODERATE</content>
+									</td>
+									<td>
+										<content ID="andSource4">CHEYENNE HDR SQA</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="andAllergy5">OATS</content>
+									</td>
+									<td>
+										<content ID="andCodedAllergyName5">Coded Allergy Name Not Available</content>
+									</td>
+									<td>
+										<content ID="andVerificationDate5">20120124132240</content>
+									</td>
+									<td>
+										<content ID="andEventType5">Propensity to adverse reactions to substance</content>
+									</td>
+									<td>
+										<list>
+											<item>
+												<content ID="andReaction5-1">DIARRHEA</content>
+											</item>
+										</list>
+									</td>
+									<td>
+										<content ID="andSeverity5">MODERATE</content>
+									</td>
+									<td>
+										<content ID="andSource5">CHEYENNE HDR SQA</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="andAllergy6">CHOCOLATE</content>
+									</td>
+									<td>
+										<content ID="andCodedAllergyName6">Coded Allergy Name Not Available</content>
+									</td>
+									<td>
+										<content ID="andVerificationDate6">20120501165448</content>
+									</td>
+									<td>
+										<content ID="andEventType6">Propensity to adverse reactions to substance</content>
+									</td>
+									<td>
+										<list>
+											<item>
+												<content ID="andReaction6-1">ANXIETY</content>
+											</item>
+										</list>
+									</td>
+									<td>
+										<content ID="andSeverity6"/>
+									</td>
+									<td>
+										<content ID="andSource6">CHEYENNE HDR SQA</content>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.6"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+							</effectiveTime>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="2.16.840.1.113883.10.20.1.18"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+									<id nullFlavor="UNK"/>
+									<code code="419511003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Propensity to adverse reactions to drug">
+										<originalText>DRUG</originalText>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20120626141026"/>
+									</effectiveTime>
+									<value xsi:type="CD"/>
+									<participant typeCode="CSM">
+										<participantRole classCode="MANU">
+											<playingEntity classCode="MMAT">
+												<code code="UNK" nullFlavor="UNK">
+													<originalText>
+														<reference value="#andCodedAllergyName1"/>
+													</originalText>
+												</code>
+												<name>LATEX STRAP</name>
+											</playingEntity>
+										</participantRole>
+									</participant>
+									<entryRelationship inversionInd="true" typeCode="MFST">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.54"/>
+											<templateId root="2.16.840.1.113883.10.20.1.28"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+											<id nullFlavor="UNK"/>
+											<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7ActCode"/>
+											<text>
+												<reference value="#andReaction1-1"/>
+											</text>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low nullFlavor="UNK"/>
+											</effectiveTime>
+											<value xsi:type="CD"/>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.6"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+							</effectiveTime>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="992" root="2.16.840.1.113883.4.349"/>
+										<name>CHEYENNE HDR SQA</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="2.16.840.1.113883.10.20.1.18"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+									<id nullFlavor="UNK"/>
+									<code code="418471000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Propensity to adverse reactions to food">
+										<originalText>FOOD</originalText>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20111024153137"/>
+									</effectiveTime>
+									<value xsi:type="CD"/>
+									<participant typeCode="CSM">
+										<participantRole classCode="MANU">
+											<playingEntity classCode="MMAT">
+												<code code="UNK" nullFlavor="UNK">
+													<originalText>
+														<reference value="#andCodedAllergyName2"/>
+													</originalText>
+												</code>
+												<name>WATERMELONS</name>
+											</playingEntity>
+										</participantRole>
+									</participant>
+									<entryRelationship inversionInd="true" typeCode="MFST">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.54"/>
+											<templateId root="2.16.840.1.113883.10.20.1.28"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+											<id nullFlavor="UNK"/>
+											<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7ActCode"/>
+											<text>
+												<reference value="#andReaction2-1"/>
+											</text>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low nullFlavor="UNK"/>
+											</effectiveTime>
+											<value xsi:type="CD"/>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.6"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+							</effectiveTime>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="992" root="2.16.840.1.113883.4.349"/>
+										<name>CHEYENNE HDR SQA</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="2.16.840.1.113883.10.20.1.18"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+									<id nullFlavor="UNK"/>
+									<code code="418471000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Propensity to adverse reactions to food">
+										<originalText>FOOD</originalText>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20120123095524"/>
+									</effectiveTime>
+									<value xsi:type="CD"/>
+									<participant typeCode="CSM">
+										<participantRole classCode="MANU">
+											<playingEntity classCode="MMAT">
+												<code code="UNK" nullFlavor="UNK">
+													<originalText>
+														<reference value="#andCodedAllergyName3"/>
+													</originalText>
+												</code>
+												<name>HONEY</name>
+											</playingEntity>
+										</participantRole>
+									</participant>
+									<entryRelationship inversionInd="true" typeCode="MFST">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.54"/>
+											<templateId root="2.16.840.1.113883.10.20.1.28"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+											<id nullFlavor="UNK"/>
+											<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7ActCode"/>
+											<text>
+												<reference value="#andReaction3-1"/>
+											</text>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low nullFlavor="UNK"/>
+											</effectiveTime>
+											<value xsi:type="CD"/>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.6"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+							</effectiveTime>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="992" root="2.16.840.1.113883.4.349"/>
+										<name>CHEYENNE HDR SQA</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="2.16.840.1.113883.10.20.1.18"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+									<id nullFlavor="UNK"/>
+									<code code="418038007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Propensity to adverse reactions to substance">
+										<originalText>DRUG, FOOD</originalText>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20120123144939"/>
+									</effectiveTime>
+									<value xsi:type="CD"/>
+									<participant typeCode="CSM">
+										<participantRole classCode="MANU">
+											<playingEntity classCode="MMAT">
+												<code code="UNK" nullFlavor="UNK">
+													<originalText>
+														<reference value="#andCodedAllergyName4"/>
+													</originalText>
+												</code>
+												<name>NUTS</name>
+											</playingEntity>
+										</participantRole>
+									</participant>
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.55"/>
+											<templateId root="2.16.840.1.113883.10.20.1.28"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+											<id nullFlavor="UNK"/>
+											<code code="SEV" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7ActCode" displayName="Severity"/>
+											<text>
+												<reference value="#andSeverity4"/>
+											</text>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low nullFlavor="UNK"/>
+											</effectiveTime>
+											<value xsi:type="CD"/>
+										</observation>
+									</entryRelationship>
+									<entryRelationship inversionInd="true" typeCode="MFST">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.54"/>
+											<templateId root="2.16.840.1.113883.10.20.1.28"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+											<id nullFlavor="UNK"/>
+											<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7ActCode"/>
+											<text>
+												<reference value="#andReaction4-1"/>
+											</text>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low nullFlavor="UNK"/>
+											</effectiveTime>
+											<value xsi:type="CD"/>
+										</observation>
+									</entryRelationship>
+									<entryRelationship inversionInd="true" typeCode="MFST">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.54"/>
+											<templateId root="2.16.840.1.113883.10.20.1.28"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+											<id nullFlavor="UNK"/>
+											<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7ActCode"/>
+											<text>
+												<reference value="#andReaction4-2"/>
+											</text>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low nullFlavor="UNK"/>
+											</effectiveTime>
+											<value xsi:type="CD"/>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.6"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+							</effectiveTime>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="992" root="2.16.840.1.113883.4.349"/>
+										<name>CHEYENNE HDR SQA</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="2.16.840.1.113883.10.20.1.18"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+									<id nullFlavor="UNK"/>
+									<code code="418038007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Propensity to adverse reactions to substance">
+										<originalText>DRUG, FOOD</originalText>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20120124132240"/>
+									</effectiveTime>
+									<value xsi:type="CD"/>
+									<participant typeCode="CSM">
+										<participantRole classCode="MANU">
+											<playingEntity classCode="MMAT">
+												<code code="UNK" nullFlavor="UNK">
+													<originalText>
+														<reference value="#andCodedAllergyName5"/>
+													</originalText>
+												</code>
+												<name>OATS</name>
+											</playingEntity>
+										</participantRole>
+									</participant>
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.55"/>
+											<templateId root="2.16.840.1.113883.10.20.1.28"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+											<id nullFlavor="UNK"/>
+											<code code="SEV" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7ActCode" displayName="Severity"/>
+											<text>
+												<reference value="#andSeverity5"/>
+											</text>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low nullFlavor="UNK"/>
+											</effectiveTime>
+											<value xsi:type="CD"/>
+										</observation>
+									</entryRelationship>
+									<entryRelationship inversionInd="true" typeCode="MFST">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.54"/>
+											<templateId root="2.16.840.1.113883.10.20.1.28"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+											<id nullFlavor="UNK"/>
+											<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7ActCode"/>
+											<text>
+												<reference value="#andReaction5-1"/>
+											</text>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low nullFlavor="UNK"/>
+											</effectiveTime>
+											<value xsi:type="CD"/>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.6"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+							</effectiveTime>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="992" root="2.16.840.1.113883.4.349"/>
+										<name>CHEYENNE HDR SQA</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="2.16.840.1.113883.10.20.1.18"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+									<id nullFlavor="UNK"/>
+									<code code="418038007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Propensity to adverse reactions to substance">
+										<originalText>DRUG, FOOD</originalText>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20120501165448"/>
+									</effectiveTime>
+									<value xsi:type="CD"/>
+									<participant typeCode="CSM">
+										<participantRole classCode="MANU">
+											<playingEntity classCode="MMAT">
+												<code code="UNK" nullFlavor="UNK">
+													<originalText>
+														<reference value="#andCodedAllergyName6"/>
+													</originalText>
+												</code>
+												<name>CHOCOLATE</name>
+											</playingEntity>
+										</participantRole>
+									</participant>
+									<entryRelationship inversionInd="true" typeCode="MFST">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.54"/>
+											<templateId root="2.16.840.1.113883.10.20.1.28"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+											<id nullFlavor="UNK"/>
+											<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7ActCode"/>
+											<text>
+												<reference value="#andReaction6-1"/>
+											</text>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low nullFlavor="UNK"/>
+											</effectiveTime>
+											<value xsi:type="CD"/>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.11"/>
+					<templateId root="2.16.840.1.113883.3.88.11.83.103"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problems"/>
+					<title>Problems/Conditions</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Department of Veterans Affairs</th>
+									<th>Business Rules for Construction of Medical Information</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Problems/Conditions</td>
+									<td>This VA Document contains all problems for the patient (active and inactive), from all VA treatment facilities, but it does not contain problems that were deleted.</td>
+								</tr>
+							</tbody>
+						</table>
+						<table ID="problemNarritive" border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Problem</th>
+									<th>Status</th>
+									<th>Problem Code</th>
+									<th>Date of Onset</th>
+									<th>Provider</th>
+									<th>Source</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<content ID="pndProblem1">Cough (SCT 49727002)</content>
+									</td>
+									<td>
+										<content ID="pndStatus1">Active</content>
+									</td>
+									<td>
+										<content ID="pndProblemCode1">786.2</content>
+									</td>
+									<td>
+										<content ID="pndDateOfOnset1">20120314</content>
+									</td>
+									<td>
+										<content ID="pndProvider1">BRUUN,JESSE</content>
+									</td>
+									<td>
+										<content ID="pndSource1">MARTINSBURG VAMC</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="pndProblem2">Allergic arthritis of multiple sites (SCT 201972000)</content>
+									</td>
+									<td>
+										<content ID="pndStatus2">Active</content>
+									</td>
+									<td>
+										<content ID="pndProblemCode2">716.29</content>
+									</td>
+									<td>
+										<content ID="pndDateOfOnset2">20120310</content>
+									</td>
+									<td>
+										<content ID="pndProvider2">CHDRAMDPROV,ALICIA M</content>
+									</td>
+									<td>
+										<content ID="pndSource2">MARTINSBURG VAMC</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="pndProblem3">Weakness of limb (SCT 309774006)</content>
+									</td>
+									<td>
+										<content ID="pndStatus3">Active</content>
+									</td>
+									<td>
+										<content ID="pndProblemCode3">728.87</content>
+									</td>
+									<td>
+										<content ID="pndDateOfOnset3"/>
+									</td>
+									<td>
+										<content ID="pndProvider3">POST,WALTER</content>
+									</td>
+									<td>
+										<content ID="pndSource3">MARTINSBURG VAMC</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="pndProblem4">Arthritis, Rheumatoid (ICD-9-CM 714.0)</content>
+									</td>
+									<td>
+										<content ID="pndStatus4">Active</content>
+									</td>
+									<td>
+										<content ID="pndProblemCode4">714.0</content>
+									</td>
+									<td>
+										<content ID="pndDateOfOnset4">20111020</content>
+									</td>
+									<td>
+										<content ID="pndProvider4">PATEL,TUSHAR</content>
+									</td>
+									<td>
+										<content ID="pndSource4">CHEYENNE HDR SQA</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="pndProblem5">Obesity in Diabetes (ICD-9-CM 278.00)</content>
+									</td>
+									<td>
+										<content ID="pndStatus5">Active</content>
+									</td>
+									<td>
+										<content ID="pndProblemCode5">278.00</content>
+									</td>
+									<td>
+										<content ID="pndDateOfOnset5">20111024</content>
+									</td>
+									<td>
+										<content ID="pndProvider5">PATEL,TUSHAR</content>
+									</td>
+									<td>
+										<content ID="pndSource5">CHEYENNE HDR SQA</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="pndProblem6">Diabetic Foot Ulcer</content>
+									</td>
+									<td>
+										<content ID="pndStatus6">Active</content>
+									</td>
+									<td>
+										<content ID="pndProblemCode6">250.80</content>
+									</td>
+									<td>
+										<content ID="pndDateOfOnset6">20111011</content>
+									</td>
+									<td>
+										<content ID="pndProvider6">POND,NEAL</content>
+									</td>
+									<td>
+										<content ID="pndSource6">CHEYENNE HDR SQA</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="pndProblem7">Aneurysm, Aorta, Abdominal</content>
+									</td>
+									<td>
+										<content ID="pndStatus7">Active</content>
+									</td>
+									<td>
+										<content ID="pndProblemCode7">441.4</content>
+									</td>
+									<td>
+										<content ID="pndDateOfOnset7"/>
+									</td>
+									<td>
+										<content ID="pndProvider7">POND,NEAL</content>
+									</td>
+									<td>
+										<content ID="pndSource7">CHEYENNE HDR SQA</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="pndProblem8">Cough</content>
+									</td>
+									<td>
+										<content ID="pndStatus8">Active</content>
+									</td>
+									<td>
+										<content ID="pndProblemCode8">786.2</content>
+									</td>
+									<td>
+										<content ID="pndDateOfOnset8"/>
+									</td>
+									<td>
+										<content ID="pndProvider8">POND,NEAL</content>
+									</td>
+									<td>
+										<content ID="pndSource8">CHEYENNE HDR SQA</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="pndProblem9">Dermatomyositis</content>
+									</td>
+									<td>
+										<content ID="pndStatus9">Active</content>
+									</td>
+									<td>
+										<content ID="pndProblemCode9">710.3</content>
+									</td>
+									<td>
+										<content ID="pndDateOfOnset9"/>
+									</td>
+									<td>
+										<content ID="pndProvider9">POND,NEAL</content>
+									</td>
+									<td>
+										<content ID="pndSource9">CHEYENNE HDR SQA</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="pndProblem10">Hypertension</content>
+									</td>
+									<td>
+										<content ID="pndStatus10">Active</content>
+									</td>
+									<td>
+										<content ID="pndProblemCode10">401.9</content>
+									</td>
+									<td>
+										<content ID="pndDateOfOnset10"/>
+									</td>
+									<td>
+										<content ID="pndProvider10">POND,NEAL</content>
+									</td>
+									<td>
+										<content ID="pndSource10">CHEYENNE HDR SQA</content>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20120314"/>
+								<high nullFlavor="UNK"/>
+							</effectiveTime>
+							<performer typeCode="PRF">
+								<assignedEntity>
+									<id extension="provider1" root="2.16.840.1.113883.4.349"/>
+									<addr/>
+									<telecom/>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id nullFlavor="UNK"/>
+									<code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" nullFlavor="UNK">
+										<originalText>Problem Type Not Available</originalText>
+									</code>
+									<text>
+										<reference value="#pndProblem1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD">
+										<translation code="786.2" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM"/>
+									</value>
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.50"/>
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											<statusCode code="completed"/>
+											<value code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" xsi:type="CE">
+												<originalText>ACTIVE</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20120310"/>
+								<high nullFlavor="UNK"/>
+							</effectiveTime>
+							<performer typeCode="PRF">
+								<assignedEntity>
+									<id extension="provider2" root="2.16.840.1.113883.4.349"/>
+									<addr/>
+									<telecom/>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id nullFlavor="UNK"/>
+									<code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" nullFlavor="UNK">
+										<originalText>Problem Type Not Available</originalText>
+									</code>
+									<text>
+										<reference value="#pndProblem2"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD">
+										<translation code="716.29" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM"/>
+									</value>
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.50"/>
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											<statusCode code="completed"/>
+											<value code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" xsi:type="CE">
+												<originalText>ACTIVE</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+								<high nullFlavor="UNK"/>
+							</effectiveTime>
+							<performer typeCode="PRF">
+								<assignedEntity>
+									<id extension="provider3" root="2.16.840.1.113883.4.349"/>
+									<addr/>
+									<telecom/>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id nullFlavor="UNK"/>
+									<code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" nullFlavor="UNK">
+										<originalText>Problem Type Not Available</originalText>
+									</code>
+									<text>
+										<reference value="#pndProblem3"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD">
+										<translation code="728.87" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM"/>
+									</value>
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.50"/>
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											<statusCode code="completed"/>
+											<value code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" xsi:type="CE">
+												<originalText>ACTIVE</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20111020"/>
+								<high nullFlavor="UNK"/>
+							</effectiveTime>
+							<performer typeCode="PRF">
+								<assignedEntity>
+									<id extension="provider4" root="2.16.840.1.113883.4.349"/>
+									<addr/>
+									<telecom/>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="992" root="2.16.840.1.113883.4.349"/>
+										<name>CHEYENNE HDR SQA</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id nullFlavor="UNK"/>
+									<code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" nullFlavor="UNK">
+										<originalText>Problem Type Not Available</originalText>
+									</code>
+									<text>
+										<reference value="#pndProblem4"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD">
+										<translation code="714.0" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM"/>
+									</value>
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.50"/>
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											<statusCode code="completed"/>
+											<value code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" xsi:type="CE">
+												<originalText>ACTIVE</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20111024"/>
+								<high nullFlavor="UNK"/>
+							</effectiveTime>
+							<performer typeCode="PRF">
+								<assignedEntity>
+									<id extension="provider5" root="2.16.840.1.113883.4.349"/>
+									<addr/>
+									<telecom/>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="992" root="2.16.840.1.113883.4.349"/>
+										<name>CHEYENNE HDR SQA</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id nullFlavor="UNK"/>
+									<code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" nullFlavor="UNK">
+										<originalText>Problem Type Not Available</originalText>
+									</code>
+									<text>
+										<reference value="#pndProblem5"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD">
+										<translation code="278.00" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM"/>
+									</value>
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.50"/>
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											<statusCode code="completed"/>
+											<value code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" xsi:type="CE">
+												<originalText>ACTIVE</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20111011"/>
+								<high nullFlavor="UNK"/>
+							</effectiveTime>
+							<performer typeCode="PRF">
+								<assignedEntity>
+									<id extension="provider6" root="2.16.840.1.113883.4.349"/>
+									<addr/>
+									<telecom/>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="992" root="2.16.840.1.113883.4.349"/>
+										<name>CHEYENNE HDR SQA</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id nullFlavor="UNK"/>
+									<code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" nullFlavor="UNK">
+										<originalText>Problem Type Not Available</originalText>
+									</code>
+									<text>
+										<reference value="#pndProblem6"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD">
+										<translation code="250.80" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM"/>
+									</value>
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.50"/>
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											<statusCode code="completed"/>
+											<value code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" xsi:type="CE">
+												<originalText>ACTIVE</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+								<high nullFlavor="UNK"/>
+							</effectiveTime>
+							<performer typeCode="PRF">
+								<assignedEntity>
+									<id extension="provider7" root="2.16.840.1.113883.4.349"/>
+									<addr/>
+									<telecom/>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="992" root="2.16.840.1.113883.4.349"/>
+										<name>CHEYENNE HDR SQA</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id nullFlavor="UNK"/>
+									<code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" nullFlavor="UNK">
+										<originalText>Problem Type Not Available</originalText>
+									</code>
+									<text>
+										<reference value="#pndProblem7"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD">
+										<translation code="441.4" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM"/>
+									</value>
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.50"/>
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											<statusCode code="completed"/>
+											<value code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" xsi:type="CE">
+												<originalText>ACTIVE</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+								<high nullFlavor="UNK"/>
+							</effectiveTime>
+							<performer typeCode="PRF">
+								<assignedEntity>
+									<id extension="provider8" root="2.16.840.1.113883.4.349"/>
+									<addr/>
+									<telecom/>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="992" root="2.16.840.1.113883.4.349"/>
+										<name>CHEYENNE HDR SQA</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id nullFlavor="UNK"/>
+									<code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" nullFlavor="UNK">
+										<originalText>Problem Type Not Available</originalText>
+									</code>
+									<text>
+										<reference value="#pndProblem8"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD">
+										<translation code="786.2" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM"/>
+									</value>
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.50"/>
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											<statusCode code="completed"/>
+											<value code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" xsi:type="CE">
+												<originalText>ACTIVE</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+								<high nullFlavor="UNK"/>
+							</effectiveTime>
+							<performer typeCode="PRF">
+								<assignedEntity>
+									<id extension="provider9" root="2.16.840.1.113883.4.349"/>
+									<addr/>
+									<telecom/>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="992" root="2.16.840.1.113883.4.349"/>
+										<name>CHEYENNE HDR SQA</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id nullFlavor="UNK"/>
+									<code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" nullFlavor="UNK">
+										<originalText>Problem Type Not Available</originalText>
+									</code>
+									<text>
+										<reference value="#pndProblem9"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD">
+										<translation code="710.3" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM"/>
+									</value>
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.50"/>
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											<statusCode code="completed"/>
+											<value code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" xsi:type="CE">
+												<originalText>ACTIVE</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+								<high nullFlavor="UNK"/>
+							</effectiveTime>
+							<performer typeCode="PRF">
+								<assignedEntity>
+									<id extension="provider10" root="2.16.840.1.113883.4.349"/>
+									<addr/>
+									<telecom/>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<representedOrganization>
+										<id extension="992" root="2.16.840.1.113883.4.349"/>
+										<name>CHEYENNE HDR SQA</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id nullFlavor="UNK"/>
+									<code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" nullFlavor="UNK">
+										<originalText>Problem Type Not Available</originalText>
+									</code>
+									<text>
+										<reference value="#pndProblem10"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD">
+										<translation code="401.9" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM"/>
+									</value>
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.50"/>
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											<statusCode code="completed"/>
+											<value code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" xsi:type="CE">
+												<originalText>ACTIVE</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.8"/>
+					<templateId root="2.16.840.1.113883.3.88.11.83.112"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+					<code code="10160-0" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Medications - Prescription and Non-Prescription</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Department of Veterans Affairs</th>
+									<th>Business Rules for Construction of Medical Information</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Medications</td>
+									<td>This VA Document contains all medications (outpatient and self-reported) for the patient, from all VA treatment facilities, where the dispense date was within the last 15 months.  It only contains medications that have an active Prescription status.</td>
+								</tr>
+							</tbody>
+						</table>
+						<table ID="medicationNarritive" border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Medication</th>
+									<th>Status</th>
+									<th>Quantity</th>
+									<th>Order Expiration</th>
+									<th>Provider</th>
+									<th>Prescription</th>
+									<th>Dispense Date</th>
+									<th>Sig</th>
+									<th>Source</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<content ID="mndMedication1">INSULIN REG HUMAN INJ</content>
+									</td>
+									<td>
+										<content ID="mndStatus1">Active</content>
+									</td>
+									<td>
+										<content ID="mndQuantity1">4</content>
+									</td>
+									<td>
+										<content ID="mndOrderExpiration1">20121030</content>
+									</td>
+									<td>
+										<content ID="mndProvider1">PATEL,TUSHAR</content>
+									</td>
+									<td>
+										<content ID="mndPrescription1">7133766</content>
+									</td>
+									<td>
+										<content ID="mndDispenseDate1">20111101</content>
+									</td>
+									<td>
+										<content ID="mndSig1">INJECT 2 TIMES DAILY SUBCUTANEOUSLY EVERY MORNING BEFORE BREAKFAST FOR 4 DAYS</content>
+									</td>
+									<td>
+										<content ID="mndSource1">MARTINSBURG VAMC</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="mndMedication2">CYCLOBENZAPRINE HCL 10MG TAB</content>
+									</td>
+									<td>
+										<content ID="mndStatus2">Active</content>
+									</td>
+									<td>
+										<content ID="mndQuantity2">2160</content>
+									</td>
+									<td>
+										<content ID="mndOrderExpiration2">20121101</content>
+									</td>
+									<td>
+										<content ID="mndProvider2">PATEL,TUSHAR</content>
+									</td>
+									<td>
+										<content ID="mndPrescription2">7133765</content>
+									</td>
+									<td>
+										<content ID="mndDispenseDate2">20111101</content>
+									</td>
+									<td>
+										<content ID="mndSig2">TAKE ONE TABLET BY MOUTH EVERY HOUR AS NEEDED FOR MUSCLE SPASM - AVOID ALCOHOL</content>
+									</td>
+									<td>
+										<content ID="mndSource2">MARTINSBURG VAMC</content>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.24"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.8"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+							<templateId assigningAuthorityName="IHE PCC" root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+							<id nullFlavor="UNK"/>
+							<id assigningAuthorityName="Department of Veterans Affairs" extension="nullFlavor" root="2.16.840.1.113883.4.349"/>
+							<text>
+								<reference value="#mndSig1"/>
+							</text>
+							<statusCode code="completed"/>
+							<consumable>
+								<manufacturedProduct>
+									<templateId root="2.16.840.1.113883.10.20.1.53"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.8.2"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+									<templateId root="2.16.840.1.113883.3.88.11.32.9"/>
+									<manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+										<code code="UNK" nullFlavor="UNK">
+											<originalText>
+												<reference value="#mndMedication1"/>
+											</originalText>
+										</code>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.3.88.11.83.8.1"/>
+									<code code="73639000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prescription drug">
+										<originalText>Prescription</originalText>
+									</code>
+									<statusCode code="completed"/>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<statusCode code="completed"/>
+									<value code="55561003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Active" nullFlavor="UNK" xsi:type="CE">
+										<originalText>ACTIVE</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<supply classCode="SPLY" moodCode="INT">
+									<templateId root="2.16.840.1.113883.10.20.1.34"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.8.3"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.3"/>
+									<id extension="15246019" root="2.16.840.1.113883.4.349"/>
+									<effectiveTime value="20121030" xsi:type="SXCM_TS"/>
+									<repeatNumber value="1"/>
+									<author>
+										<time value="20111030110709"/>
+										<assignedAuthor>
+											<id nullFlavor="UNK"/>
+											<addr/>
+											<telecom/>
+											<assignedPerson>
+												<name>PATEL,TUSHAR</name>
+											</assignedPerson>
+										</assignedAuthor>
+									</author>
+								</supply>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<supply classCode="SPLY" moodCode="INT">
+									<templateId root="2.16.840.1.113883.10.20.1.34"/>
+									<id extension="7133766" root="2.16.840.1.113883.4.349"/>
+									<effectiveTime value="20111101"/>
+								</supply>
+							</entryRelationship>
+						</substanceAdministration>
+					</entry>
+					<entry typeCode="DRIV">
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.24"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.8"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+							<templateId assigningAuthorityName="IHE PCC" root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+							<id nullFlavor="UNK"/>
+							<id assigningAuthorityName="Department of Veterans Affairs" extension="nullFlavor" root="2.16.840.1.113883.4.349"/>
+							<text>
+								<reference value="#mndSig2"/>
+							</text>
+							<statusCode code="completed"/>
+							<consumable>
+								<manufacturedProduct>
+									<templateId root="2.16.840.1.113883.10.20.1.53"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.8.2"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+									<templateId root="2.16.840.1.113883.3.88.11.32.9"/>
+									<manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+										<code code="UNK" nullFlavor="UNK">
+											<originalText>
+												<reference value="#mndMedication2"/>
+											</originalText>
+										</code>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.3.88.11.83.8.1"/>
+									<code code="73639000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prescription drug">
+										<originalText>Prescription</originalText>
+									</code>
+									<statusCode code="completed"/>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<statusCode code="completed"/>
+									<value code="55561003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Active" nullFlavor="UNK" xsi:type="CE">
+										<originalText>ACTIVE</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<supply classCode="SPLY" moodCode="INT">
+									<templateId root="2.16.840.1.113883.10.20.1.34"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.8.3"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.3"/>
+									<id extension="15246023" root="2.16.840.1.113883.4.349"/>
+									<effectiveTime value="20121101" xsi:type="SXCM_TS"/>
+									<repeatNumber value="1"/>
+									<author>
+										<time value="20111101151306"/>
+										<assignedAuthor>
+											<id nullFlavor="UNK"/>
+											<addr/>
+											<telecom/>
+											<assignedPerson>
+												<name>PATEL,TUSHAR</name>
+											</assignedPerson>
+										</assignedAuthor>
+									</author>
+								</supply>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<supply classCode="SPLY" moodCode="INT">
+									<templateId root="2.16.840.1.113883.10.20.1.34"/>
+									<id extension="7133765" root="2.16.840.1.113883.4.349"/>
+									<effectiveTime value="20111101"/>
+								</supply>
+							</entryRelationship>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.16"/>
+					<templateId root="2.16.840.1.113883.3.88.11.83.119"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.25"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2"/>
+					<code code="8716-3" codeSystem="2.16.840.1.113883.6.1" displayName="VITAL SIGNS"/>
+					<title>Vital Signs</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Department of Veterans Affairs</th>
+									<th>Business Rules for Construction of Medical Information</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Vital Signs</td>
+									<td>This VA Document contains all vital signs (inpatient and outpatient) for the patient, from all VA treatment facilities, where the panel Date Taken is within 12 months up to a maximum of the 10 most recent panels.  If more than one panel was taken on the same date, only the most recent panel is populated for that date. </td>
+								</tr>
+							</tbody>
+						</table>
+						<table ID="vitalNarritive" border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Date</th>
+									<th>Measurements</th>
+									<th>Source</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<content ID="vndDate1">20120515132054</content>
+									</td>
+									<td>
+										<list>
+											<item>
+												<content ID="vndMeasurement1-1">Heart rate: 85/min</content>
+											</item>
+											<item>
+												<content ID="vndMeasurement1-2">Body temperature: 99[degF]</content>
+											</item>
+										</list>
+									</td>
+									<td>
+										<content ID="vndSource1">MARTINSBURG VAMC</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="vndDate2">20120113092623</content>
+									</td>
+									<td>
+										<list>
+											<item>
+												<content ID="vndMeasurement2-1">Bdy height: 75[in_us]</content>
+											</item>
+											<item>
+												<content ID="vndMeasurement2-2">Heart rate: 50/min</content>
+											</item>
+											<item>
+												<content ID="vndMeasurement2-3">SaO2% BldC Oximetry: 34%</content>
+											</item>
+											<item>
+												<content ID="vndMeasurement2-4">Resp rate: 35/min</content>
+											</item>
+											<item>
+												<content ID="vndMeasurement2-5">Body temperature: 105[degF]</content>
+											</item>
+											<item>
+												<content ID="vndMeasurement2-6">Weight Measured: 250[lb_av]</content>
+											</item>
+											<item>
+												<content ID="vndMeasurement2-7">BP sys: 130mm[Hg]</content>
+											</item>
+											<item>
+												<content ID="vndMeasurement2-8">BP dias: 75mm[Hg]</content>
+											</item>
+										</list>
+									</td>
+									<td>
+										<content ID="vndSource2">CHEYENNE VAMC</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="vndDate3">20111101120538</content>
+									</td>
+									<td>
+										<list>
+											<item>
+												<content ID="vndMeasurement3-1">Bdy height: 70[in_us]</content>
+											</item>
+											<item>
+												<content ID="vndMeasurement3-2">Heart rate: 74/min</content>
+											</item>
+											<item>
+												<content ID="vndMeasurement3-3">SaO2% BldC Oximetry: 65%</content>
+											</item>
+											<item>
+												<content ID="vndMeasurement3-4">Resp rate: 95/min</content>
+											</item>
+											<item>
+												<content ID="vndMeasurement3-5">Body temperature: 100[degF]</content>
+											</item>
+											<item>
+												<content ID="vndMeasurement3-6">Weight Measured: 175[lb_av]</content>
+											</item>
+											<item>
+												<content ID="vndMeasurement3-7">BP sys: 120mm[Hg]</content>
+											</item>
+											<item>
+												<content ID="vndMeasurement3-8">BP dias: 80mm[Hg]</content>
+											</item>
+										</list>
+									</td>
+									<td>
+										<content ID="vndSource3">MARTINSBURG VAMC</content>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<content ID="vital1" revised="delete">Vital Sign Observation Text Not Available</content>
+					</text>
+					<entry typeCode="DRIV">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.32"/>
+							<templateId root="2.16.840.1.113883.10.20.1.35"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/>
+							<id nullFlavor="UNK"/>
+							<code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vital signs"/>
+							<statusCode code="completed"/>
+							<effectiveTime value="20120515132054"/>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="7002034" root="2.16.840.1.113883.4.349"/>
+									<code code="8867-4" codeSystem="2.16.840.1.113883.6.1" displayName="Heart rate">
+										<originalText>PULSE</originalText>
+										<translation code="4500636" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="PULSE"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20120515132432"/>
+									<value unit="/min" value="85" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="7002033" root="2.16.840.1.113883.4.349"/>
+									<code code="8310-5" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature">
+										<originalText>TEMPERATURE</originalText>
+										<translation code="4500638" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="TEMPERATURE"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20120515132432"/>
+									<value unit="[degF]" value="99" xsi:type="PQ"/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					<entry typeCode="DRIV">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.32"/>
+							<templateId root="2.16.840.1.113883.10.20.1.35"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/>
+							<id nullFlavor="UNK"/>
+							<code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vital signs"/>
+							<statusCode code="completed"/>
+							<effectiveTime value="20120113092623"/>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="442" root="2.16.840.1.113883.4.349"/>
+										<name>CHEYENNE VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="2662414" root="2.16.840.1.113883.4.349"/>
+									<code code="8302-2" codeSystem="2.16.840.1.113883.6.1" displayName="Bdy height">
+										<originalText>HEIGHT</originalText>
+										<translation code="4688724" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="HEIGHT"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20120113092739"/>
+									<value unit="[in_us]" value="75" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="2662408" root="2.16.840.1.113883.4.349"/>
+									<code code="8867-4" codeSystem="2.16.840.1.113883.6.1" displayName="Heart rate">
+										<originalText>PULSE</originalText>
+										<translation code="4500636" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="PULSE"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20120113092739"/>
+									<value unit="/min" value="50" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="2662412" root="2.16.840.1.113883.4.349"/>
+									<code code="2710-2" codeSystem="2.16.840.1.113883.6.1" displayName="SaO2% BldC Oximetry">
+										<originalText>PULSE OXIMETRY</originalText>
+										<translation code="4500637" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="PULSE OXIMETRY"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20120113092739"/>
+									<value unit="%" value="34" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="2662409" root="2.16.840.1.113883.4.349"/>
+									<code code="9279-1" codeSystem="2.16.840.1.113883.6.1" displayName="Resp rate">
+										<originalText>RESPIRATION</originalText>
+										<translation code="4688725" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="RESPIRATION"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20120113092739"/>
+									<value unit="/min" value="35" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="2662407" root="2.16.840.1.113883.4.349"/>
+									<code code="8310-5" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature">
+										<originalText>TEMPERATURE</originalText>
+										<translation code="4500638" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="TEMPERATURE"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20120113092739"/>
+									<value unit="[degF]" value="105" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="2662411" root="2.16.840.1.113883.4.349"/>
+									<code code="3141-9" codeSystem="2.16.840.1.113883.6.1" displayName="Weight Measured">
+										<originalText>WEIGHT</originalText>
+										<translation code="4500639" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="WEIGHT"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20120113092739"/>
+									<value unit="[lb_av]" value="250" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="2662410~1" root="2.16.840.1.113883.4.349"/>
+									<code code="8480-6" codeSystem="2.16.840.1.113883.6.1" displayName="BP sys">
+										<originalText>SYSTOLIC BLOOD PRESSURE</originalText>
+										<translation code="4500634~1" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="SYSTOLIC BLOOD PRESSURE"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20120113092739"/>
+									<value unit="mm[Hg]" value="130" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="2662410~2" root="2.16.840.1.113883.4.349"/>
+									<code code="8462-4" codeSystem="2.16.840.1.113883.6.1" displayName="BP dias">
+										<originalText>DIASTOLIC BLOOD PRESSURE</originalText>
+										<translation code="4500634~2" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="DIASTOLIC BLOOD PRESSURE"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20120113092739"/>
+									<value unit="mm[Hg]" value="75" xsi:type="PQ"/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					<entry typeCode="DRIV">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.32"/>
+							<templateId root="2.16.840.1.113883.10.20.1.35"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/>
+							<id nullFlavor="UNK"/>
+							<code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vital signs"/>
+							<statusCode code="completed"/>
+							<effectiveTime value="20111101120538"/>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="7001896" root="2.16.840.1.113883.4.349"/>
+									<code code="8302-2" codeSystem="2.16.840.1.113883.6.1" displayName="Bdy height">
+										<originalText>HEIGHT</originalText>
+										<translation code="4688724" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="HEIGHT"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101120842"/>
+									<value unit="[in_us]" value="70" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="7001893" root="2.16.840.1.113883.4.349"/>
+									<code code="8867-4" codeSystem="2.16.840.1.113883.6.1" displayName="Heart rate">
+										<originalText>PULSE</originalText>
+										<translation code="4500636" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="PULSE"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101120842"/>
+									<value unit="/min" value="74" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="7001899" root="2.16.840.1.113883.4.349"/>
+									<code code="2710-2" codeSystem="2.16.840.1.113883.6.1" displayName="SaO2% BldC Oximetry">
+										<originalText>PULSE OXIMETRY</originalText>
+										<translation code="4500637" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="PULSE OXIMETRY"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101120842"/>
+									<value unit="%" value="65" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="7001894" root="2.16.840.1.113883.4.349"/>
+									<code code="9279-1" codeSystem="2.16.840.1.113883.6.1" displayName="Resp rate">
+										<originalText>RESPIRATION</originalText>
+										<translation code="4688725" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="RESPIRATION"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101120842"/>
+									<value unit="/min" value="95" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="7001892" root="2.16.840.1.113883.4.349"/>
+									<code code="8310-5" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature">
+										<originalText>TEMPERATURE</originalText>
+										<translation code="4500638" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="TEMPERATURE"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101120842"/>
+									<value unit="[degF]" value="100" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="7001897" root="2.16.840.1.113883.4.349"/>
+									<code code="3141-9" codeSystem="2.16.840.1.113883.6.1" displayName="Weight Measured">
+										<originalText>WEIGHT</originalText>
+										<translation code="4500639" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="WEIGHT"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101120842"/>
+									<value unit="[lb_av]" value="175" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="7001895~1" root="2.16.840.1.113883.4.349"/>
+									<code code="8480-6" codeSystem="2.16.840.1.113883.6.1" displayName="BP sys">
+										<originalText>SYSTOLIC BLOOD PRESSURE</originalText>
+										<translation code="4500634~1" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="SYSTOLIC BLOOD PRESSURE"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101120842"/>
+									<value unit="mm[Hg]" value="120" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="7001895~2" root="2.16.840.1.113883.4.349"/>
+									<code code="8462-4" codeSystem="2.16.840.1.113883.6.1" displayName="BP dias">
+										<originalText>DIASTOLIC BLOOD PRESSURE</originalText>
+										<translation code="4500634~2" codeSystem="2.16.840.1.113883.6.233" codeSystemName="VHA Enterprise Reference Terminology" displayName="DIASTOLIC BLOOD PRESSURE"/>
+									</code>
+									<text>
+										<reference value="#vital1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101120842"/>
+									<value unit="mm[Hg]" value="80" xsi:type="PQ"/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.14"/>
+					<templateId root="2.16.840.1.113883.3.88.11.83.122"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.28"/>
+					<code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Relevant diagnostic tests and/or laboratory data"/>
+					<title>Lab Results - Chemistry and Hematology</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Department of Veterans Affairs</th>
+									<th>Business Rules for Construction of Medical Information</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Lab Results</td>
+									<td>This VA Document contains all Chemistry and Hematology Lab Results for the patient, from all VA treatment facilities, where the result date was within the last 12 months, up to a limit of the most recent 5 panels.</td>
+								</tr>
+							</tbody>
+						</table>
+						<table ID="labNarritive" border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Date/Time</th>
+									<th>Result Type</th>
+									<th>Source</th>
+									<th>Result - Unit</th>
+									<th>Interpretation</th>
+									<th>Reference Range</th>
+									<th>Status</th>
+									<th>Comment</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<content ID="lndDateTime1">20111101171133</content>
+									</td>
+									<td>
+										<content ID="lndResultType1">GLUCOSE</content>
+									</td>
+									<td>
+										<content ID="lndSource1">MARTINSBURG VAMC</content>
+									</td>
+									<td>
+										<content/>
+									</td>
+									<td>
+										<content/>
+									</td>
+									<td>
+										<content/>
+									</td>
+									<td>
+										<content ID="lndStatus1">completed</content>
+									</td>
+									<td>
+										<content ID="lndComment1">~For Test: GLUCOSE ~Patient may have high blood sugar Patient has good blood sugar level </content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content>20111101171133</content>
+									</td>
+									<td>
+										<content ID="lndResultType1-1">Glucose [Mass/volume] in Serum or Plasma</content>
+									</td>
+									<td>
+										<content>MARTINSBURG VAMC</content>
+									</td>
+									<td>
+										<content ID="lndResultUnit1-1">89 MG/DL</content>
+									</td>
+									<td>
+										<content ID="lndInterpretation1-1"/>
+									</td>
+									<td>
+										<content ID="lndReferenceRange1-1">74-118</content>
+									</td>
+									<td>
+										<content>completed</content>
+									</td>
+									<td>
+										<content>~For Test: GLUCOSE ~Patient may have high blood sugar Patient has good blood sugar level </content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="lndDateTime2">20111101150315</content>
+									</td>
+									<td>
+										<content ID="lndResultType2">CHEM 7</content>
+									</td>
+									<td>
+										<content ID="lndSource2">MARTINSBURG VAMC</content>
+									</td>
+									<td>
+										<content/>
+									</td>
+									<td>
+										<content/>
+									</td>
+									<td>
+										<content/>
+									</td>
+									<td>
+										<content ID="lndStatus2">completed</content>
+									</td>
+									<td>
+										<content ID="lndComment2">TEST 11012011 </content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content>20111101150315</content>
+									</td>
+									<td>
+										<content ID="lndResultType2-1">Glucose [Mass/volume] in Serum or Plasma</content>
+									</td>
+									<td>
+										<content>MARTINSBURG VAMC</content>
+									</td>
+									<td>
+										<content ID="lndResultUnit2-1">97 MG/DL</content>
+									</td>
+									<td>
+										<content ID="lndInterpretation2-1"/>
+									</td>
+									<td>
+										<content ID="lndReferenceRange2-1">74-118</content>
+									</td>
+									<td>
+										<content>completed</content>
+									</td>
+									<td>
+										<content>TEST 11012011 </content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content>20111101150315</content>
+									</td>
+									<td>
+										<content ID="lndResultType2-2">Urea nitrogen [Mass/volume] in Serum or Plasma</content>
+									</td>
+									<td>
+										<content>MARTINSBURG VAMC</content>
+									</td>
+									<td>
+										<content ID="lndResultUnit2-2">10 MG/DL</content>
+									</td>
+									<td>
+										<content ID="lndInterpretation2-2"/>
+									</td>
+									<td>
+										<content ID="lndReferenceRange2-2">9-20</content>
+									</td>
+									<td>
+										<content>completed</content>
+									</td>
+									<td>
+										<content>TEST 11012011 </content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content>20111101150315</content>
+									</td>
+									<td>
+										<content ID="lndResultType2-3">Creatinine [Mass/volume] in Serum or Plasma</content>
+									</td>
+									<td>
+										<content>MARTINSBURG VAMC</content>
+									</td>
+									<td>
+										<content ID="lndResultUnit2-3">0.9 MG/DL</content>
+									</td>
+									<td>
+										<content ID="lndInterpretation2-3"/>
+									</td>
+									<td>
+										<content ID="lndReferenceRange2-3">0.7-1.5</content>
+									</td>
+									<td>
+										<content>completed</content>
+									</td>
+									<td>
+										<content>TEST 11012011 </content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content>20111101150315</content>
+									</td>
+									<td>
+										<content ID="lndResultType2-4">Sodium [Moles/volume] in Serum or Plasma</content>
+									</td>
+									<td>
+										<content>MARTINSBURG VAMC</content>
+									</td>
+									<td>
+										<content ID="lndResultUnit2-4">130 MMOL/L</content>
+									</td>
+									<td>
+										<content ID="lndInterpretation2-4">L</content>
+									</td>
+									<td>
+										<content ID="lndReferenceRange2-4">133-145</content>
+									</td>
+									<td>
+										<content>completed</content>
+									</td>
+									<td>
+										<content>TEST 11012011 </content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content>20111101150315</content>
+									</td>
+									<td>
+										<content ID="lndResultType2-5">Potassium [Moles/volume] in Serum or Plasma</content>
+									</td>
+									<td>
+										<content>MARTINSBURG VAMC</content>
+									</td>
+									<td>
+										<content ID="lndResultUnit2-5">4.5 MMOL/L</content>
+									</td>
+									<td>
+										<content ID="lndInterpretation2-5"/>
+									</td>
+									<td>
+										<content ID="lndReferenceRange2-5">3.5-5.0</content>
+									</td>
+									<td>
+										<content>completed</content>
+									</td>
+									<td>
+										<content>TEST 11012011 </content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content>20111101150315</content>
+									</td>
+									<td>
+										<content ID="lndResultType2-6">Chloride [Moles/volume] in Serum or Plasma</content>
+									</td>
+									<td>
+										<content>MARTINSBURG VAMC</content>
+									</td>
+									<td>
+										<content ID="lndResultUnit2-6">72 MMOL/L</content>
+									</td>
+									<td>
+										<content ID="lndInterpretation2-6">L</content>
+									</td>
+									<td>
+										<content ID="lndReferenceRange2-6">98-111</content>
+									</td>
+									<td>
+										<content>completed</content>
+									</td>
+									<td>
+										<content>TEST 11012011 </content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content>20111101150315</content>
+									</td>
+									<td>
+										<content ID="lndResultType2-7">Carbon dioxide, total [Moles/volume] in Serum or Plasma</content>
+									</td>
+									<td>
+										<content>MARTINSBURG VAMC</content>
+									</td>
+									<td>
+										<content ID="lndResultUnit2-7">30.0 MMOL/L</content>
+									</td>
+									<td>
+										<content ID="lndInterpretation2-7"/>
+									</td>
+									<td>
+										<content ID="lndReferenceRange2-7">22.0-30.0</content>
+									</td>
+									<td>
+										<content>completed</content>
+									</td>
+									<td>
+										<content>TEST 11012011 </content>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<content ID="lab-1" revised="delete">Result Observation Text Not Available</content>
+						<content ID="labproc1" revised="delete">Result Procedure Text Not Available</content>
+					</text>
+					<entry>
+						<procedure classCode="PROC" moodCode="EVN">
+							<templateId assigningAuthorityName="HITSP C83" root="2.16.840.1.113883.3.88.11.83.17"/>
+							<templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.29"/>
+							<templateId assigningAuthorityName="IHE PCC" root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="UNK">
+								<originalText>
+									<reference value="#labproc1"/>
+								</originalText>
+							</code>
+							<text>
+								<reference value="#labproc1"/>
+							</text>
+							<statusCode code="completed"/>
+						</procedure>
+					</entry>
+					<entry typeCode="DRIV">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.32"/>
+							<id extension="613;1519402;3111101;6;1" root="2.16.840.1.113883.4.349"/>
+							<code nullFlavor="UNK">
+								<originalText>GLUCOSE</originalText>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime value="20111201171133"/>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="CH;6888897.828867;2" root="2.16.840.1.113883.4.349"/>
+									<code code="2345-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Glucose [Mass/volume] in Serum or Plasma">
+										<originalText>GLUCOSE</originalText>
+									</code>
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101171133"/>
+									<value representation="TXT" xsi:type="ST">89 MG/DL</value>
+									<interpretationCode nullFlavor="UNK">
+										<originalText/>
+									</interpretationCode>
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										<act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<text>
+												<reference value="#lndComment1"/>
+											</text>
+											<statusCode code="completed"/>
+											<author>
+												<time nullFlavor="UNK"/>
+												<assignedAuthor>
+													<id nullFlavor="NI"/>
+													<addr/>
+													<telecom/>
+													<assignedPerson>
+														<name/>
+													</assignedPerson>
+													<representedOrganization>
+														<name/>
+														<telecom/>
+														<addr/>
+													</representedOrganization>
+												</assignedAuthor>
+											</author>
+										</act>
+									</entryRelationship>
+									<referenceRange>
+										<observationRange>
+											<text>74-118</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					<entry typeCode="DRIV">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.32"/>
+							<id extension="613;1519399;3111101;3;1" root="2.16.840.1.113883.4.349"/>
+							<code nullFlavor="UNK">
+								<originalText>CHEM 7</originalText>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime value="20111101150315"/>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="CH;6888897.849685;2" root="2.16.840.1.113883.4.349"/>
+									<code code="2345-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Glucose [Mass/volume] in Serum or Plasma">
+										<originalText>GLUCOSE</originalText>
+									</code>
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101150315"/>
+									<value representation="TXT" xsi:type="ST">97 MG/DL</value>
+									<interpretationCode nullFlavor="UNK">
+										<originalText/>
+									</interpretationCode>
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										<act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<text>
+												<reference value="#lndComment2"/>
+											</text>
+											<statusCode code="completed"/>
+											<author>
+												<time nullFlavor="UNK"/>
+												<assignedAuthor>
+													<id nullFlavor="NI"/>
+													<addr/>
+													<telecom/>
+													<assignedPerson>
+														<name/>
+													</assignedPerson>
+													<representedOrganization>
+														<name/>
+														<telecom/>
+														<addr/>
+													</representedOrganization>
+												</assignedAuthor>
+											</author>
+										</act>
+									</entryRelationship>
+									<referenceRange>
+										<observationRange>
+											<text>74-118</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="CH;6888897.849685;3" root="2.16.840.1.113883.4.349"/>
+									<code code="3094-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Urea nitrogen [Mass/volume] in Serum or Plasma">
+										<originalText>UREA NITROGEN (BUN)</originalText>
+									</code>
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101150315"/>
+									<value representation="TXT" xsi:type="ST">10 MG/DL</value>
+									<interpretationCode nullFlavor="UNK">
+										<originalText/>
+									</interpretationCode>
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										<act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<text>
+												<reference value="#lndComment2"/>
+											</text>
+											<statusCode code="completed"/>
+											<author>
+												<time nullFlavor="UNK"/>
+												<assignedAuthor>
+													<id nullFlavor="NI"/>
+													<addr/>
+													<telecom/>
+													<assignedPerson>
+														<name/>
+													</assignedPerson>
+													<representedOrganization>
+														<name/>
+														<telecom/>
+														<addr/>
+													</representedOrganization>
+												</assignedAuthor>
+											</author>
+										</act>
+									</entryRelationship>
+									<referenceRange>
+										<observationRange>
+											<text>9-20</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="CH;6888897.849685;4" root="2.16.840.1.113883.4.349"/>
+									<code code="2160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Creatinine [Mass/volume] in Serum or Plasma">
+										<originalText>CREATININE</originalText>
+									</code>
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101150315"/>
+									<value representation="TXT" xsi:type="ST">0.9 MG/DL</value>
+									<interpretationCode nullFlavor="UNK">
+										<originalText/>
+									</interpretationCode>
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										<act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<text>
+												<reference value="#lndComment2"/>
+											</text>
+											<statusCode code="completed"/>
+											<author>
+												<time nullFlavor="UNK"/>
+												<assignedAuthor>
+													<id nullFlavor="NI"/>
+													<addr/>
+													<telecom/>
+													<assignedPerson>
+														<name/>
+													</assignedPerson>
+													<representedOrganization>
+														<name/>
+														<telecom/>
+														<addr/>
+													</representedOrganization>
+												</assignedAuthor>
+											</author>
+										</act>
+									</entryRelationship>
+									<referenceRange>
+										<observationRange>
+											<text>0.7-1.5</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="CH;6888897.849685;5" root="2.16.840.1.113883.4.349"/>
+									<code code="2951-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Sodium [Moles/volume] in Serum or Plasma">
+										<originalText>SODIUM</originalText>
+									</code>
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101150315"/>
+									<value representation="TXT" xsi:type="ST">130 MMOL/L</value>
+									<interpretationCode nullFlavor="UNK">
+										<originalText>L</originalText>
+									</interpretationCode>
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										<act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<text>
+												<reference value="#lndComment2"/>
+											</text>
+											<statusCode code="completed"/>
+											<author>
+												<time nullFlavor="UNK"/>
+												<assignedAuthor>
+													<id nullFlavor="NI"/>
+													<addr/>
+													<telecom/>
+													<assignedPerson>
+														<name/>
+													</assignedPerson>
+													<representedOrganization>
+														<name/>
+														<telecom/>
+														<addr/>
+													</representedOrganization>
+												</assignedAuthor>
+											</author>
+										</act>
+									</entryRelationship>
+									<referenceRange>
+										<observationRange>
+											<text>133-145</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="CH;6888897.849685;6" root="2.16.840.1.113883.4.349"/>
+									<code code="2823-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Potassium [Moles/volume] in Serum or Plasma">
+										<originalText>POTASSIUM</originalText>
+									</code>
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101150315"/>
+									<value representation="TXT" xsi:type="ST">4.5 MMOL/L</value>
+									<interpretationCode nullFlavor="UNK">
+										<originalText/>
+									</interpretationCode>
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										<act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<text>
+												<reference value="#lndComment2"/>
+											</text>
+											<statusCode code="completed"/>
+											<author>
+												<time nullFlavor="UNK"/>
+												<assignedAuthor>
+													<id nullFlavor="NI"/>
+													<addr/>
+													<telecom/>
+													<assignedPerson>
+														<name/>
+													</assignedPerson>
+													<representedOrganization>
+														<name/>
+														<telecom/>
+														<addr/>
+													</representedOrganization>
+												</assignedAuthor>
+											</author>
+										</act>
+									</entryRelationship>
+									<referenceRange>
+										<observationRange>
+											<text>3.5-5.0</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="CH;6888897.849685;7" root="2.16.840.1.113883.4.349"/>
+									<code code="2075-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Chloride [Moles/volume] in Serum or Plasma">
+										<originalText>CHLORIDE</originalText>
+									</code>
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101150315"/>
+									<value representation="TXT" xsi:type="ST">72 MMOL/L</value>
+									<interpretationCode nullFlavor="UNK">
+										<originalText>L</originalText>
+									</interpretationCode>
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										<act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<text>
+												<reference value="#lndComment2"/>
+											</text>
+											<statusCode code="completed"/>
+											<author>
+												<time nullFlavor="UNK"/>
+												<assignedAuthor>
+													<id nullFlavor="NI"/>
+													<addr/>
+													<telecom/>
+													<assignedPerson>
+														<name/>
+													</assignedPerson>
+													<representedOrganization>
+														<name/>
+														<telecom/>
+														<addr/>
+													</representedOrganization>
+												</assignedAuthor>
+											</author>
+										</act>
+									</entryRelationship>
+									<referenceRange>
+										<observationRange>
+											<text>98-111</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<id extension="CH;6888897.849685;8" root="2.16.840.1.113883.4.349"/>
+									<code code="2028-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Carbon dioxide, total [Moles/volume] in Serum or Plasma">
+										<originalText>CO2</originalText>
+									</code>
+									<text>
+										<reference value="#lab-1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20111101150315"/>
+									<value representation="TXT" xsi:type="ST">30.0 MMOL/L</value>
+									<interpretationCode nullFlavor="UNK">
+										<originalText/>
+									</interpretationCode>
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										<act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.40"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+											<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+											<text>
+												<reference value="#lndComment2"/>
+											</text>
+											<statusCode code="completed"/>
+											<author>
+												<time nullFlavor="UNK"/>
+												<assignedAuthor>
+													<id nullFlavor="NI"/>
+													<addr/>
+													<telecom/>
+													<assignedPerson>
+														<name/>
+													</assignedPerson>
+													<representedOrganization>
+														<name/>
+														<telecom/>
+														<addr/>
+													</representedOrganization>
+												</assignedAuthor>
+											</author>
+										</act>
+									</entryRelationship>
+									<referenceRange>
+										<observationRange>
+											<text>22.0-30.0</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.6"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.23"/>
+					<templateId root="2.16.840.1.113883.3.88.11.83.117"/>
+					<code code="11369-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName=" History of immunizations "/>
+					<title>Immunizations</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Department of Veterans Affairs</th>
+									<th>Business Rules for Construction of Medical Information</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Immunizations</td>
+									<td>This VA Document contains all immunizations for the patient, from all VA treatment facilities. </td>
+								</tr>
+							</tbody>
+						</table>
+						<table ID="immunizationNarritive" border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Immunization</th>
+									<th>Series</th>
+									<th>Date Issued</th>
+									<th>Reaction</th>
+									<th>Comments</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<content ID="indImmunization1">ADENOVIRUS,TYPE 7</content>
+									</td>
+									<td>
+										<content ID="indSeries1"/>
+									</td>
+									<td>
+										<content ID="indDateIssued1">20111102</content>
+									</td>
+									<td>
+										<content ID="indReaction1"/>
+									</td>
+									<td>
+										<content ID="indComments1">first immunization NO CONTRAINDICATION; OK TO USE IN FUTURE.</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="indImmunization2">CHOLERA, ORAL</content>
+									</td>
+									<td>
+										<content ID="indSeries2"/>
+									</td>
+									<td>
+										<content ID="indDateIssued2">20111102</content>
+									</td>
+									<td>
+										<content ID="indReaction2"/>
+									</td>
+									<td>
+										<content ID="indComments2">second immunization NO CONTRAINDICATION; OK TO USE IN FUTURE.</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="indImmunization3">CHICKENPOX</content>
+									</td>
+									<td>
+										<content ID="indSeries3">1</content>
+									</td>
+									<td>
+										<content ID="indDateIssued3">20111101</content>
+									</td>
+									<td>
+										<content ID="indReaction3">FEVER</content>
+									</td>
+									<td>
+										<content ID="indComments3"> NO CONTRAINDICATION; OK TO USE IN FUTURE.</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="indImmunization4">CHOLERA</content>
+									</td>
+									<td>
+										<content ID="indSeries4"/>
+									</td>
+									<td>
+										<content ID="indDateIssued4">20111101</content>
+									</td>
+									<td>
+										<content ID="indReaction4">IRRITABILITY</content>
+									</td>
+									<td>
+										<content ID="indComments4">Irritability NO CONTRAINDICATION; OK TO USE IN FUTURE.</content>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+							<templateId root="2.16.840.1.113883.10.20.1.24"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.13"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+							<id nullFlavor="UNK"/>
+							<code code="IMMUNIZ" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+							<text>
+								<reference value="#indComments1"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime value="20111102"/>
+							<consumable>
+								<manufacturedProduct>
+									<templateId root="2.16.840.1.113883.10.20.1.53"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+									<id nullFlavor="UNK"/>
+									<manufacturedMaterial>
+										<code code="UNK" codeSystem="2.16.840.1.113883.6.59" codeSystemName="CVX" nullFlavor="UNK">
+											<originalText>
+												<reference value="#indImmunization1"/>
+											</originalText>
+										</code>
+									</manufacturedMaterial>
+									<manufacturerOrganization/>
+								</manufacturedProduct>
+							</consumable>
+							<performer typeCode="PRF">
+								<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+								<time>
+									<high nullFlavor="UNK"/>
+								</time>
+								<assignedEntity>
+									<id extension="65587" root="2.16.840.1.113883.4.349"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name>TESTER,JOHN G</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.46"/>
+									<code code="30973-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dose Number"/>
+									<statusCode code="completed"/>
+									<value nullFlavor="UNK" xsi:type="INT"/>
+								</observation>
+							</entryRelationship>
+						</substanceAdministration>
+					</entry>
+					<entry typeCode="DRIV">
+						<substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+							<templateId root="2.16.840.1.113883.10.20.1.24"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.13"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+							<id nullFlavor="UNK"/>
+							<code code="IMMUNIZ" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+							<text>
+								<reference value="#indComments2"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime value="20111102"/>
+							<consumable>
+								<manufacturedProduct>
+									<templateId root="2.16.840.1.113883.10.20.1.53"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+									<id nullFlavor="UNK"/>
+									<manufacturedMaterial>
+										<code code="UNK" codeSystem="2.16.840.1.113883.6.59" codeSystemName="CVX" nullFlavor="UNK">
+											<originalText>
+												<reference value="#indImmunization2"/>
+											</originalText>
+										</code>
+									</manufacturedMaterial>
+									<manufacturerOrganization/>
+								</manufacturedProduct>
+							</consumable>
+							<performer typeCode="PRF">
+								<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+								<time>
+									<high nullFlavor="UNK"/>
+								</time>
+								<assignedEntity>
+									<id extension="65587" root="2.16.840.1.113883.4.349"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name>TESTER,JOHN G</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.46"/>
+									<code code="30973-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dose Number"/>
+									<statusCode code="completed"/>
+									<value nullFlavor="UNK" xsi:type="INT"/>
+								</observation>
+							</entryRelationship>
+						</substanceAdministration>
+					</entry>
+					<entry typeCode="DRIV">
+						<substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+							<templateId root="2.16.840.1.113883.10.20.1.24"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.13"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+							<id nullFlavor="UNK"/>
+							<code code="IMMUNIZ" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+							<text>
+								<reference value="#indComments3"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime value="20111101"/>
+							<consumable>
+								<manufacturedProduct>
+									<templateId root="2.16.840.1.113883.10.20.1.53"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+									<id nullFlavor="UNK"/>
+									<manufacturedMaterial>
+										<code code="UNK" codeSystem="2.16.840.1.113883.6.59" codeSystemName="CVX" nullFlavor="UNK">
+											<originalText>
+												<reference value="#indImmunization3"/>
+											</originalText>
+										</code>
+									</manufacturedMaterial>
+									<manufacturerOrganization/>
+								</manufacturedProduct>
+							</consumable>
+							<performer typeCode="PRF">
+								<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+								<time>
+									<high nullFlavor="UNK"/>
+								</time>
+								<assignedEntity>
+									<id extension="65587" root="2.16.840.1.113883.4.349"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name>TESTER,JOHN G</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.46"/>
+									<code code="30973-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dose Number"/>
+									<statusCode code="completed"/>
+									<value value="1" xsi:type="INT"/>
+								</observation>
+							</entryRelationship>
+							<entryRelationship inversionInd="false" typeCode="CAUS">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="2.16.840.1.113883.10.20.1.54"/>
+									<id extension="#indReaction3" root="2.16.840.1.113883.4.349"/>
+									<code nullFlavor="UNK"/>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value nullFlavor="UNK" xsi:type="CD"/>
+								</observation>
+							</entryRelationship>
+						</substanceAdministration>
+					</entry>
+					<entry typeCode="DRIV">
+						<substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+							<templateId root="2.16.840.1.113883.10.20.1.24"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.13"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+							<id nullFlavor="UNK"/>
+							<code code="IMMUNIZ" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+							<text>
+								<reference value="#indComments4"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime value="20111101"/>
+							<consumable>
+								<manufacturedProduct>
+									<templateId root="2.16.840.1.113883.10.20.1.53"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+									<id nullFlavor="UNK"/>
+									<manufacturedMaterial>
+										<code code="UNK" codeSystem="2.16.840.1.113883.6.59" codeSystemName="CVX" nullFlavor="UNK">
+											<originalText>
+												<reference value="#indImmunization4"/>
+											</originalText>
+										</code>
+									</manufacturedMaterial>
+									<manufacturerOrganization/>
+								</manufacturedProduct>
+							</consumable>
+							<performer typeCode="PRF">
+								<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+								<time>
+									<high nullFlavor="UNK"/>
+								</time>
+								<assignedEntity>
+									<id extension="65587" root="2.16.840.1.113883.4.349"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name>TESTER,JOHN G</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.46"/>
+									<code code="30973-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dose Number"/>
+									<statusCode code="completed"/>
+									<value nullFlavor="UNK" xsi:type="INT"/>
+								</observation>
+							</entryRelationship>
+							<entryRelationship inversionInd="false" typeCode="CAUS">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="2.16.840.1.113883.10.20.1.54"/>
+									<id extension="#indReaction4" root="2.16.840.1.113883.4.349"/>
+									<code nullFlavor="UNK"/>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value nullFlavor="UNK" xsi:type="CD"/>
+								</observation>
+							</entryRelationship>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.3"/>
+					<templateId root="2.16.840.1.113883.3.88.11.83.127"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.3"/>
+					<code code="46240-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of Encounters"/>
+					<title>History of Encounters</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Department of Veterans Affairs</th>
+									<th>Business Rules for Construction of Encounter Information</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Encounters</td>
+									<td>This VA Document contains all historical (completed) Outpatient Encounters for the patient, from all VA treatment facilities where the Encounter Date was within the last 36 months, up to a maximum of the most recent 25 encounters.  Ancillary visits are not included.  Lists of associated note titles for each encounter are limited to a maximum of 10.</td>
+								</tr>
+							</tbody>
+						</table>
+						<table ID="encounterNarritive" border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Date Time</th>
+									<th>Encounter Type</th>
+									<th>Encounter Description</th>
+									<th>Reason</th>
+									<th>Arrival</th>
+									<th>Departure</th>
+									<th>Provider</th>
+									<th>Source</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<content ID="endDateTime1">20120201103858</content>
+									</td>
+									<td>
+										<content ID="endEncounterType1"/>
+									</td>
+									<td>
+										<content ID="endEncounterDescription1">PRIMARY CARE/MEDICINE</content>
+									</td>
+									<td>
+										<content ID="endReason1">UNSPECIFIED DISORDER OF EYE MOVEMENTS ICD9 378.9 with Provider Comments A pattern strabismus (SNOMED CT 413380004)</content>
+									</td>
+									<td>
+										<content ID="endArrival1"/>
+									</td>
+									<td>
+										<content ID="endDepature1"/>
+									</td>
+									<td>
+										<content ID="endProvider1">POST,WALTER</content>
+									</td>
+									<td>
+										<content ID="endSource1">MARTINSBURG VAMC</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="endDateTime2">20120111155950</content>
+									</td>
+									<td>
+										<content ID="endEncounterType2"/>
+									</td>
+									<td>
+										<content ID="endEncounterDescription2">GENERAL INTERNAL MEDICINE</content>
+									</td>
+									<td>
+										<content ID="endReason2"/>
+									</td>
+									<td>
+										<content ID="endArrival2"/>
+									</td>
+									<td>
+										<content ID="endDepature2"/>
+									</td>
+									<td>
+										<content ID="endProvider2"/>
+									</td>
+									<td>
+										<content ID="endSource2">CHEYENNE VAMC</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="endDateTime3">20120110134536</content>
+									</td>
+									<td>
+										<content ID="endEncounterType3"/>
+									</td>
+									<td>
+										<content ID="endEncounterDescription3">ADMIN PAT ACTIVTIES (MASNONCT)</content>
+									</td>
+									<td>
+										<content ID="endReason3"/>
+									</td>
+									<td>
+										<content ID="endArrival3"/>
+									</td>
+									<td>
+										<content ID="endDepature3"/>
+									</td>
+									<td>
+										<content ID="endProvider3"/>
+									</td>
+									<td>
+										<content ID="endSource3">CHEYENNE VAMC</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="endDateTime4">20111102142604</content>
+									</td>
+									<td>
+										<content ID="endEncounterType4"/>
+									</td>
+									<td>
+										<content ID="endEncounterDescription4">PRIMARY CARE/MEDICINE with associated notes REFERRAL NOTE</content>
+									</td>
+									<td>
+										<content ID="endReason4">RHEUMATOID ARTHRITIS ICD9 714.0 with Provider Comments Arthritis, Rheumatoid</content>
+									</td>
+									<td>
+										<content ID="endArrival4"/>
+									</td>
+									<td>
+										<content ID="endDepature4"/>
+									</td>
+									<td>
+										<content ID="endProvider4">TESTER,JOHN G</content>
+									</td>
+									<td>
+										<content ID="endSource4">MARTINSBURG VAMC</content>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="endDateTime5">20111101080241</content>
+									</td>
+									<td>
+										<content ID="endEncounterType5"/>
+									</td>
+									<td>
+										<content ID="endEncounterDescription5">PRIMARY CARE/MEDICINE</content>
+									</td>
+									<td>
+										<content ID="endReason5">OBESITY, UNSPECIFIED ICD9 278.00 with Provider Comments Obesity in Diabetes</content>
+									</td>
+									<td>
+										<content ID="endArrival5"/>
+									</td>
+									<td>
+										<content ID="endDepature5"/>
+									</td>
+									<td>
+										<content ID="endProvider5">TESTER,JOHN G</content>
+									</td>
+									<td>
+										<content ID="endSource5">MARTINSBURG VAMC</content>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<content ID="encNote-1" revised="delete">IHE Encounter Template Text not used by VA</content>
+					</text>
+					<entry>
+						<encounter classCode="ENC" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.21"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.16"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="UNK">
+								<originalText>
+									<reference value="#endEncounterDescription1"/>
+								</originalText>
+							</code>
+							<text>
+								<reference value="#encNote-1"/>
+							</text>
+							<effectiveTime>
+								<low value="20120201103858"/>
+							</effectiveTime>
+							<priorityCode nullFlavor="UNK"/>
+							<performer typeCode="PRF">
+								<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+								<time>
+									<high nullFlavor="UNK"/>
+								</time>
+								<assignedEntity>
+									<id nullFlavor="UNK"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name>POST,WALTER</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<participant typeCode="LOC">
+								<templateId root="2.16.840.1.113883.10.20.1.45"/>
+								<time>
+									<low nullFlavor="UNK"/>
+									<high nullFlavor="UNK"/>
+								</time>
+								<participantRole classCode="SDLOC">
+									<playingEntity classCode="PLC"/>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="RSON">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<id nullFlavor="UNK"/>
+									<code nullFlavor="UNK"/>
+									<text>
+										<reference value="#endReason1"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD"/>
+								</observation>
+							</entryRelationship>
+						</encounter>
+					</entry>
+					<entry>
+						<encounter classCode="ENC" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.21"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.16"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="UNK">
+								<originalText>
+									<reference value="#endEncounterDescription2"/>
+								</originalText>
+							</code>
+							<text>
+								<reference value="#encNote-1"/>
+							</text>
+							<effectiveTime>
+								<low value="20120111155950"/>
+							</effectiveTime>
+							<priorityCode nullFlavor="UNK"/>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="442" root="2.16.840.1.113883.4.349"/>
+										<name>CHEYENNE VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<participant typeCode="LOC">
+								<templateId root="2.16.840.1.113883.10.20.1.45"/>
+								<time>
+									<low nullFlavor="UNK"/>
+									<high nullFlavor="UNK"/>
+								</time>
+								<participantRole classCode="SDLOC">
+									<playingEntity classCode="PLC"/>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="RSON">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<id nullFlavor="UNK"/>
+									<code nullFlavor="UNK"/>
+									<text>
+										<reference value="#endReason2"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD"/>
+								</observation>
+							</entryRelationship>
+						</encounter>
+					</entry>
+					<entry>
+						<encounter classCode="ENC" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.21"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.16"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="UNK">
+								<originalText>
+									<reference value="#endEncounterDescription3"/>
+								</originalText>
+							</code>
+							<text>
+								<reference value="#encNote-1"/>
+							</text>
+							<effectiveTime>
+								<low value="20120110134536"/>
+							</effectiveTime>
+							<priorityCode nullFlavor="UNK"/>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="442" root="2.16.840.1.113883.4.349"/>
+										<name>CHEYENNE VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<participant typeCode="LOC">
+								<templateId root="2.16.840.1.113883.10.20.1.45"/>
+								<time>
+									<low nullFlavor="UNK"/>
+									<high nullFlavor="UNK"/>
+								</time>
+								<participantRole classCode="SDLOC">
+									<playingEntity classCode="PLC"/>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="RSON">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<id nullFlavor="UNK"/>
+									<code nullFlavor="UNK"/>
+									<text>
+										<reference value="#endReason3"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD"/>
+								</observation>
+							</entryRelationship>
+						</encounter>
+					</entry>
+					<entry>
+						<encounter classCode="ENC" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.21"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.16"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="UNK">
+								<originalText>
+									<reference value="#endEncounterDescription4"/>
+								</originalText>
+							</code>
+							<text>
+								<reference value="#encNote-1"/>
+							</text>
+							<effectiveTime>
+								<low value="20111102142604"/>
+							</effectiveTime>
+							<priorityCode nullFlavor="UNK"/>
+							<performer typeCode="PRF">
+								<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+								<time>
+									<high nullFlavor="UNK"/>
+								</time>
+								<assignedEntity>
+									<id nullFlavor="UNK"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name>TESTER,JOHN G</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<participant typeCode="LOC">
+								<templateId root="2.16.840.1.113883.10.20.1.45"/>
+								<time>
+									<low nullFlavor="UNK"/>
+									<high nullFlavor="UNK"/>
+								</time>
+								<participantRole classCode="SDLOC">
+									<playingEntity classCode="PLC"/>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="RSON">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<id nullFlavor="UNK"/>
+									<code nullFlavor="UNK"/>
+									<text>
+										<reference value="#endReason4"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD"/>
+								</observation>
+							</entryRelationship>
+						</encounter>
+					</entry>
+					<entry>
+						<encounter classCode="ENC" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.21"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.16"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="UNK">
+								<originalText>
+									<reference value="#endEncounterDescription5"/>
+								</originalText>
+							</code>
+							<text>
+								<reference value="#encNote-1"/>
+							</text>
+							<effectiveTime>
+								<low value="20111101080241"/>
+							</effectiveTime>
+							<priorityCode nullFlavor="UNK"/>
+							<performer typeCode="PRF">
+								<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+								<time>
+									<high nullFlavor="UNK"/>
+								</time>
+								<assignedEntity>
+									<id nullFlavor="UNK"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name>TESTER,JOHN G</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<author>
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<addr/>
+									<telecom/>
+									<assignedPerson>
+										<name/>
+									</assignedPerson>
+									<representedOrganization>
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<name>MARTINSBURG VAMC</name>
+										<telecom/>
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<participant typeCode="LOC">
+								<templateId root="2.16.840.1.113883.10.20.1.45"/>
+								<time>
+									<low nullFlavor="UNK"/>
+									<high nullFlavor="UNK"/>
+								</time>
+								<participantRole classCode="SDLOC">
+									<playingEntity classCode="PLC"/>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="RSON">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<id nullFlavor="UNK"/>
+									<code nullFlavor="UNK"/>
+									<text>
+										<reference value="#endReason5"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD"/>
+								</observation>
+							</entryRelationship>
+						</encounter>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>
