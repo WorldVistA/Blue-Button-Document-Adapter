@@ -22,7 +22,7 @@
     Subdirectories can be specified below the property e.g. java.io.tmpdir/one
 
   -->
-  <diskStore path="ehcache.disk.store.dir" />
+  <diskStore path="/u01/ehcache.disk.store.dir" />
 
   <!--
     Mandatory Default Cache configuration. These settings will be applied to caches
