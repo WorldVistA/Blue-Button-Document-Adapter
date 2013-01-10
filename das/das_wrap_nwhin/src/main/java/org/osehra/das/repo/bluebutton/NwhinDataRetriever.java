@@ -119,9 +119,13 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 			}
 			else {
 				logger.warn("Patient ID's don't match: requested ID:" + patientId + " document ID:" + newDoc.getDocumentPatientId());
+				oldDocument.setDocument(BlueButtonConstants.ERROR_STATUS_STRING);
+				getC32DocumentDao().update(oldDocument);	
 			}
 		} else {
 			logger.warn("No valid record available for patient ID: " + patientId);
+			oldDocument.setDocument(BlueButtonConstants.UNAVAILABLE_STATUS_STRING);
+			getC32DocumentDao().update(oldDocument);
 		}
 	}
 
@@ -141,7 +145,7 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 						BeanUtils.equalsNullSafe(results.get(i).getDocument(), BlueButtonConstants.INCOMPLETE_STATUS_STRING) &&
 						datesEqual(cal, results.get(i).getCreateDate(), newDoc.getCreateDate())) {
 					return results.get(i);
-				}
+				}		
 			}
 		}
 		return null;

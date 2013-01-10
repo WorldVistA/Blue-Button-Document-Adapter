@@ -122,7 +122,9 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 			List<C32DocumentEntity> filteredList = new ArrayList<C32DocumentEntity>(arraySize);	
 
 			for (int i=0;i<docList.size(); i++) {
-				if (BeanUtils.equalsNullSafe(docList.get(i).getDocument().toString(), BlueButtonConstants.INCOMPLETE_STATUS_STRING) == false) {
+				if (BeanUtils.equalsNullSafe(docList.get(i).getDocument().toString(), BlueButtonConstants.INCOMPLETE_STATUS_STRING) == false &&
+					BeanUtils.equalsNullSafe(docList.get(i).getDocument().toString(), BlueButtonConstants.UNAVAILABLE_STATUS_STRING) == false && 
+					BeanUtils.equalsNullSafe(docList.get(i).getDocument().toString(), BlueButtonConstants.ERROR_STATUS_STRING) == false) {
 					filteredList.add(docList.get(i));
 				}
 			}
@@ -178,6 +180,10 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 		for (int i=0;i<docList.size();i++) {
 			if (BeanUtils.equalsNullSafe(docList.get(i).getDocument(), BlueButtonConstants.INCOMPLETE_STATUS_STRING)) {
 				statusList.add(new DocStatus(docList.get(i).getIcn(), docList.get(i).getCreateDate(), BlueButtonConstants.INCOMPLETE_STATUS_STRING));
+			} else if (BeanUtils.equalsNullSafe(docList.get(i).getDocument(), BlueButtonConstants.UNAVAILABLE_STATUS_STRING)) {
+				statusList.add(new DocStatus(docList.get(i).getIcn(), docList.get(i).getCreateDate(), BlueButtonConstants.ERROR_STATUS_STRING));
+			} else if (BeanUtils.equalsNullSafe(docList.get(i).getDocument(), BlueButtonConstants.ERROR_STATUS_STRING)) {
+				statusList.add(new DocStatus(docList.get(i).getIcn(), docList.get(i).getCreateDate(), BlueButtonConstants.ERROR_STATUS_STRING));
 			} else {
 				statusList.add(new DocStatus(docList.get(i).getIcn(), docList.get(i).getCreateDate(), BlueButtonConstants.COMPLETE_STATUS_STRING));
 			}
