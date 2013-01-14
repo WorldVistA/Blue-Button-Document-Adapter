@@ -39,11 +39,28 @@ public class RepositoryImplTest extends AbstractDateAwareTests implements C32Doc
 		List<DocStatus> list = repo.getStatus("112233", "jones");
 		Assert.assertEquals(1, list.size());
 		assertDateEquals(list.get(0).getDateGenerated(), 2012, 10, 10, 9, 8, 7);
-		Assert.assertEquals("COMPLETE", list.get(0).getStatus());
+		Assert.assertEquals(BlueButtonConstants.COMPLETE_STATUS_STRING, list.get(0).getStatus());
 		Assert.assertEquals("112233", list.get(0).getPatientId());
-		
 		assertMessageSent("112233", "jones");
 		assertOnePersisted("112233");
+	}
+	
+	@Test
+	public void getStatus_oneOfSeveralErrors() {
+		String ptId = "12345";
+		String docString = "<fred></fred>";
+		java.sql.Timestamp time = getDate(2012, 10, 11, 13, 14, 15);
+		setupEntriesOneErrorOneGood1(ptId, time, docString);
+		List<DocStatus> list = repo.getStatus(ptId, "whatever");
+		Assert.assertEquals(2, list.size());
+		assertDateEquals(list.get(0).getDateGenerated(), 2012, 10, 11, 13, 14, 15);
+		Assert.assertEquals(BlueButtonConstants.UNAVAILABLE_STATUS_STRING, list.get(0).getStatus());
+		Assert.assertEquals(ptId, list.get(0).getPatientId());
+		assertDateEquals(list.get(1).getDateGenerated(), 2012, 10, 11, 13, 14, 15);
+		Assert.assertEquals(BlueButtonConstants.COMPLETE_STATUS_STRING, list.get(1).getStatus());
+		Assert.assertEquals(ptId, list.get(1).getPatientId());
+		assertMessageSent(ptId, "whatever");
+		assertOnePersisted(ptId);
 	}
 	
 	@Test
@@ -70,14 +87,51 @@ public class RepositoryImplTest extends AbstractDateAwareTests implements C32Doc
 	}
 
 	@Test
-	public void getDocument() {
+	public void getDocument_oneOfOne() {
 		String xml = "<hiThere></hiThere>";
 		docsRetrieved = new ArrayList<C32DocumentEntity>();
-		docsRetrieved.add(new C32DocumentEntity("12321", "12321", new java.sql.Timestamp(new Date().getTime()), xml));
+		docsRetrieved.add(new C32DocumentEntity("12321", "12321", getNowTimestamp(), xml));
 		C32Document doc = repo.getDocument(new Date(), "12321");
 		Assert.assertNotNull(doc);
 		Assert.assertEquals("12321", doc.getPatientId());
 		Assert.assertEquals(xml, new String(Base64.decodeBase64(doc.getDocument())));
+	}
+	
+	@Test
+	public void getDocument_oneOfSeveralErrors() {
+		String ptId = "333";
+		Date aDate = new Date();
+		String docString = "<hi></hi>";
+		java.sql.Timestamp time = getTimestamp(aDate);
+		setupMultipleEntriesOneDate(ptId, time, docString);
+		C32Document doc = repo.getDocument(aDate, ptId);
+		Assert.assertNotNull(doc);
+		Assert.assertEquals(ptId, doc.getPatientId());
+		Assert.assertEquals(docString, new String(Base64.decodeBase64(doc.getDocument())));
+	}
+	
+	protected void setupMultipleEntriesOneDate(String ptId, java.sql.Timestamp time, String docString) {
+		docsRetrieved = new ArrayList<C32DocumentEntity>();
+		docsRetrieved.add(new C32DocumentEntity(ptId, ptId, time, BlueButtonConstants.ERROR_C32_PARSE_STATUS_STRING));
+		docsRetrieved.add(new C32DocumentEntity(ptId, ptId, time, BlueButtonConstants.ERROR_C32_STATUS_STRING));
+		docsRetrieved.add(new C32DocumentEntity(ptId, ptId, time, BlueButtonConstants.ERROR_PTID_STATUS_STRING));
+		docsRetrieved.add(new C32DocumentEntity(ptId, ptId, time, BlueButtonConstants.INCOMPLETE_STATUS_STRING));
+		docsRetrieved.add(new C32DocumentEntity(ptId, ptId, time, BlueButtonConstants.UNAVAILABLE_STATUS_STRING));
+		docsRetrieved.add(new C32DocumentEntity(ptId, ptId, time, docString));
+	}
+	
+	protected void setupEntriesOneErrorOneGood1(String ptId, java.sql.Timestamp time, String docString) {
+		docsRetrieved = new ArrayList<C32DocumentEntity>();
+		docsRetrieved.add(new C32DocumentEntity(ptId, ptId, time, BlueButtonConstants.UNAVAILABLE_STATUS_STRING));
+		docsRetrieved.add(new C32DocumentEntity(ptId, ptId, time, docString));
+	}
+	
+	protected java.sql.Timestamp getNowTimestamp() {
+		return getTimestamp(new Date());
+	}
+	
+	protected java.sql.Timestamp getTimestamp(Date aDate) {
+		return new java.sql.Timestamp(aDate.getTime());
 	}
 	
 	protected void assertOnePersisted(String ptId) {

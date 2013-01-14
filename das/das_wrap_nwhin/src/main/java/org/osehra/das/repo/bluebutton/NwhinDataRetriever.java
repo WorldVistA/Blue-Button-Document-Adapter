@@ -80,21 +80,54 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 	@Override
 	public void onMessage(Message msg) {
 		TextMessage tMsg = (TextMessage)msg;
-		AsyncRetrieveMessage aMsg;
-		boolean debugging = logger.isDebugEnabled();
+		AsyncRetrieveMessage aMsg = null;
+		
 		try {
 			aMsg = (AsyncRetrieveMessage)getAsyncMessageFormat().parse(tMsg.getText());
-			if (debugging) {
-				logger.debug("calling getDomainXml for " + aMsg);
-			}
-			String xml = (String)_nwhinResource.getDomainXml(aMsg.getPatientId(), aMsg.getPatientName());
-			if (debugging) {
+		}
+		catch (Exception ex) {
+			logger.error("message parsing error for " + msg + ": USER CANNOT BE NOTIFIED (users info is not known)", ex);
+			return;
+		}
+		
+		C32DocumentEntity doc = getC32Document(aMsg);
+
+		try {
+			if (logger.isDebugEnabled()) {
 				logger.debug("Attempting to Persist Domain XML for: " + aMsg.getPatientId());
 			}
-			updateDocumentWithNewDocument(aMsg.getPatientId(), getDocumentFactory().createDocument(aMsg.getPatientId(), xml));
-		} catch (Exception e) {
-			logger.error("general exception for " + msg, e);
+			updateDocumentWithNewDocument(aMsg.getPatientId(), doc);
 		}
+		catch (Exception ex) {
+			logger.error("error saving c32 document: USER NOT NOTIFIED:" + msg, ex);
+		}
+	}
+	
+	protected C32DocumentEntity getC32Document(AsyncRetrieveMessage msg) {
+		String xml = null;
+		
+		try {
+			if (logger.isDebugEnabled()) {
+				logger.debug("calling getDomainXml for " + msg);
+			}
+			xml = (String)_nwhinResource.getDomainXml(msg.getPatientId(), msg.getPatientName());
+		}
+		catch (Exception ex) {
+			logger.error("error retrieving c32; attempting to pass this info to user:" + msg, ex);
+			return new C32DocumentEntity(msg.getPatientId(), msg.getPatientId(), getNowTimestamp(), BlueButtonConstants.ERROR_C32_STATUS_STRING);
+		}
+
+		try {
+			return getDocumentFactory().createDocument(msg.getPatientId(), xml);
+		}
+		catch (Exception ex) {
+			logger.error("error parsing c32; attempting to pass this info to user:" + msg, ex);
+		}
+		return new C32DocumentEntity(msg.getPatientId(), msg.getPatientId(), getNowTimestamp(), BlueButtonConstants.ERROR_C32_PARSE_STATUS_STRING);
+	}
+	
+	protected java.sql.Timestamp getNowTimestamp() {
+		return new java.sql.Timestamp(new java.util.Date().getTime());
 	}
 	
 	protected void updateDocumentWithNewDocument(String patientId, C32DocumentEntity newDoc) {
@@ -112,21 +145,19 @@ public class NwhinDataRetriever extends AbstractC32DaoAware implements MessageLi
 				oldDocument.setCreateDate(newDoc.getCreateDate());
 				oldDocument.setDocument(newDoc.getDocument());
 				oldDocument.setDocumentPatientId(newDoc.getDocumentPatientId());
-				if (debugging) {
-					logger.debug("merging (updating) document:" + oldDocument);
-				}
-				getC32DocumentDao().update(oldDocument);
 			}
 			else {
 				logger.warn("Patient ID's don't match: requested ID:" + patientId + " document ID:" + newDoc.getDocumentPatientId());
-				oldDocument.setDocument(BlueButtonConstants.ERROR_STATUS_STRING);
-				getC32DocumentDao().update(oldDocument);	
+				oldDocument.setDocument(BlueButtonConstants.ERROR_PTID_STATUS_STRING);
 			}
 		} else {
 			logger.warn("No valid record available for patient ID: " + patientId);
 			oldDocument.setDocument(BlueButtonConstants.UNAVAILABLE_STATUS_STRING);
-			getC32DocumentDao().update(oldDocument);
 		}
+		if (debugging) {
+			logger.debug("merging (updating) document:" + oldDocument);
+		}
+		getC32DocumentDao().update(oldDocument);
 	}
 
 	protected C32DocumentEntity getOldDocument(C32DocumentEntity newDoc) {

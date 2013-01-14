@@ -41,7 +41,7 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 		if (getDocumentByDate(today, docList)==null) {
 			saveIncompleteDocument(today, patientId);
 			sendMessageToRetrieve(today, patientId, patientName);
-			docList = getAllStoredDocuments(patientId);	
+			docList = getAllStoredDocuments(patientId);
 		}
 		docList = getLimitedStatuses(today, docList);
 		return getDocStatuses(docList);
@@ -66,10 +66,10 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 	 * @param docDate		The date of the document to make an entry for.
 	 * @param ptId			The identifier of the patient to make an entry for.
 	 */
-
 	protected void saveIncompleteDocument(Date docDate, String ptId) {
 		getC32DocumentDao().insert(new C32DocumentEntity(ptId, ptId, new java.sql.Timestamp(docDate.getTime()), BlueButtonConstants.INCOMPLETE_STATUS_STRING));
 	}
+	
 	/**
 	 * BASE64 encodes the XML on a document passed to it.
 	 * 
@@ -122,9 +122,9 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 			List<C32DocumentEntity> filteredList = new ArrayList<C32DocumentEntity>(arraySize);	
 
 			for (int i=0;i<docList.size(); i++) {
-				if (BeanUtils.equalsNullSafe(docList.get(i).getDocument().toString(), BlueButtonConstants.INCOMPLETE_STATUS_STRING) == false &&
-					BeanUtils.equalsNullSafe(docList.get(i).getDocument().toString(), BlueButtonConstants.UNAVAILABLE_STATUS_STRING) == false && 
-					BeanUtils.equalsNullSafe(docList.get(i).getDocument().toString(), BlueButtonConstants.ERROR_STATUS_STRING) == false) {
+				if (!BeanUtils.equalsNullSafe(docList.get(i).getDocument(), BlueButtonConstants.INCOMPLETE_STATUS_STRING) &&
+					!BeanUtils.equalsNullSafe(docList.get(i).getDocument(), BlueButtonConstants.UNAVAILABLE_STATUS_STRING) && 
+					!BeanUtils.startsWithNullSafe(docList.get(i).getDocument(), BlueButtonConstants.ERROR_STRING)) {
 					filteredList.add(docList.get(i));
 				}
 			}
@@ -168,7 +168,6 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 	 * @param docList		The List of documents to be formatted for output.
 	 * @return				The return list of documents for final display.
 	 */
-
 	protected List<DocStatus> getDocStatuses(List<C32DocumentEntity> docList) {
 		if (docList==null || docList.isEmpty()) {
 			return null;
@@ -178,17 +177,16 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 		List<DocStatus> statusList = new ArrayList<DocStatus>(arraySize);
 		
 		for (int i=0;i<docList.size();i++) {
-			if (BeanUtils.equalsNullSafe(docList.get(i).getDocument(), BlueButtonConstants.INCOMPLETE_STATUS_STRING)) {
-				statusList.add(new DocStatus(docList.get(i).getIcn(), docList.get(i).getCreateDate(), BlueButtonConstants.INCOMPLETE_STATUS_STRING));
-			} else if (BeanUtils.equalsNullSafe(docList.get(i).getDocument(), BlueButtonConstants.UNAVAILABLE_STATUS_STRING)) {
-				statusList.add(new DocStatus(docList.get(i).getIcn(), docList.get(i).getCreateDate(), BlueButtonConstants.ERROR_STATUS_STRING));
-			} else if (BeanUtils.equalsNullSafe(docList.get(i).getDocument(), BlueButtonConstants.ERROR_STATUS_STRING)) {
-				statusList.add(new DocStatus(docList.get(i).getIcn(), docList.get(i).getCreateDate(), BlueButtonConstants.ERROR_STATUS_STRING));
-			} else {
-				statusList.add(new DocStatus(docList.get(i).getIcn(), docList.get(i).getCreateDate(), BlueButtonConstants.COMPLETE_STATUS_STRING));
+			String status = BlueButtonConstants.COMPLETE_STATUS_STRING;
+			String docString = docList.get(i).getDocument();
+			if (BeanUtils.equalsNullSafe(docString, BlueButtonConstants.INCOMPLETE_STATUS_STRING) ||
+					BeanUtils.equalsNullSafe(docString, BlueButtonConstants.UNAVAILABLE_STATUS_STRING) ||
+					BeanUtils.startsWithNullSafe(docString, BlueButtonConstants.ERROR_STRING)) {
+				status = docString;
 			}
-		}		
-		return statusList;		
+			statusList.add(new DocStatus(docList.get(i).getIcn(), docList.get(i).getCreateDate(), status));
+		}
+		return statusList;
 	}
 	
 	/**
@@ -198,7 +196,6 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 	 * @param docList		List of C32 Documents to be filtered.
 	 * @return				List of C32 Documents after filtering.
 	 */
-
 	protected List<C32DocumentEntity> getLimitedStatuses(Date today, List<C32DocumentEntity> docList) {
 		if (docList==null || docList.isEmpty()) {
 			return null;
