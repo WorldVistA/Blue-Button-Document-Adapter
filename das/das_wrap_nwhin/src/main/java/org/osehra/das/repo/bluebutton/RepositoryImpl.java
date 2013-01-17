@@ -179,10 +179,12 @@ public class RepositoryImpl extends AbstractC32DaoAware implements Repository {
 		for (int i=0;i<docList.size();i++) {
 			String status = BlueButtonConstants.COMPLETE_STATUS_STRING;
 			String docString = docList.get(i).getDocument();
-			if (BeanUtils.equalsNullSafe(docString, BlueButtonConstants.INCOMPLETE_STATUS_STRING) ||
-					BeanUtils.equalsNullSafe(docString, BlueButtonConstants.UNAVAILABLE_STATUS_STRING) ||
+			if (BeanUtils.equalsNullSafe(docString, BlueButtonConstants.INCOMPLETE_STATUS_STRING)) {
+				status = BlueButtonConstants.INCOMPLETE_STATUS_STRING;
+			}
+			else if (BeanUtils.equalsNullSafe(docString, BlueButtonConstants.UNAVAILABLE_STATUS_STRING) ||
 					BeanUtils.startsWithNullSafe(docString, BlueButtonConstants.ERROR_STRING)) {
-				status = docString;
+				status = BlueButtonConstants.ERROR_STRING;
 			}
 			statusList.add(new DocStatus(docList.get(i).getIcn(), docList.get(i).getCreateDate(), status));
 		}

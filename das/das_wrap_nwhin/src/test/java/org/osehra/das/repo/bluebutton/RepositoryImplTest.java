@@ -54,7 +54,7 @@ public class RepositoryImplTest extends AbstractDateAwareTests implements C32Doc
 		List<DocStatus> list = repo.getStatus(ptId, "whatever");
 		Assert.assertEquals(2, list.size());
 		assertDateEquals(list.get(0).getDateGenerated(), 2012, 10, 11, 13, 14, 15);
-		Assert.assertEquals(BlueButtonConstants.UNAVAILABLE_STATUS_STRING, list.get(0).getStatus());
+		Assert.assertEquals(BlueButtonConstants.ERROR_STRING, list.get(0).getStatus());
 		Assert.assertEquals(ptId, list.get(0).getPatientId());
 		assertDateEquals(list.get(1).getDateGenerated(), 2012, 10, 11, 13, 14, 15);
 		Assert.assertEquals(BlueButtonConstants.COMPLETE_STATUS_STRING, list.get(1).getStatus());
