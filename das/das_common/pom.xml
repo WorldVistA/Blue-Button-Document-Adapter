@@ -4,7 +4,7 @@
 	<artifactId>das_common</artifactId>
 	<!-- NEW VERSION FORMAT -->
 	<!-- Version.Sprint.SprintVersion.Buildnumber -->
-	<version>1.1.1.1-SNAPSHOT</version>
+	<version>1.1.1.2-SNAPSHOT</version>
 	<name>das_common</name>
 	<parent>
 		<groupId>org.osehra.das</groupId>
@@ -12,7 +12,7 @@
 		<relativePath>../</relativePath>
 		<!-- NEW VERSION FORMAT -->
 		<!-- Version.Sprint.SprintVersion.Buildnumber -->
-		<version>1.1.1.1-SNAPSHOT</version>
+		<version>1.1.1.2-SNAPSHOT</version>
 	</parent>
 	<dependencies>
 		<dependency>
